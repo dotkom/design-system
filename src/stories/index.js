@@ -6,6 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
 import ExampleBox from '../ExampleBox';
+import TextField from '../TextField';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -19,4 +20,5 @@ storiesOf('Button', module)
     </Button>
   ));
 
-storiesOf('TestBox', module).add('red', () => <ExampleBox>hi</ExampleBox>);
+storiesOf('TestBox', module).add('styled with color', () => <ExampleBox />);
+storiesOf('TextField', module).add('default', () => <TextField />);
