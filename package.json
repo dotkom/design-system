@@ -8,27 +8,25 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
+    "@babel/core": "^7.5.0",
     "@types/jest": "^24.0.15",
     "@types/node": "12.0.12",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
     "@types/styled-components": "^4.1.16",
+    "babel-loader": "^8.0.6",
     "microbundle": "^0.12.0-next.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
     "styled-components": "^4.3.2",
     "typescript": "^3.5.2"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "microbundle -f modern,cjs --jsx=React.createElement",
     "prepublishOnly": "yarn build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,12 +43,16 @@
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "@types/storybook__react": "^4.0.2",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
     "awesome-typescript-loader": "^5.2.1",
+    "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
     "prettier": "^1.18.2",
     "react-docgen-typescript-loader": "^3.1.0",
-    "ts-jest": "^24.0.2"
+    "ts-jest": "^24.0.2",
+    "tsconfig-paths-webpack-plugin": "^3.2.0"
   }
 }
