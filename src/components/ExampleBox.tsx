@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from 'common/colors';
+import colors from 'common/colors';
 
 const ExampleBox = () => {
   const exampleProp = true;

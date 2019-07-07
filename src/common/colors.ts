@@ -1,6 +1,6 @@
-export const colors = {
+const colors = {
   hotpink: 'hotpink',
-  primay: '#0068B3',
+  primary: '#0068B3',
   primaryLight: '#008CF0',
   primaryDark: '#004170',
 
@@ -31,3 +31,5 @@ export const colors = {
   eventsInternt: '#F5A3E7',
   eventsAnnet: '#C986F9',
 };
+
+export default colors;
