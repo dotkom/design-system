@@ -12,5 +12,5 @@ export default ExampleBox;
 
 const StyledBox = styled.div<{ someProp: boolean }>`
   ${({ someProp }) => (someProp ? 'color: gray' : null)}
-  background-color: ${colors.hotpink};
+  background-color: ${colors.systemWarning50};
 `;
