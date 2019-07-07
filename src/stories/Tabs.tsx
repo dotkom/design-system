@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Tabs, Tab } from '../components/Tabs';
+import { Tabs, Tab } from 'components/Tabs';
 
 const TabsExample = () => {
   const [tab, setTab] = useState(0);

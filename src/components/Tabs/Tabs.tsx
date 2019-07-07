@@ -7,9 +7,16 @@ const TabContainer = styled.div`
   display: flex;
 `;
 
-const Slider = styled.div`
+interface SliderProps {
+  width: number;
+  offset: number;
+}
+
+const Slider = styled.div<SliderProps>`
   transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
   border-top: 2px solid ${colors.primaryLight};
+  width: ${({ width }) => width}px;
+  margin-left: ${({ offset }) => offset}px;
   margin-top: -2px;
 `;
 
@@ -39,33 +46,29 @@ const Tabs: FunctionComponent<Props> = ({ activeTab, children, ...rest }) => {
     }
   }, [activeTab]);
 
+  // Store a reference to the selected tab, and set its `selected` prop.
+  const updatedChildren = React.Children.map(children, (child) => {
+    if (!React.isValidElement(child)) {
+      return child;
+    }
+
+    if (child.props.tab === activeTab) {
+      return React.cloneElement(child, {
+        ref: selectedTab,
+        selected: true,
+      });
+    }
+
+    return React.cloneElement(child);
+  });
+
   return (
     <div {...rest}>
-      <TabContainer>
-        {React.Children.map(children, (child) => {
-          if (!React.isValidElement(child)) {
-            return child;
-          }
-
-          if (child.props.tab === activeTab) {
-            return React.cloneElement(child, {
-              ref: selectedTab,
-              selected: true,
-            });
-          }
-
-          return React.cloneElement(child);
-        })}
-      </TabContainer>
+      <TabContainer>{updatedChildren}</TabContainer>
 
       <SliderBackground />
 
-      <Slider
-        style={{
-          marginLeft: sliderOffset + 'px',
-          width: sliderWidth + 'px',
-        }}
-      />
+      <Slider offset={sliderOffset} width={sliderWidth} />
     </div>
   );
 };
