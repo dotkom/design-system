@@ -2,26 +2,17 @@
   "name": "design-system",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@types/jest": "^24.0.15",
-    "@types/node": "12.0.12",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
-    "@types/styled-components": "^4.1.16",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "styled-components": "^4.3.2",
-    "typescript": "^3.5.2"
-  },
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "microbundle -f modern,cjs --jsx=React.createElement",
+    "prepublishOnly": "yarn build",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,19 +22,41 @@
     "not ie 11",
     "not op_mini all"
   ],
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "~16.8",
+    "react-is": "~16.8"
+  },
   "devDependencies": {
+    "@babel/core": "^7.5.0",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-info": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
+    "@types/jest": "^24.0.15",
+    "@types/node": "12.0.12",
+    "@types/react": "16.8.23",
+    "@types/react-dom": "16.8.4",
     "@types/storybook__react": "^4.0.2",
+    "@types/styled-components": "^4.1.16",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
     "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.0.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
+    "microbundle": "^0.12.0-next.3",
     "prettier": "^1.18.2",
+    "react": "^16.8.6",
     "react-docgen-typescript-loader": "^3.1.0",
-    "ts-jest": "^24.0.2"
+    "react-dom": "^16.8.6",
+    "react-is": "^16.8.6",
+    "styled-components": "^4.3.2",
+    "ts-jest": "^24.0.2",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
+    "typescript": "^3.5.2"
   }
 }
