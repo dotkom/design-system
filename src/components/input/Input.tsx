@@ -64,6 +64,10 @@ const InputLabel = styled.label<{ color?: string }>`
 
 const InputMessage = styled.p<{ color?: string }>`
   color: ${({ color }) => color};
+
+  &:empty {
+    display: none;
+  }
 `;
 
 const Input = ({
@@ -73,7 +77,7 @@ const Input = ({
   labelColor = '',
   errorMessage = '',
   defaultValue = '',
-  onChange = (...args: any[]) => {},
+  onChange = () => {},
   ...props
 }: IInput) => {
   const [value, setValue] = useState(defaultValue);
