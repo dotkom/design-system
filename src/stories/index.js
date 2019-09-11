@@ -7,6 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import { Button, Welcome } from '@storybook/react/demo';
 import ExampleBox from 'components/ExampleBox';
 import TextField from 'components/input/TextField';
+import Alert from 'components/alerts/Alert';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -46,5 +47,19 @@ storiesOf('Input', module).add('text field', () => (
       pattern=".{10,}"
       errorMessage={(input: string) => `You need ${10 - input.length} more letter${input.length !== 9 ? 's' : ''}.`}
     />
+  </>
+));
+storiesOf('Alert', module).add('alertstripe', () => (
+  <>
+    <Alert>Default</Alert>
+    <br />
+    <Alert type="info">Info</Alert>
+    <br />
+    <Alert type="success">Success</Alert>
+    <br />
+    <Alert type="alert">Alert</Alert>
+    <br />
+    <Alert type="error">Error</Alert>
+    <br />
   </>
 ));
