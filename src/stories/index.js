@@ -8,6 +8,7 @@ import { Button, Welcome } from '@storybook/react/demo';
 
 import ExampleBox from 'components/ExampleBox';
 import TextField from 'components/input/TextField';
+import Alert from 'components/alerts/Alert';
 import SpinnerLogo from "../components/Logo/SpinnerLogo";
 import StaticLogo from "../components/Logo/StaticLogo";
 
@@ -51,6 +52,21 @@ storiesOf('Input', module).add('text field', () => (
     />
   </>
 ));
+
+storiesOf('Alert', module).add('alertstripe', () => (
+  <>
+    <Alert>Default</Alert>
+    <br />
+    <Alert type="info">Info</Alert>
+    <br />
+    <Alert type="success">Success</Alert>
+    <br />
+    <Alert type="alert">Alert</Alert>
+    <br />
+    <Alert type="error">Error</Alert>
+    <br />
+  </>
+  ));
 
 storiesOf('Logo', module)
     .add('Spinners', () => (
