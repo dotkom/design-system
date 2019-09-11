@@ -5,8 +5,10 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
+
 import ExampleBox from 'components/ExampleBox';
 import TextField from 'components/input/TextField';
+import SpinnerLogo from "../components/Logo/SpinnerLogo";
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -47,4 +49,23 @@ storiesOf('Input', module).add('text field', () => (
       errorMessage={(input: string) => `You need ${10 - input.length} more letter${input.length !== 9 ? 's' : ''}.`}
     />
   </>
+));
+
+storiesOf('Logo', module).add('Spinners', () => (
+    <>
+        <h3>Classic Spinner</h3>
+        <div style={{display: 'inline-flex'}}>
+        <SpinnerLogo/>
+        </div>
+        <h3>Spinner with other colors</h3>
+        <div style={{display: 'inline-flex'}}>
+            <SpinnerLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'}/>
+        </div>
+        <h3>Spinners of different sizes</h3>
+        <div style={{display: 'inline-flex'}}>
+            <SpinnerLogo spinnerSize={"75px"}/>
+            <SpinnerLogo spinnerSize={"100px"}/>
+            <SpinnerLogo spinnerSize={"150px"}/>
+        </div>
+    </>
 ));
