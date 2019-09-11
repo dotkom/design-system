@@ -5,3 +5,4 @@
 
 export { default as ExampleBox } from './components/ExampleBox';
 export { default as TextField } from './components/input/TextField';
+export { default as EventCard } from './components/eventCard/EventCard';
