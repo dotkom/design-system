@@ -22,7 +22,9 @@
     "not ie 11",
     "not op_mini all"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "material-design-icons": "^3.0.1"
+  },
   "peerDependencies": {
     "react": "~16.8",
     "react-is": "~16.8"
