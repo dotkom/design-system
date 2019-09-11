@@ -6,7 +6,7 @@ import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
 import ExampleBox from 'components/ExampleBox';
-import Input from 'components/input/Input';
+import TextField from 'components/input/TextField';
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -20,18 +20,18 @@ storiesOf('Button', module)
     </Button>
   ));
 
-storiesOf('Input', module).add('input field', () => (
+storiesOf('Input', module).add('text field', () => (
   <>
     <h3>Input</h3>
-    <Input placeholder={'Search...'} />
+    <TextField placeholder={'Search...'} />
     <h3>Input with label</h3>
-    <Input placeholder={'Search...'} label="Label" />
+    <TextField placeholder={'Search...'} label="Label" />
     <h3>Disabled</h3>
-    <Input defaultValue={'disabled'} disabled />
+    <TextField defaultValue={'disabled'} disabled />
     <h3>Input with error</h3>
-    <Input defaultValue={'Not an email'} type="email" pattern=".+@.+" required errorMessage="Not an email" />
+    <TextField defaultValue={'Not an email'} type="email" pattern=".+@.+" required errorMessage="Not an email" />
     <h3>Input with error (colored)</h3>
-    <Input
+    <TextField
       defaultValue={'Green error message'}
       type="email"
       pattern=".+@.+"
@@ -40,7 +40,7 @@ storiesOf('Input', module).add('input field', () => (
       errorMessage="Not a valid email"
     />
     <h3>Input with dynamic error message</h3>
-    <Input
+    <TextField
       defaultValue={'Text'}
       required
       pattern=".{10,}"
