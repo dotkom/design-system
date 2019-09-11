@@ -5,9 +5,12 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
 import { Button, Welcome } from '@storybook/react/demo';
+
 import ExampleBox from 'components/ExampleBox';
 import TextField from 'components/input/TextField';
 import Alert from 'components/alerts/Alert';
+import SpinnerLogo from "../components/Logo/SpinnerLogo";
+import StaticLogo from "../components/Logo/StaticLogo";
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -49,6 +52,7 @@ storiesOf('Input', module).add('text field', () => (
     />
   </>
 ));
+
 storiesOf('Alert', module).add('alertstripe', () => (
   <>
     <Alert>Default</Alert>
@@ -62,4 +66,34 @@ storiesOf('Alert', module).add('alertstripe', () => (
     <Alert type="error">Error</Alert>
     <br />
   </>
+  ));
+
+storiesOf('Logo', module)
+    .add('Spinners', () => (
+        <>
+            <h3>Classic Spinner</h3>
+            <div style={{display: 'inline-flex'}}>
+            <SpinnerLogo/>
+            </div>
+            <h3>Spinner with other colors</h3>
+            <div style={{display: 'inline-flex'}}>
+                <SpinnerLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'}/>
+            </div>
+            <h3>Spinners of different sizes</h3>
+            <div style={{display: 'inline-flex'}}>
+                <SpinnerLogo spinnerSize={"75px"}/>
+                <SpinnerLogo spinnerSize={"100px"}/>
+                <SpinnerLogo spinnerSize={"150px"}/>
+            </div>
+        </>
+    )
+);
+
+storiesOf('Logo', module).add('Static Logo', () => (
+    <>
+        <h3>Classic Static Logo</h3>
+        <StaticLogo/>
+        <h3>Static Logo with alternative colors</h3>
+        <StaticLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'}/>
+    </>
 ));

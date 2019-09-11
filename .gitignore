@@ -173,3 +173,5 @@ yarn-error.log*
 
 # microbundle
 dist/
+
+.idea/
