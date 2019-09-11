@@ -12,6 +12,9 @@ export const colors = {
   graysDarkGray: '#5B5A57',
   graysBlack: '#2A2722',
 
+  systemInfo: '#66CBEC',
+  systemInfo20: 'hsla(195, 78%, 66%, 0.2)',
+  systemInfo50: 'hsla(195, 78%, 66%, 0.5)',
   systemSuccess: '#5CBA65',
   systemSuccess50: 'hsla(126, 41%, 55%, 0.5)',
   systemSuccess20: 'hsla(126, 41%, 55%, 0.2)',
