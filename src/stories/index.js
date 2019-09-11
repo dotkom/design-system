@@ -75,9 +75,15 @@ storiesOf('Logo', module)
 
 storiesOf('Logo', module).add('Static Logo', () => (
     <>
-        <h3>Classic Static Logo</h3>
+        <h3>Classic Logo</h3>
         <StaticLogo/>
         <h3>Static Logo with alternative colors</h3>
         <StaticLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'}/>
+        <h3>Classic Logo different sizes</h3>
+        <div style={{display: 'inline-flex', alignItems: 'center'}}>
+            <StaticLogo size={'75px'}/>
+            <StaticLogo size={'100px'}/>
+            <StaticLogo size={'150px'}/>
+        </div>
     </>
 ));
