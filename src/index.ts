@@ -4,3 +4,4 @@
  */
 
 export { default as ExampleBox } from './components/ExampleBox';
+export { default as Input } from './components/input/Input';
