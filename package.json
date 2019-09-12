@@ -11,6 +11,7 @@
     "build": "microbundle -f modern,cjs --jsx=React.createElement",
     "prepublishOnly": "yarn build",
     "storybook": "start-storybook -p 9009 -s public",
+    "build-docs": "build-storybook --docs",
     "build-storybook": "build-storybook -s public",
     "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
   },
@@ -23,7 +24,8 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "material-design-icons": "^3.0.1"
+    "material-design-icons": "^3.0.1",
+    "storybook-chromatic": "^2.2.2"
   },
   "peerDependencies": {
     "react": "~16.8",
@@ -31,18 +33,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
-    "@storybook/addon-actions": "^5.1.11",
-    "@storybook/addon-info": "^5.1.11",
-    "@storybook/addon-knobs": "^5.1.11",
-    "@storybook/addon-links": "^5.1.11",
-    "@storybook/addon-notes": "^5.1.11",
+    "@mdx-js/loader": "1.2.2",
+    "@storybook/addon-a11y": "5.2.0-beta.32",
+    "@storybook/addon-actions": "5.2.0-beta.32",
+    "@storybook/addon-docs": "5.2.0-beta.32",
+    "@storybook/addon-knobs": "5.2.0-beta.32",
     "@storybook/addon-storysource": "5.1.11",
-    "@storybook/source-loader": "5.2.0-alpha.14",
-    "storybook-addon-figma": "0.1.0",
-    "storybook-addon-props": "3.0.4",
-    "storybook-addon-styled-themes": "0.0.3",
-    "@storybook/addons": "^5.1.11",
-    "@storybook/react": "^5.1.11",
+    "@storybook/addons": "5.2.0-beta.32",
+    "@storybook/react": "5.2.0-beta.32",
+    "@storybook/source-loader": "5.2.0-beta.32",
     "@types/jest": "^24.0.18",
     "@types/node": "12.7.5",
     "@types/react": "16.9.2",
@@ -64,8 +63,9 @@
     "react-dom": "^16.9.0",
     "react-is": "^16.9.0",
     "storybook-addon-designs": "^5.1.1",
+    "storybook-addon-figma": "0.1.0",
     "storybook-addon-props": "^3.0.4",
-    "storybook-addon-styled-themes": "^0.0.3",
+    "storybook-addon-styled-themes": "0.0.3",
     "styled-components": "^4.3.2",
     "ts-jest": "^24.0.2",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
