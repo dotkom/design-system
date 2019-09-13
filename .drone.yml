@@ -1,0 +1,19 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: deploy
+    image: appleboy/drone-ssh
+    secrets: [ssh_key]
+    when:
+      event: push
+      branch: master
+      status: success
+    settings:
+      host: nansen.online.ntnu.no
+      port: 22
+      key:
+        from_secret: ssh_key
+      command_timeout: 4m
+      script:
+        - /srv/www/design-system/deploy.sh
