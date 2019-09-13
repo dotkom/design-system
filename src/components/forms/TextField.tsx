@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colors } from 'common/colors';
+import { colors } from '../../common/colors';
 
 type ErrorFunction = (input: string) => string;
 type ErrorMessage = string | ErrorFunction;
 
-interface IInput {
+interface TextFieldProps {
   type: string;
   disabled?: boolean;
   errorMessage?: ErrorMessage;
@@ -70,7 +70,7 @@ const InputMessage = styled.p<{ color?: string }>`
   }
 `;
 
-const Input = ({
+const TextField = ({
   type,
   disabled = false,
   label = '',
@@ -79,7 +79,7 @@ const Input = ({
   defaultValue = '',
   onChange = () => {},
   ...props
-}: IInput) => {
+}: TextFieldProps) => {
   const [value, setValue] = useState(defaultValue);
 
   const extendedOnChange = (evt: any, ...args: any[]) => {
@@ -96,4 +96,4 @@ const Input = ({
   );
 };
 
-export default Input;
+export default TextField;

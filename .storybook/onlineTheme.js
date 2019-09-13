@@ -1,7 +1,7 @@
 import { create } from '@storybook/theming';
 
 export default create({
-  base: 'dark',
+  base: 'light',
 
   colorPrimary: 'hotpink',
   colorSecondary: '#d60',
@@ -9,8 +9,8 @@ export default create({
   // UI
   appBg: '#004170',
   appContentBg: '#f1f1f1',
-  appBorderColor: '#faa21b',
-  appBorderRadius: 3,
+  //appBorderColor: '#faa21b',
+  appBorderRadius: 5,
 
   // Typography
   fontBase: '"Open Sans Pro", sans-serif',
@@ -21,11 +21,11 @@ export default create({
   //textInverseColor: 'rgba(255,255,255,0.9)',
 
   // Toolbar default and active colors
-  //barTextColor: 'silver',
-  //barSelectedColor: 'black',
-  //barBg: 'hotpink',
+  barTextColor: '#999',
+  barSelectedColor: '#d60',
+  barBg: '#333',
 
-  // Form colors
+  //// Form colors
   //inputBg: 'white',
   //inputBorder: 'silver',
   //inputTextColor: 'black',
