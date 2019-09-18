@@ -11,3 +11,4 @@ export { default as ExampleBox } from './components/ExampleBox';
 export { default as TextField } from './components/forms/TextField';
 export { default as SpinnerLogo } from './components/logo/SpinnerLogo';
 export { default as StaticLogo } from './components/logo/StaticLogo';
+export { default as CircleCross } from './components/icons/CircleCross';
