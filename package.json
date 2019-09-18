@@ -10,7 +10,7 @@
   "scripts": {
     "build": "microbundle -f modern,cjs --jsx=React.createElement",
     "prepublishOnly": "yarn build",
-    "storybook": "start-storybook -p 9009 -s public",
+    "start": "start-storybook -p 9009 -s public",
     "build-docs": "build-storybook --docs",
     "build-storybook": "build-storybook -s public",
     "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
