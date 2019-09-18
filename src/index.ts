@@ -7,7 +7,6 @@ import * as global from './components/shared/global';
 export { global };
 
 export { default as Alert } from './components/alerts/Alert';
-export { default as ExampleBox } from './components/ExampleBox';
 export { default as TextField } from './components/forms/TextField';
 export { default as SpinnerLogo } from './components/logo/SpinnerLogo';
 export { default as StaticLogo } from './components/logo/StaticLogo';

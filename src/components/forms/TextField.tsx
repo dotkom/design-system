@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { ChangeEvent, useState } from 'react';
+import styled, { StyledComponentProps } from 'styled-components';
 import { colors } from '../../common/colors';
 
 type ErrorFunction = (input: string) => string;
 type ErrorMessage = string | ErrorFunction;
 
-interface TextFieldProps {
-  type: string;
+interface TextFieldProps extends StyledComponentProps<'input', any, any, any> {
   disabled?: boolean;
   errorMessage?: ErrorMessage;
-  [props: string]: any;
+  invalidColor?: string;
+  label?: string;
+  labelColor?: string;
+  type?: string;
 }
 
 const InputContainer = styled.div`
@@ -62,9 +64,7 @@ const InputLabel = styled.label<{ color?: string }>`
   }
 `;
 
-const InputMessage = styled.p<{ color?: string }>`
-  color: ${({ color }) => color};
-
+const InputMessage = styled.p`
   &:empty {
     display: none;
   }
@@ -82,16 +82,16 @@ const TextField = ({
 }: TextFieldProps) => {
   const [value, setValue] = useState(defaultValue);
 
-  const extendedOnChange = (evt: any, ...args: any[]) => {
+  const extendedOnChange = (evt: ChangeEvent<HTMLInputElement>) => {
     setValue(evt.target.value);
-    onChange(evt, ...args);
+    onChange(evt);
   };
 
   return (
     <InputContainer>
       <InputLabel color={labelColor}>{label}</InputLabel>
       <InputField {...props} disabled={disabled} defaultValue={defaultValue} onChange={extendedOnChange} />
-      <InputMessage>{typeof errorMessage === 'function' ? errorMessage(value) : errorMessage}</InputMessage>
+      <InputMessage>{value /*typeof errorMessage === 'function' ? errorMessage(value) : errorMessage*/}</InputMessage>
     </InputContainer>
   );
 };
