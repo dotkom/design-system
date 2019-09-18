@@ -6,21 +6,23 @@ export interface IProps {
     size?: string;
 }
 
-const CircleContainer = styled.svg<{ color?: string, size?: string }>`
+const CircleContainer = styled.svg<{ color?: string }>`
     background-color: ${({ color }) => color};
-    height: ${({ size }) => size};
-    width: ${({ size }) => size};
-    border-radius: 50%;
 `;
 
-const CircleCross = ({ color = '#eb5757', size = '16px'}: IProps) => (
-    <CircleContainer color={color} size={size}>
-        <title>Circle Containing Red Cross</title>
-        <path id="path0_stroke" stroke="#FFF" fill="#FFF" d="M -1.06066 1.06066L 21.9393 24.0607L 24.0607 21.9393L
-        1.06066 -1.06066L -1.06066 1.06066ZM 1.06066 24.0607L 24.0607 1.06066L 21.9393 -1.06066L -1.06066 21.9393L
-        1.06066 24.0607Z"/>
-    </CircleContainer>
+const IconWrapper = styled.div<{ size?: string }>`
+    height: ${({ size }) => size};
+    width: ${({ size }) => size};
+`;
 
+const CircleCross = ({ color = '#eb5757', size = "100px"}: IProps) => (
+    <IconWrapper size={size}>
+        <CircleContainer viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50" fill={color}/>
+            <rect x="15" y="22.0711" width="10" height="90" transform="rotate(-45 15 22.0711)" fill="white"/>
+            <rect x="78.6396" y="15" width="10" height="90" transform="rotate(45 78.6396 15)" fill="white"/>
+        </CircleContainer>
+    </IconWrapper>
 );
 
 export default CircleCross;

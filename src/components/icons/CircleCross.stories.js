@@ -10,6 +10,10 @@ export default {
 export const all = () => (
     <>
         <h3>Circle with Cross</h3>
-        <CircleCross/>
+        <div style={{display: "inline-flex"}}>
+            <CircleCross size={"50px"}/>
+            <CircleCross size={"75px"}/>
+            <CircleCross/>
+        </div>
     </>
 );
