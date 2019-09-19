@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-export interface IProps {
+export interface SpinnerLogoProps {
   primaryColor?: string;
   secondaryColor?: string;
   spinnerSize?: string;
@@ -34,7 +34,11 @@ const SpinnerLightning = styled.svg`
   z-index: 1;
 `;
 
-const SpinnerLogo = ({ primaryColor = '#FAA21B', secondaryColor = '#0060A3', spinnerSize = '100px' }: IProps) => (
+const SpinnerLogo = ({
+  primaryColor = '#FAA21B',
+  secondaryColor = '#0060A3',
+  spinnerSize = '100px',
+}: SpinnerLogoProps) => (
   <SpinnerContainer size={spinnerSize}>
     <SpinningCircle viewBox="0 0 506 400" fill="none">
       <circle
