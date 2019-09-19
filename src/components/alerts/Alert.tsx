@@ -2,12 +2,12 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
 
-interface IAlert {
+interface AlertProps {
   type: 'success' | 'alert' | 'error' | 'info';
   children: JSX.Element[];
 }
 
-const Alert = ({ type, children }: IAlert) => {
+const Alert = ({ type, children }: AlertProps) => {
   let color: string;
   let bordercolor: string;
 

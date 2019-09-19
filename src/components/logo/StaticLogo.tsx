@@ -1,11 +1,11 @@
 import React from 'react';
 
-export interface IProps {
+export interface StaticLogoProps {
   primaryColor?: string;
   secondaryColor?: string;
 }
 
-const StaticLogo = ({ primaryColor = '#0068B3', secondaryColor = '#FAA21B' }: IProps) => (
+const StaticLogo = ({ primaryColor = '#0068B3', secondaryColor = '#FAA21B' }: StaticLogoProps) => (
   <svg width="141" height="112" viewBox="0 0 141 112" fill="none">
     <g clipPath="url(#clip0)">
       <path
