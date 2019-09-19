@@ -2,11 +2,8 @@ import React from 'react';
 import styled, { StyledComponentProps } from 'styled-components';
 import { colors } from '../../common/colors';
 
-type ErrorFunction = (input: string) => string;
-type ErrorMessage = string | ErrorFunction;
-
 interface TextFieldProps extends StyledComponentProps<'input', any, any, any> {
-  errorMessage?: ErrorMessage;
+  errorMessage?: string;
   invalidColor?: string;
   label?: string;
   labelColor?: string;
