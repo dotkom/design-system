@@ -15,7 +15,7 @@ steps:
         - ./node_modules
 
   - name: install
-    image: node:carbon
+    image: node:erbium
     when:
       event: [push, pull_request]
       branch: master
@@ -23,7 +23,7 @@ steps:
       - yarn
 
   - name: lint
-    image: node:carbon
+    image: node:erbium
     when:
       event: [push, pull_request]
       branch: master
