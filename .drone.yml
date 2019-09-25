@@ -59,6 +59,18 @@ steps:
       script:
         - /srv/www/design-system/deploy.sh
 
+  - name: publish-to-npm
+    image: plugins/npm
+    when:
+      event: [tag]
+      status: success
+    secrets: [npm_username, npm_password]
+    settings:
+      username:
+        from_secret: npm_username
+      password: password
+        from_secret: npm_password
+
 volumes:
   - name: cache
     host:
