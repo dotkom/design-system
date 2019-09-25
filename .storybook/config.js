@@ -1,14 +1,23 @@
-import { configure, addParameters } from '@storybook/react';
-import lightTheme from './lightTheme';
+import React from 'react';
+import { configure, addParameters, addDecorator } from '@storybook/react';
+import { withA11y } from '@storybook/addon-a11y';
+import 'storybook-chromatic';
+
+import onlineTheme from './onlineTheme';
+import { GlobalStyle } from '../src/components/shared/global';
+
+addDecorator(withA11y);
+addDecorator((story) => (
+  <>
+    <GlobalStyle />
+    {story()}
+  </>
+));
 
 addParameters({
   options: {
-    theme: lightTheme,
+    theme: onlineTheme,
   },
 });
 
-function loadStories() {
-  require('../src/stories');
-}
-
-configure(loadStories, module);
+configure([require.context('../src', true, /\.stories\.(tsx|mdx?)$/)], module);

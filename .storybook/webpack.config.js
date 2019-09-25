@@ -2,7 +2,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = ({ config }) => {
   config.module.rules.push({
-    test: /\.(ts|tsx)$/,
+    test: /\.tsx?$/,
     use: [
       {
         loader: require.resolve('awesome-typescript-loader'),
@@ -14,9 +14,9 @@ module.exports = ({ config }) => {
     ],
   });
   config.resolve.extensions.push('.ts', '.tsx');
-  if(config.resolve.plugins === undefined) {
+  if (config.resolve.plugins === undefined) {
     config.resolve.plugins = [];
   }
-  config.resolve.plugins.push(new TsconfigPathsPlugin({}))
+  config.resolve.plugins.push(new TsconfigPathsPlugin({}));
   return config;
 };
