@@ -1,0 +1,16 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import EventCard from './EventCard';
+
+<Meta title="Design System|EventCard" component={EventCard} />
+
+# EventCard
+
+<Preview>
+  <Story name="all">
+    <>
+      <EventCard eventName="Jakob bør kjøpe en muffins te meg" date="2019-08-07" attending="17/20" />
+    </>
+  </Story>
+</Preview>
+
+<Props of={EventCard} />

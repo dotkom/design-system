@@ -1,74 +1,64 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { far } from "@fortawesome/free-regular-svg-icons";
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-
-type ErrorFunction = (input: string) => string;
-type ErrorMessage = string | ErrorFunction;
+import DateRangeIcon from '@material-ui/icons/DateRange';
+import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 
 interface ICard {
-  type: string;
-  disabled?: boolean;
-  errorMessage?: ErrorMessage;
-  [props: string]: any;
+  eventName: string;
+  eventColor: string;
+  date: string;
+  attending: string;
 }
 
 const CardContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  background: pink;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   min-height: 4rem;
   width: 100%;
 `;
 
 const ColorCodeIndicator = styled.span<{ color?: string }>`
+  display: inline-block;
   background: ${({ color }) => color || colors.primay};
   width: 7px;
   min-height: calc(4rem - 20px);
-  margin: 10px 0 10px 8px;
+  margin: 10px 0;
   border-radius: 2px;
 `;
 
-const CardText = styled.p<{ color?: string }>`
-  font: inherit;
-  line-height: 1.5;
+const Text = styled.p`
+  display: inline;
   margin-left: 5px;
-  font-size: 1.2em;
-  color: ${({ color }) => color || colors.graysBlack};
+`;
 
-  &:empty {
-    margin: 0;
+const Box = styled.span`
+  display: inline-flex;
+  align-items: center;
+  margin: 0 15px;
+
+  &:first-child {
+    margin-right: auto;
   }
 `;
 
-const Date = styled.p<{ color?: string }>`
-  color: ${({ color }) => color};
-
-  &:empty {
-    display: none;
-  }
-`;
-
-const EventCard = ({
-  eventName = '',
-  labelColor = '',
-  eventColor = '',
-  errorMessage = '',
-  defaultValue = '',
-}: ICard) => {
-  const [value] = useState(defaultValue);
-
-  return (
-    <CardContainer>
+const EventCard = ({ eventName, eventColor, date, attending }: ICard) => (
+  <CardContainer>
+    <Box>
       <ColorCodeIndicator color={eventColor}></ColorCodeIndicator>
-      <CardText color={labelColor}>{eventName}</CardText>
-      <FontAwesomeIcon icon={['far', 'faCalendarAlt']} />
-      <Date>{typeof errorMessage === 'function' ? errorMessage(value) : errorMessage}</Date>
-    </CardContainer>
-  );
-};
+      <Text>{eventName}</Text>
+    </Box>
+    <Box>
+      <DateRangeIcon />
+      <Text>{date}</Text>
+    </Box>
+    <Box>
+      <PermIdentityIcon />
+      <Text>{attending}</Text>
+    </Box>
+  </CardContainer>
+);
 
 export default EventCard;
