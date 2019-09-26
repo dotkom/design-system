@@ -11,11 +11,6 @@ export const media = {
   mobile: `screen and (min-width: ${breakPoints.minMobileWidth}) and (max-width: ${breakPoints.maxMobileWidth})`,
   tablet: `screen and (min-width: ${breakPoints.minTabletWidth}) and (max-width: ${breakPoints.maxTabletWidth})`,
   desktop: `screen and (min-width: ${breakPoints.minDesktopWidth}) and (max-width: ${breakPoints.maxDesktopWidth})`,
-  not: {
-    mobile: `screen and (min-width: ${breakPoints.minTabletWidth})`,
-    tablet: `screen and (max-width: ${breakPoints.maxMobileWidth}), screen and (min-width: ${breakPoints.minDesktopWidth})`,
-    desktop: `screen and (max-width: ${breakPoints.maxDesktopWidth})`,
-  },
   min: {
     mobile: `screen and (min-width: ${breakPoints.minMobileWidth})`,
     tablet: `screen and (min-width: ${breakPoints.minTabletWidth})`,
