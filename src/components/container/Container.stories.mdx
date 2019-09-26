@@ -48,14 +48,14 @@ To use the break points in a media query, you need to specify `@media` on before
             content: "Tablet [${breakPoints.minTabletWidth}, ${breakPoints.maxTabletWidth}]";
           }
         }
-        @media ${media.min.desktop} {
+        @media ${media.smallDesktop} {
           .content::before {
-            content: "Large Desktop [${breakPoints.minLargeDesktopWidth}, ∞)";
+            content: "Small Desktop [${breakPoints.minDesktopWidth}, ${breakPoints.maxDesktopWidth}]";
           }
         }
-        @media ${media.desktop} {
+        @media ${media.largeDesktop} {
           .content::before {
-            content: "Desktop [${breakPoints.minDesktopWidth}, ${breakPoints.maxDesktopWidth}]";
+            content: "Large Desktop [${breakPoints.minLargeDesktopWidth}, ∞)";
           }
         }
       `,
