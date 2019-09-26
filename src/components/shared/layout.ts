@@ -4,7 +4,8 @@ export const breakPoints = {
   minTabletWidth: '756px',
   maxTabletWidth: '1199px',
   minDesktopWidth: '1200px',
-  maxDesktopWidth: '1704px',
+  maxDesktopWidth: '1703px',
+  minLargeDesktopWidth: '1704px',
 };
 
 export const media = {
