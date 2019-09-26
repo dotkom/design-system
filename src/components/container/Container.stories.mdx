@@ -64,3 +64,26 @@ To use the break points in a media query, you need to specify `@media` on before
     </Container>
   </Story>
 </Preview>
+
+## List of all media queries available
+
+| Media query              | Interval                   | Logic                                                                  |
+| :----------------------- | :------------------------- | :--------------------------------------------------------------------- |
+| **Precise**              |                            |                                                                        |
+| `media.mobile`           | `[0, maxMobile]`           | Mobile only.                                                           |
+| `media.tablet`           | `[minTablet, maxTablet]`   | Tablet only.                                                           |
+| `media.desktop`          | `[minDesktop, ∞)`          | Desktop (both small and infinitly large).                              |
+| `media.smallDesktop`     | `[minDesktop, maxDesktop]` | Only small desktop; not large desktop.                                 |
+| `media.largeDesktop`     | `[minLargeDesktop, ∞)`     | Only large desktop; not small desktop.                                 |
+| **Minimums**             |                            |                                                                        |
+| `media.min.mobile`       | `[minMobile, ∞)`           | Minimum mobile. Currently it is minimum 0px which is always true.      |
+| `media.min.tablet`       | `[minTablet, ∞)`           | Minimum tablet width. This excludes mobile.                            |
+| `media.min.desktop`      | `[minDesktop, ∞)`          | Minimum desktop width. This excludes mobile and tablet.                |
+| `media.min.smallDesktop` | `[minDesktop, ∞)`          | Minimum small desktop. This excludes mobile and tablet.                |
+| `media.min.largeDesktop` | `[minLargeDesktop, ∞)`     | Minimum large desktop. This excludes mobile, tablet and small desktop. |
+| **Maximums**             |                            |                                                                        |
+| `media.max.mobile`       | `[0, maxMobile]`           | Maximum mobile => Excludes everything except mobile.                   |
+| `media.max.tablet`       | `[0, maxTablet]`           | Maximum tablet width.                                                  |
+| `media.max.desktop`      | `[0, ∞)`                   | Maximum desktop => Always true, as desktop has no limits.              |
+| `media.max.smallDesktop` | `[0, maxDesktop]`          | Maximum small desktop width.                                           |
+| `media.max.largeDesktop` | `[0, ∞)`                   | Maximum large desktop => Always true, as it has no limits.             |
