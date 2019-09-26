@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { media, breakPoints } from '../shared/layout';
 
 interface ContainerProps {
-  children: JSX.Element[];
+  children: string | JSX.Element | JSX.Element[];
   [name: string]: any;
 }
 
