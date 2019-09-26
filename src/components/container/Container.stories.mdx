@@ -6,6 +6,28 @@ import Container from './Container';
 
 # Media break points
 
+We have defined a few break points that should be used when designing components. This will make it easier tweak parameters later and keep the system more consistent while developing over time.
+
+To use the break points in a media query, you need to specify `@media` on beforehand. You can then use the query like this:
+
+```less
+@media ${media.mobile}, ${media.tablet} {
+  // If mobile or tablet
+}
+
+@media not ${media.tablet} {
+  // If not tablet
+}
+
+@media ${media.min.desktop} {
+  // If minimum desktop (aka not mobile and tablet)
+}
+
+@media ${media.max.tablet} {
+  // If maximum tablet (aka mobile and tablet)
+}
+```
+
 <Preview>
   <Story name="all">
     <Container style={{ backgroundColor: '#ddd', margin: 'auto' }}>
@@ -42,5 +64,3 @@ import Container from './Container';
     </Container>
   </Story>
 </Preview>
-
-<Props of={Container} />
