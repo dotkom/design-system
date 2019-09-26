@@ -1,4 +1,5 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { media, breakPoints } from '../shared/layout';
 import Container from './Container';
 
 <Meta title="Design System|layout/Media break points" component={Container} />
@@ -7,9 +8,38 @@ import Container from './Container';
 
 <Preview>
   <Story name="all">
-    <>
-      <Container style={{ backgroundColor: 'red', margin: 'auto' }}>Content</Container>
-    </>
+    <Container style={{ backgroundColor: '#ddd', margin: 'auto' }}>
+      <h1 class="content" />
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+        .content::before {
+          content: "No matching media queries";
+        }
+        @media ${media.mobile} {
+          .content::before {
+            content: "Mobile [${breakPoints.minMobileWidth}, ${breakPoints.maxMobileWidth}]";
+          }
+        }
+        @media ${media.tablet} {
+          .content::before {
+            content: "Tablet [${breakPoints.minTabletWidth}, ${breakPoints.maxTabletWidth}]";
+          }
+        }
+        @media ${media.min.desktop} {
+          .content::before {
+            content: "Large Desktop (${breakPoints.minLargeDesktopWidth}, ∞)";
+          }
+        }
+        @media ${media.desktop} {
+          .content::before {
+            content: "Desktop [${breakPoints.minDesktopWidth}, ${breakPoints.maxDesktopWidth}]";
+          }
+        }
+      `,
+        }}
+      />
+    </Container>
   </Story>
 </Preview>
 
