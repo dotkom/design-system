@@ -15,12 +15,8 @@ const StyledContainer = styled.div`
     max-width: ${breakPoints.minTabletWidth};
   }
 
-  @media ${media.smallDesktop} {
+  @media ${media.desktop} {
     max-width: ${breakPoints.minDesktopWidth};
-  }
-
-  @media ${media.largeDesktop} {
-    max-width: ${breakPoints.minLargeDesktopWidth};
   }
 `;
 
