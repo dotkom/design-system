@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { colors } from 'common/colors';
 
 interface AlertProps {
-  type: 'success' | 'alert' | 'error' | 'info';
-  children: JSX.Element[];
+  type?: 'success' | 'alert' | 'error' | 'info';
+  children: string | JSX.Element | JSX.Element[];
 }
 
 const Alert = ({ type, children }: AlertProps) => {
