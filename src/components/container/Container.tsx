@@ -11,12 +11,16 @@ const StyledContainer = styled.div`
   width: 100%;
   padding: 1em;
 
-  @media ${media.tablet} {
+  @media ${media.tabletAndUp} {
     max-width: ${breakPoints.minTabletWidth};
   }
 
-  @media ${media.desktop} {
+  @media ${media.desktopAndUp} {
     max-width: ${breakPoints.minDesktopWidth};
+  }
+
+  @media ${media.widescreenAndUp} {
+    max-width: ${breakPoints.minWidescreenWidth};
   }
 `;
 

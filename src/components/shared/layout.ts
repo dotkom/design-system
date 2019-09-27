@@ -4,20 +4,16 @@ export const breakPoints = {
   minTabletWidth: '756px',
   maxTabletWidth: '1199px',
   minDesktopWidth: '1200px',
+  maxDesktopWidth: '1703px',
+  minWidescreenWidth: '1704px',
 };
 
 export const media = {
-  mobile: `screen and (max-width: ${breakPoints.maxMobileWidth})`,
-  tablet: `screen and (min-width: ${breakPoints.minTabletWidth}) and (max-width: ${breakPoints.maxTabletWidth})`,
-  desktop: `screen and (min-width: ${breakPoints.minDesktopWidth})`,
-  min: {
-    mobile: `screen`,
-    tablet: `screen and (min-width: ${breakPoints.minTabletWidth})`,
-    desktop: `screen and (min-width: ${breakPoints.minDesktopWidth})`,
-  },
-  max: {
-    mobile: `screen and (max-width: ${breakPoints.maxMobileWidth})`,
-    tablet: `screen and (max-width: ${breakPoints.maxTabletWidth})`,
-    desktop: `screen`,
-  },
+  mobileOnly: `screen and (max-width: ${breakPoints.maxMobileWidth})`,
+  tabletOnly: `screen and (min-width: ${breakPoints.minTabletWidth}) and (max-width: ${breakPoints.maxTabletWidth})`,
+  desktopOnly: `screen and (min-width: ${breakPoints.minDesktopWidth}) and (max-width: ${breakPoints.maxDesktopWidth})`,
+  widescreenOnly: `screen and (min-width: ${breakPoints.minWidescreenWidth})`,
+  tabletAndUp: `screen and (min-width: ${breakPoints.minTabletWidth})`,
+  desktopAndUp: `screen and (min-width: ${breakPoints.minDesktopWidth})`,
+  widescreenAndUp: `screen and (min-width: ${breakPoints.minWidescreenWidth})`,
 };
