@@ -31,20 +31,6 @@ steps:
     commands:
       - yarn lint
 
-  - name: publish-to-npm
-    image: plugins/npm
-    when:
-      event: [tag]
-      status: success
-    secrets: [npm_username, npm_password, npm_email]
-    settings:
-      username:
-        from_secret: npm_username
-      password:
-        from_secret: npm_password
-      email:
-        from_secret: npm_email
-
   - name: rebuild-cache
     image: drillster/drone-volume-cache
     when:
