@@ -12,13 +12,11 @@ interface CheckboxProps {
 
 const Checkbox = ({ label }: CheckboxProps) => {
   return (
-    <div>
-      <CheckboxLabel tabIndex={0}>
-        <HiddenCheckbox />
-        <StyledCheckbox />
-        <span>{label}</span>
-      </CheckboxLabel>
-    </div>
+    <CheckboxLabel>
+      <HiddenCheckbox />
+      <StyledCheckbox tabIndex={0} />
+      <span>{label}</span>
+    </CheckboxLabel>
   );
 };
 
@@ -54,13 +52,17 @@ const StyledCheckbox = styled.div`
   border: 1px solid #ddd;
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in, border-color 0.2s;
   ${HiddenCheckbox}:checked + & {
     background-color: ${colors.primary};
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
     background-position: center;
     background-size: 75%;
     background-repeat: no-repeat;
+    border-color: ${colors.primary};
+  }
+  ${CheckboxLabel}:hover & {
+    border-color: ${colors.primary};
   }
 `;
 
