@@ -53,7 +53,7 @@ const InputLabel = styled.label<{ color?: string }>`
   font-weight: bold;
   font-size: 0.7em;
   margin-bottom: 0.5em;
-  color: ${({ color }) => color || colors.primay};
+  color: ${({ color }) => color || colors.primary};
 
   &:empty {
     margin: 0;
