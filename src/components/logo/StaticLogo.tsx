@@ -1,13 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 
-export interface StaticLogoProps {
+export interface IProps {
   primaryColor?: string;
   secondaryColor?: string;
+  size?: string
 }
 
-const StaticLogo = ({ primaryColor = '#0068B3', secondaryColor = '#FAA21B' }: StaticLogoProps) => (
-  <svg width="141" height="112" viewBox="0 0 141 112" fill="none">
-    <g clipPath="url(#clip0)">
+const Logo = styled.svg<{size?: string}>`
+    height: ${({ size }) => size};
+    width: ${({ size }) => size};
+`;
+
+const StaticLogo = ({primaryColor = '#0068B3', secondaryColor = '#FAA21B', size = '100px'}: IProps) => (
+    <Logo size={size} viewBox="0 0 141 112" fill="none">
+        <g clipPath="url(#clip0)">
       <path
         d="M22.213 83.8012C26.2975 90.7452 34.618 101.093 48.2128 107.048C61.8075 113.002 77.2087 113.308
             91.0284 107.897C104.848 102.487 115.955 91.803 121.904 78.197C127.853 64.5907 127.012 52.3852 125.193
@@ -35,7 +42,7 @@ const StaticLogo = ({ primaryColor = '#0068B3', secondaryColor = '#FAA21B' }: St
         <rect width="141" height="112" fill="white" />
       </clipPath>
     </defs>
-  </svg>
+  </Logo>
 );
 
 export default StaticLogo;
