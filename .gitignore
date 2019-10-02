@@ -17,3 +17,5 @@ storybook-static/
 .env.local
 .env.*.local
 .env.test.local
+
+.idea/
