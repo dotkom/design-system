@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { StyledComponentProps } from 'styled-components';
-import { colors } from '../../common/colors';
+import { colors } from 'common/colors';
 
 interface TextFieldProps extends StyledComponentProps<'input', any, any, any> {
   errorMessage?: string;
