@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export interface IProps {
+export interface Props {
   primaryColor?: string;
   secondaryColor?: string;
   size?: string
@@ -12,7 +12,7 @@ const Logo = styled.svg<{size?: string}>`
     width: ${({ size }) => size};
 `;
 
-const StaticLogo = ({primaryColor = '#0068B3', secondaryColor = '#FAA21B', size = '100px'}: IProps) => (
+const StaticLogo = ({primaryColor = '#0068B3', secondaryColor = '#FAA21B', size = '100px'}: Props) => (
     <Logo size={size} viewBox="0 0 141 112" fill="none">
         <g clipPath="url(#clip0)">
       <path
