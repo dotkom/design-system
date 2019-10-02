@@ -1,14 +1,23 @@
 import ToggleSwitch from "./ToggleSwitch";
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Design System|Buttons/Toggle Switch" />
 
 # Toggle Switch
 
+The toggle switch is a simple button switching between "checked" and "not checked".
+
 <Preview>
   <Story name="all">
     <>
       <h3>Toggle Switch</h3>
-      <ToggleSwitch/>
+      <div style={{ display: 'inline-flex' }}>
+        <ToggleSwitch/>
+        <ToggleSwitch size={48}/>
+        <ToggleSwitch size={64}/>
+      </div>
     </>
   </Story>
 </Preview>
+
+<Props of={ToggleSwitch} />

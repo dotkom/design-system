@@ -11,7 +11,7 @@ export interface IProps {
     size?: number;
 }
 
-const StyledButton = styled.button<{ spacing: number, size: number }>`
+const StyledButton = styled.button<{ spacing: number, size: number, disabled: boolean }>`
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -23,9 +23,16 @@ const StyledButton = styled.button<{ spacing: number, size: number }>`
     border-radius: ${({ size, spacing }) => (size + spacing) + "px"};
     box-sizing: inherit;
     cursor: pointer;
+    
+    &:focus {
+        outline: none;
+    }
+   
+    ${({ disabled }) => disabled && `
+        background: #808080;
+    `}
+   
 `;
-
-/* height: ${({ size }) => size + "px"}; */
 
 const StyledSlider = styled.div<{ checked?: boolean, size: number, spacing: number }>`
     position: absolute;
@@ -42,8 +49,6 @@ const StyledSlider = styled.div<{ checked?: boolean, size: number, spacing: numb
         background: #1e8449;
     `}
 `;
-
-/* height: ${({ size }) => size + "px"}; */
 
 const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 32}: IProps) => {
     const spacing = size / 8;
