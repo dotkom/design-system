@@ -4,7 +4,7 @@ import { withA11y } from '@storybook/addon-a11y';
 import 'storybook-chromatic';
 
 import onlineTheme from './onlineTheme';
-import { GlobalStyle } from '../src/components/shared/global';
+import { GlobalStyle } from '../src/common/global';
 
 addDecorator(withA11y);
 addDecorator((story) => (

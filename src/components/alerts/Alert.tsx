@@ -4,7 +4,7 @@ import { colors } from 'common/colors';
 
 interface AlertProps {
   type?: 'success' | 'alert' | 'error' | 'info';
-  children: string | JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 }
 
 const Alert = ({ type, children }: AlertProps) => {
