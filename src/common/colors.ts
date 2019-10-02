@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   hotpink: 'hotpink',
   primary: '#0068B3',
   primaryLight: '#008CF0',
@@ -12,6 +12,9 @@ const colors = {
   graysDarkGray: '#5B5A57',
   graysBlack: '#2A2722',
 
+  systemInfo: '#66CBEC',
+  systemInfo20: 'hsla(195, 78%, 66%, 0.2)',
+  systemInfo50: 'hsla(195, 78%, 66%, 0.5)',
   systemSuccess: '#5CBA65',
   systemSuccess50: 'hsla(126, 41%, 55%, 0.5)',
   systemSuccess20: 'hsla(126, 41%, 55%, 0.2)',
@@ -31,5 +34,3 @@ const colors = {
   eventsInternt: '#F5A3E7',
   eventsAnnet: '#C986F9',
 };
-
-export default colors;

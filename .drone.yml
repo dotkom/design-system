@@ -1,0 +1,65 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: restore-cache
+    image: drillster/drone-volume-cache
+    when:
+      event: [push, pull_request]
+    volumes:
+      - name: cache
+        path: /cache
+    settings:
+      restore: true
+      mount:
+        - ./node_modules
+
+  - name: install
+    image: node:12
+    when:
+      event: [push, pull_request]
+      branch: master
+    commands:
+      - yarn
+
+  - name: lint
+    image: node:12
+    when:
+      event: [push, pull_request]
+      branch: master
+      status: success
+    commands:
+      - yarn lint
+
+  - name: rebuild-cache
+    image: drillster/drone-volume-cache
+    when:
+      event: [push, pull_request]
+    volumes:
+      - name: cache
+        path: /cache
+    settings:
+      rebuild: true
+      mount:
+        - ./node_modules
+
+  - name: deploy
+    image: appleboy/drone-ssh
+    secrets: [ssh_key]
+    when:
+      event: push
+      branch: master
+      status: success
+    settings:
+      host: nansen.online.ntnu.no
+      port: 22
+      key:
+        from_secret: ssh_key
+      command_timeout: 4m
+      script:
+        - /srv/www/design-system/deploy.sh
+
+volumes:
+  - name: cache
+    host:
+      path: /tmp/cache

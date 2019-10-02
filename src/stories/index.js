@@ -1,1 +1,0 @@
-import 'stories/Tabs';

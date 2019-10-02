@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef, FunctionComponent } from 'react';
+import React, { useEffect, useState, useRef, FC } from 'react';
 import styled from 'styled-components';
-import colors from 'common/colors';
+import { colors } from 'common/colors';
 
 const TabContainer = styled.div`
   position: relative;
@@ -18,6 +18,7 @@ const Slider = styled.div<SliderProps>`
   width: ${({ width }) => width}px;
   margin-left: ${({ offset }) => offset}px;
   margin-top: -2px;
+  margin-bottom: 10px;
 `;
 
 const SliderBackground = styled.hr`
@@ -33,7 +34,7 @@ interface Props {
   activeTab: number;
 }
 
-const Tabs: FunctionComponent<Props> = ({ activeTab, children, ...rest }) => {
+const TabSelect: FC<Props> = ({ activeTab, children, ...rest }) => {
   const [sliderOffset, setSliderOffset] = useState(0);
   const [sliderWidth, setSliderWidth] = useState(0);
 
@@ -73,4 +74,4 @@ const Tabs: FunctionComponent<Props> = ({ activeTab, children, ...rest }) => {
   );
 };
 
-export default Tabs;
+export default TabSelect;
