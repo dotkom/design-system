@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 
 import {CircleCheckmark} from 'index';
 import {CircleCross} from 'index';
@@ -27,18 +27,6 @@ const StyledButton = styled.button<{ spacing: number, size: number }>`
 
 /* height: ${({ size }) => size + "px"}; */
 
-
-const slide = keyframes`
-    0% {
-        left: 0%;
-    }
-
-    100% {
-        left: 100%
-    }
-`;
-
-
 const StyledSlider = styled.div<{ checked?: boolean, size: number, spacing: number }>`
     position: absolute;
     display: inline-flex;
@@ -47,7 +35,6 @@ const StyledSlider = styled.div<{ checked?: boolean, size: number, spacing: numb
     border-radius: 50%;
     background: @red;
     justify-content: center;
-    animate: 0.2s ${slide};
     
     ${({checked, spacing}) => checked && `
         left: auto;
@@ -58,7 +45,7 @@ const StyledSlider = styled.div<{ checked?: boolean, size: number, spacing: numb
 
 /* height: ${({ size }) => size + "px"}; */
 
-const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 32 }: IProps) => {
+const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 32}: IProps) => {
     const spacing = size / 8;
     const [checked, setChecked] = useState(initialChecked);
 
