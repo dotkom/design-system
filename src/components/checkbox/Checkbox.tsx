@@ -65,12 +65,3 @@ const StyledCheckbox = styled.div`
     border-color: ${colors.primary};
   }
 `;
-
-/*
-const StyledBox = styled.div<{ backgroundColor: string; borderColor: string }>`
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  box-shadow: inset 0 0 0 1px ${({ borderColor }) => borderColor};
-  padding: 1em;
-  border-radius: 3px;
-`;
-*/
