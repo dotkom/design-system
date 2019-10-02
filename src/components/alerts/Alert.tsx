@@ -2,12 +2,12 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
 
-interface IAlert {
-  type: 'success' | 'alert' | 'error' | 'info';
-  children: JSX.Element[];
+interface AlertProps {
+  type?: 'success' | 'alert' | 'error' | 'info';
+  children: string | JSX.Element | JSX.Element[];
 }
 
-const Alert = ({ type, children }: IAlert) => {
+const Alert = ({ type, children }: AlertProps) => {
   let color: string;
   let bordercolor: string;
 
@@ -40,7 +40,7 @@ const Alert = ({ type, children }: IAlert) => {
   }
 
   return (
-    <StyledBox someProp={color} borderColor={bordercolor}>
+    <StyledBox backgroundColor={color} borderColor={bordercolor}>
       {children}
     </StyledBox>
   );
@@ -48,8 +48,8 @@ const Alert = ({ type, children }: IAlert) => {
 
 export default Alert;
 
-const StyledBox = styled.div<{ someProp: string; borderColor: string }>`
-  background-color: ${({ someProp }) => someProp};
+const StyledBox = styled.div<{ backgroundColor: string; borderColor: string }>`
+  background-color: ${({ backgroundColor }) => backgroundColor};
   box-shadow: inset 0 0 0 1px ${({ borderColor }) => borderColor};
   padding: 1em;
   border-radius: 3px;

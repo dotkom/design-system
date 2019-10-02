@@ -2,15 +2,6 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = ({ config }) => {
   config.module.rules.push({
-    test: /\.mdx?$/,
-    use: ['babel-loader', '@mdx-js/loader'],
-  });
-  config.module.rules.push({
-    test: /\.stories\.jsx?$/,
-    use: [{ loader: require.resolve('@storybook/addon-storysource/loader') }],
-    enforce: 'pre',
-  });
-  config.module.rules.push({
     test: /\.tsx?$/,
     use: [
       {

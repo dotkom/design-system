@@ -1,12 +1,8 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-
 import Alert from './Alert';
 
-const onChange = action('change');
-
 export default {
-  title: 'Design System|alerts/Alert',
+  title: 'Design System|Alert',
   component: Alert,
 };
 

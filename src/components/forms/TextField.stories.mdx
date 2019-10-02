@@ -1,0 +1,26 @@
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import TextField from './TextField';
+
+<Meta title="Design System|forms/TextField" component={TextField} />
+
+# Text field
+
+This is basically an `<input />` field of `type="text"` in HTML.
+
+<Preview>
+  <Story name="all">
+    <>
+      <h3>Input</h3>
+      <TextField placeholder={'Search...'} />
+      <h3>Input with label</h3>
+      <TextField placeholder={'Search...'} label="Label" />
+      <h3>Disabled</h3>
+      <TextField defaultValue={'disabled'} disabled />
+      <h3>Input with error</h3>
+      <TextField defaultValue={'Not an email'} type="email" pattern=".+@.+" required errorMessage="Not an email" />
+    </>
+  </Story>
+</Preview>
+
+<Props of={TextField} />
