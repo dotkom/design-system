@@ -1,0 +1,20 @@
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import UploadField from './UploadField';
+
+<Meta title="Design System|forms/UploadField" component={UploadField} />
+
+# Text field
+
+This is basically an `<input />` field of `type="text"` in HTML.
+
+<Preview>
+  <Story name="all">
+    <>
+      <h3>Input with label</h3>
+      <UploadField label="Label" />
+    </>
+  </Story>
+</Preview>
+
+<Props of={UploadField} />
