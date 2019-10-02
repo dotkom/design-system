@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, {useState} from 'react';
+import styled, {keyframes} from 'styled-components';
 
 import {CircleCheckmark} from 'index';
 import {CircleCross} from 'index';
 
 export interface IProps {
-    checked?: boolean;
+    initialChecked?: boolean;
     disabled?: boolean;
     onChange: () => void;
     size?: number;
@@ -16,39 +16,59 @@ const StyledButton = styled.button<{ spacing: number, size: number }>`
     display: inline-flex;
     align-items: center;
     background: #fff;
-    width: ${({ size }) => (size * 2) + "px"};
+    width: ${({ size }) => (size * 1.5) + "px"};
+    height: ${({ size }) => (size * 0.75) + "px"};
     padding: ${({ spacing }) => spacing + "px"};
-    height: ${({ size }) => size + "px"};
     border: ${({ spacing }) => spacing + "px"} solid @darkGray;
     border-radius: ${({ size, spacing }) => (size + spacing) + "px"};
     box-sizing: inherit;
     cursor: pointer;
 `;
 
-const StyledSlider = styled.div<{ checked?: boolean, size: number }>`
-    position: relative;
+/* height: ${({ size }) => size + "px"}; */
+
+
+const slide = keyframes`
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: 100%
+    }
+`;
+
+
+const StyledSlider = styled.div<{ checked?: boolean, size: number, spacing: number }>`
+    position: absolute;
     display: inline-flex;
     align-items: center;
-    left: 0;
-    width: ${({ size }) => size + "px"};
-    height: ${({ size }) => size + "px"};
+    left: ${({ spacing }) => spacing + "px"};
     border-radius: 50%;
     background: @red;
-    transition: 0.2s;
     justify-content: center;
+    animate: 0.2s ${slide};
     
-    ${({checked, size}) => checked && `
-        left: calc(100% - ${size + "px"});
+    ${({checked, spacing}) => checked && `
+        left: auto;
+        right: ${spacing + "px"};
         background: #1e8449;
     `}
 `;
 
-const ToggleSwitch = ({ checked = false, disabled = false, onChange, size = 16 }: IProps) => {
+/* height: ${({ size }) => size + "px"}; */
+
+const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 32 }: IProps) => {
     const spacing = size / 8;
-    console.log(checked);
+    const [checked, setChecked] = useState(initialChecked);
+
+    function onClick() {
+        setChecked(!checked);
+    }
+
     return (
-        <StyledButton size={size} spacing={spacing} disabled={disabled} onClick={onChange}>
-            <StyledSlider size={size} checked={checked}>
+        <StyledButton size={size} spacing={spacing} disabled={disabled} onClick={onClick}>
+            <StyledSlider size={size} checked={checked} spacing={spacing}>
                 { checked ? <CircleCheckmark size={(size/2) + "px"}/> : <CircleCross size={(size/2) + "px"}/> }
             </StyledSlider>
         </StyledButton>
