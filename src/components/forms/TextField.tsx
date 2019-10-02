@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { StyledComponentProps } from 'styled-components';
-import { colors } from '../../common/colors';
+import { colors } from 'common/colors';
 
 interface TextFieldProps extends StyledComponentProps<'input', any, any, any> {
   errorMessage?: string;
@@ -53,7 +53,7 @@ const InputLabel = styled.label<{ color?: string }>`
   font-weight: bold;
   font-size: 0.7em;
   margin-bottom: 0.5em;
-  color: ${({ color }) => color || colors.primay};
+  color: ${({ color }) => color || colors.primary};
 
   &:empty {
     margin: 0;

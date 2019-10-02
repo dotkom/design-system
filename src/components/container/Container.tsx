@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { media, breakPoints } from '../shared/layout';
+import { media, breakPoints } from 'common/layout';
 
 interface ContainerProps {
-  children: string | JSX.Element | JSX.Element[];
+  children: React.ReactNode;
   [name: string]: any;
 }
 
