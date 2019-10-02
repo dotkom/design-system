@@ -201,4 +201,16 @@ export const GlobalStyle = createGlobalStyle`
   body {
     ${bodyStyles}
   }
+  h1, h2, h3 {
+    margin: 2rem 0 1rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
 `;
