@@ -58,14 +58,10 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   visibility: hidden;
 `;
 
-const StyledCheckboxError = css`
-  border-color: ${colors.systemError};
-`;
-
 const StyledCheckbox = styled.div<{ error?: boolean }>`
   ${CheckboxCommon}
   display: inline-block;
-  border: 1px solid #ddd;
+  border: 1px solid ${({ error }) => (error ? colors.systemError : '#ddd')};
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease-in, border-color 0.2s;
@@ -85,5 +81,4 @@ const StyledCheckbox = styled.div<{ error?: boolean }>`
     background-color: ${colors.grayslightGray};
     border-color: ${colors.graysGray};
   }
-  ${({ error }) => error && StyledCheckboxError};
 `;
