@@ -32,6 +32,9 @@ const CheckboxLabel = styled.label`
   padding-right: 5px;
   height: ${size}px;
   cursor: pointer;
+  &:hover {
+    color: ${colors.primaryDark};
+  }
 `;
 
 const CheckboxCommon = css`
@@ -59,9 +62,9 @@ const StyledCheckbox = styled.div`
     background-position: center;
     background-size: 75%;
     background-repeat: no-repeat;
-    border-color: ${colors.primary};
+    border-color: ${colors.primaryLight};
   }
   ${CheckboxLabel}:hover & {
-    border-color: ${colors.primary};
+    border-color: ${colors.primaryLight};
   }
 `;
