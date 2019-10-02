@@ -8,12 +8,19 @@ interface Props extends HTMLProps<HTMLInputElement> {
 }
 
 const TabHeader = styled.div<Props>`
-  color: ${({ selected }) => selected && colors.primaryLight};
-  padding: 10px 30px;
-  cursor: pointer;
+  color: ${({ selected }) => (selected ? colors.primary : colors.graysDarkGray)};
+  padding: 10px 0;
+  transition: color 0.2s;
+  font-size: 1.5rem;
+  cursor: ${({ selected }) => !selected && 'pointer'};
 
   &:not(:first-child) {
     border-left: none;
+    margin-left: 20px;
+  }
+
+  &:hover {
+    color: ${colors.primary};
   }
 `;
 

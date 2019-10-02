@@ -12,17 +12,19 @@ interface SliderProps {
   offset: number;
 }
 
+const dividerHeight = 3;
+
 const Slider = styled.div<SliderProps>`
   transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
-  border-top: 2px solid ${colors.primaryLight};
+  border-top: ${dividerHeight}px solid ${colors.primary};
   width: ${({ width }) => width}px;
   margin-left: ${({ offset }) => offset}px;
-  margin-top: -2px;
+  margin-top: -${dividerHeight}px;
   margin-bottom: 10px;
 `;
 
 const SliderBackground = styled.hr`
-  border-top: 2px solid ${colors.graysGray};
+  border-top: ${dividerHeight}px solid ${colors.grayslightGray};
   border-bottom: none;
   border-left: none;
   border-right: none;
