@@ -4,17 +4,17 @@ import { colors } from 'common/colors';
 
 interface CheckboxProps {
   label: string;
-  isChecked: boolean;
-  onCheck(): void;
+  isChecked?: boolean;
+  onCheck: (isChecked: boolean) => void;
   disabled?: boolean;
   error?: boolean;
 }
 
-const Checkbox = ({ label }: CheckboxProps) => {
+const Checkbox = ({ label, isChecked, onCheck, disabled, error }: CheckboxProps) => {
   return (
-    <CheckboxLabel>
-      <HiddenCheckbox />
-      <StyledCheckbox tabIndex={0} />
+    <CheckboxLabel onChange={() => onCheck(!isChecked)} disabled={disabled}>
+      <HiddenCheckbox checked={isChecked} disabled={disabled} />
+      <StyledCheckbox tabIndex={0} error={error} />
       <span>{label}</span>
     </CheckboxLabel>
   );
@@ -24,7 +24,15 @@ export default Checkbox;
 
 const size = 20;
 
-const CheckboxLabel = styled.label`
+const CheckboxLabelDisabled = css`
+  color: ${colors.graysGray};
+  cursor: not-allowed;
+  &:hover {
+    color: ${colors.graysGray};
+  }
+`;
+
+const CheckboxLabel = styled.label<{ disabled?: boolean }>`
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -35,6 +43,7 @@ const CheckboxLabel = styled.label`
   &:hover {
     color: ${colors.primaryDark};
   }
+  ${({ disabled }) => disabled && CheckboxLabelDisabled};
 `;
 
 const CheckboxCommon = css`
@@ -49,7 +58,11 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   visibility: hidden;
 `;
 
-const StyledCheckbox = styled.div`
+const StyledCheckboxError = css`
+  border-color: ${colors.systemError};
+`;
+
+const StyledCheckbox = styled.div<{ error?: boolean }>`
   ${CheckboxCommon}
   display: inline-block;
   border: 1px solid #ddd;
@@ -67,4 +80,10 @@ const StyledCheckbox = styled.div`
   ${CheckboxLabel}:hover & {
     border-color: ${colors.primaryLight};
   }
+  ${HiddenCheckbox}:disabled + & {
+    cursor: not-allowed;
+    background-color: ${colors.grayslightGray};
+    border-color: ${colors.graysGray};
+  }
+  ${({ error }) => error && StyledCheckboxError};
 `;

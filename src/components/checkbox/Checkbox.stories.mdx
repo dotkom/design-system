@@ -7,7 +7,18 @@ import Checkbox from './Checkbox';
 
 <Preview>
   <Story name="all">
-    <Checkbox label="Example checkbox" isChecked={true} />
+    <>
+      <h3>Checkbox</h3>
+      <Checkbox label="Lorem" />
+      <h3>Always true</h3>
+      <Checkbox label="Ipsum" isChecked={true} />
+      <h3>Always false</h3>
+      <Checkbox label="Dolor" isChecked={false} />
+      <h3>Disabled</h3>
+      <Checkbox label="Sit" disabled={true} />
+      <h3>Error</h3>
+      <Checkbox label="Amet" error={true} />
+    </>
   </Story>
 </Preview>
 
