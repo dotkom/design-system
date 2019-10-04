@@ -25,6 +25,7 @@ steps:
 
   - name: lint-check (eslint)
     image: node:12
+    group: checks
     when:
       event: [push, pull_request]
       branch: master
@@ -34,6 +35,7 @@ steps:
 
   - name: format-check (prettier)
     image: node:12
+    group: checks
     when:
       event: [push, pull_request]
       branch: master
