@@ -12,6 +12,9 @@
     "start": "start-storybook -p 9009 -s public",
     "build-docs": "build-storybook --docs",
     "build-storybook": "build-storybook -s public",
+    "format": "tsc --noEmit && prettier --write 'src/**/*.{js,ts,tsx}'",
+    "format-check": "tsc --noEmit && prettier --check 'src/**/*.{js,ts,tsx}'",
+    "lint-check": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet",
     "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "eslintConfig": {
