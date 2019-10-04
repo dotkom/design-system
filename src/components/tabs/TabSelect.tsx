@@ -34,9 +34,10 @@ const SliderBackground = styled.hr`
 
 interface Props {
   activeTab: number;
+  children: React.ReactNode;
 }
 
-const TabSelect: FC<Props> = ({ activeTab, children, ...rest }) => {
+const TabSelect: FC<Props> = ({ activeTab, children, ...rest }: Props) => {
   const [sliderOffset, setSliderOffset] = useState(0);
   const [sliderWidth, setSliderWidth] = useState(0);
 
@@ -50,7 +51,7 @@ const TabSelect: FC<Props> = ({ activeTab, children, ...rest }) => {
   }, [activeTab]);
 
   // Store a reference to the selected tab, and set its `selected` prop.
-  const updatedChildren = React.Children.map(children, (child) => {
+  const updatedChildren = React.Children.map(children, (child: React.ReactNode) => {
     if (!React.isValidElement(child)) {
       return child;
     }

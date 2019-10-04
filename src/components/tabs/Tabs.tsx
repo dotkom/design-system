@@ -9,7 +9,7 @@ interface Props {
   children: TabElement[] | TabElement;
 }
 
-const Tabs: FC<Props> = ({ children }) => {
+const Tabs: FC<Props> = ({ children }: Props) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (

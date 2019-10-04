@@ -5,8 +5,8 @@ import { colors } from 'common/colors';
 const statuses = {
   error: colors.systemError,
   warning: colors.systemWarning,
-  success: colors.systemSuccess
-}
+  success: colors.systemSuccess,
+};
 
 type StatusStrings = keyof typeof statuses;
 
@@ -28,7 +28,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
   background-color: #fcfcfc;
   border: none;
   border-radius: 3px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1) ${({ status }) => status? `, inset 0 0 0 1px ${statuses[status]}`:''};
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1) ${({ status }) => (status ? `, inset 0 0 0 1px ${statuses[status]}` : '')};
   padding: 0.625em 1em;
   font-size: 1em;
   color: ${colors.graysBlack};
@@ -43,7 +43,8 @@ const InputField = styled.input<{ status?: StatusStrings }>`
   }
 
   &:invalid {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), inset 0 0 0 1px ${({ status }) => status? statuses[status] : colors.systemError};
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 1px ${({ status }) => (status ? statuses[status] : colors.systemError)};
     box-sizing: border-box;
   }
 
@@ -53,7 +54,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 
   &:invalid + p {
     font-size: 0.7em;
-    color: ${({ status }) => status? statuses[status] : colors.systemError};
+    color: ${({ status }) => (status ? statuses[status] : colors.systemError)};
   }
 `;
 
@@ -79,7 +80,7 @@ const TextField = ({ type = 'text', label = '', labelColor = '', errorMessage = 
   return (
     <InputContainer>
       <InputLabel color={labelColor}>{label}</InputLabel>
-      <ClearableInputField {...props}/>
+      <ClearableInputField {...props} />
       <InputMessage>{errorMessage}</InputMessage>
     </InputContainer>
   );
@@ -94,14 +95,21 @@ const ClearButton = styled.button`
   background-color: transparent;
 `;
 
-const ClearableInputField = ({disabled, ...props}:TextFieldProps) => {
+const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
   const [text, setText] = useState(props.defaultValue || '');
   return (
     <div>
-      <InputField value={text} onChange={(e)=>{setText(e.target.value)}} {...props} disabled={disabled}/>
+      <InputField
+        value={text}
+        onChange={(e) => {
+          setText(e.target.value);
+        }}
+        {...props}
+        disabled={disabled}
+      />
       {text && !disabled && <ClearButton onClick={() => setText('')}>X</ClearButton>}
     </div>
   );
-}
+};
 
 export default TextField;
