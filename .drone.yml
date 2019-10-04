@@ -6,6 +6,7 @@ steps:
     image: drillster/drone-volume-cache
     when:
       event: [push, pull_request]
+      branch: master
     volumes:
       - name: cache
         path: /cache
@@ -44,6 +45,7 @@ steps:
     image: drillster/drone-volume-cache
     when:
       event: [push, pull_request]
+      branch: master
     volumes:
       - name: cache
         path: /cache
