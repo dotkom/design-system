@@ -22,7 +22,7 @@ steps:
     commands:
       - yarn
 
-  - name: lint
+  - name: lint-check (eslint)
     image: node:12
     when:
       event: [push, pull_request]
