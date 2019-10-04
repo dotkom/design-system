@@ -29,7 +29,16 @@ steps:
       branch: master
       status: success
     commands:
-      - yarn lint
+      - yarn lint-check
+
+  - name: format-check (prettier)
+    image: node:12
+    when:
+      event: [push, pull_request]
+      branch: master
+      status: success
+    commands:
+      - yarn format-check
 
   - name: rebuild-cache
     image: drillster/drone-volume-cache
