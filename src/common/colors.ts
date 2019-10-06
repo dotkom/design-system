@@ -1,6 +1,6 @@
 export const colors = {
   hotpink: 'hotpink',
-  primay: '#0068B3',
+  primary: '#0068B3',
   primaryLight: '#008CF0',
   primaryDark: '#004170',
 

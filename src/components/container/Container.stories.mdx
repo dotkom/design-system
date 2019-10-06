@@ -1,0 +1,77 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { media, breakPoints } from 'common/layout';
+import Container from './Container';
+
+<Meta title="Design System|layout/Media break points" component={Container} />
+
+# Media break points
+
+We have defined a few break points that should be used when designing components. This will make it easier tweak parameters later and keep the system more consistent while developing over time.
+
+To use the break points in a media query, you need to specify `@media` on beforehand. You can then use the query like this:
+
+```javascript
+@media ${media.mobileOnly}, ${media.tabletOnly} {
+  // If mobile or tablet
+}
+
+@media not ${media.tabletOnly} {
+  // If not tablet
+}
+
+@media ${media.desktopAndUp} {
+  // If minimum desktop (aka not mobile and tablet)
+}
+
+@media not ${media.desktopAndUp} {
+  // Negation of desktop and up => tablet and down (aka mobile and tablet)
+}
+```
+
+**NB:** We have a mobile-first approach, meaning you will need to design for mobile first. You can then add, for example, desktop behaviour afterwards using `desktopAndUp` and so on. Be sure to order the media queries correctly (mobile first, then increase).
+
+<Preview>
+  <Story name="all">
+    <Container style={{ backgroundColor: '#ddd', margin: 'auto' }}>
+      <h1 className="content" />
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+        .content::before {
+          content: "Mobile [${breakPoints.minMobileWidth}, ${breakPoints.maxMobileWidth}]";
+        }
+        @media ${media.tabletAndUp} {
+          .content::before {
+            content: "Tablet [${breakPoints.minTabletWidth}, ${breakPoints.maxTabletWidth}]";
+          }
+        }
+        @media ${media.desktopAndUp} {
+          .content::before {
+            content: "Desktop [${breakPoints.minDesktopWidth}, ${breakPoints.maxDesktopWidth}]";
+          }
+        }
+        @media ${media.widescreenAndUp} {
+          .content::before {
+            content: "Widescreen [${breakPoints.minWidescreenWidth}, ∞)";
+          }
+        }
+      `,
+        }}
+      />
+    </Container>
+  </Story>
+</Preview>
+
+## List of all media queries available
+
+| Media query             | Interval                   | Logic                                             |
+| :---------------------- | :------------------------- | :------------------------------------------------ |
+| **Minimums**            |                            |                                                   |
+| `media.tabletAndUp`     | `[minTablet, ∞)`           | Minimum tablet. This excludes mobile.             |
+| `media.desktopAndUp`    | `[minDesktop, ∞)`          | Minimum desktop. This excludes mobile and tablet. |
+| `media.widescreenAndUp` | `[minWidescreen, ∞)`       | Minimum widescreen. Basically widescreen only.    |
+| **Precise**             |                            |                                                   |
+| `media.mobileOnly`      | `[0, maxMobile]`           | Mobile only.                                      |
+| `media.tabletOnly`      | `[minTablet, maxTablet]`   | Tablet only.                                      |
+| `media.desktopOnly`     | `[minDesktop, maxDesktop]` | Desktop only.                                     |
+| `media.widescreenOnly`  | `[minWidescreen, ∞)`       | Widescreen only.                                  |
