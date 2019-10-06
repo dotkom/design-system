@@ -25,25 +25,28 @@ const InputContainer = styled.div`
 `;
 
 const InputField = styled.input<{ status?: StatusStrings }>`
-  background-color: #fcfcfc;
   border: none;
   border-radius: 3px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1) ${({ status }) => (status ? `, inset 0 0 0 1px ${statuses[status]}` : '')};
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2) ${({ status }) => (status ? `, inset 0 0 0 1px ${statuses[status]}` : '')};
   padding: 0.625em 1em;
   font-size: 1em;
   color: ${colors.graysBlack};
+  border: 1px solid ${colors.grayslightGray};
 
   &:focus {
     outline: none;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1), inset 0 0 0 1px ${colors.systemInfo};
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2), inset 0 0 0 1px ${colors.systemInfo};
   }
 
   &:disabled {
-    background-color: #ddd;
+    background-color: ${colors.grayslightGray};
+    color: ${colors.graysDarkGray};
+    box-shadow: none;
+    border: 1px solid ${colors.graysGray};
   }
 
   &:invalid {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1),
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2),
       inset 0 0 0 1px ${({ status }) => (status ? statuses[status] : colors.systemError)};
     box-sizing: border-box;
   }
@@ -61,8 +64,8 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 const InputLabel = styled.label<{ color?: string }>`
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.7em;
-  margin-bottom: 0.5em;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
   color: ${({ color }) => color || colors.primary};
 
   &:empty {
@@ -71,6 +74,8 @@ const InputLabel = styled.label<{ color?: string }>`
 `;
 
 const InputMessage = styled.p`
+  margin-top: 0.5rem;
+
   &:empty {
     display: none;
   }

@@ -61,9 +61,9 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 const StyledCheckbox = styled.div<{ error?: boolean }>`
   ${CheckboxCommon}
   display: inline-block;
-  border: 1px solid ${({ error }) => (error ? colors.systemError : '#ddd')};
+  border: 1px solid ${({ error }) => (error ? colors.systemError : colors.grayslightGray)};
   background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s ease-in, border-color 0.2s;
   ${HiddenCheckbox}:checked + & {
     background-color: ${colors.primary};

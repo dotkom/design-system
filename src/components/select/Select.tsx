@@ -6,8 +6,9 @@ const Select = styled.select`
 
   padding: 8px 28px 8px 8px;
   background: #fff;
-  border: 1px solid #bbb;
   border-radius: 3px;
+  border: 1px solid ${colors.grayslightGray};
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 
   cursor: pointer;
 
