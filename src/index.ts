@@ -9,6 +9,7 @@ import { media, breakPoints } from 'common/layout';
 export { colors, global, media, breakPoints };
 
 export { default as Alert } from 'components/alerts/Alert';
+export { default as EventCard } from './components/eventCard/EventCard';
 export { default as CircleCross } from 'components/icons/CircleCross';
 export { default as CircleCheckmark } from 'components/icons/CircleCheckmark';
 export { default as Spinner } from 'components/loading/Spinner';

@@ -1,0 +1,28 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import EventCard from './EventCard';
+
+<Meta title="Design System|EventCard" component={EventCard} />
+
+# EventCard
+
+<Preview>
+  <Story name="All">
+    <>
+      <h3>Large event card</h3>
+      <EventCard
+        eventName="Nofas"
+        date="2019-08-07"
+        attending="17/20"
+        imgSrc="https://online.ntnu.no/media/images/responsive/sm/0c6f22e2-ff1f-44df-b40b-41ca8d8e12c8.jpeg"
+        isLargeEvent={true}
+        category="Kurs"
+        eventColor="#127DBD"
+      />
+      <br />
+      <h3>Small event card</h3>
+      <EventCard eventName="Bekk" date="2019-08-07" attending="17/20" isLargeEvent={false} />
+    </>
+  </Story>
+</Preview>
+
+<Props of={EventCard} />
