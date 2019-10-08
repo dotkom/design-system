@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { colors } from 'common/colors';
 
 import { CircleCheckmark } from 'index';
 import { CircleCross } from 'index';
@@ -16,12 +17,12 @@ const StyledButton = styled.button<{ spacing: number; size: number; disabled: bo
   display: inline-flex;
   align-items: center;
   background: #fff;
-  width: ${({ size }) => size * 1.5 + 'px'};
-  height: ${({ size }) => size * 0.75 + 'px'};
+  width: ${({ size }) => size * 2 + 'px'};
+  height: ${({ size }) => size + 'px'};
   padding: ${({ spacing }) => spacing + 'px'};
-  border: ${({ spacing }) => spacing + 'px'} solid @darkGray;
+  border: ${({ spacing }) => spacing + 'px'} solid ${colors.graysGray};
   border-radius: ${({ size, spacing }) => size + spacing + 'px'};
-  box-sizing: inherit;
+  box-sizing: content-box;
   cursor: pointer;
 
   &:focus {
@@ -31,29 +32,25 @@ const StyledButton = styled.button<{ spacing: number; size: number; disabled: bo
   ${({ disabled }) =>
     disabled &&
     `
-        background: #808080;
+        background: ${colors.grayslightGray};
+        cursor: not-allowed;
     `}
 `;
 
 const StyledSlider = styled.div<{ checked?: boolean; size: number; spacing: number }>`
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  left: ${({ spacing }) => spacing + 'px'};
+  position: relative;
+  left: 0;
   border-radius: 50%;
-  background: @red;
-  justify-content: center;
+  transition: left 0.2s;
 
-  ${({ checked, spacing }) =>
+  ${({ checked, size }) =>
     checked &&
     `
-        left: auto;
-        right: ${spacing + 'px'};
-        background: #1e8449;
+        left: calc(100% - ${size}px);
     `}
 `;
 
-const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 32 }: Props) => {
+const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 16 }: Props) => {
   const spacing = size / 8;
   const [checked, setChecked] = useState(initialChecked);
 
@@ -64,7 +61,7 @@ const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 32 }: P
   return (
     <StyledButton size={size} spacing={spacing} disabled={disabled} onClick={onClick}>
       <StyledSlider size={size} checked={checked} spacing={spacing}>
-        {checked ? <CircleCheckmark size={size / 2 + 'px'} /> : <CircleCross size={size / 2 + 'px'} />}
+        {checked ? <CircleCheckmark size={size + 'px'} /> : <CircleCross size={size + 'px'} />}
       </StyledSlider>
     </StyledButton>
   );

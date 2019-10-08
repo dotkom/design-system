@@ -15,5 +15,5 @@ export { default as CircleCheckmark } from 'components/icons/CircleCheckmark';
 export { default as Spinner } from 'components/loading/Spinner';
 export { default as SpinnerLogo } from 'components/logo/SpinnerLogo';
 export { default as StaticLogo } from 'components/logo/StaticLogo';
-export { default as TextField } from 'components/forms/TextField';
-export { default as ToggleSwitch } from 'components/buttons/ToggleSwitch';
+export { default as TextField } from 'components/textField/TextField';
+export { default as ToggleSwitch } from 'components/toggleSwitch/ToggleSwitch';
