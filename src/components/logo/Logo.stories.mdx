@@ -1,7 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import StaticLogo from './StaticLogo';
 
-<Meta title="Design System|Logo" component={StaticLogo} />
+<Meta title="Layouts|Logo" component={StaticLogo} />
 
 # Static Logo
 
@@ -9,16 +9,16 @@ import StaticLogo from './StaticLogo';
   <Story name="static logo">
     <>
       <h3>Classic Logo</h3>
-        <StaticLogo/>
-        <h3>Static Logo with alternative colors</h3>
-        <StaticLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'}/>
-        <h3>Classic Logo different sizes</h3>
-        <div style={{display: 'inline-flex', alignItems: 'center'}}>
-          <StaticLogo size={'75px'}/>
-          <StaticLogo size={'100px'}/>
-          <StaticLogo size={'150px'}/>
+      <StaticLogo />
+      <h3>Static Logo with alternative colors</h3>
+      <StaticLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
+      <h3>Classic Logo different sizes</h3>
+      <div style={{ display: 'inline-flex', alignItems: 'center' }}>
+        <StaticLogo size={'75px'} />
+        <StaticLogo size={'100px'} />
+        <StaticLogo size={'150px'} />
       </div>
-      </>
+    </>
   </Story>
 </Preview>
 
