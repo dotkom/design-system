@@ -8,7 +8,9 @@ export const bodyStyles = css`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
-  * {
+  *,
+  *:before,
+  *:after {
     box-sizing: border-box;
   }
   sub,
