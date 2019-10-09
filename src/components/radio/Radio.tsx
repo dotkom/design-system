@@ -11,7 +11,7 @@ interface RadioProps {
 const Radio = ({ labels, groupName, disabled }: RadioProps) => {
   const radios = labels.map((label) => (
     <RadioLabel disabled={disabled}>
-      <RadioButton name={groupName} />
+      <RadioButton name={groupName} disabled={disabled} />
       {label}
     </RadioLabel>
   ));
