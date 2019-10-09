@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Radio from './Radio';
+
+<Meta title="Design System|Radio" component={Radio} />
+
+# Radio bars
+
+<Preview>
+  <Story name="all">
+    <>
+      <h3>Radio Button Group</h3>
+      <Radio labels={['Hei', 'Hallo', 'Yo']} groupName="greetings" />
+      <h3>Other Radio Button Group</h3>
+      <Radio labels={['brownies', 'carrot cake', 'oreo cake']} groupName="cakes" />
+    </>
+  </Story>
+</Preview>
+
+<Props of={Radio} />
