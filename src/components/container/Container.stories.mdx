@@ -2,7 +2,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { media, breakPoints } from 'common/layout';
 import Container from './Container';
 
-<Meta title="Design System|layout/Media break points" component={Container} />
+<Meta title="Layouts|Media break points" component={Container} />
 
 # Media break points
 
@@ -31,7 +31,7 @@ To use the break points in a media query, you need to specify `@media` on before
 **NB:** We have a mobile-first approach, meaning you will need to design for mobile first. You can then add, for example, desktop behaviour afterwards using `desktopAndUp` and so on. Be sure to order the media queries correctly (mobile first, then increase).
 
 <Preview>
-  <Story name="all">
+  <Story name="All cases">
     <Container style={{ backgroundColor: '#ddd', margin: 'auto' }}>
       <h1 className="content" />
       <style
