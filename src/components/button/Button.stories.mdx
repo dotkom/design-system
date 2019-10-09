@@ -1,0 +1,46 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Button from './Button';
+
+<Meta title="Forms|Button" component={Button} />
+
+# Button
+
+<Preview>
+  <Story name="Button">
+    <Button text="Lorem" />
+  </Story>
+</Preview>
+
+### Outline
+
+<Preview>
+  <Story name="Outline">
+    <Button text="Ipsum" variation="outline" />
+  </Story>
+</Preview>
+
+### Contrast
+
+<Preview>
+  <Story name="Contrast">
+    <Button text="Dolor" variation="contrast" />
+  </Story>
+</Preview>
+
+### Positive
+
+<Preview>
+  <Story name="Positive">
+    <Button text="Sit" variation="positive" />
+  </Story>
+</Preview>
+
+### Negative
+
+<Preview>
+  <Story name="Negative">
+    <Button text="Amet" variation="negative" />
+  </Story>
+</Preview>
+
+<Props of={Button} />
