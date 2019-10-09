@@ -1,0 +1,42 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Card from './Card';
+
+<Meta title="Design System|Cards|card" component={Card} />
+
+# Card
+
+<Preview>
+  <Story name="Card">
+    <>
+      <h3>Regular Card</h3>
+      <Card>
+        This is some placeholder text inside a card.
+      </Card>
+    </>
+  </Story>
+</Preview>
+
+# Image Card
+
+<Preview>
+  <Story name="Image Card">
+    <>
+      <Card>
+        <img width="300px" src="https://online.ntnu.no/media/images/responsive/sm/0c6f22e2-ff1f-44df-b40b-41ca8d8e12c8.jpeg"/>
+        <h3>This is a company named 'nofas'</h3>
+      </Card>
+    </>
+  </Story>
+</Preview>
+
+
+<Preview>
+  <Story name="Card With Padding">
+    <>
+      <h3>Image Card without padding</h3>
+      <Card style={{padding: 0}}>
+        <img width="300px" src="https://online.ntnu.no/media/images/responsive/sm/0c6f22e2-ff1f-44df-b40b-41ca8d8e12c8.jpeg"/>
+      </Card>
+    </>
+  </Story>
+</Preview>

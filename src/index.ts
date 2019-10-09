@@ -17,3 +17,4 @@ export { default as SpinnerLogo } from 'components/logo/SpinnerLogo';
 export { default as StaticLogo } from 'components/logo/StaticLogo';
 export { default as TextField } from 'components/textField/TextField';
 export { default as ToggleSwitch } from 'components/toggleSwitch/ToggleSwitch';
+export { default as Card } from 'components/cards/Card';
