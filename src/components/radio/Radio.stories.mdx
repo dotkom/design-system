@@ -6,17 +6,25 @@ import Radio from './Radio';
 # Radio Button Group
 
 <Preview>
-  <Story name="Disabled">
+  <Story name="Default">
     <Radio labels={['Brownies', 'Carrot cake', 'Oreo cake']} groupName="cakes" />
   </Story>
 </Preview>
 
-### Disabled Radio Button Group
+<Props of={Radio} />
+
+### Disabled
 
 <Preview>
-  <Story name="Default">
+  <Story name="Disabled">
     <Radio labels={['Lime', 'Magenta', 'Cyan']} groupName="colors" disabled />
   </Story>
 </Preview>
 
-<Props of={Radio} />
+### Error
+
+<Preview>
+  <Story name="Error">
+    <Radio labels={['Lime', 'Magenta', 'Cyan']} groupName="colors" error />
+  </Story>
+</Preview>

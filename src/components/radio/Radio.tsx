@@ -6,16 +6,17 @@ interface RadioProps {
   labels: string[];
   groupName: string;
   disabled?: boolean;
+  error?: boolean;
 }
 
-const Radio = ({ labels, groupName, disabled }: RadioProps) => {
+const Radio = ({ labels, groupName, disabled, error }: RadioProps) => {
   const radios = labels.map((label) => (
     <RadioLabel disabled={disabled}>
       <RadioButton name={groupName} disabled={disabled} />
       {label}
     </RadioLabel>
   ));
-  return <RadioGroup>{radios}</RadioGroup>;
+  return <RadioGroup error={error}>{radios}</RadioGroup>;
 };
 
 const RadioButton = styled.input.attrs({ type: 'radio' })`
@@ -29,6 +30,7 @@ const RadioLabelDisabled = css`
     color: ${colors.graysGray};
   }
 `;
+
 const RadioLabel = styled.label<{ disabled?: boolean }>`
   display: block;
   cursor: pointer;
@@ -38,10 +40,17 @@ const RadioLabel = styled.label<{ disabled?: boolean }>`
   ${({ disabled }) => disabled && RadioLabelDisabled};
 `;
 
-const RadioGroup = styled.div`
+const RadioGroupError = css`
+  background: ${colors.systemError20};
+  border: 1px solid ${colors.systemError};
+`;
+
+const RadioGroup = styled.div<{ error?: boolean }>`
+  padding: 1rem;
   & > * + * {
     margin-top: 0.5rem;
   }
+  ${({ error }) => error && RadioGroupError};
 `;
 
 export default Radio;
