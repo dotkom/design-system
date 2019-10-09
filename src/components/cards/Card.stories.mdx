@@ -7,36 +7,34 @@ import Card from './Card';
 
 <Preview>
   <Story name="Card">
-    <>
-      <h3>Regular Card</h3>
-      <Card>
-        This is some placeholder text inside a card.
-      </Card>
-    </>
+    <Card>This is some placeholder text inside a card.</Card>
   </Story>
 </Preview>
 
-# Image Card
+### Image Card
 
 <Preview>
   <Story name="Image Card">
-    <>
-      <Card>
-        <img width="300px" src="https://online.ntnu.no/media/images/responsive/sm/0c6f22e2-ff1f-44df-b40b-41ca8d8e12c8.jpeg"/>
-        <h3>This is a company named 'nofas'</h3>
-      </Card>
-    </>
+    <Card>
+      <img
+        width="300px"
+        src="https://online.ntnu.no/media/images/responsive/sm/72f7113d-3833-4ca5-a498-4eccbb833db7.png"
+      />
+      <p>This card has standard padding, which might look weird with a non-transparent image.</p>
+    </Card>
   </Story>
 </Preview>
 
+### Padding
 
 <Preview>
   <Story name="Card With Padding">
-    <>
-      <h3>Image Card without padding</h3>
-      <Card style={{padding: 0}}>
-        <img width="300px" src="https://online.ntnu.no/media/images/responsive/sm/0c6f22e2-ff1f-44df-b40b-41ca8d8e12c8.jpeg"/>
-      </Card>
-    </>
+    <Card style={{ padding: 0 }}>
+      <img
+        width="300px"
+        src="https://online.ntnu.no/media/images/responsive/sm/72f7113d-3833-4ca5-a498-4eccbb833db7.png"
+      />
+      <p>This card has no padding at all!</p>
+    </Card>
   </Story>
 </Preview>
