@@ -10,8 +10,8 @@ interface RadioProps {
 }
 
 const Radio = ({ labels, groupName, disabled, error }: RadioProps) => {
-  const radios = labels.map((label) => (
-    <RadioLabel disabled={disabled}>
+  const radios = labels.map((label, index) => (
+    <RadioLabel key={index} disabled={disabled}>
       <HiddenRadio name={groupName} disabled={disabled} />
       <StyledRadio tabIndex={0} error={error} />
       {label}
