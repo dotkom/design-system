@@ -2,12 +2,12 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { media, breakPoints } from 'common/layout';
 
-interface ContainerProps {
+interface BreakpointsProps {
   children: React.ReactNode;
   [name: string]: any;
 }
 
-const StyledContainer = styled.div`
+const StyledBreakpoints = styled.div`
   width: 100%;
   padding: 1em;
 
@@ -24,8 +24,8 @@ const StyledContainer = styled.div`
   }
 `;
 
-const Container = ({ children, ...props }: ContainerProps) => {
-  return <StyledContainer {...props}>{children}</StyledContainer>;
+const Breakpoints = ({ children, ...props }: BreakpointsProps) => {
+  return <StyledBreakpoints {...props}>{children}</StyledBreakpoints>;
 };
 
-export default Container;
+export default Breakpoints;

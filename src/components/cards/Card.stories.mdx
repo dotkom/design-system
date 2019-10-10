@@ -1,0 +1,40 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Card from './Card';
+
+<Meta title="Layout|Card" component={Card} />
+
+# Card
+
+<Preview>
+  <Story name="Card">
+    <Card>This is some placeholder text inside a card.</Card>
+  </Story>
+</Preview>
+
+### Image Card
+
+<Preview>
+  <Story name="Image Card">
+    <Card>
+      <img
+        width="300px"
+        src="https://online.ntnu.no/media/images/responsive/sm/72f7113d-3833-4ca5-a498-4eccbb833db7.png"
+      />
+      <p>This card has standard padding, which might look weird with a non-transparent image.</p>
+    </Card>
+  </Story>
+</Preview>
+
+### Padding
+
+<Preview>
+  <Story name="Card With Padding">
+    <Card style={{ padding: 0 }}>
+      <img
+        width="300px"
+        src="https://online.ntnu.no/media/images/responsive/sm/72f7113d-3833-4ca5-a498-4eccbb833db7.png"
+      />
+      <p>This card has no padding at all!</p>
+    </Card>
+  </Story>
+</Preview>
