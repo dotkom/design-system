@@ -1,18 +1,23 @@
 import React from 'react';
 import styled, { StyledComponentProps } from 'styled-components';
-//import { colors } from 'common/colors';
+import { colors } from 'common/colors';
 
 interface UploadFieldProps extends StyledComponentProps<'input', any, any, any> {
   label: string;
 }
 
 const FileUpload = styled.input`
-  display: none;
+  display: block;
 `;
 const FileUploadLabel = styled.label`
   display: inline-block;
   border-radius: 3px;
-  background-color: #006cff;
+  text-align: center;
+  background-color: ${colors.grayslightGray};
+  box-sizing: border-box;
+  border: 2px dashed ${colors.primay};
+  width: 400px;
+  padding: 20px 10px;
 `;
 const FileUploadContainer = styled.div`
   display: flex;
