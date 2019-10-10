@@ -1,0 +1,55 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Button from './Button';
+
+<Meta title="Forms|Button" component={Button} />
+
+# Button
+
+<Preview>
+  <Story name="All">
+    <>
+      <Button color="primary">Primary</Button>
+      <Button color="secondary">Secondary</Button>
+      <Button color="secondary" disabled>
+        Disabled
+      </Button>
+      <Button color="success">Success</Button>
+      <Button color="danger">Danger</Button>
+      <br />
+      <Button variant="inverted" color="primary">
+        Primary
+      </Button>
+      <Button variant="inverted" color="secondary">
+        Secondary
+      </Button>
+      <Button variant="inverted" color="secondary" disabled>
+        Disabled
+      </Button>
+      <Button variant="inverted" color="success">
+        Success
+      </Button>
+      <Button variant="inverted" color="danger">
+        Danger
+      </Button>
+      <br />
+      <Button variant="flat" color="primary">
+        Primary
+      </Button>
+      <Button variant="flat" color="secondary">
+        Secondary
+      </Button>
+      <Button variant="flat" color="secondary" disabled>
+        Disabled
+      </Button>
+      <Button variant="flat" color="success">
+        Success
+      </Button>
+      <Button variant="flat" color="danger">
+        Danger
+      </Button>
+      <br />
+    </>
+  </Story>
+</Preview>
+
+<Props of={Button} />
