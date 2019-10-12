@@ -1,6 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import StaticLogo from './StaticLogo';
 import Logo from './Logo';
+import StaticSpinnerLogo from './StaticSpinnerLogo';
 
 <Meta title="Logo" component={StaticLogo} />
 
@@ -38,24 +39,9 @@ import Logo from './Logo';
 # Static Spinner
 
 <Preview>
-  <Story name="Spinner Logo">
-    <>
-      <h3>Classic Spinner</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo />
-      </div>
-      <h3>Spinner with other colors</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
-      </div>
-      <h3>Spinners of different sizes</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo spinnerSize={'75px'} />
-        <SpinnerLogo spinnerSize={'100px'} />
-        <SpinnerLogo spinnerSize={'150px'} />
-      </div>
-    </>
+  <Story name="Static Spinner Logo">
+    <StaticSpinnerLogo />
   </Story>
 </Preview>
 
-<Props of={SpinnerLogo} />
+<Props of={StaticSpinnerLogo} />
