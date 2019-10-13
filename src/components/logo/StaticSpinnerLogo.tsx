@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export interface SpinnerLogoProps {
   primaryColor?: string;
@@ -9,23 +9,11 @@ export interface SpinnerLogoProps {
 
 const SpinnerContainer = styled.section<{ size?: string }>`
   position: relative;
-  margin: auto;
   height: ${({ size }) => size};
   width: ${({ size }) => size};
 `;
 
-const rotate = keyframes`
-    0% {
-        transform: rotate(0deg);
-}
-
-    100% {
-        transform: rotate(360deg);
-}
-`;
-
 const SpinningCircle = styled.svg`
-  animation: ${rotate} 6s linear infinite;
   position: absolute;
 `;
 
@@ -34,7 +22,7 @@ const SpinnerLightning = styled.svg`
   z-index: 1;
 `;
 
-const SpinnerLogo = ({
+const StaticSpinnerLogo = ({
   primaryColor = '#FAA21B',
   secondaryColor = '#0060A3',
   spinnerSize = '100px',
@@ -112,4 +100,4 @@ const SpinnerLogo = ({
   </SpinnerContainer>
 );
 
-export default SpinnerLogo;
+export default StaticSpinnerLogo;
