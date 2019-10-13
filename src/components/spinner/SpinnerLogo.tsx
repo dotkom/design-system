@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 export interface SpinnerLogoProps {
   primaryColor?: string;
   secondaryColor?: string;
-  spinnerSize?: string;
+  size?: string;
 }
 
 const SpinnerContainer = styled.section<{ size?: string }>`
@@ -15,13 +15,13 @@ const SpinnerContainer = styled.section<{ size?: string }>`
 `;
 
 const rotate = keyframes`
-    0% {
-        transform: rotate(0deg);
-}
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-}
+  100% {
+    transform: rotate(360deg);
+  }
 `;
 
 const SpinningCircle = styled.svg`
@@ -34,12 +34,8 @@ const SpinnerLightning = styled.svg`
   z-index: 1;
 `;
 
-const SpinnerLogo = ({
-  primaryColor = '#FAA21B',
-  secondaryColor = '#0060A3',
-  spinnerSize = '100px',
-}: SpinnerLogoProps) => (
-  <SpinnerContainer size={spinnerSize}>
+const SpinnerLogo = ({ primaryColor = '#FAA21B', secondaryColor = '#0060A3', size = '100px' }: SpinnerLogoProps) => (
+  <SpinnerContainer size={size}>
     <SpinningCircle viewBox="0 0 506 400" fill="none">
       <circle
         cx="200"
