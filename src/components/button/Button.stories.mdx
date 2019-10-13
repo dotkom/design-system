@@ -8,29 +8,30 @@ import Button from './Button';
 <Preview>
   <Story name="All">
     <>
-      <Button color="primary">Primary</Button>
-      <Button color="secondary">Secondary</Button>
-      <Button color="secondary" disabled>
-        Disabled
-      </Button>
-      <Button color="success">Success</Button>
-      <Button color="danger">Danger</Button>
-      <br />
-      <Button variant="outline" color="primary">
-        Primary
-      </Button>
-      <Button variant="outline" color="secondary">
-        Secondary
-      </Button>
-      <Button variant="outline" color="secondary" disabled>
-        Disabled
-      </Button>
-      <Button variant="outline" color="success">
-        Success
-      </Button>
-      <Button variant="outline" color="danger">
-        Danger
-      </Button>
+      <div style={{ display: 'inline-flex' }}>
+        <Button color="primary">Primary</Button>
+        <Button color="secondary">Secondary</Button>
+        <Button color="success">Success</Button>
+        <Button color="danger">Danger</Button>
+        <Button disabled>Disabled</Button>
+      </div>
+      <div style={{ display: 'inline-flex' }}>
+        <Button variant="outline" color="primary">
+          Primary
+        </Button>
+        <Button variant="outline" color="secondary">
+          Secondary
+        </Button>
+        <Button variant="outline" color="success">
+          Success
+        </Button>
+        <Button variant="outline" color="danger">
+          Danger
+        </Button>
+        <Button variant="outline" disabled>
+          Disabled
+        </Button>
+      </div>
     </>
   </Story>
 </Preview>
