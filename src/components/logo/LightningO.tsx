@@ -19,7 +19,6 @@ const LightningO = ({ size = 300}: OwnProps) => {
     const proportion = 615/445;
     return (
         <OSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 615 445"width={size} height={size/proportion}>
-            <defs/>
             <defs>
                 <clipPath id="a" clipPathUnits="userSpaceOnUse">
                     <path d="M0 334h461.5V0H0z"/>
