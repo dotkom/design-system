@@ -9,7 +9,7 @@ interface ButtonProps extends StyledComponentProps<'button', any, any, any> {
   value?: React.ReactNode;
   icon?: string | Icon;
   color?: 'primary' | 'secondary' | 'success' | 'danger';
-  variant?: 'normal' | 'flat' | 'outline';
+  variant?: 'normal' | 'outline';
 }
 
 interface StyledButtonProps {
@@ -85,13 +85,6 @@ const Button = ({
     boxShadow: disabled ? 'transparent' : 'rgba(0, 0, 0, 0.1)',
   };
   switch (variant) {
-    case 'flat': {
-      extraProps.backgroundColor = 'transparent';
-      extraProps.borderColor = 'transparent';
-      extraProps.textColor = mainColor;
-      extraProps.boxShadow = 'transparent';
-      break;
-    }
     case 'outline': {
       extraProps.backgroundColor = colors.graysWhite;
       extraProps.textColor = mainColor;
