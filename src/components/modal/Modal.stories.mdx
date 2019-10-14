@@ -1,0 +1,24 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Modal from './Modal';
+
+<Meta title="Modal" component={Modal} />
+
+# Modal
+
+
+# Fullscreen
+<Preview>
+  <Story name="Modal">
+    <Modal />
+  </Story>
+</Preview>
+
+<Props of={Modal} />
+
+# In-place
+
+<Preview>
+  <Story name="In-place">
+    <Modal Fullscreen={false} />
+  </Story>
+</Preview>
