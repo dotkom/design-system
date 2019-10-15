@@ -10,9 +10,6 @@ const Center = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.5em;
-`;
-
-const InPlace = styled(Center)`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 `;
 
@@ -64,10 +61,10 @@ const Modal: React.FC<Props> = ({ fullscreen = true, open = false, onClose, chil
   return (
     <>
       {open && (
-        <InPlace>
+        <Center>
           <CloseBtn onClick={(): void => onClose()}>X</CloseBtn>
           {children}
-        </InPlace>
+        </Center>
       )}
     </>
   );

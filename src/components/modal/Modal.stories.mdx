@@ -1,24 +1,27 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Modal from './Modal';
+import ExampleModal from './ExampleModal';
 
 <Meta title="Modal" component={Modal} />
 
 # Modal
+The modal is used to front important information, prompts, user-required actions and information hidden from default view.
 
-
-# Fullscreen
 <Preview>
   <Story name="Modal">
-    <Modal />
+    <ExampleModal />
   </Story>
 </Preview>
 
 <Props of={Modal} />
 
 # In-place
+The in-place modal allows for info boxes and other overlays that does not need block the entire screen.
 
 <Preview>
   <Story name="In-place">
-    <Modal Fullscreen={false} />
+    <Modal fullscreen={false} open={true}>
+      This is an example of how an in-place modal can be used.
+      </Modal>
   </Story>
 </Preview>
