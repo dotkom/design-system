@@ -7,10 +7,10 @@ export interface SpinnerLogoProps {
   spinnerSize?: string;
 }
 
-const SpinnerContainer = styled.section<{ size?: string }>`
+const SpinnerContainer = styled.section<{ size: string }>`
   position: relative;
-  height: ${({ size }) => size};
-  width: ${({ size }) => size};
+  height: ${({ size }): string => size};
+  width: ${({ size }): string => size};
 `;
 
 const SpinningCircle = styled.svg`
@@ -26,7 +26,7 @@ const StaticSpinnerLogo = ({
   primaryColor = '#FAA21B',
   secondaryColor = '#0060A3',
   spinnerSize = '100px',
-}: SpinnerLogoProps) => (
+}: SpinnerLogoProps): JSX.Element => (
   <SpinnerContainer size={spinnerSize}>
     <SpinningCircle viewBox="0 0 506 400" fill="none">
       <circle

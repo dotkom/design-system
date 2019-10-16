@@ -16,7 +16,7 @@ const StyledCard = styled.div`
   padding: 1rem;
 `;
 
-const Card = ({ children, ...props }: CardProps) => {
+const Card = ({ children, ...props }: CardProps): JSX.Element => {
   return <StyledCard {...props}>{children}</StyledCard>;
 };
 
