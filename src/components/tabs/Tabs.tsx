@@ -15,23 +15,20 @@ const Tabs: FC<Props> = ({ children }: Props): JSX.Element => {
   return (
     <>
       <TabSelect activeTab={activeTab}>
-        {React.Children.map(
-          children,
-          (child, i): JSX.Element => {
-            if (!React.isValidElement(child)) {
-              return child;
-            }
-
-            return (
-              <TabHeader tab={i} onClick={() => setActiveTab(i)}>
-                {child.props.title}
-              </TabHeader>
-            );
+        {React.Children.map(children, (child, i): JSX.Element | React.ReactNode => {
+          if (!React.isValidElement(child)) {
+            return child;
           }
-        )}
+
+          return (
+            <TabHeader tab={i} onClick={(): void => setActiveTab(i)}>
+              {child.props.title}
+            </TabHeader>
+          );
+        })}
       </TabSelect>
 
-      {React.Children.map(children, (child, i): JSX.Element => i === activeTab && child)}
+      {React.Children.map(children, (child, i): JSX.Element | false => i === activeTab && child)}
     </>
   );
 };

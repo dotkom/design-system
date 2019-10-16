@@ -7,7 +7,7 @@ export interface Props {
   size?: string;
 }
 
-const Logo = styled.svg<{ size?: string }>`
+const Logo = styled.svg<{ size: string }>`
   height: ${({ size }): string => size};
   width: ${({ size }): string => size};
 `;

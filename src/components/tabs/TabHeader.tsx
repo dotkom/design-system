@@ -12,7 +12,7 @@ const TabHeader = styled.div<Props>`
   padding: 10px 0;
   transition: color 0.2s;
   font-size: 1.5rem;
-  cursor: ${({ selected }): string => !selected && 'pointer'};
+  cursor: ${({ selected }): string | false => !selected && 'pointer'};
 
   &:not(:first-child) {
     border-left: none;

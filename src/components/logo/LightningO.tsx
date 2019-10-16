@@ -13,8 +13,8 @@ interface OwnProps {
 }
 
 const OSvg = styled.svg<SvgProps>`
-  ${({ width }): string => width && width + 'px;'}
-  ${({ height }): string => height && height + 'px;'}
+  ${({ width }): string => width + 'px;'}
+  ${({ height }): string => height + 'px;'}
 `;
 
 const LightningO = ({ size = 300, oColor = '#2167a5', lightningColor = '#faa532' }: OwnProps): JSX.Element => {

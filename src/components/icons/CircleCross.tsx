@@ -7,9 +7,10 @@ export interface Props {
 }
 
 const CircleContainer = styled.svg<{ color?: string; size?: string }>`
-  background-color: ${({ color }): string => color};
-  height: ${({ size }): string => size};
-  width: ${({ size }): string => size};
+  /* This is currently never set? */
+  background-color: ${({ color }): string | undefined => color};
+  height: ${({ size }): string | undefined => size};
+  width: ${({ size }): string | undefined => size};
 `;
 
 const IconWrapper = styled.div<{}>`

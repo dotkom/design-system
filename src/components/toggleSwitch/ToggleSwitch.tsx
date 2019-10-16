@@ -44,7 +44,7 @@ const StyledSlider = styled.div<{ checked?: boolean; size: number; spacing: numb
   transition: left 0.2s;
 
   ${({ checked, size }): string | false =>
-    checked &&
+    Boolean(checked) &&
     `
         left: calc(100% - ${size}px);
     `}

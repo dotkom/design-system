@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css, FlattenInterpolation, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { colors } from 'common/colors';
 
 interface RadioProps {
@@ -35,7 +35,7 @@ const RadioGroup = styled.div<{ error?: boolean }>`
     margin-top: 0.5rem;
   }
 
-  ${({ error }): FlattenSimpleInterpolation | false => error && RadioGroupError};
+  ${({ error }): FlattenSimpleInterpolation | false => Boolean(error) && RadioGroupError};
 `;
 
 const RadioLabelDisabled = css`
@@ -59,7 +59,7 @@ const RadioLabel = styled.label<{ disabled?: boolean }>`
     color: ${colors.primary};
   }
 
-  ${({ disabled }): FlattenSimpleInterpolation | false => disabled && RadioLabelDisabled};
+  ${({ disabled }): FlattenSimpleInterpolation | false => Boolean(disabled) && RadioLabelDisabled};
 `;
 
 const HiddenRadioCommon = css`

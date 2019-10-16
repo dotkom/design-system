@@ -7,7 +7,7 @@ export interface SpinnerLogoProps {
   spinnerSize?: string;
 }
 
-const SpinnerContainer = styled.section<{ size?: string }>`
+const SpinnerContainer = styled.section<{ size: string }>`
   position: relative;
   height: ${({ size }): string => size};
   width: ${({ size }): string => size};

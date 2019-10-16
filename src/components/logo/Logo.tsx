@@ -20,7 +20,12 @@ export const FullLogo = styled.svg<LogoProps>`
   ${({ size }): string => 'width: ' + size / proportion + 'px; height: ' + size + 'px;'};
 `;
 
-const Logo = ({ backgroundColor = 'primary', textColor = '#FFF', lightningColor = '#F9A11B', size = 59 }: OwnProps): JSX.Element => {
+const Logo = ({
+  backgroundColor = 'primary',
+  textColor = '#FFF',
+  lightningColor = '#F9A11B',
+  size = 59,
+}: OwnProps): JSX.Element => {
   return (
     <FullLogo xmlns="http://www.w3.org/2000/svg" size={size} backgroundColor={backgroundColor} viewBox="0 0 239 59">
       <defs />

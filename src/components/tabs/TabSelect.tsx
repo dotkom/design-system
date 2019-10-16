@@ -51,23 +51,19 @@ const TabSelect: FC<Props> = ({ activeTab, children, ...rest }: Props): JSX.Elem
   }, [activeTab]);
 
   // Store a reference to the selected tab, and set its `selected` prop.
-  const updatedChildren = React.Children.map(
-    children,
-    (child: React.ReactNode): JSX.Element => {
-      if (!React.isValidElement(child)) {
-        return child;
-      }
-
-      if (child.props.tab === activeTab) {
-        return React.cloneElement(child, {
-          ref: selectedTab,
-          selected: true,
-        });
-      }
-
-      return React.cloneElement(child);
+  const updatedChildren = React.Children.map(children, (child: React.ReactNode): JSX.Element | React.ReactNode => {
+    if (!React.isValidElement(child)) {
+      return child;
     }
-  );
+
+    if (child.props.tab === activeTab) {
+      return React.cloneElement(child, {
+        ref: selectedTab,
+        selected: true,
+      });
+    }
+    return React.cloneElement(child);
+  });
 
   return (
     <div {...rest}>

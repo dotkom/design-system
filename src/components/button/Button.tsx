@@ -9,9 +9,9 @@ interface ButtonProps extends StyledComponentProps<'button', any, any, any> {
 }
 
 interface StyledButtonProps {
-  color?: string;
-  variant?: string;
-  disabled?: boolean;
+  color: string;
+  variant: string;
+  disabled: boolean;
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
@@ -36,7 +36,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     cursor: not-allowed;
   }
 
-  ${(props): string =>
+  ${(props): string | false =>
     props.variant == 'outline' &&
     `
     background: transparent;
