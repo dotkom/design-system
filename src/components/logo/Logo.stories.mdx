@@ -3,6 +3,7 @@ import StaticLogo from './StaticLogo';
 import Logo from './Logo';
 import StaticSpinnerLogo from './StaticSpinnerLogo';
 import LightningO from './LightningO';
+import ToggleBackgroundContainer from '../internal/ToggleBackgroundContainer';
 
 <Meta title="Logo" component={StaticLogo} />
 
@@ -13,7 +14,9 @@ This is the official logo, meant to be used in its full form.
 
 <Preview>
   <Story name="Logo">
-    <Logo />
+    <ToggleBackgroundContainer isDark={true}>
+      <Logo />
+    </ToggleBackgroundContainer>
   </Story>
 </Preview>
 
@@ -54,8 +57,8 @@ This can be used in places where the larger logo cannot fit, as a favicon, or ap
 
 <Props of={StaticLogo} />
 
-# Futuristic Logo (Static Spinner)  
-  
+# Futuristic Logo (Static Spinner)
+
 **NOT APPROVED FOR OFFICIAL USE**
 
 <Preview>

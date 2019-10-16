@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from 'common/colors';
-
-type ColorKeys = keyof typeof colors;
 
 interface LogoProps {
-  backgroundColor: ColorKeys;
   size: number;
   textColor?: string;
   lightningColor?: string;
@@ -16,13 +12,12 @@ type OwnProps = Partial<LogoProps>;
 const proportion = 59 / 239;
 
 export const FullLogo = styled.svg<LogoProps>`
-  background-color: ${({ backgroundColor }) => colors[backgroundColor] + ';'};
   ${({ size }) => 'width: ' + size / proportion + 'px; height: ' + size + 'px;'};
 `;
 
-const Logo = ({ backgroundColor = 'primary', textColor = '#FFF', lightningColor = '#F9A11B', size = 59 }: OwnProps) => {
+const Logo = ({ textColor = '#FFF', lightningColor = '#F9A11B', size = 59 }: OwnProps) => {
   return (
-    <FullLogo xmlns="http://www.w3.org/2000/svg" size={size} backgroundColor={backgroundColor} viewBox="0 0 239 59">
+    <FullLogo xmlns="http://www.w3.org/2000/svg" size={size} viewBox="0 0 239 59">
       <defs />
       <g fill={textColor}>
         <path d="M120.49 55.778l11.203-42.789h10.948l-11.002 42.789z" />
