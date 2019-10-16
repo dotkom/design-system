@@ -6,9 +6,7 @@ export interface Props {
   size?: string;
 }
 
-const CircleContainer = styled.svg<{ color?: string; size?: string }>`
-  /* This background color is currently never set? */
-  background-color: ${({ color }): string | undefined => color};
+const CircleContainer = styled.svg<{ size?: string }>`
   height: ${({ size }): string | undefined => size};
   width: ${({ size }): string | undefined => size};
 `;
