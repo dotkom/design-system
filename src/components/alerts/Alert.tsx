@@ -7,7 +7,7 @@ interface AlertProps {
   children: React.ReactNode;
 }
 
-const Alert = ({ type, children }: AlertProps) => {
+const Alert = ({ type, children }: AlertProps): JSX.Element => {
   let color: string;
   let bordercolor: string;
 
@@ -49,8 +49,8 @@ const Alert = ({ type, children }: AlertProps) => {
 export default Alert;
 
 const StyledBox = styled.div<{ backgroundColor: string; borderColor: string }>`
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  border: 1px solid ${({ borderColor }) => borderColor};
+  background-color: ${({ backgroundColor }): string => backgroundColor};
+  border: 1px solid ${({ borderColor }): string => borderColor};
   padding: 1em;
   border-radius: 3px;
 `;

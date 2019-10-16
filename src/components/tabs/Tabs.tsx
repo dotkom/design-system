@@ -9,26 +9,29 @@ interface Props {
   children: TabElement[] | TabElement;
 }
 
-const Tabs: FC<Props> = ({ children }: Props) => {
+const Tabs: FC<Props> = ({ children }: Props): JSX.Element => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
     <>
       <TabSelect activeTab={activeTab}>
-        {React.Children.map(children, (child, i) => {
-          if (!React.isValidElement(child)) {
-            return child;
-          }
+        {React.Children.map(
+          children,
+          (child, i): JSX.Element => {
+            if (!React.isValidElement(child)) {
+              return child;
+            }
 
-          return (
-            <TabHeader tab={i} onClick={() => setActiveTab(i)}>
-              {child.props.title}
-            </TabHeader>
-          );
-        })}
+            return (
+              <TabHeader tab={i} onClick={() => setActiveTab(i)}>
+                {child.props.title}
+              </TabHeader>
+            );
+          }
+        )}
       </TabSelect>
 
-      {React.Children.map(children, (child, i) => i === activeTab && child)}
+      {React.Children.map(children, (child, i): JSX.Element => i === activeTab && child)}
     </>
   );
 };

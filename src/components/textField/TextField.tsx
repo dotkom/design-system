@@ -47,7 +47,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 
   &:invalid {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2),
-      inset 0 0 0 1px ${({ status }) => (status ? statuses[status] : colors.systemError)};
+      inset 0 0 0 1px ${({ status }): string => (status ? statuses[status] : colors.systemError)};
     box-sizing: border-box;
   }
 
@@ -57,7 +57,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 
   &:invalid + p {
     font-size: 0.7em;
-    color: ${({ status }) => (status ? statuses[status] : colors.systemError)};
+    color: ${({ status }): string => (status ? statuses[status] : colors.systemError)};
   }
 `;
 
@@ -66,7 +66,7 @@ const InputLabel = styled.label<{ color?: string }>`
   font-weight: bold;
   font-size: 0.75rem;
   margin-bottom: 0.5rem;
-  color: ${({ color }) => color || colors.primary};
+  color: ${({ color }): string => color || colors.primary};
 
   &:empty {
     margin: 0;
@@ -81,11 +81,17 @@ const InputMessage = styled.p`
   }
 `;
 
-const TextField = ({ type = 'text', label = '', labelColor = '', errorMessage = '', ...props }: TextFieldProps) => {
+const TextField = ({
+  type = 'text',
+  label = '',
+  labelColor = '',
+  errorMessage = '',
+  ...props
+}: TextFieldProps): JSX.Element => {
   return (
     <InputContainer>
       <InputLabel color={labelColor}>{label}</InputLabel>
-      <ClearableInputField {...props} />
+      <ClearableInputField type={type} {...props} />
       <InputMessage>{errorMessage}</InputMessage>
     </InputContainer>
   );
@@ -100,19 +106,19 @@ const ClearButton = styled.button`
   background-color: transparent;
 `;
 
-const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
+const ClearableInputField = ({ disabled, ...props }: TextFieldProps): JSX.Element => {
   const [text, setText] = useState(props.defaultValue || '');
   return (
     <div>
       <InputField
         value={text}
-        onChange={(e) => {
+        onChange={(e): void => {
           setText(e.target.value);
         }}
         {...props}
         disabled={disabled}
       />
-      {text && !disabled && <ClearButton onClick={() => setText('')}>X</ClearButton>}
+      {text && !disabled && <ClearButton onClick={(): void => setText('')}>X</ClearButton>}
     </div>
   );
 };

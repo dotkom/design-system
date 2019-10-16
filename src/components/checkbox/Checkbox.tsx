@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { colors } from 'common/colors';
 
 interface CheckboxProps {
@@ -10,9 +10,9 @@ interface CheckboxProps {
   error?: boolean;
 }
 
-const Checkbox = ({ label, isChecked, onCheck, disabled, error }: CheckboxProps) => {
+const Checkbox = ({ label, isChecked, onCheck, disabled, error }: CheckboxProps): JSX.Element => {
   return (
-    <CheckboxLabel onChange={() => onCheck(!isChecked)} disabled={disabled}>
+    <CheckboxLabel onChange={(): void => onCheck(!isChecked)} disabled={disabled}>
       <HiddenCheckbox checked={isChecked} disabled={disabled} />
       <StyledCheckbox tabIndex={0} error={error} />
       <span>{label}</span>
@@ -43,7 +43,7 @@ const CheckboxLabel = styled.label<{ disabled?: boolean }>`
   &:hover {
     color: ${colors.primaryDark};
   }
-  ${({ disabled }) => disabled && CheckboxLabelDisabled};
+  ${({ disabled }): FlattenSimpleInterpolation | undefined | false => disabled && CheckboxLabelDisabled};
 `;
 
 const CheckboxCommon = css`
@@ -61,7 +61,7 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 const StyledCheckbox = styled.div<{ error?: boolean }>`
   ${CheckboxCommon}
   display: inline-block;
-  border: 1px solid ${({ error }) => (error ? colors.systemError : colors.grayslightGray)};
+  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayslightGray)};
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s ease-in, border-color 0.2s;

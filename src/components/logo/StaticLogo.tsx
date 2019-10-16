@@ -8,11 +8,11 @@ export interface Props {
 }
 
 const Logo = styled.svg<{ size?: string }>`
-  height: ${({ size }) => size};
-  width: ${({ size }) => size};
+  height: ${({ size }): string => size};
+  width: ${({ size }): string => size};
 `;
 
-const StaticLogo = ({ primaryColor = '#0068B3', secondaryColor = '#FAA21B', size = '100px' }: Props) => (
+const StaticLogo = ({ primaryColor = '#0068B3', secondaryColor = '#FAA21B', size = '100px' }: Props): JSX.Element => (
   <Logo size={size} viewBox="0 0 141 112" fill="none">
     <g clipPath="url(#clip0)">
       <path
