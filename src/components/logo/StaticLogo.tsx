@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colors } from 'common/colors';
 
 export interface Props {
   primaryColor?: string;
@@ -12,7 +13,11 @@ const Logo = styled.svg<{ size: string }>`
   width: ${({ size }): string => size};
 `;
 
-const StaticLogo = ({ primaryColor = '#0068B3', secondaryColor = '#FAA21B', size = '100px' }: Props): JSX.Element => (
+const StaticLogo = ({
+  primaryColor = colors.officialBlue,
+  secondaryColor = colors.officialOrange,
+  size = '100px',
+}: Props): JSX.Element => (
   <Logo size={size} viewBox="0 0 141 112" fill="none">
     <g clipPath="url(#clip0)">
       <path

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colors } from 'common/colors';
 
 export interface SpinnerLogoProps {
   primaryColor?: string;
@@ -23,8 +24,8 @@ const SpinnerLightning = styled.svg`
 `;
 
 const StaticSpinnerLogo = ({
-  primaryColor = '#FAA21B',
-  secondaryColor = '#0060A3',
+  primaryColor = colors.officialBlue,
+  secondaryColor = colors.officialOrange,
   spinnerSize = '100px',
 }: SpinnerLogoProps): JSX.Element => (
   <SpinnerContainer size={spinnerSize}>

@@ -1,4 +1,6 @@
 export const colors = {
+  officialBlue: '#0060A3',
+  officialOrange: '#FAA21B',
   hotpink: 'hotpink',
   primary: '#0068B3',
   primaryLight: '#008CF0',
