@@ -24,7 +24,7 @@ const StyledBreakpoints = styled.div`
   }
 `;
 
-const Breakpoints = ({ children, ...props }: BreakpointsProps) => {
+const Breakpoints = ({ children, ...props }: BreakpointsProps): JSX.Element => {
   return <StyledBreakpoints {...props}>{children}</StyledBreakpoints>;
 };
 

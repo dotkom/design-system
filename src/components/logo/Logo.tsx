@@ -12,10 +12,10 @@ type OwnProps = Partial<LogoProps>;
 const proportion = 59 / 239;
 
 export const FullLogo = styled.svg<LogoProps>`
-  ${({ size }) => 'width: ' + size / proportion + 'px; height: ' + size + 'px;'};
+  ${({ size }): string => 'width: ' + size / proportion + 'px; height: ' + size + 'px;'};
 `;
 
-const Logo = ({ textColor = '#FFF', lightningColor = '#F9A11B', size = 59 }: OwnProps) => {
+const Logo = ({ textColor = '#FFF', lightningColor = '#F9A11B', size = 59 }: OwnProps): JSX.Element => {
   return (
     <FullLogo xmlns="http://www.w3.org/2000/svg" size={size} viewBox="0 0 239 59">
       <defs />

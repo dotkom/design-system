@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
+import { ExternalCSS } from 'common/types';
 
 interface RadioProps {
   labels: string[];
@@ -9,14 +10,16 @@ interface RadioProps {
   error?: boolean;
 }
 
-const Radio = ({ labels, groupName, disabled, error }: RadioProps) => {
-  const radios = labels.map((label, index) => (
-    <RadioLabel key={index} disabled={disabled}>
-      <HiddenRadio name={groupName} disabled={disabled} />
-      <StyledRadio tabIndex={0} error={error} />
-      {label}
-    </RadioLabel>
-  ));
+const Radio = ({ labels, groupName, disabled, error }: RadioProps): JSX.Element => {
+  const radios = labels.map(
+    (label, index): JSX.Element => (
+      <RadioLabel key={index} disabled={disabled}>
+        <HiddenRadio name={groupName} disabled={disabled} />
+        <StyledRadio tabIndex={0} error={error} />
+        {label}
+      </RadioLabel>
+    )
+  );
   return <RadioGroup error={error}>{radios}</RadioGroup>;
 };
 
@@ -33,7 +36,7 @@ const RadioGroup = styled.div<{ error?: boolean }>`
     margin-top: 0.5rem;
   }
 
-  ${({ error }) => error && RadioGroupError};
+  ${({ error }): ExternalCSS => Boolean(error) && RadioGroupError};
 `;
 
 const RadioLabelDisabled = css`
@@ -57,7 +60,7 @@ const RadioLabel = styled.label<{ disabled?: boolean }>`
     color: ${colors.primary};
   }
 
-  ${({ disabled }) => disabled && RadioLabelDisabled};
+  ${({ disabled }): ExternalCSS => Boolean(disabled) && RadioLabelDisabled};
 `;
 
 const HiddenRadioCommon = css`
@@ -77,7 +80,7 @@ const HiddenRadio = styled.input.attrs({ type: 'radio' })`
 const StyledRadio = styled.div<{ error?: boolean }>`
   ${HiddenRadioCommon}
   background: #fff;
-  border: 1px solid ${({ error }) => (error ? colors.systemError : colors.grayslightGray)};
+  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayslightGray)};
   border-radius: 50%;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
   transition: border 0.2s;

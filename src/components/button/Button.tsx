@@ -9,15 +9,15 @@ interface ButtonProps extends StyledComponentProps<'button', any, any, any> {
 }
 
 interface StyledButtonProps {
-  color?: string;
-  variant?: string;
-  disabled?: boolean;
+  color: string;
+  variant: string;
+  disabled: boolean;
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
   appearance: none;
-  background: ${(props) => props.color};
-  border: 2px solid ${(props) => props.color};
+  background: ${(props): string => props.color};
+  border: 2px solid ${(props): string => props.color};
   color: ${colors.graysWhite};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
@@ -36,7 +36,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     cursor: not-allowed;
   }
 
-  ${(props) =>
+  ${(props): string | false =>
     props.variant == 'outline' &&
     `
     background: transparent;
@@ -52,7 +52,7 @@ const Button = ({
   variant = 'normal',
   disabled = false,
   ...props
-}: ButtonProps) => {
+}: ButtonProps): JSX.Element => {
   let mainColor: string = colors.primary;
   switch (color) {
     case 'secondary': {
