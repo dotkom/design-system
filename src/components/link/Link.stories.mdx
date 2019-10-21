@@ -8,11 +8,22 @@ import Link from './Link';
 <Preview>
   <Story name="All">
     <>
-      <div>
-	<Link>This is a link</Link>
-	<br />
-	<Link underline='true'>This is a link with an underline</Link>
-      </div>
+      <Link>Underline on hover</Link>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget elementum lorem. Proin elementum aliquet
+        euismod. Proin quis gravida arcu. Donec molestie sollicitudin ligula, ac rutrum mauris.{' '}
+        <Link>Etiam pharetra</Link> purus et enim mattis, nec suscipit felis ornare. Fusce eget porttitor quam. Proin
+        quis tellus in metus facilisis vehicula. Sed sed odio enim. Integer eu pharetra urna, convallis molestie nulla.
+      </p>
+      <br />
+      <Link underline={true}>Underline by default</Link>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget elementum lorem. Proin elementum aliquet
+        euismod. Proin quis gravida arcu. Donec molestie sollicitudin ligula, ac rutrum mauris.{' '}
+        <Link underline={true}>Etiam pharetra</Link> purus et enim mattis, nec suscipit felis ornare. Fusce eget
+        porttitor quam. Proin quis tellus in metus facilisis vehicula. Sed sed odio enim. Integer eu pharetra urna,
+        convallis molestie nulla.
+      </p>
     </>
   </Story>
 </Preview>

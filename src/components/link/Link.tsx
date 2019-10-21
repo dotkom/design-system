@@ -13,23 +13,42 @@ interface StyledLinkProps {
 }
 
 const StyledLink = styled.a<StyledLinkProps>`
+  position: relative;
+  text-decoration: none;
   color: ${colors.primary};
-  display: inline-block;
+  transition: color 0.1s;
 
-  &:hover {
-    color: ${colors.primaryLight};
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: ${colors.primary};
+    bottom: 0;
+    left: 0;
+    transition: transform 0.1s, color 0.1s;
+    ${(props): string | false | undefined =>
+      !props.underline &&
+      `
+        transform: scaleX(0);
+      `}
   }
 
-  ${(props) =>
-    props.underline &&
-    `
-    text-decoration: underline;
-  `}
+  &:hover,
+  &:focus {
+    outline: none;
+    color: ${colors.primaryDark};
+
+    &::after {
+      transform: scaleX(1);
+      background: ${colors.primaryDark};
+    }
+  }
 `;
 
-const Link = ({ underline, href, children }: LinkProps) => {
+const Link = ({ href, underline = false, children }: LinkProps): JSX.Element => {
   return (
-    <StyledLink underline={underline} href={href}>
+    <StyledLink href={href} underline={underline}>
       {children}
     </StyledLink>
   );
