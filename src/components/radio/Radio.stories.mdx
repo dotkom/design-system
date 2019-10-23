@@ -1,0 +1,30 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Radio from './Radio';
+
+<Meta title="Forms|Radio" component={Radio} />
+
+# Radio Button Group
+
+<Preview>
+  <Story name="Default">
+    <Radio labels={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']} groupName="lorem" />
+  </Story>
+</Preview>
+
+<Props of={Radio} />
+
+### Disabled
+
+<Preview>
+  <Story name="Disabled">
+    <Radio labels={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']} groupName="ipsum" disabled />
+  </Story>
+</Preview>
+
+### Error
+
+<Preview>
+  <Story name="Error">
+    <Radio labels={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']} groupName="dolor sit amet" error />
+  </Story>
+</Preview>

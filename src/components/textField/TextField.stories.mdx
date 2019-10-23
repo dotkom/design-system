@@ -1,0 +1,67 @@
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import TextField from './TextField';
+
+<Meta title="Forms|TextField" component={TextField} />
+
+# Text field
+
+This is basically an `<input />` field of `type="text"` in HTML.
+This component supports any props a regular `<input />` [accepts](https://www.w3schools.com/tags/tag_input.asp), as well as it's own props listed below.
+
+<Preview>
+  <Story name="Plain">
+    <TextField placeholder={'Search...'} />
+  </Story>
+</Preview>
+
+<Props of={TextField} />
+
+### Input with label
+
+<Preview>
+  <Story name="With Label">
+    <TextField placeholder={'Search...'} label="Label" />
+  </Story>
+</Preview>
+
+### Input disabled
+
+<Preview>
+  <Story name="Disabled">
+    <TextField defaultValue="disabled" disabled />
+  </Story>
+</Preview>
+
+## Status colors
+
+These colors can be set by setting the `status` prop.  
+Red color indicates a critical error, hindering the user in proceeding with what they are doing.  
+Yellow color indicates that input _may_ be wrong, but is not validated.
+This can also be used to alert users of fields that are usually faulty.
+In this scenario, it is useful to set a label with a readable, but matching color.  
+Green color indicates that input is correct and validated, and the user can submit, save or continue.
+
+### Input with error
+
+<Preview>
+  <Story name="With Error">
+    <TextField defaultValue={'Not an email'} type="email" pattern=".+@.+" required errorMessage="Not an email" />
+  </Story>
+</Preview>
+
+### Input with success
+
+<Preview>
+  <Story name="With Success">
+    <TextField defaultValue="Correct input" status="success" />
+  </Story>
+</Preview>
+
+### Input with warning
+
+<Preview>
+  <Story name="With Warning">
+    <TextField placeholder="This field is prone to errors" status="warning" />
+  </Story>
+</Preview>

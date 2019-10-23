@@ -1,46 +1,67 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import StaticLogo from './StaticLogo';
+import Logo from './Logo';
+import StaticSpinnerLogo from './StaticSpinnerLogo';
+import LightningO from './LightningO';
 
-<Meta title="Design System|Logo" component={StaticLogo} />
+<Meta title="Logo" component={StaticLogo} />
 
-# Static Logo
+# Logo
+
+The logo of Online, linjeforeningen for informatikk ved NTNU Trondheim.  
+This is the official logo, meant to be used in its full form.
 
 <Preview>
-  <Story name="static logo">
+  <Story name="Logo">
+    <Logo />
+  </Story>
+</Preview>
+
+<Props of={Logo} />
+
+# Lightning O
+
+This is the alternative logo.  
+This can be used in places where the larger logo cannot fit, as a favicon, or application logo.
+
+<Preview>
+  <Story name="Lightning O">
+    <LightningO />
+  </Story>
+</Preview>
+
+<Props of={LightningO} />
+
+# Modern Logo
+
+**NOT APPROVED FOR OFFICIAL USE**
+
+<Preview>
+  <Story name="Static Logo">
     <>
-      <h3>Classic Static Logo</h3>
       <StaticLogo />
-      <h3>Static Logo with alternative colors</h3>
+      <h3>Alternative colors</h3>
       <StaticLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
+      <h3>Example of different sizes</h3>
+      <div style={{ display: 'inline-flex', alignItems: 'center' }}>
+        <StaticLogo size={'75px'} />
+        <StaticLogo size={'100px'} />
+        <StaticLogo size={'150px'} />
+      </div>
     </>
   </Story>
 </Preview>
 
 <Props of={StaticLogo} />
 
-import SpinnerLogo from './SpinnerLogo';
+# Futuristic Logo (Static Spinner)
 
-# Spinner Logo
+**NOT APPROVED FOR OFFICIAL USE**
 
 <Preview>
-  <Story name="spinner logo">
-    <>
-      <h3>Classic Spinner</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo />
-      </div>
-      <h3>Spinner with other colors</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
-      </div>
-      <h3>Spinners of different sizes</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo spinnerSize={'75px'} />
-        <SpinnerLogo spinnerSize={'100px'} />
-        <SpinnerLogo spinnerSize={'150px'} />
-      </div>
-    </>
+  <Story name="Static Spinner Logo">
+    <StaticSpinnerLogo />
   </Story>
 </Preview>
 
-<Props of={SpinnerLogo} />
+<Props of={StaticSpinnerLogo} />
