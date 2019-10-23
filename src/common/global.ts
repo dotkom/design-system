@@ -3,10 +3,12 @@ import Reset from './reset';
 
 export const GlobalStyle = createGlobalStyle`
   ${Reset}
-  @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800,900');
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Serif+Pro&display=swap');
   body {
+    font-family: 'Source Sans Pro', sans-serif;
   }
   h1, h2, h3 {
+    font-family: 'Source Serif Pro', serif;
     margin: 2rem 0 1rem;
   }
   h1 {
