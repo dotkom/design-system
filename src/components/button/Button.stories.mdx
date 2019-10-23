@@ -1,5 +1,13 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Button from './Button';
+import styled from 'styled-components';
+
+export const ExampleButtonContainer = styled.div`
+  margin: -0.5rem;
+  & > \* {
+    margin: 0.5rem;
+  }
+`;
 
 <Meta title="Forms|Button" component={Button} />
 
@@ -7,32 +15,29 @@ import Button from './Button';
 
 <Preview>
   <Story name="All">
-    <>
-      <div style={{ display: 'inline-flex' }}>
-        <Button color="primary">Primary</Button>
-        <Button color="secondary">Secondary</Button>
-        <Button color="success">Success</Button>
-        <Button color="danger">Danger</Button>
-        <Button disabled>Disabled</Button>
-      </div>
-      <div style={{ display: 'inline-flex' }}>
-        <Button variant="outline" color="primary">
-          Primary
-        </Button>
-        <Button variant="outline" color="secondary">
-          Secondary
-        </Button>
-        <Button variant="outline" color="success">
-          Success
-        </Button>
-        <Button variant="outline" color="danger">
-          Danger
-        </Button>
-        <Button variant="outline" disabled>
-          Disabled
-        </Button>
-      </div>
-    </>
+    <ExampleButtonContainer>
+      <Button color="primary">Primary</Button>
+      <Button color="secondary">Secondary</Button>
+      <Button color="success">Success</Button>
+      <Button color="danger">Danger</Button>
+      <Button disabled>Disabled</Button>
+      <br />
+      <Button variant="outline" color="primary">
+        Primary
+      </Button>
+      <Button variant="outline" color="secondary">
+        Secondary
+      </Button>
+      <Button variant="outline" color="success">
+        Success
+      </Button>
+      <Button variant="outline" color="danger">
+        Danger
+      </Button>
+      <Button variant="outline" disabled>
+        Disabled
+      </Button>
+    </ExampleButtonContainer>
   </Story>
 </Preview>
 
