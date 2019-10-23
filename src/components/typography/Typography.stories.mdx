@@ -1,0 +1,42 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Heading, Heading2, Heading3 } from './Heading';
+import { Ingress, Body, Info } from './Text';
+
+<Meta title="Typography|Heading" component={Heading} />
+
+# Typography
+
+## Headings
+
+<Preview>
+  <Story name="All">
+    <>
+      <Heading>Heading</Heading>
+      <Heading2>Heading2</Heading2>
+      <Heading3>Heading3</Heading3>
+    </>
+  </Story>
+</Preview>
+
+## An article example
+
+<Preview>
+  <Story name="Article Example">
+    <>
+      <Heading>Heading</Heading>
+      <Info>Info</Info>
+      <Ingress>Ingress</Ingress>
+      <Body>Body</Body>
+    </>
+  </Story>
+</Preview>
+
+## Custom style
+
+<Preview>
+  <Story name="Custom">
+    <>
+      <Heading style={{ color: 'red' }}>Heading</Heading>
+    </>
+  </Story>
+</Preview>
