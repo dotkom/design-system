@@ -1,16 +1,15 @@
-import Event from './event';
-import moment from 'moment';
+import React from 'react';
 
+interface DayProps {
+  children: React.ReactNode;
+  day: string;
+}
 
-const Day = ({ events, eventClickHandler, active }) => {
-  const DAY = moment(events[0].start_time).format('dddd DD. MMMM');
-
+const Day = ({ children, day }: DayProps): JSX.Element => {
   return (
     <div className="cal-day">
-      <h2 className="cal-day--string">{DAY}</h2>
-      { events.map((e, id) => {
-        return <Event eventClickHandler={eventClickHandler} active={active} title={e.title} start_time={e.start_time} end_time={e.end_time} content={e.content} key={id} index={e.index} />
-      })}
+      <h2 className="cal-day--string">{day}</h2>
+      {children}
       <br />
     </div>
   );
