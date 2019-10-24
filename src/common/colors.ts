@@ -1,18 +1,4 @@
 export const colors = {
-  officialBlue: '#0060A3',
-  officialOrange: '#FAA21B',
-  primaryLight: '#008CF0',
-  primaryDark: '#004170',
-
-  eventsBedpres: '#eb536e',
-  eventsKurs: '#127dbd',
-  eventsSosialt: '#43b171',
-  eventsUtflukt: '#fdbd47',
-  eventsEkskursjon: '#2ac6f9',
-  eventsKjelleren: '#e75e3b',
-  eventsInternt: '#e75e3b',
-  eventsAnnet: '#b36bcd',
-
   primaryLighten45: '#73A8CC',
   primaryLighten30: '#4C90BF',
   primaryLighten15: '#2678B1',
@@ -62,4 +48,16 @@ export const colors = {
   error: '#DF2020',
   errorDarken35: '#911515',
   errorDarken70: '#430A0A',
+
+  eventsBedpres: '#eb536e',
+  eventsKurs: '#127dbd',
+  eventsSosialt: '#43b171',
+  eventsUtflukt: '#fdbd47',
+  eventsEkskursjon: '#2ac6f9',
+  eventsKjelleren: '#e75e3b',
+  eventsInternt: '#e75e3b',
+  eventsAnnet: '#b36bcd',
+
+  officialBlue: '#0060A3',
+  officialOrange: '#FAA21B',
 };

@@ -13,7 +13,7 @@ const Select = styled.select`
   cursor: pointer;
 
   &:hover {
-    border-color: ${colors.primaryLight};
+    border-color: ${colors.primaryLighten45};
   }
   appearance: none;
 

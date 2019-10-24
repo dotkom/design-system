@@ -41,7 +41,7 @@ const CheckboxLabel = styled.label<{ disabled?: boolean }>`
   height: ${size}px;
   cursor: pointer;
   &:hover {
-    color: ${colors.primaryDark};
+    color: ${colors.primaryDarken45};
   }
   ${({ disabled }): FlattenSimpleInterpolation | undefined | false => disabled && CheckboxLabelDisabled};
 `;
@@ -71,10 +71,10 @@ const StyledCheckbox = styled.div<{ error?: boolean }>`
     background-position: center;
     background-size: 75%;
     background-repeat: no-repeat;
-    border-color: ${colors.primaryLight};
+    border-color: ${colors.primaryLighten45};
   }
   ${CheckboxLabel}:hover & {
-    border-color: ${colors.primaryLight};
+    border-color: ${colors.primaryLighten45};
   }
   ${HiddenCheckbox}:disabled + & {
     cursor: not-allowed;
