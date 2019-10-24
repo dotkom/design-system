@@ -2,11 +2,8 @@ export const colors = {
   officialBlue: '#0060A3',
   officialOrange: '#FAA21B',
   hotpink: 'hotpink',
-  primary: '#0068B3',
   primaryLight: '#008CF0',
   primaryDark: '#004170',
-
-  accent: '#FAA21B',
 
   graysWhite: '#FCFCFC',
   grayslightGray: '#F1F1F1',
@@ -35,4 +32,46 @@ export const colors = {
   eventsKjelleren: '#F7BE6E',
   eventsInternt: '#F5A3E7',
   eventsAnnet: '#C986F9',
+
+  white: 'hsl(0, 0%, 100%)',
+  grayLighten45: 'hsl(0, 0%, 95%)',
+  grayLighten30: 'hsl(0, 0%, 80%)',
+  grayLighten15: 'hsl(0, 0%, 65%)',
+  gray: 'hsl(0, 0%, 50%)',
+  grayDarken15: 'hsl(0, 0%, 35%)',
+  grayDarken30: 'hsl(0, 0%, 20%)',
+  grayDarken45: 'hsl(0, 0%, 5%)',
+  black: 'hsl(0, 0%, 5%)',
+
+  primaryLighten15: 'hsl(205, 100%, 47%)',
+  primaryLighten10: 'hsl(205, 100%, 42%)',
+  primaryLighten5: 'hsl(205, 100%, 37%)',
+  primary: 'hsl(205, 100%, 32%)',
+  primaryDarken5: 'hsl(205, 100%, 27%)',
+  primaryDarken10: 'hsl(205, 100%, 22%)',
+  primaryDarken15: 'hsl(205, 100%, 17%)',
+
+  secondaryLighten15: 'hsl(36, 96%, 69%)',
+  secondaryLighten10: 'hsl(36, 96%, 64%)',
+  secondaryLighten5: 'hsl(36, 96%, 59%)',
+  secondary: 'hsl(36, 96%, 54%)',
+  secondaryDarken5: 'hsl(36, 96%, 49%)',
+  secondaryDarken10: 'hsl(36, 96%, 44%)',
+  secondaryDarken15: 'hsl(36, 96%, 39%)',
+
+  infoLighten15: 'hsl(195, 50%, 85%)',
+  info: 'hsl(195, 50%, 70%)',
+  infoDarken15: 'hsl(195, 50%, 55%)',
+
+  successLighten15: 'hsl(120, 50%, 85%)',
+  success: 'hsl(120, 50%, 70%)',
+  successDarken15: 'hsl(120, 50%, 55%)',
+
+  warningLighten15: 'hsl(47, 50%, 85%)',
+  warning: 'hsl(47, 50%, 70%)',
+  warningDarken15: 'hsl(47, 50%, 55%)',
+
+  errorLighten15: 'hsl(0, 50%, 85%)',
+  error: 'hsl(0, 50%, 70%)',
+  errorDarken15: 'hsl(0, 50%, 55%)',
 };

@@ -49,7 +49,7 @@ interface IProps {
   secondaryColor?: string;
 }
 
-const Spinner: FC<IProps> = ({ primaryColor = colors.primary, secondaryColor = colors.accent }): JSX.Element => {
+const Spinner: FC<IProps> = ({ primaryColor = colors.primary, secondaryColor = colors.secondary }): JSX.Element => {
   return (
     <SpinnerSVG version="1.1" x="0px" y="0px" viewBox="0 0 50 50">
       <SpinnerPath time={1.4} start={5} end={5} color={secondaryColor} />

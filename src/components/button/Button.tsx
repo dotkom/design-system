@@ -56,7 +56,7 @@ const Button = ({
   let mainColor: string = colors.primary;
   switch (color) {
     case 'secondary': {
-      mainColor = colors.accent;
+      mainColor = colors.secondary;
       break;
     }
     case 'success': {

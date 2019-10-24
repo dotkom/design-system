@@ -1,0 +1,79 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { media, breakPoints } from 'common/layout';
+import ColorSwatch from './Colors';
+
+<Meta title="Global|Colors" />
+
+# Colors
+
+<Preview>
+  <Story name="Gray">
+    <>
+      <ColorSwatch color="white" darkText={true} />
+      <ColorSwatch color="grayLighten45" darkText={true} />
+      <ColorSwatch color="grayLighten30" darkText={true} />
+      <ColorSwatch color="grayLighten15" darkText={true} />
+      <ColorSwatch color="gray" darkText={true} />
+      <ColorSwatch color="grayDarken15" />
+      <ColorSwatch color="grayDarken30" />
+      <ColorSwatch color="grayDarken45" />
+      <ColorSwatch color="black" />
+    </>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Primary">
+    <>
+      <ColorSwatch color="primaryLighten15" />
+      <ColorSwatch color="primaryLighten10" />
+      <ColorSwatch color="primaryLighten5" />
+      <ColorSwatch color="primary" />
+      <ColorSwatch color="primaryDarken5" />
+      <ColorSwatch color="primaryDarken10" />
+      <ColorSwatch color="primaryDarken15" />
+    </>
+  </Story>
+  <Story name="Secondary">
+    <>
+      <ColorSwatch color="secondaryLighten15" darkText={true} />
+      <ColorSwatch color="secondaryLighten10" darkText={true} />
+      <ColorSwatch color="secondaryLighten5" darkText={true} />
+      <ColorSwatch color="secondary" darkText={true} />
+      <ColorSwatch color="secondaryDarken5" darkText={true} />
+      <ColorSwatch color="secondaryDarken10" darkText={true} />
+      <ColorSwatch color="secondaryDarken15" darkText={true} />
+    </>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Info">
+    <>
+      <ColorSwatch color="infoLighten15" darkText={true} />
+      <ColorSwatch color="info" darkText={true} />
+      <ColorSwatch color="infoDarken15" darkText={true} />
+    </>
+  </Story>
+  <Story name="Success">
+    <>
+      <ColorSwatch color="successLighten15" darkText={true} />
+      <ColorSwatch color="success" darkText={true} />
+      <ColorSwatch color="successDarken15" darkText={true} />
+    </>
+  </Story>
+  <Story name="Warning">
+    <>
+      <ColorSwatch color="warningLighten15" darkText={true} />
+      <ColorSwatch color="warning" darkText={true} />
+      <ColorSwatch color="warningDarken15" darkText={true} />
+    </>
+  </Story>
+  <Story name="Error">
+    <>
+      <ColorSwatch color="errorLighten15" darkText={true} />
+      <ColorSwatch color="error" darkText={true} />
+      <ColorSwatch color="errorDarken15" darkText={true} />
+    </>
+  </Story>
+</Preview>
