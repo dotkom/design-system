@@ -1,0 +1,95 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Timeline from './Timeline';
+import Day from './Day';
+import Event from './Event';
+
+<Meta title="Others|Timeline" component={Timeline} />
+
+const event = Event
+
+# Timeline
+
+<Preview>
+  <Story name="Default">
+    <Timeline>
+      <Day day={'Fredag 23. august'}>
+        <Event
+          title="[Bachelor] Technostart"
+          startTime="10:15"
+          endTime="15:00"
+          eventClickHandler={() => console.log('boop')}
+          index={1}
+          active={1}
+        >
+          <p>
+            Teknostart er et obligatorisk oppstartprogram for studenter på NTNUs teknologiutdanninger. Informatikk har
+            felles prosjektarbeid med datateknologi.
+          </p>
+          <p>
+            For spørsmål om teknostart for informatikk, kontakt læringsassistent Eivind Lie Andreassen:
+            eiviland@stud.ntnu.no
+          </p>
+        </Event>
+        <Event
+          title="[Alle] Beachparty"
+          startTime="15:00"
+          endTime="18:00"
+          eventClickHandler={() => console.log('boop')}
+          index={1}
+          active={1}
+        >
+          <p>
+            Årets beachparty for nye Onlinere! Grilling, forhåpentligvis bading og uteaktiviterer som volleyball er
+            planlagt! Ta med Badetøy, håndkle, noe alkoholfritt til å holde deg hydrert og godt humør! Vi ber til
+            værgudene om sol og varme denne dagen i Korsvika!
+          </p>
+        </Event>
+        <Event
+          title="[Alle] Hangoverkino"
+          startTime="19:00"
+          endTime="21:00"
+          eventClickHandler={() => console.log('boop')}
+          index={1}
+          active={1}
+        >
+          <p>
+            Dagen derpå i slutten av fadderukene kan være ekstra hard. Derfor byr vi på kinokveld med PSI, der du kan
+            lene deg tilbake, og nyte en god film med de nye bekjentskapene fra dagen før. Ta med egen alkoholfri
+            drikke, så stiller vi med popcorn!
+          </p>
+        </Event>
+      </Day>
+      <Day day={'Lørdag 24. august'}>
+        <Event
+          title="[Alle] Onlinelekene"
+          startTime="13:00"
+          endTime="15:00"
+          eventClickHandler={() => console.log('boop')}
+          index={1}
+          active={1}
+        >
+          <p>
+            Har du alltid hatt lyst å skli ned en 50x8 meter lang vannsklie, eller spille såpefotball? Hva med
+            bumperballs, eller kubb med en liten vri? Dette er blant noen av aktivitetene vi rigger opp til. I tillegg
+            vil det bli servert gratis grillmat! Hva er vel bedre enn å avslutte fadderukene med OL (Online-lekene)?
+          </p>
+          <p>Ta med badetøy, håndkle, noe alkoholfritt å drikke og godt humør!</p>
+        </Event>
+        <Event
+          title="[Alle] Avslutningsfest"
+          startTime="18:00"
+          endTime="23:59"
+          eventClickHandler={() => console.log('boop')}
+          index={1}
+          active={1}
+        >
+          <p>
+            Fadderukens siste fest står for tur, og da er det ikke annet å gjøre enn å gi jernet og nyte hvert øyeblikk!
+          </p>
+        </Event>
+      </Day>
+    </Timeline>
+  </Story>
+</Preview>
+
+<Props of={Timeline} />
