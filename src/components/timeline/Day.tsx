@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 interface DayProps {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ interface DayProps {
 const Day = ({ children, day }: DayProps): JSX.Element => {
   return (
     <div className="cal-day">
-      <h2 className="cal-day--string">{day}</h2>
+      <DayString>{day}</DayString>
       {children}
       <br />
     </div>
@@ -16,3 +17,12 @@ const Day = ({ children, day }: DayProps): JSX.Element => {
 };
 
 export default Day;
+
+const DayString = styled.h2`
+  color: #f9a11b;
+  font-weight: 400;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+`;
