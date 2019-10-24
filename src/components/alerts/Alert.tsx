@@ -7,7 +7,7 @@ interface AlertProps {
   children: React.ReactNode;
 }
 
-const Alert = ({ type, children }: AlertProps): JSX.Element => {
+const Alert = ({ type = 'info', children }: AlertProps): JSX.Element => {
   let color: string;
   let bordercolor: string;
 
@@ -33,8 +33,8 @@ const Alert = ({ type, children }: AlertProps): JSX.Element => {
       break;
     }
     default: {
-      color = colors.graysWhite;
-      bordercolor = colors.graysGray;
+      color = colors.white;
+      bordercolor = colors.black;
       break;
     }
   }

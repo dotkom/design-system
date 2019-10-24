@@ -24,7 +24,7 @@ const Slider = styled.div<SliderProps>`
 `;
 
 const SliderBackground = styled.hr`
-  border-top: ${dividerHeight}px solid ${colors.grayslightGray};
+  border-top: ${dividerHeight}px solid ${colors.grayLighten90};
   border-bottom: none;
   border-left: none;
   border-right: none;

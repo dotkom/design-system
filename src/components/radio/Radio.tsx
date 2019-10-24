@@ -40,11 +40,11 @@ const RadioGroup = styled.div<{ error?: boolean }>`
 `;
 
 const RadioLabelDisabled = css`
-  color: ${colors.graysGray};
+  color: ${colors.grayLighten60};
   cursor: not-allowed;
 
   &:hover {
-    color: ${colors.graysGray};
+    color: ${colors.grayLighten60};
   }
 `;
 
@@ -80,7 +80,7 @@ const HiddenRadio = styled.input.attrs({ type: 'radio' })`
 const StyledRadio = styled.div<{ error?: boolean }>`
   ${HiddenRadioCommon}
   background: #fff;
-  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayslightGray)};
+  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayLighten90)};
   border-radius: 50%;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
   transition: border 0.2s;
@@ -96,8 +96,8 @@ const StyledRadio = styled.div<{ error?: boolean }>`
 
   ${HiddenRadio}:disabled + & {
     cursor: not-allowed;
-    background-color: ${colors.grayslightGray};
-    border-color: ${colors.graysGray};
+    background-color: ${colors.grayLighten90};
+    border-color: ${colors.grayLighten60};
   }
 `;
 

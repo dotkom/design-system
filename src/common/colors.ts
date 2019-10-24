@@ -1,15 +1,8 @@
 export const colors = {
   officialBlue: '#0060A3',
   officialOrange: '#FAA21B',
-  hotpink: 'hotpink',
   primaryLight: '#008CF0',
   primaryDark: '#004170',
-
-  graysWhite: '#FCFCFC',
-  grayslightGray: '#F1F1F1',
-  graysGray: '#B4B3B1',
-  graysDarkGray: '#5B5A57',
-  graysBlack: '#2A2722',
 
   systemInfo: '#66CBEC',
   systemInfo20: 'hsla(195, 78%, 66%, 0.2)',

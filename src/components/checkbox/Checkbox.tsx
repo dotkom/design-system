@@ -25,10 +25,10 @@ export default Checkbox;
 const size = 20;
 
 const CheckboxLabelDisabled = css`
-  color: ${colors.graysGray};
+  color: ${colors.grayLighten60};
   cursor: not-allowed;
   &:hover {
-    color: ${colors.graysGray};
+    color: ${colors.grayLighten60};
   }
 `;
 
@@ -61,7 +61,7 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 const StyledCheckbox = styled.div<{ error?: boolean }>`
   ${CheckboxCommon}
   display: inline-block;
-  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayslightGray)};
+  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayLighten90)};
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s ease-in, border-color 0.2s;
@@ -78,7 +78,7 @@ const StyledCheckbox = styled.div<{ error?: boolean }>`
   }
   ${HiddenCheckbox}:disabled + & {
     cursor: not-allowed;
-    background-color: ${colors.grayslightGray};
-    border-color: ${colors.graysGray};
+    background-color: ${colors.grayLighten90};
+    border-color: ${colors.grayLighten60};
   }
 `;
