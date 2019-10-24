@@ -41,7 +41,7 @@ export const colors = {
   grayDarken15: 'hsl(0, 0%, 35%)',
   grayDarken30: 'hsl(0, 0%, 20%)',
   grayDarken45: 'hsl(0, 0%, 5%)',
-  black: 'hsl(0, 0%, 5%)',
+  black: 'hsl(0, 0%, 0%)',
 
   primaryLighten15: 'hsl(205, 100%, 47%)',
   primaryLighten10: 'hsl(205, 100%, 42%)',
@@ -67,11 +67,11 @@ export const colors = {
   success: 'hsl(120, 50%, 70%)',
   successDarken15: 'hsl(120, 50%, 55%)',
 
-  warningLighten15: 'hsl(47, 50%, 85%)',
-  warning: 'hsl(47, 50%, 70%)',
-  warningDarken15: 'hsl(47, 50%, 55%)',
+  warningLighten15: 'hsl(45, 90%, 85%)',
+  warning: 'hsl(45, 90%, 70%)',
+  warningDarken15: 'hsl(45, 90%, 55%)',
 
-  errorLighten15: 'hsl(0, 50%, 85%)',
-  error: 'hsl(0, 50%, 70%)',
-  errorDarken15: 'hsl(0, 50%, 55%)',
+  errorLighten15: 'hsl(0, 75%, 85%)',
+  error: 'hsl(0, 75%, 70%)',
+  errorDarken15: 'hsl(0, 75%, 55%)',
 };
