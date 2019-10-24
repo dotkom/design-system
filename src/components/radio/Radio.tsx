@@ -26,7 +26,7 @@ const Radio = ({ labels, groupName, disabled, error }: RadioProps): JSX.Element 
 const size = 20;
 
 const RadioGroupError = css`
-  border: 1px solid ${colors.systemError};
+  border: 1px solid ${colors.error};
 `;
 
 const RadioGroup = styled.div<{ error?: boolean }>`
@@ -80,7 +80,7 @@ const HiddenRadio = styled.input.attrs({ type: 'radio' })`
 const StyledRadio = styled.div<{ error?: boolean }>`
   ${HiddenRadioCommon}
   background: #fff;
-  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayLighten90)};
+  border: 1px solid ${({ error }): string => (error ? colors.error : colors.grayLighten90)};
   border-radius: 50%;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
   transition: border 0.2s;

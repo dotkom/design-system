@@ -60,11 +60,11 @@ const Button = ({
       break;
     }
     case 'success': {
-      mainColor = colors.systemSuccess;
+      mainColor = colors.success;
       break;
     }
     case 'danger': {
-      mainColor = colors.systemError;
+      mainColor = colors.error;
       break;
     }
   }

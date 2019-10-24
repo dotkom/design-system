@@ -3,9 +3,9 @@ import styled, { StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
 
 const statuses = {
-  error: colors.systemError,
-  warning: colors.systemWarning,
-  success: colors.systemSuccess,
+  error: colors.error,
+  warning: colors.warning,
+  success: colors.success,
 };
 
 type StatusStrings = keyof typeof statuses;
@@ -35,7 +35,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 
   &:focus {
     outline: none;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2), inset 0 0 0 1px ${colors.systemInfo};
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2), inset 0 0 0 1px ${colors.info};
   }
 
   &:disabled {
@@ -47,7 +47,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 
   &:invalid {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2),
-      inset 0 0 0 1px ${({ status }): string => (status ? statuses[status] : colors.systemError)};
+      inset 0 0 0 1px ${({ status }): string => (status ? statuses[status] : colors.error)};
     box-sizing: border-box;
   }
 
@@ -57,7 +57,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 
   &:invalid + p {
     font-size: 0.7em;
-    color: ${({ status }): string => (status ? statuses[status] : colors.systemError)};
+    color: ${({ status }): string => (status ? statuses[status] : colors.error)};
   }
 `;
 
