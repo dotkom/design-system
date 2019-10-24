@@ -13,23 +13,23 @@ const Alert = ({ type = 'info', children }: AlertProps): JSX.Element => {
 
   switch (type) {
     case 'success': {
-      color = colors.successLighten15;
-      bordercolor = colors.successDarken15;
+      color = colors.successLighten90;
+      bordercolor = colors.success;
       break;
     }
     case 'alert': {
-      color = colors.warningLighten15;
-      bordercolor = colors.warningDarken15;
+      color = colors.warningLighten90;
+      bordercolor = colors.warning;
       break;
     }
     case 'error': {
-      color = colors.errorLighten15;
-      bordercolor = colors.errorDarken15;
+      color = colors.errorLighten90;
+      bordercolor = colors.error;
       break;
     }
     case 'info': {
-      color = colors.infoLighten15;
-      bordercolor = colors.infoDarken15;
+      color = colors.infoLighten90;
+      bordercolor = colors.info;
       break;
     }
     default: {
