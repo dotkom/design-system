@@ -20,7 +20,7 @@ const Event = ({ title, startTime, endTime, children, eventClickHandler, index, 
 
       <EventHeader onClick={eventClickHandler}>
         <EventTime>{startTime}</EventTime>
-        <EventIndicator></EventIndicator>
+        <EventIndicator />
         <EventTitle>{title}</EventTitle>
       </EventHeader>
 
@@ -51,7 +51,7 @@ const EventHeader = styled.div`
 `;
 
 const EventTime = styled.h3`
-  padding: 16px 44px 16px 0;
+  padding: 16px 30px 16px 0;
 `;
 
 const EventEndTime = styled.p`
