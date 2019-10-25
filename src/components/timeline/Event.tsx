@@ -16,8 +16,6 @@ const Event = ({ title, startTime, endTime, children, eventClickHandler, index, 
 
   return (
     <div className="cal-event" id={`event-${index}`}>
-      {/* <div className="cal-event-indicator"></div> */}
-
       <EventHeader onClick={eventClickHandler}>
         <EventTime>{startTime}</EventTime>
         <EventIndicator />

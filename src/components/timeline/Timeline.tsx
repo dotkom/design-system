@@ -6,22 +6,7 @@ interface TimelineProps {
 }
 
 const Timeline = ({ children }: TimelineProps) => {
-  return (
-    <>
-      {/* <Line /> */}
-      {children}
-    </>
-  );
+  return <>{children}</>;
 };
-
-// const Line = styled.div`
-//   position: absolute;
-//   top: 110px;
-//   bottom: 65px;
-//   left: 290px;
-
-//   background-color: #000;
-//   width: 1px;
-// `;
 
 export default Timeline;
