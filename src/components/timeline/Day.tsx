@@ -8,19 +8,26 @@ interface DayProps {
 
 const Day = ({ children, day }: DayProps): JSX.Element => {
   return (
-    <div className="cal-day">
+    <StyledDay>
       <DayString>{day}</DayString>
-      {children}
-      <br />
-    </div>
+      <div>{children}</div>
+    </StyledDay>
   );
 };
 
 export default Day;
 
+const StyledDay = styled.div`
+  display: flex;
+`;
+
 const DayString = styled.h2`
   color: #f9a11b;
   font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+  padding: 15px 30px 0 0;
+  width: 225px;
 
   &::first-letter {
     text-transform: uppercase;

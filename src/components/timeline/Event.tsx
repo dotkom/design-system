@@ -57,17 +57,17 @@ const EventTime = styled.h3`
 const EventEndTime = styled.p`
   font-size: 14px;
   text-decoration: underline;
-  /* border-left: 1px solid black;
-  padding: 8px 0 8px 45px;
-  margin-left: 90px; */
+  padding-top: 16px;
 `;
 
 const EventBody = styled.div`
   border-left: 1px solid black;
-
   padding-left: 45px;
   margin-left: 90px;
+
+  max-width: 670px;
 `;
+
 const EventInnerContent = styled.div`
   border-bottom: 1px solid transparent;
 
