@@ -80,8 +80,12 @@ const EventIndicator = styled.div`
   position: absolute;
   left: 83px;
   top: 20px;
-  background-color: orange;
+  background-color: black;
   border-radius: 50%;
   width: 14px;
   height: 14px;
+
+  &:hover {
+    background-color: orange;
+  }
 `;
