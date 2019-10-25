@@ -10,8 +10,8 @@ export interface SpinnerLogoProps {
 
 const SpinnerContainer = styled.section<{ size: string }>`
   position: relative;
-  height: ${({ size }): string => size};
-  width: ${({ size }): string => size};
+  height: ${({ size }) => size};
+  width: ${({ size }) => size};
 `;
 
 const SpinningCircle = styled.svg`

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
 
 import { CircleCheckmark } from 'index';
@@ -17,11 +17,11 @@ const StyledButton = styled.button<{ spacing: number; size: number; disabled: bo
   display: inline-flex;
   align-items: center;
   background: #fff;
-  width: ${({ size }): string => size * 2 + 'px'};
-  height: ${({ size }): string => size + 'px'};
-  padding: ${({ spacing }): string => spacing + 'px'};
-  border: ${({ spacing }): string => spacing + 'px'} solid ${colors.grayLighten60};
-  border-radius: ${({ size, spacing }): string => size + spacing + 'px'};
+  width: ${({ size }) => size * 2 + 'px'};
+  height: ${({ size }) => size + 'px'};
+  padding: ${({ spacing }) => spacing + 'px'};
+  border: ${({ spacing }) => spacing + 'px'} solid ${colors.grayLighten60};
+  border-radius: ${({ size, spacing }) => size + spacing + 'px'};
   box-sizing: content-box;
   cursor: pointer;
 
@@ -29,11 +29,11 @@ const StyledButton = styled.button<{ spacing: number; size: number; disabled: bo
     outline: none;
   }
 
-  ${({ disabled }): string | false =>
+  ${({ disabled }) =>
     disabled &&
-    `
-        background: ${colors.grayLighten90};
-        cursor: not-allowed;
+    css`
+      background: ${colors.grayLighten90};
+      cursor: not-allowed;
     `}
 `;
 
@@ -43,10 +43,10 @@ const StyledSlider = styled.div<{ checked?: boolean; size: number; spacing: numb
   border-radius: 50%;
   transition: left 0.2s;
 
-  ${({ checked, size }): string | false =>
+  ${({ checked, size }) =>
     Boolean(checked) &&
-    `
-        left: calc(100% - ${size}px);
+    css`
+      left: calc(100% - ${size}px);
     `}
 `;
 
@@ -54,9 +54,9 @@ const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 16 }: P
   const spacing = size / 8;
   const [checked, setChecked] = useState(initialChecked);
 
-  function onClick(): void {
-    setChecked(!checked);
-  }
+  const onClick = () => {
+    setChecked((current) => !current);
+  };
 
   return (
     <StyledButton size={size} spacing={spacing} disabled={disabled} onClick={onClick}>

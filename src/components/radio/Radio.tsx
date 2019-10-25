@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
-import { ExternalCSS } from 'common/types';
 
 interface RadioProps {
   labels: string[];
@@ -36,7 +35,7 @@ const RadioGroup = styled.div<{ error?: boolean }>`
     margin-top: 0.5rem;
   }
 
-  ${({ error }): ExternalCSS => Boolean(error) && RadioGroupError};
+  ${({ error }) => Boolean(error) && RadioGroupError};
 `;
 
 const RadioLabelDisabled = css`
@@ -60,7 +59,7 @@ const RadioLabel = styled.label<{ disabled?: boolean }>`
     color: ${colors.primary};
   }
 
-  ${({ disabled }): ExternalCSS => Boolean(disabled) && RadioLabelDisabled};
+  ${({ disabled }) => Boolean(disabled) && RadioLabelDisabled};
 `;
 
 const HiddenRadioCommon = css`
@@ -80,7 +79,7 @@ const HiddenRadio = styled.input.attrs({ type: 'radio' })`
 const StyledRadio = styled.div<{ error?: boolean }>`
   ${HiddenRadioCommon}
   background: #fff;
-  border: 1px solid ${({ error }): string => (error ? colors.error : colors.grayLighten90)};
+  border: 1px solid ${({ error }) => (error ? colors.error : colors.grayLighten90)};
   border-radius: 50%;
   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
   transition: border 0.2s;

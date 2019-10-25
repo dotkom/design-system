@@ -7,11 +7,11 @@ export interface Props {
 }
 
 const CircleContainer = styled.svg<{ size?: string }>`
-  height: ${({ size }): string | undefined => size};
-  width: ${({ size }): string | undefined => size};
+  height: ${({ size }) => size};
+  width: ${({ size }) => size};
 `;
 
-const IconWrapper = styled.div<{}>`
+const IconWrapper = styled.div`
   display: flex;
 `;
 

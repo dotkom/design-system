@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
 
 interface LogoProps {
@@ -13,7 +13,11 @@ type OwnProps = Partial<LogoProps>;
 const proportion = 59 / 239;
 
 export const FullLogo = styled.svg<LogoProps>`
-  ${({ size }): string => 'width: ' + size / proportion + 'px; height: ' + size + 'px;'};
+  ${({ size }) =>
+    css`
+      width: ${size / proportion}px;
+      height: ${size}px;
+    `};
 `;
 
 const Logo = ({

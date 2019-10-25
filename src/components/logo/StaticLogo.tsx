@@ -9,8 +9,8 @@ export interface Props {
 }
 
 const Logo = styled.svg<{ size: string }>`
-  height: ${({ size }): string => size};
-  width: ${({ size }): string => size};
+  height: ${({ size }) => size};
+  width: ${({ size }) => size};
 `;
 
 const StaticLogo = ({

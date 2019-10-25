@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
 
 interface CheckboxProps {
@@ -43,7 +43,7 @@ const CheckboxLabel = styled.label<{ disabled?: boolean }>`
   &:hover {
     color: ${colors.primaryDarken45};
   }
-  ${({ disabled }): FlattenSimpleInterpolation | undefined | false => disabled && CheckboxLabelDisabled};
+  ${({ disabled }) => disabled && CheckboxLabelDisabled};
 `;
 
 const CheckboxCommon = css`
@@ -61,7 +61,7 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 const StyledCheckbox = styled.div<{ error?: boolean }>`
   ${CheckboxCommon}
   display: inline-block;
-  border: 1px solid ${({ error }): string => (error ? colors.error : colors.grayLighten90)};
+  border: 1px solid ${({ error }) => (error ? colors.error : colors.grayLighten90)};
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s ease-in, border-color 0.2s;

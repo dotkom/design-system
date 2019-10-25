@@ -14,8 +14,8 @@ interface OwnProps {
 }
 
 const OSvg = styled.svg<SvgProps>`
-  ${({ width }): string => width + 'px;'}
-  ${({ height }): string => height + 'px;'}
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
 `;
 
 const LightningO = ({

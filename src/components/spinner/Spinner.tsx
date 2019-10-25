@@ -30,8 +30,8 @@ const SpinnerPath = styled(Path)<ISpinnerProps>`
   transform-origin: 50% 50%;
   animation-fill-mode: forwards;
 
-  stroke: ${({ color }): string => color};
-  animation: ${({ time }): number => time}s spin infinite;
+  stroke: ${({ color }) => color};
+  animation: ${({ time }) => time}s spin infinite;
   animation-timing-function: cubic-bezier(0.43, 0.54, 0.61, 0.74);
 
   @keyframes spin {

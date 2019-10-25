@@ -49,8 +49,8 @@ const Alert = ({ type = 'info', children }: AlertProps): JSX.Element => {
 export default Alert;
 
 const StyledBox = styled.div<{ backgroundColor: string; borderColor: string }>`
-  background-color: ${({ backgroundColor }): string => backgroundColor};
-  border: 1px solid ${({ borderColor }): string => borderColor};
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  border: 1px solid ${({ borderColor }) => borderColor};
   padding: 1em;
   border-radius: 3px;
 `;

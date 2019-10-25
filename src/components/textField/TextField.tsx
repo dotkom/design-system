@@ -47,7 +47,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 
   &:invalid {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2),
-      inset 0 0 0 1px ${({ status }): string => (status ? statuses[status] : colors.error)};
+      inset 0 0 0 1px ${({ status }) => (status ? statuses[status] : colors.error)};
     box-sizing: border-box;
   }
 
@@ -57,7 +57,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 
   &:invalid + p {
     font-size: 0.7em;
-    color: ${({ status }): string => (status ? statuses[status] : colors.error)};
+    color: ${({ status }) => (status ? statuses[status] : colors.error)};
   }
 `;
 
@@ -66,7 +66,7 @@ const InputLabel = styled.label<{ color?: string }>`
   font-weight: bold;
   font-size: 0.75rem;
   margin-bottom: 0.5rem;
-  color: ${({ color }): string => color || colors.primary};
+  color: ${({ color }) => color || colors.primary};
 
   &:empty {
     margin: 0;
