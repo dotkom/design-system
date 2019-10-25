@@ -20,15 +20,16 @@ const Event = ({ title, startTime, endTime, children, eventClickHandler, index, 
 
       <EventHeader onClick={eventClickHandler}>
         <EventTime>{startTime}</EventTime>
+        <EventIndicator></EventIndicator>
         <EventTitle>{title}</EventTitle>
       </EventHeader>
 
-      <EventContent className={`cal-event-content ${classes}`}>
+      <EventBody className={`cal-event-content ${classes}`}>
         <EventInnerContent>{children}</EventInnerContent>
-      </EventContent>
-      <EventEndTime className={`cal-event-content ${classes} cal-event-endtime`}>
-        Antatt sluttidspunkt: {endTime}
-      </EventEndTime>
+        <EventEndTime className={`cal-event-content ${classes} cal-event-endtime`}>
+          Antatt sluttidspunkt: {endTime}
+        </EventEndTime>
+      </EventBody>
     </div>
   );
 };
@@ -43,6 +44,7 @@ const EventTitle = styled.h3`
 
 const EventHeader = styled.div`
   display: flex;
+  position: relative;
   h3 {
     margin: 0px;
   }
@@ -55,20 +57,16 @@ const EventTime = styled.h3`
 const EventEndTime = styled.p`
   font-size: 14px;
   text-decoration: underline;
-  border-left: 1px solid black;
+  /* border-left: 1px solid black;
   padding: 8px 0 8px 45px;
-  margin-left: 90px;
+  margin-left: 90px; */
 `;
 
-const EventContent = styled.div`
+const EventBody = styled.div`
   border-left: 1px solid black;
 
   padding-left: 45px;
   margin-left: 90px;
-
-  & > * + * {
-    margin: 16px 0;
-  }
 `;
 const EventInnerContent = styled.div`
   border-bottom: 1px solid transparent;
@@ -76,4 +74,14 @@ const EventInnerContent = styled.div`
   & > * + * {
     margin: 16px 0;
   }
+`;
+
+const EventIndicator = styled.div`
+  position: absolute;
+  left: 83px;
+  top: 20px;
+  background-color: orange;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
 `;
