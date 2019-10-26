@@ -7,6 +7,11 @@ import Event from './Event';
 
 const event = Event
 
+export const actives = [false, true, true, true, true, true];
+export const toggleActives = (index) => {
+  actives[index] = !actives[index];
+};
+
 # Timeline
 
 <Preview>
@@ -17,9 +22,8 @@ const event = Event
           title="[Bachelor] Technostart"
           startTime="10:15"
           endTime="15:00"
-          eventClickHandler={() => console.log('boop')}
-          index={1}
-          active={true}
+          eventClickHandler={() => toggleActives(0)}
+          active={actives[0]}
         >
           <p>
             Teknostart er et obligatorisk oppstartprogram for studenter på NTNUs teknologiutdanninger. Informatikk har
@@ -34,9 +38,8 @@ const event = Event
           title="[Alle] Beachparty"
           startTime="15:00"
           endTime="18:00"
-          eventClickHandler={() => console.log('boop')}
-          index={1}
-          active={false}
+          eventClickHandler={() => toggleActives(1)}
+          active={actives[1]}
         >
           <p>
             Årets beachparty for nye Onlinere! Grilling, forhåpentligvis bading og uteaktiviterer som volleyball er
@@ -49,8 +52,7 @@ const event = Event
           startTime="19:00"
           endTime="21:00"
           eventClickHandler={() => console.log('boop')}
-          index={1}
-          active={true}
+          active={actives[2]}
         >
           <p>
             Dagen derpå i slutten av fadderukene kan være ekstra hard. Derfor byr vi på kinokveld med PSI, der du kan
@@ -65,8 +67,7 @@ const event = Event
           startTime="13:00"
           endTime="15:00"
           eventClickHandler={() => console.log('boop')}
-          index={1}
-          active={true}
+          active={actives[3]}
         >
           <p>
             Har du alltid hatt lyst å skli ned en 50x8 meter lang vannsklie, eller spille såpefotball? Hva med
@@ -80,8 +81,7 @@ const event = Event
           startTime="18:00"
           endTime="23:59"
           eventClickHandler={() => console.log('boop')}
-          index={1}
-          active={true}
+          active={actives[4]}
         >
           <p>
             Fadderukens siste fest står for tur, og da er det ikke annet å gjøre enn å gi jernet og nyte hvert øyeblikk!
@@ -94,8 +94,7 @@ const event = Event
           startTime="19:00"
           endTime="23:59"
           eventClickHandler={() => console.log('boop')}
-          index={1}
-          active={true}
+          active={actives[5]}
         >
           <p>
             Vi feirer alle nye studenter som er immatrikulert med tradisjonsrikt ball! Børst støvet av finstasen og gjør

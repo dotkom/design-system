@@ -7,16 +7,10 @@ interface EventProps {
   endTime: string;
   children: React.ReactNode;
   eventClickHandler: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-  index: number;
   active: boolean;
 }
 
-const Event = ({ title, startTime, endTime, children, eventClickHandler, index, active }: EventProps): JSX.Element => {
-  // const classes = index === active ? 'cal-event-content-active' : '';
-  console.log(active);
-
-  const classes = '';
-  console.log(index);
+const Event = ({ title, startTime, endTime, children, eventClickHandler, active }: EventProps): JSX.Element => {
   return (
     <StyledEvent>
       <EventHeader onClick={eventClickHandler}>
@@ -27,7 +21,7 @@ const Event = ({ title, startTime, endTime, children, eventClickHandler, index, 
 
       <EventBody hide={!active}>
         <EventInnerContent>{children}</EventInnerContent>
-        <EventEndTime className={classes}>Antatt sluttidspunkt: {endTime}</EventEndTime>
+        <EventEndTime>Antatt sluttidspunkt: {endTime}</EventEndTime>
       </EventBody>
     </StyledEvent>
   );
