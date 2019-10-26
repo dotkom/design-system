@@ -8,31 +8,40 @@ interface EventProps {
   children: React.ReactNode;
   eventClickHandler: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   index: number;
-  active: number;
+  active: boolean;
 }
 
 const Event = ({ title, startTime, endTime, children, eventClickHandler, index, active }: EventProps): JSX.Element => {
-  const classes = index === active ? 'cal-event-content-active' : '';
+  // const classes = index === active ? 'cal-event-content-active' : '';
+  console.log(active);
 
+  const classes = '';
+  console.log(index);
   return (
-    <div className="cal-event" id={`event-${index}`}>
+    <StyledEvent>
       <EventHeader onClick={eventClickHandler}>
         <EventTime>{startTime}</EventTime>
-        <EventIndicator />
+        <EventIndicator className="indicator" />
         <EventTitle>{title}</EventTitle>
       </EventHeader>
 
-      <EventBody className={`cal-event-content ${classes}`}>
+      <EventBody hide={!active}>
         <EventInnerContent>{children}</EventInnerContent>
-        <EventEndTime className={`cal-event-content ${classes} cal-event-endtime`}>
-          Antatt sluttidspunkt: {endTime}
-        </EventEndTime>
+        <EventEndTime className={classes}>Antatt sluttidspunkt: {endTime}</EventEndTime>
       </EventBody>
-    </div>
+    </StyledEvent>
   );
 };
 
 export default Event;
+
+const StyledEvent = styled.div`
+  &:hover {
+    .indicator {
+      background-color: orange;
+    }
+  }
+`;
 
 const EventTitle = styled.h3`
   font-weight: bold;
@@ -58,12 +67,17 @@ const EventEndTime = styled.p`
   padding-top: 16px;
 `;
 
-const EventBody = styled.div`
+const EventBody = styled.div<{ hide?: boolean }>`
   border-left: 1px solid black;
   padding-left: 45px;
   margin-left: 90px;
-
   max-width: 670px;
+
+  ${({ hide }) =>
+    hide &&
+    `
+    display: none;
+  `}
 `;
 
 const EventInnerContent = styled.div`
@@ -82,8 +96,4 @@ const EventIndicator = styled.div`
   border-radius: 50%;
   width: 14px;
   height: 14px;
-
-  &:hover {
-    background-color: orange;
-  }
 `;
