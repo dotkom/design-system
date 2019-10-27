@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
 
 interface LogoProps {
@@ -13,14 +13,14 @@ type OwnProps = Partial<LogoProps>;
 const proportion = 59 / 239;
 
 export const FullLogo = styled.svg<LogoProps>`
-  ${({ size }): string => 'width: ' + size / proportion + 'px; height: ' + size + 'px;'};
+  ${({ size }) =>
+    css`
+      width: ${size / proportion}px;
+      height: ${size}px;
+    `};
 `;
 
-const Logo = ({
-  textColor = colors.officialBlue,
-  lightningColor = colors.officialOrange,
-  size = 59,
-}: OwnProps): JSX.Element => {
+const Logo = ({ textColor = colors.officialBlue, lightningColor = colors.officialOrange, size = 59 }: OwnProps) => {
   return (
     <FullLogo xmlns="http://www.w3.org/2000/svg" size={size} viewBox="0 0 239 59">
       <defs />

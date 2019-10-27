@@ -17,8 +17,8 @@ const dividerHeight = 3;
 const Slider = styled.div<SliderProps>`
   transition: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
   border-top: ${dividerHeight}px solid ${colors.primary};
-  width: ${({ width }): number => width}px;
-  margin-left: ${({ offset }): number => offset}px;
+  width: ${({ width }) => width}px;
+  margin-left: ${({ offset }) => offset}px;
   margin-top: -${dividerHeight}px;
   margin-bottom: 10px;
 `;
@@ -37,13 +37,13 @@ interface Props {
   children: React.ReactNode;
 }
 
-const TabSelect: FC<Props> = ({ activeTab, children, ...rest }: Props): JSX.Element => {
+const TabSelect: FC<Props> = ({ activeTab, children, ...rest }: Props) => {
   const [sliderOffset, setSliderOffset] = useState(0);
   const [sliderWidth, setSliderWidth] = useState(0);
 
   const selectedTab = useRef<HTMLElement>(null);
 
-  useEffect((): void => {
+  useEffect(() => {
     if (selectedTab && selectedTab.current) {
       setSliderOffset(selectedTab.current.offsetLeft);
       setSliderWidth(selectedTab.current.clientWidth);

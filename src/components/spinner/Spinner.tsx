@@ -26,20 +26,20 @@ const SpinnerPath = styled(Path)<ISpinnerProps>`
   stroke-width: 6;
   stroke-linecap: round;
   stroke-miterlimit: 10;
-  transform: rotate(${({ start }): number => start % 361}deg);
+  transform: rotate(${({ start }) => start % 361}deg);
   transform-origin: 50% 50%;
   animation-fill-mode: forwards;
 
-  stroke: ${({ color }): string => color};
-  animation: ${({ time }): number => time}s spin infinite;
+  stroke: ${({ color }) => color};
+  animation: ${({ time }) => time}s spin infinite;
   animation-timing-function: cubic-bezier(0.43, 0.54, 0.61, 0.74);
 
   @keyframes spin {
     from {
-      transform: rotate(${({ start }): number => start % 361}deg);
+      transform: rotate(${({ start }) => start % 361}deg);
     }
     to {
-      transform: rotate(${({ end }): number => end % 361}deg);
+      transform: rotate(${({ end }) => end % 361}deg);
     }
   }
 `;
@@ -49,7 +49,7 @@ interface IProps {
   secondaryColor?: string;
 }
 
-const Spinner: FC<IProps> = ({ primaryColor = colors.primary, secondaryColor = colors.secondary }): JSX.Element => {
+const Spinner: FC<IProps> = ({ primaryColor = colors.primary, secondaryColor = colors.secondary }) => {
   return (
     <SpinnerSVG version="1.1" x="0px" y="0px" viewBox="0 0 50 50">
       <SpinnerPath time={1.4} start={5} end={5} color={secondaryColor} />

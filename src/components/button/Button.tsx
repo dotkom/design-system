@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { StyledComponentProps } from 'styled-components';
+import styled, { css, StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
 
 interface ButtonProps extends StyledComponentProps<'button', any, any, any> {
@@ -16,8 +16,8 @@ interface StyledButtonProps {
 
 const StyledButton = styled.button<StyledButtonProps>`
   appearance: none;
-  background: ${(props): string => props.color};
-  border: 2px solid ${(props): string => props.color};
+  background: ${(props) => props.color};
+  border: 2px solid ${(props) => props.color};
   color: ${colors.white};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
@@ -36,13 +36,13 @@ const StyledButton = styled.button<StyledButtonProps>`
     cursor: not-allowed;
   }
 
-  ${(props): string | false =>
+  ${(props) =>
     props.variant == 'outline' &&
-    `
-    background: transparent;
-    border: 2px solid ${props.color};
-    color: ${props.color};
-  `}
+    css`
+      background: transparent;
+      border: 2px solid ${props.color};
+      color: ${props.color};
+    `}
 `;
 
 const Button = ({
@@ -52,7 +52,7 @@ const Button = ({
   variant = 'normal',
   disabled = false,
   ...props
-}: ButtonProps): JSX.Element => {
+}: ButtonProps) => {
   let mainColor: string = colors.primary;
   switch (color) {
     case 'secondary': {
