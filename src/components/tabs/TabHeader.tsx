@@ -8,7 +8,7 @@ interface Props extends HTMLProps<HTMLInputElement> {
 }
 
 const TabHeader = styled.div<Props>`
-  color: ${({ selected }): string => (selected ? colors.primary : colors.graysDarkGray)};
+  color: ${({ selected }): string => (selected ? colors.primary : colors.grayDarken30)};
   padding: 10px 0;
   transition: color 0.2s;
   font-size: 1.5rem;

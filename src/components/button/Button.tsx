@@ -18,7 +18,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   appearance: none;
   background: ${(props): string => props.color};
   border: 2px solid ${(props): string => props.color};
-  color: ${colors.graysWhite};
+  color: ${colors.white};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   padding: 0.5rem 1rem;
@@ -29,10 +29,10 @@ const StyledButton = styled.button<StyledButtonProps>`
   }
 
   &:disabled {
-    background: ${colors.grayslightGray};
-    color: ${colors.graysGray};
+    background: ${colors.grayLighten90};
+    color: ${colors.grayLighten60};
     box-shadow: none;
-    border-color: ${colors.grayslightGray};
+    border-color: ${colors.grayLighten90};
     cursor: not-allowed;
   }
 
@@ -56,15 +56,15 @@ const Button = ({
   let mainColor: string = colors.primary;
   switch (color) {
     case 'secondary': {
-      mainColor = colors.accent;
+      mainColor = colors.secondary;
       break;
     }
     case 'success': {
-      mainColor = colors.systemSuccess;
+      mainColor = colors.success;
       break;
     }
     case 'danger': {
-      mainColor = colors.systemError;
+      mainColor = colors.error;
       break;
     }
   }

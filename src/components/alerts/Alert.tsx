@@ -7,34 +7,34 @@ interface AlertProps {
   children: React.ReactNode;
 }
 
-const Alert = ({ type, children }: AlertProps): JSX.Element => {
+const Alert = ({ type = 'info', children }: AlertProps): JSX.Element => {
   let color: string;
   let bordercolor: string;
 
   switch (type) {
     case 'success': {
-      color = colors.systemSuccess50;
-      bordercolor = colors.systemSuccess;
+      color = colors.successLighten90;
+      bordercolor = colors.success;
       break;
     }
     case 'alert': {
-      color = colors.systemWarning50;
-      bordercolor = colors.systemWarning;
+      color = colors.warningLighten90;
+      bordercolor = colors.warning;
       break;
     }
     case 'error': {
-      color = colors.systemError50;
-      bordercolor = colors.systemError;
+      color = colors.errorLighten90;
+      bordercolor = colors.error;
       break;
     }
     case 'info': {
-      color = colors.systemInfo20;
-      bordercolor = colors.systemInfo;
+      color = colors.infoLighten90;
+      bordercolor = colors.info;
       break;
     }
     default: {
-      color = colors.graysWhite;
-      bordercolor = colors.graysGray;
+      color = colors.white;
+      bordercolor = colors.black;
       break;
     }
   }

@@ -37,11 +37,11 @@ const StyledLink = styled.a<StyledLinkProps>`
   &:hover,
   &:focus {
     outline: none;
-    color: ${colors.primaryDark};
+    color: ${colors.primaryDarken45};
 
     &::after {
       transform: scaleX(1);
-      background: ${colors.primaryDark};
+      background: ${colors.primaryDarken45};
     }
   }
 `;

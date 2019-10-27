@@ -20,7 +20,7 @@ const StyledButton = styled.button<{ spacing: number; size: number; disabled: bo
   width: ${({ size }): string => size * 2 + 'px'};
   height: ${({ size }): string => size + 'px'};
   padding: ${({ spacing }): string => spacing + 'px'};
-  border: ${({ spacing }): string => spacing + 'px'} solid ${colors.graysGray};
+  border: ${({ spacing }): string => spacing + 'px'} solid ${colors.grayLighten60};
   border-radius: ${({ size, spacing }): string => size + spacing + 'px'};
   box-sizing: content-box;
   cursor: pointer;
@@ -32,7 +32,7 @@ const StyledButton = styled.button<{ spacing: number; size: number; disabled: bo
   ${({ disabled }): string | false =>
     disabled &&
     `
-        background: ${colors.grayslightGray};
+        background: ${colors.grayLighten90};
         cursor: not-allowed;
     `}
 `;

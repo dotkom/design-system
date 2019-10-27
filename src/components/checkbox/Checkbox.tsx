@@ -25,10 +25,10 @@ export default Checkbox;
 const size = 20;
 
 const CheckboxLabelDisabled = css`
-  color: ${colors.graysGray};
+  color: ${colors.grayLighten60};
   cursor: not-allowed;
   &:hover {
-    color: ${colors.graysGray};
+    color: ${colors.grayLighten60};
   }
 `;
 
@@ -41,7 +41,7 @@ const CheckboxLabel = styled.label<{ disabled?: boolean }>`
   height: ${size}px;
   cursor: pointer;
   &:hover {
-    color: ${colors.primaryDark};
+    color: ${colors.primaryDarken45};
   }
   ${({ disabled }): FlattenSimpleInterpolation | undefined | false => disabled && CheckboxLabelDisabled};
 `;
@@ -61,7 +61,7 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 const StyledCheckbox = styled.div<{ error?: boolean }>`
   ${CheckboxCommon}
   display: inline-block;
-  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayslightGray)};
+  border: 1px solid ${({ error }): string => (error ? colors.error : colors.grayLighten90)};
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s ease-in, border-color 0.2s;
@@ -71,14 +71,14 @@ const StyledCheckbox = styled.div<{ error?: boolean }>`
     background-position: center;
     background-size: 75%;
     background-repeat: no-repeat;
-    border-color: ${colors.primaryLight};
+    border-color: ${colors.primaryLighten45};
   }
   ${CheckboxLabel}:hover & {
-    border-color: ${colors.primaryLight};
+    border-color: ${colors.primaryLighten45};
   }
   ${HiddenCheckbox}:disabled + & {
     cursor: not-allowed;
-    background-color: ${colors.grayslightGray};
-    border-color: ${colors.graysGray};
+    background-color: ${colors.grayLighten90};
+    border-color: ${colors.grayLighten60};
   }
 `;
