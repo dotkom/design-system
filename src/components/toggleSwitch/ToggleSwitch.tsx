@@ -44,13 +44,13 @@ const StyledSlider = styled.div<{ checked?: boolean; size: number; spacing: numb
   transition: left 0.2s;
 
   ${({ checked, size }) =>
-    Boolean(checked) &&
+    checked &&
     css`
       left: calc(100% - ${size}px);
     `}
 `;
 
-const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 16 }: Props): JSX.Element => {
+const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 16 }: Props) => {
   const spacing = size / 8;
   const [checked, setChecked] = useState(initialChecked);
 

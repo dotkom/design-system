@@ -17,7 +17,7 @@ const StaticLogo = ({
   primaryColor = colors.officialBlue,
   secondaryColor = colors.officialOrange,
   size = '100px',
-}: Props): JSX.Element => (
+}: Props) => (
   <Logo size={size} viewBox="0 0 141 112" fill="none">
     <g clipPath="url(#clip0)">
       <path

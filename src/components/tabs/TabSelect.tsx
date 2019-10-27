@@ -37,13 +37,13 @@ interface Props {
   children: React.ReactNode;
 }
 
-const TabSelect: FC<Props> = ({ activeTab, children, ...rest }: Props): JSX.Element => {
+const TabSelect: FC<Props> = ({ activeTab, children, ...rest }: Props) => {
   const [sliderOffset, setSliderOffset] = useState(0);
   const [sliderWidth, setSliderWidth] = useState(0);
 
   const selectedTab = useRef<HTMLElement>(null);
 
-  useEffect((): void => {
+  useEffect(() => {
     if (selectedTab && selectedTab.current) {
       setSliderOffset(selectedTab.current.offsetLeft);
       setSliderWidth(selectedTab.current.clientWidth);

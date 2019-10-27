@@ -7,7 +7,7 @@ interface AlertProps {
   children: React.ReactNode;
 }
 
-const Alert = ({ type = 'info', children }: AlertProps): JSX.Element => {
+const Alert = ({ type = 'info', children }: AlertProps) => {
   let color: string;
   let bordercolor: string;
 

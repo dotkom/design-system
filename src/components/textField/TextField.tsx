@@ -81,13 +81,7 @@ const InputMessage = styled.p`
   }
 `;
 
-const TextField = ({
-  type = 'text',
-  label = '',
-  labelColor = '',
-  errorMessage = '',
-  ...props
-}: TextFieldProps): JSX.Element => {
+const TextField = ({ type = 'text', label = '', labelColor = '', errorMessage = '', ...props }: TextFieldProps) => {
   return (
     <InputContainer>
       <InputLabel color={labelColor}>{label}</InputLabel>
@@ -106,19 +100,19 @@ const ClearButton = styled.button`
   background-color: transparent;
 `;
 
-const ClearableInputField = ({ disabled, ...props }: TextFieldProps): JSX.Element => {
+const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
   const [text, setText] = useState(props.defaultValue || '');
   return (
     <div>
       <InputField
         value={text}
-        onChange={(e): void => {
+        onChange={(e) => {
           setText(e.target.value);
         }}
         {...props}
         disabled={disabled}
       />
-      {text && !disabled && <ClearButton onClick={(): void => setText('')}>X</ClearButton>}
+      {text && !disabled && <ClearButton onClick={() => setText('')}>X</ClearButton>}
     </div>
   );
 };

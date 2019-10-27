@@ -52,7 +52,7 @@ const Button = ({
   variant = 'normal',
   disabled = false,
   ...props
-}: ButtonProps): JSX.Element => {
+}: ButtonProps) => {
   let mainColor: string = colors.primary;
   switch (color) {
     case 'secondary': {

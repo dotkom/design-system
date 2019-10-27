@@ -9,16 +9,14 @@ interface RadioProps {
   error?: boolean;
 }
 
-const Radio = ({ labels, groupName, disabled, error }: RadioProps): JSX.Element => {
-  const radios = labels.map(
-    (label, index): JSX.Element => (
-      <RadioLabel key={index} disabled={disabled}>
-        <HiddenRadio name={groupName} disabled={disabled} />
-        <StyledRadio tabIndex={0} error={error} />
-        {label}
-      </RadioLabel>
-    )
-  );
+const Radio = ({ labels, groupName, disabled, error }: RadioProps) => {
+  const radios = labels.map((label, index) => (
+    <RadioLabel key={index} disabled={disabled}>
+      <HiddenRadio name={groupName} disabled={disabled} />
+      <StyledRadio tabIndex={0} error={error} />
+      {label}
+    </RadioLabel>
+  ));
   return <RadioGroup error={error}>{radios}</RadioGroup>;
 };
 
@@ -35,7 +33,7 @@ const RadioGroup = styled.div<{ error?: boolean }>`
     margin-top: 0.5rem;
   }
 
-  ${({ error }) => Boolean(error) && RadioGroupError};
+  ${({ error }) => error && RadioGroupError};
 `;
 
 const RadioLabelDisabled = css`
@@ -59,7 +57,7 @@ const RadioLabel = styled.label<{ disabled?: boolean }>`
     color: ${colors.primary};
   }
 
-  ${({ disabled }) => Boolean(disabled) && RadioLabelDisabled};
+  ${({ disabled }) => disabled && RadioLabelDisabled};
 `;
 
 const HiddenRadioCommon = css`

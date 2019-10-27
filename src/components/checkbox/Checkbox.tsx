@@ -10,9 +10,9 @@ interface CheckboxProps {
   error?: boolean;
 }
 
-const Checkbox = ({ label, isChecked, onCheck, disabled, error }: CheckboxProps): JSX.Element => {
+const Checkbox = ({ label, isChecked, onCheck, disabled, error }: CheckboxProps) => {
   return (
-    <CheckboxLabel onChange={(): void => onCheck(!isChecked)} disabled={disabled}>
+    <CheckboxLabel onChange={() => onCheck(!isChecked)} disabled={disabled}>
       <HiddenCheckbox checked={isChecked} disabled={disabled} />
       <StyledCheckbox tabIndex={0} error={error} />
       <span>{label}</span>

@@ -26,7 +26,7 @@ const StyledColor = styled.div<{ color: ColorStrings; darkText: boolean }>`
   }
 `;
 
-const ColorSwatch = ({ color, darkText = false }: ColorSwatchProps): JSX.Element => {
+const ColorSwatch = ({ color, darkText = false }: ColorSwatchProps) => {
   return (
     <StyledColor color={color} darkText={darkText}>
       <span>{color}</span>

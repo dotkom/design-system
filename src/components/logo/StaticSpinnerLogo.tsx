@@ -27,7 +27,7 @@ const StaticSpinnerLogo = ({
   primaryColor = colors.officialBlue,
   secondaryColor = colors.officialOrange,
   spinnerSize = '100px',
-}: SpinnerLogoProps): JSX.Element => (
+}: SpinnerLogoProps) => (
   <SpinnerContainer size={spinnerSize}>
     <SpinningCircle viewBox="0 0 506 400" fill="none">
       <circle

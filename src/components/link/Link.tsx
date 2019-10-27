@@ -46,7 +46,7 @@ const StyledLink = styled.a<StyledLinkProps>`
   }
 `;
 
-const Link = ({ href, underline = false, children }: LinkProps): JSX.Element => {
+const Link = ({ href, underline = false, children }: LinkProps) => {
   return (
     <StyledLink href={href} underline={underline}>
       {children}

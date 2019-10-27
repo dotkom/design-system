@@ -15,7 +15,7 @@ const IconWrapper = styled.div`
   display: flex;
 `;
 
-const CircleCheckmark = ({ color = '#1e8449', size = '100px' }: Props): JSX.Element => (
+const CircleCheckmark = ({ color = '#1e8449', size = '100px' }: Props) => (
   <IconWrapper>
     <CircleContainer viewBox="0 0 100 100" size={size}>
       <circle cx="50" cy="50" r="50" fill={color} />

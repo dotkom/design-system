@@ -79,15 +79,7 @@ const CategoryInfo = styled.h2<{ color?: string; hidden: boolean }>`
   }
 `;
 
-const EventCard = ({
-  eventName,
-  eventColor,
-  date,
-  attending,
-  imgSrc = '',
-  isLargeEvent,
-  category,
-}: ICard): JSX.Element => (
+const EventCard = ({ eventName, eventColor, date, attending, imgSrc = '', isLargeEvent, category }: ICard) => (
   <CardContainer>
     <CategoryInfo color={eventColor} hidden={!isLargeEvent}>
       {category}
