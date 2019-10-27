@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 interface EventProps {
@@ -6,20 +6,24 @@ interface EventProps {
   startTime: string;
   endTime: string;
   children: React.ReactNode;
-  eventClickHandler: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-  active: boolean;
 }
 
-const Event = ({ title, startTime, endTime, children, eventClickHandler, active }: EventProps): JSX.Element => {
+const Event = ({ title, startTime, endTime, children }: EventProps): JSX.Element => {
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <StyledEvent>
-      <EventHeader onClick={eventClickHandler}>
+      <EventHeader onClick={toggleExpanded}>
         <EventTime>{startTime}</EventTime>
         <EventIndicator className="indicator" />
         <EventTitle>{title}</EventTitle>
       </EventHeader>
 
-      <EventBody hide={!active}>
+      <EventBody hide={!expanded}>
         <EventInnerContent>{children}</EventInnerContent>
         <EventEndTime>Antatt sluttidspunkt: {endTime}</EventEndTime>
       </EventBody>
