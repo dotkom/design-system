@@ -28,7 +28,7 @@ const DayString = styled.h2`
   margin: 0;
   padding: 15px 30px 0 0;
   width: 275px;
-
+  white-space: nowrap;
   &::first-letter {
     text-transform: uppercase;
   }
