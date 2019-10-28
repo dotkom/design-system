@@ -79,8 +79,6 @@ const EventBody = styled.div<{ hide?: boolean }>`
 `;
 
 const EventInnerContent = styled.div`
-  border-bottom: 1px solid transparent;
-
   & > * + * {
     margin: 16px 0;
   }
