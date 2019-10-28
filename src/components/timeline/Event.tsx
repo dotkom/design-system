@@ -61,7 +61,6 @@ const EventTime = styled.h3`
 `;
 
 const EventEndTime = styled.p`
-  font-size: 14px;
   text-decoration: underline;
   padding-top: 16px;
 `;
