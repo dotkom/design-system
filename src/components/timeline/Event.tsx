@@ -18,10 +18,9 @@ const Event = ({ title, startTime, endTime, children }: EventProps): JSX.Element
   };
 
   return (
-    <StyledEvent onMouseOver={() => setHighlighted(true)} onMouseLeave={() => setHighlighted(false)}>
+    <div onMouseOver={() => setHighlighted(true)} onMouseLeave={() => setHighlighted(false)}>
       <EventHeader onClick={toggleExpanded}>
         <EventTime>{startTime}</EventTime>
-        {/* <EventIndicator className="indicator" /> */}
         <EventTitle highlighted={highlighted}>{title}</EventTitle>
       </EventHeader>
 
@@ -29,13 +28,11 @@ const Event = ({ title, startTime, endTime, children }: EventProps): JSX.Element
         <EventInnerContent>{children}</EventInnerContent>
         <EventEndTime>Antatt sluttidspunkt: {endTime}</EventEndTime>
       </EventBody>
-    </StyledEvent>
+    </div>
   );
 };
 
 export default Event;
-
-const StyledEvent = styled.div``;
 
 const EventTitle = styled.h3<{ highlighted: boolean }>`
   position: relative;
@@ -53,11 +50,6 @@ const EventTitle = styled.h3<{ highlighted: boolean }>`
     position: absolute;
     left: 0;
     transform: translateX(-50%);
-  }
-  &:hover {
-    &::before {
-      background-color: orange;
-    }
   }
 `;
 
@@ -96,13 +88,3 @@ const EventInnerContent = styled.div`
     margin: 16px 0;
   }
 `;
-
-// const EventIndicator = styled.div`
-//   position: absolute;
-//   left: 83px;
-//   top: 20px;
-//   background-color: ${colors.black};
-//   border-radius: 50%;
-//   width: 14px;
-//   height: 14px;
-// `;
