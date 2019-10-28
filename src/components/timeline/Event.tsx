@@ -43,6 +43,7 @@ const StyledEvent = styled.div`
 `;
 
 const EventTitle = styled.h3`
+  position: relative;
   font-weight: bold;
   border-left: 1px solid ${colors.black};
   padding: 16px 0 16px 45px;
@@ -54,8 +55,9 @@ const EventTitle = styled.h3`
     border-radius: 50%;
     width: 15px;
     height: 15px;
-    position: relative;
-    left: -53px;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
   }
 `;
 
