@@ -24,7 +24,7 @@ const StyledDay = styled.div`
 
 const DayString = styled.h2`
   color: ${colors.secondary};
-  font-weight: 400;
+  font-weight: normal;
   font-size: 20px;
   margin: 0;
   padding: 15px 30px 0 0;
