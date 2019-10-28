@@ -34,13 +34,7 @@ const Event = ({ title, startTime, endTime, children }: EventProps): JSX.Element
 
 export default Event;
 
-const StyledEvent = styled.div`
-  &:hover {
-    .indicator {
-      background-color: ${colors.secondary};
-    }
-  }
-`;
+const StyledEvent = styled.div``;
 
 const EventTitle = styled.h3`
   position: relative;
@@ -58,6 +52,11 @@ const EventTitle = styled.h3`
     position: absolute;
     left: 0;
     transform: translateX(-50%);
+  }
+  &:hover {
+    &::before {
+      background-color: orange;
+    }
   }
 `;
 
