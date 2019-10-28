@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { colors } from 'common/colors';
 
 interface EventProps {
   title: string;
@@ -36,14 +37,14 @@ export default Event;
 const StyledEvent = styled.div`
   &:hover {
     .indicator {
-      background-color: orange;
+      background-color: ${colors.secondary};
     }
   }
 `;
 
 const EventTitle = styled.h3`
   font-weight: bold;
-  border-left: 1px solid black;
+  border-left: 1px solid ${colors.black};
   padding: 16px 0 16px 45px;
 `;
 
@@ -66,7 +67,7 @@ const EventEndTime = styled.p`
 `;
 
 const EventBody = styled.div<{ hide?: boolean }>`
-  border-left: 1px solid black;
+  border-left: 1px solid ${colors.black};
   padding-left: 45px;
   margin-left: 90px;
   max-width: 670px;
@@ -88,7 +89,7 @@ const EventIndicator = styled.div`
   position: absolute;
   left: 83px;
   top: 20px;
-  background-color: black;
+  background-color: ${colors.black};
   border-radius: 50%;
   width: 14px;
   height: 14px;

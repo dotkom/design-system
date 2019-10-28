@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colors } from 'common/colors';
 
 interface DayProps {
   children: React.ReactNode;
@@ -22,7 +23,7 @@ const StyledDay = styled.div`
 `;
 
 const DayString = styled.h2`
-  color: #f9a11b;
+  color: ${colors.secondary};
   font-weight: 400;
   font-size: 20px;
   margin: 0;
