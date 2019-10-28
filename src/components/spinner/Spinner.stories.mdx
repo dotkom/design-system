@@ -4,12 +4,26 @@ import { colors } from 'common/colors';
 import Spinner from './Spinner';
 import SpinnerLogo from './SpinnerLogo';
 
+import { themes } from '@storybook/theming';
+import darkTheme from 'common/darkThemeBlock';
+import { ThemeSwitch } from 'common/ThemeSwitch'
+
 <Meta title="Feedback|Spinner" component={Spinner} />
 
 # Spinner/loading component
 
+<ThemeSwitch dark />
+
 <Preview>
-  <Story name="All">
+  <Story name="All" parameters={{options:{theme:darkTheme}}}>
+    <>
+      <h3>Regular small spinner</h3>
+      <Spinner />
+      <h3>Colored small spinner</h3>
+      <Spinner primaryColor={colors.error} secondaryColor="#0FF0AE" />
+    </>
+  </Story>
+  <Story name="Alls">
     <>
       <h3>Regular small spinner</h3>
       <Spinner />

@@ -1,15 +1,14 @@
 import { create } from '@storybook/theming';
 
-export default create({
-  base: 'light',
-
-  colorPrimary: 'hotpink',
-  colorSecondary: '#d60',
+const baseTheme = {
+  colorPrimary: '#FF4785',
+  colorSecondary: '#1EA7FD',
 
   // UI
   appBg: '#004170',
-  appContentBg: '#fff',
+  appContentBg: 'var(--bg)',
   //appBorderColor: '#faa21b',
+  appBorderColor: 'rgba(255,255,255,.1)',
   appBorderRadius: 5,
 
   // Typography
@@ -34,4 +33,41 @@ export default create({
   brandTitle: 'dotKoms storybook',
   brandUrl: 'https://online.ntnu.no',
   brandImage: 'https://online.ntnu.no/static/img/online_logo.svg',
-});
+  /*
+  // UI
+  appBg: '#2f2f2f',
+  appContentBg: '#333',
+  appBorderColor: 'rgba(255,255,255,.1)',
+  appBorderRadius: 4,
+
+  // Fonts
+  fontBase: typography.fonts.base,
+  fontCode: typography.fonts.mono,
+
+  // Text colors
+  textColor: color.lightest,
+  textInverseColor: color.darkest,
+
+  // Toolbar default and active colors
+  barTextColor: '#999999',
+  barSelectedColor: color.secondary,
+  barBg: color.darkest,
+
+  // Form colors
+  inputBg: '#3f3f3f',
+  inputBorder: 'rgba(0,0,0,.3)',
+  inputTextColor: color.lightest,
+  inputBorderRadius: 4,
+  */
+}
+
+export const themes = {
+  light: {
+    base: 'light', ...baseTheme
+  },
+  dark: {
+    base: 'dark', ...baseTheme
+  }
+}
+
+export default create(themes.dark);
