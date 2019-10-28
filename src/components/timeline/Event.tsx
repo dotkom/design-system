@@ -11,30 +11,31 @@ interface EventProps {
 
 const Event = ({ title, startTime, endTime, children }: EventProps): JSX.Element => {
   const [expanded, setExpanded] = useState(false);
-  const [highlighted, setHighlighted] = useState(false);
 
   const toggleExpanded = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <div onMouseOver={() => setHighlighted(true)} onMouseLeave={() => setHighlighted(false)}>
+    <StyledEvent>
       <EventHeader onClick={toggleExpanded}>
         <EventTime>{startTime}</EventTime>
-        <EventTitle highlighted={highlighted}>{title}</EventTitle>
+        <EventTitle>{title}</EventTitle>
       </EventHeader>
 
       <EventBody hide={!expanded}>
         <EventInnerContent>{children}</EventInnerContent>
         <EventEndTime>Antatt sluttidspunkt: {endTime}</EventEndTime>
       </EventBody>
-    </div>
+    </StyledEvent>
   );
 };
 
 export default Event;
 
-const EventTitle = styled.h3<{ highlighted: boolean }>`
+const StyledEvent = styled.div``;
+
+const EventTitle = styled.h3`
   position: relative;
   font-weight: bold;
   border-left: 1px solid ${colors.black};
@@ -43,13 +44,17 @@ const EventTitle = styled.h3<{ highlighted: boolean }>`
   &::before {
     content: '';
     display: inline-block;
-    background-color: ${({ highlighted }) => (highlighted ? colors.secondary : colors.black)};
+    background-color: ${colors.black};
     border-radius: 50%;
     width: 15px;
     height: 15px;
     position: absolute;
     left: 0;
     transform: translateX(-50%);
+
+    ${StyledEvent}:hover & {
+      background-color: ${colors.secondary};
+    }
   }
 `;
 
