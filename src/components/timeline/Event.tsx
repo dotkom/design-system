@@ -11,17 +11,18 @@ interface EventProps {
 
 const Event = ({ title, startTime, endTime, children }: EventProps): JSX.Element => {
   const [expanded, setExpanded] = useState(false);
+  const [highlighted, setHighlighted] = useState(false);
 
   const toggleExpanded = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <StyledEvent>
+    <StyledEvent onMouseOver={() => setHighlighted(true)} onMouseLeave={() => setHighlighted(false)}>
       <EventHeader onClick={toggleExpanded}>
         <EventTime>{startTime}</EventTime>
         {/* <EventIndicator className="indicator" /> */}
-        <EventTitle>{title}</EventTitle>
+        <EventTitle highlighted={highlighted}>{title}</EventTitle>
       </EventHeader>
 
       <EventBody hide={!expanded}>
@@ -36,7 +37,7 @@ export default Event;
 
 const StyledEvent = styled.div``;
 
-const EventTitle = styled.h3`
+const EventTitle = styled.h3<{ highlighted: boolean }>`
   position: relative;
   font-weight: bold;
   border-left: 1px solid ${colors.black};
@@ -45,7 +46,7 @@ const EventTitle = styled.h3`
   &::before {
     content: '';
     display: inline-block;
-    background-color: ${colors.black};
+    background-color: ${({ highlighted }) => (highlighted ? colors.secondary : colors.black)};
     border-radius: 50%;
     width: 15px;
     height: 15px;
