@@ -20,7 +20,7 @@ const Event = ({ title, startTime, endTime, children }: EventProps): JSX.Element
     <StyledEvent>
       <EventHeader onClick={toggleExpanded}>
         <EventTime>{startTime}</EventTime>
-        <EventIndicator className="indicator" />
+        {/* <EventIndicator className="indicator" /> */}
         <EventTitle>{title}</EventTitle>
       </EventHeader>
 
@@ -46,6 +46,17 @@ const EventTitle = styled.h3`
   font-weight: bold;
   border-left: 1px solid ${colors.black};
   padding: 16px 0 16px 45px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    background-color: ${colors.black};
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    left: -53px;
+  }
 `;
 
 const EventHeader = styled.div`
@@ -84,12 +95,12 @@ const EventInnerContent = styled.div`
   }
 `;
 
-const EventIndicator = styled.div`
-  position: absolute;
-  left: 83px;
-  top: 20px;
-  background-color: ${colors.black};
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-`;
+// const EventIndicator = styled.div`
+//   position: absolute;
+//   left: 83px;
+//   top: 20px;
+//   background-color: ${colors.black};
+//   border-radius: 50%;
+//   width: 14px;
+//   height: 14px;
+// `;
