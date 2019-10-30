@@ -1,44 +1,43 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Icon from './Icon';
+import Button from '../button/Button';
+import styled from 'styled-components';
 
 <Meta title="Others|Icon" component={Icon} />
 
+export const ExampleIconContainer = styled.div`
+  & > * + * {
+    margin-top: 0.5rem;
+  }
+`;
+
 # Icon
+
+This icon-component uses the Material icon font from Google. You can find all the different icons [here](https://material.io/resources/icons/?style=two-tone).
+
+The icons inherit color and font-size from its parents.
 
 <Preview>
   <Story name="All">
-    <>
-      Small red account box icon!<br /><br />
-      <Icon icon='account_box' size='small' color='red' />
-      <br /><br />
-      Medium purple watch later outline icon!<br /><br />
-      <Icon icon='watch_later' size='medium' type='outlined' color='purple' />
-      <br /><br />
-      Large pink favorite two-tone icon!<br /><br /> 
-      <Icon icon='favorite' size='large' type='two-tone' color='pink' />
-      <br /><br />
-      Huge green wifi rounded icon!<br /><br />
-      <Icon icon='signal_wifi_4_bar' size='huge' type='round' color='#64b851' />
-    </>
+    <ExampleIconContainer>
+      <p style={{ fontSize: '24px' }}>
+        Icons inherit
+        <Icon name="whatshot" />
+        font size
+      </p>
+      <p style={{ color: 'green' }}>
+        <Icon name="lock" />
+        Icons also inherit color
+      </p>
+      <Button>
+        <Icon name="favorite" /> Lorem
+      </Button>
+      <br />
+      <Button color="danger" variant="outline">
+        <Icon name="warning" /> Ipsum
+      </Button>
+    </ExampleIconContainer>
   </Story>
 </Preview>
-
-# How to use this component
-
-## Choosing an icon
-
-This icon-component uses the material-icon fonts from google.
-
-You can find all the different icons (and the different types of icons, rounded, sharp etc.) [here](https://material.io/resources/icons/?style=baseline).
-
-You set the type of icon you want to use by passing the `type` prop to the component. The different types are baseline (this is the default, so no prop is needed), `outline`, `two-tone`, `round` or `sharp`.
-
-## Styling the icon
-
-To change the size of the icon pass the size prop to the icon.
-
-This prop can either be small, medium, large or huge. You can also change the font-size later in a custom-css document by changing the font-size of the `<i>` element.
-
-To change the color of the icon, pass the color prop. This just needs to be any valid CSS color. (Hex, RGB, etc.)
 
 <Props of={Icon} />
