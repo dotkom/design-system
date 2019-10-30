@@ -8,6 +8,10 @@ interface AlertProps {
   children: React.ReactNode;
 }
 
+const IconWrapper = styled.span<{ color: string }>`
+  color: ${({ color }) => color};
+`;
+
 const Alert = ({ type = 'info', children }: AlertProps) => {
   let color: string;
   let bordercolor: string;
@@ -48,7 +52,10 @@ const Alert = ({ type = 'info', children }: AlertProps) => {
 
   return (
     <StyledBox backgroundColor={color} borderColor={bordercolor}>
-      <Icon name={iconName} color={{ color: bordercolor }} /> {children}
+      <IconWrapper color={bordercolor}>
+        <Icon name={iconName} />
+      </IconWrapper>{' '}
+      {children}
     </StyledBox>
   );
 };
