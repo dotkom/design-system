@@ -9,7 +9,7 @@ interface EventProps {
   children: React.ReactNode;
 }
 
-const Event = ({ title, startTime, endTime, children }: EventProps): JSX.Element => {
+const Event = ({ title, startTime, endTime, children }: EventProps) => {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpanded = () => {

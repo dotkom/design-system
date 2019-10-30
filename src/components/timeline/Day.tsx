@@ -8,7 +8,7 @@ interface DayProps {
   day: string;
 }
 
-const Day = ({ children, day }: DayProps): JSX.Element => {
+const Day = ({ children, day }: DayProps) => {
   return (
     <StyledDay>
       <DayString>{day}</DayString>
