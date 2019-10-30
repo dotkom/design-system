@@ -13,7 +13,7 @@ const FileUploadLabel = styled.label`
   display: inline-block;
   border-radius: 3px;
   text-align: center;
-  background-color: ${colors.grayslightGray};
+  background-color: ${colors.grayLighten90};
   box-sizing: border-box;
   border: 2px dashed ${colors.primary};
   width: 400px;
