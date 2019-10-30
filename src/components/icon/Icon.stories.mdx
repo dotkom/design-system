@@ -1,0 +1,43 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Icon from './Icon';
+import Button from '../button/Button';
+import styled from 'styled-components';
+
+<Meta title="Others|Icon" component={Icon} />
+
+export const ExampleIconContainer = styled.div`
+  & > * + * {
+    margin-top: 0.5rem;
+  }
+`;
+
+# Icon
+
+This icon-component uses the Material icon font from Google. You can find all the different icons [here](https://material.io/resources/icons/?style=two-tone).
+
+The icons inherit color and font-size from its parents.
+
+<Preview>
+  <Story name="All">
+    <ExampleIconContainer>
+      <p style={{ fontSize: '24px' }}>
+        Icons inherit
+        <Icon name="whatshot" />
+        font size
+      </p>
+      <p style={{ color: 'green' }}>
+        <Icon name="lock" />
+        Icons also inherit color
+      </p>
+      <Button>
+        <Icon name="favorite" /> Lorem
+      </Button>
+      <br />
+      <Button color="danger" variant="outline">
+        <Icon name="warning" /> Ipsum
+      </Button>
+    </ExampleIconContainer>
+  </Story>
+</Preview>
+
+<Props of={Icon} />

@@ -3,7 +3,8 @@ import Reset from './reset';
 
 export const GlobalStyle = createGlobalStyle`
   ${Reset}
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Code+Pro&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Code+Pro|Material+Icons+Two+Tone');
+
   body {
     font-family: 'Source Sans Pro', sans-serif;
   }
