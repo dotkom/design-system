@@ -10,6 +10,7 @@ interface AlertProps {
 
 const IconWrapper = styled.span<{ color: string }>`
   color: ${({ color }) => color};
+  margin-right: 0.5rem;
 `;
 
 const Alert = ({ type = 'info', children }: AlertProps) => {
@@ -54,7 +55,7 @@ const Alert = ({ type = 'info', children }: AlertProps) => {
     <StyledBox backgroundColor={color} borderColor={bordercolor}>
       <IconWrapper color={bordercolor}>
         <Icon name={iconName} />
-      </IconWrapper>{' '}
+      </IconWrapper>
       {children}
     </StyledBox>
   );
@@ -63,8 +64,10 @@ const Alert = ({ type = 'info', children }: AlertProps) => {
 export default Alert;
 
 const StyledBox = styled.div<{ backgroundColor: string; borderColor: string }>`
+  display: flex;
   background-color: ${({ backgroundColor }) => backgroundColor};
   border: 1px solid ${({ borderColor }) => borderColor};
-  padding: 1em;
+  padding: 1rem;
   border-radius: 3px;
+  font-size: 1.25rem;
 `;
