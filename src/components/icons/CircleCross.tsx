@@ -7,15 +7,15 @@ export interface Props {
 }
 
 const CircleContainer = styled.svg<{ size?: string }>`
-  height: ${({ size }): string | undefined => size};
-  width: ${({ size }): string | undefined => size};
+  height: ${({ size }) => size};
+  width: ${({ size }) => size};
 `;
 
-const IconWrapper = styled.div<{}>`
+const IconWrapper = styled.div`
   display: flex;
 `;
 
-const CircleCross = ({ color = '#eb5757', size = '100px' }: Props): JSX.Element => (
+const CircleCross = ({ color = '#eb5757', size = '100px' }: Props) => (
   <IconWrapper>
     <CircleContainer viewBox="0 0 100 100" size={size}>
       <circle cx="50" cy="50" r="50" fill={color} />
