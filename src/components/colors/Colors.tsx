@@ -30,7 +30,7 @@ const ColorSwatch = ({ color, darkText = false }: ColorSwatchProps) => {
   return (
     <StyledColor color={color} darkText={darkText}>
       <span>{color}</span>
-      <span>{colors[color]}</span>
+      <samp>{colors[color]}</samp>
     </StyledColor>
   );
 };
