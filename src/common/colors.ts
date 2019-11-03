@@ -1,63 +1,65 @@
-import { pSBC } from './psbc';
+import { darken, lighten } from './blender';
 
 const primary = '#0060A3';
 const secondary = '#FAA21B';
+const white = '#ffffff';
 const gray = '#808080';
+const black = '#000000';
 const info = '#0A94C2';
 const success = '#09AA09';
 const warning = '#FFC000';
 const error = '#DF2020';
 
 export const colors = {
-  primaryLighten45: pSBC(0.45, primary),
-  primaryLighten30: pSBC(0.3, primary),
-  primaryLighten15: pSBC(0.15, primary),
+  primaryLighten45: lighten(primary, 0.45),
+  primaryLighten30: lighten(primary, 0.3),
+  primaryLighten15: lighten(primary, 0.15),
   primary: primary,
-  primaryDarken15: pSBC(-0.15, primary),
-  primaryDarken30: pSBC(-0.3, primary),
-  primaryDarken45: pSBC(-0.45, primary),
+  primaryDarken15: darken(primary, 0.15),
+  primaryDarken30: darken(primary, 0.3),
+  primaryDarken45: darken(primary, 0.45),
 
-  secondaryLighten45: pSBC(0.45, secondary),
-  secondaryLighten30: pSBC(0.3, secondary),
-  secondaryLighten15: pSBC(0.15, secondary),
+  secondaryLighten45: lighten(secondary, 0.45),
+  secondaryLighten30: lighten(secondary, 0.3),
+  secondaryLighten15: lighten(secondary, 0.15),
   secondary: secondary,
-  secondaryDarken15: pSBC(-0.15, secondary),
-  secondaryDarken30: pSBC(-0.3, secondary),
-  secondaryDarken45: pSBC(-0.45, secondary),
+  secondaryDarken15: darken(secondary, 0.15),
+  secondaryDarken30: darken(secondary, 0.3),
+  secondaryDarken45: darken(secondary, 0.45),
 
-  white: pSBC(1, gray),
-  grayLighten90: pSBC(0.9, gray),
-  grayLighten60: pSBC(0.6, gray),
-  grayLighten30: pSBC(0.3, gray),
+  white: white,
+  grayLighten90: lighten(gray, 0.9),
+  grayLighten60: lighten(gray, 0.6),
+  grayLighten30: lighten(gray, 0.3),
   gray: gray,
-  grayDarken30: pSBC(-0.3, gray),
-  grayDarken60: pSBC(-0.6, gray),
-  grayDarken90: pSBC(-0.9, gray),
-  black: pSBC(-1, gray),
+  grayDarken30: darken(gray, 0.3),
+  grayDarken60: darken(gray, 0.6),
+  grayDarken90: darken(gray, 0.9),
+  black: black,
 
-  infoLighten90: pSBC(0.9, info),
-  infoLighten45: pSBC(0.45, info),
+  infoLighten90: lighten(info, 0.9),
+  infoLighten45: lighten(info, 0.45),
   info: info,
-  infoDarken35: pSBC(-0.35, info),
-  infoDarken70: pSBC(-0.7, info),
+  infoDarken35: darken(info, 0.35),
+  infoDarken70: darken(info, 0.7),
 
-  successLighten90: pSBC(0.9, success),
-  successLighten45: pSBC(0.45, success),
+  successLighten90: lighten(success, 0.9),
+  successLighten45: lighten(success, 0.45),
   success: success,
-  successDarken35: pSBC(-0.35, success),
-  successDarken70: pSBC(-0.7, success),
+  successDarken35: darken(success, 0.35),
+  successDarken70: darken(success, 0.7),
 
-  warningLighten90: pSBC(0.9, warning),
-  warningLighten45: pSBC(0.45, warning),
+  warningLighten90: lighten(warning, 0.9),
+  warningLighten45: lighten(warning, 0.45),
   warning: warning,
-  warningDarken35: pSBC(-0.35, warning),
-  warningDarken70: pSBC(-0.7, warning),
+  warningDarken35: darken(warning, 0.35),
+  warningDarken70: darken(warning, 0.7),
 
-  errorLighten90: pSBC(0.9, error),
-  errorLighten45: pSBC(0.45, error),
+  errorLighten90: lighten(error, 0.9),
+  errorLighten45: lighten(error, 0.45),
   error: error,
-  errorDarken35: pSBC(-0.35, error),
-  errorDarken70: pSBC(-0.7, error),
+  errorDarken35: darken(error, 0.35),
+  errorDarken70: darken(error, 0.7),
 
   eventsBedpres: '#eb536e',
   eventsKurs: '#127dbd',
