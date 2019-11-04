@@ -1,53 +1,65 @@
+import { darken, lighten } from './blender';
+
+const primary = '#0060A3';
+const secondary = '#FAA21B';
+const white = '#ffffff';
+const gray = '#808080';
+const black = '#000000';
+const info = '#0A94C2';
+const success = '#09AA09';
+const warning = '#FFC000';
+const error = '#DF2020';
+
 export const colors = {
-  primaryLighten45: '#73A8CC',
-  primaryLighten30: '#4C90BF',
-  primaryLighten15: '#2678B1',
-  primary: '#0060A3',
-  primaryDarken15: '#00528B',
-  primaryDarken30: '#004372',
-  primaryDarken45: '#00355A',
+  primaryLighten45: lighten(primary, 0.45),
+  primaryLighten30: lighten(primary, 0.3),
+  primaryLighten15: lighten(primary, 0.15),
+  primary: primary,
+  primaryDarken15: darken(primary, 0.15),
+  primaryDarken30: darken(primary, 0.3),
+  primaryDarken45: darken(primary, 0.45),
 
-  secondaryLighten45: '#FCCC82',
-  secondaryLighten30: '#FCBE5F',
-  secondaryLighten15: '#FBB03D',
-  secondary: '#FAA21B',
-  secondaryDarken15: '#D58A17',
-  secondaryDarken30: '#AF7113',
-  secondaryDarken45: '#89590F',
+  secondaryLighten45: lighten(secondary, 0.45),
+  secondaryLighten30: lighten(secondary, 0.3),
+  secondaryLighten15: lighten(secondary, 0.15),
+  secondary: secondary,
+  secondaryDarken15: darken(secondary, 0.15),
+  secondaryDarken30: darken(secondary, 0.3),
+  secondaryDarken45: darken(secondary, 0.45),
 
-  white: '#FFFFFF',
-  grayLighten90: '#F2F2F2',
-  grayLighten60: '#CCCCCC',
-  grayLighten30: '#A6A6A6',
-  gray: '#808080',
-  grayDarken30: '#5A5A5A',
-  grayDarken60: '#333333',
-  grayDarken90: '#0D0D0D',
-  black: '#000000',
+  white: white,
+  grayLighten90: lighten(gray, 0.9),
+  grayLighten60: lighten(gray, 0.6),
+  grayLighten30: lighten(gray, 0.3),
+  gray: gray,
+  grayDarken30: darken(gray, 0.3),
+  grayDarken60: darken(gray, 0.6),
+  grayDarken90: darken(gray, 0.9),
+  black: black,
 
-  infoLighten90: '#E6F4F9',
-  infoLighten45: '#78C4DD',
-  info: '#0A94C2',
-  infoDarken35: '#06607E',
-  infoDarken70: '#032C3A',
+  infoLighten90: lighten(info, 0.9),
+  infoLighten45: lighten(info, 0.45),
+  info: info,
+  infoDarken35: darken(info, 0.35),
+  infoDarken70: darken(info, 0.7),
 
-  successLighten90: '#E6F7E6',
-  successLighten45: '#78D078',
-  success: '#09AA09',
-  successDarken35: '#066E06',
-  successDarken70: '#033303',
+  successLighten90: lighten(success, 0.9),
+  successLighten45: lighten(success, 0.45),
+  success: success,
+  successDarken35: darken(success, 0.35),
+  successDarken70: darken(success, 0.7),
 
-  warningLighten90: '#FFF9E5',
-  warningLighten45: '#FFDC73',
-  warning: '#FFC000',
-  warningDarken35: '#A67D00',
-  warningDarken70: '#4D3A00',
+  warningLighten90: lighten(warning, 0.9),
+  warningLighten45: lighten(warning, 0.45),
+  warning: warning,
+  warningDarken35: darken(warning, 0.35),
+  warningDarken70: darken(warning, 0.7),
 
-  errorLighten90: '#FCE9E9',
-  errorLighten45: '#ED8484',
-  error: '#DF2020',
-  errorDarken35: '#911515',
-  errorDarken70: '#430A0A',
+  errorLighten90: lighten(error, 0.9),
+  errorLighten45: lighten(error, 0.45),
+  error: error,
+  errorDarken35: darken(error, 0.35),
+  errorDarken70: darken(error, 0.7),
 
   eventsBedpres: '#eb536e',
   eventsKurs: '#127dbd',

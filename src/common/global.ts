@@ -21,4 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   h3 {
     font-size: 1.25rem;
   }
+  samp {
+    font-family: 'Source Code Pro', monospace;
+  }
 `;
