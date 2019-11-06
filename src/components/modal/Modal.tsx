@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import Icon from './../icon/Icon';
+import { colors } from 'common/colors';
 
 const Center = styled.div`
   position: relative;
@@ -37,34 +39,30 @@ const FullscreenWrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.4);
 `;
 
+const TopBar = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
 interface Props {
-  fullscreen?: boolean;
   open: boolean;
-  onClose: () => any;
+  onClose: () => void;
 }
 
-const Modal: React.FC<Props> = ({ fullscreen = true, open = false, onClose, children }): JSX.Element => {
-  if (fullscreen) {
-    return (
-      <>
-        {open && (
-          <FullscreenWrapper>
-            <Center>
-              <CloseBtn onClick={(): void => onClose()}>X</CloseBtn>
-              {children}
-            </Center>
-          </FullscreenWrapper>
-        )}
-      </>
-    );
-  }
+const Modal: React.FC<Props> = ({ open = false, onClose, children }): JSX.Element => {
   return (
     <>
       {open && (
-        <Center>
-          <CloseBtn onClick={(): void => onClose()}>X</CloseBtn>
-          {children}
-        </Center>
+        <FullscreenWrapper>
+          <Center>
+            <TopBar>
+              <CloseBtn onClick={() => onClose()}>
+                <Icon name="clear" />
+              </CloseBtn>
+            </TopBar>
+            {children}
+          </Center>
+        </FullscreenWrapper>
       )}
     </>
   );
