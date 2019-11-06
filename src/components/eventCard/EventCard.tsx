@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
-import DateRangeIcon from '@material-ui/icons/DateRange';
-import PermIdentityIcon from '@material-ui/icons/PermIdentity';
+import Icon from 'components/icon/Icon';
 
 interface ICard {
   eventName: string;
@@ -91,11 +90,11 @@ const EventCard = ({ eventName, eventColor, date, attending, imgSrc = '', isLarg
         <Text>{eventName}</Text>
       </Box>
       <Box>
-        <DateRangeIcon />
+        <Icon name="date_range" />
         <Text>{date}</Text>
       </Box>
       <Box>
-        <PermIdentityIcon />
+        <Icon name="perm_identity" />
         <Text>{attending}</Text>
       </Box>
     </EventInfo>
