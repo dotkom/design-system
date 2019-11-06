@@ -45,7 +45,7 @@ const FullscreenWrapper = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  z-index: 1;
+  z-index: 3;
   background-color: rgba(0, 0, 0, 0.4);
 `;
 
