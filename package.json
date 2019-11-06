@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "microbundle -f modern,cjs --jsx=React.createElement",
+    "build": "microbundle -f modern,cjs --jsx=React.createElement --tsconfig=tsconfig.json",
     "prepublishOnly": "yarn build",
     "start": "start-storybook -p 9009 -s public",
     "build-docs": "build-storybook --docs",

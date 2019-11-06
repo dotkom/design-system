@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
 
-import { CircleCheckmark } from 'index';
-import { CircleCross } from 'index';
+import CircleCheckmark from 'components/icons/CircleCheckmark';
+import CircleCross from 'components/icons/CircleCross';
 
 export interface Props {
   initialChecked?: boolean;
