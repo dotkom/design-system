@@ -7,14 +7,13 @@ import SpinnerCircles from './SpinnerCircles';
 
 <Meta title="Feedback|Spinner" component={Spinner} />
 
-# Spinner/loading component
+# Chasing Spinner
 
 <Preview>
-  <Story name="All">
+  <Story name="Chasing Spinner">
     <>
-      <h3>Regular small spinner</h3>
       <Spinner />
-      <h3>Colored small spinner</h3>
+      <br />
       <Spinner primaryColor={colors.error} secondaryColor="#0FF0AE" />
     </>
   </Story>
@@ -27,22 +26,9 @@ import SpinnerCircles from './SpinnerCircles';
 <Preview>
   <Story name="Spinner Circles">
     <>
-      <h3>Classic Spinner</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerCircles />
-      </div>
-      <h3>Spinner with other colors</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerCircles primaryColor={'rgb(99,105,157)'} secondaryColor={'rgb(113,147,214)'} />
-      </div>
-      <h3>Spinners of different sizes</h3>
-      <div>
-        <SpinnerCircles size={'3rem'} />
-        <br />
-        <SpinnerCircles size={'4rem'} />
-        <br />
-        <SpinnerCircles size={'5rem'} />
-      </div>
+      <SpinnerCircles />
+      <br />
+      <SpinnerCircles size={'4rem'} primaryColor={colors.primary} secondaryColor={colors.secondary} />
     </>
   </Story>
 </Preview>
@@ -54,19 +40,9 @@ import SpinnerCircles from './SpinnerCircles';
 <Preview>
   <Story name="Spinner Logo">
     <>
-      <h3>Classic Spinner</h3>
-      <div style={{ display: 'inline-flex' }}>
+      <div style={{ display: 'flex' }}>
         <SpinnerLogo />
-      </div>
-      <h3>Spinner with other colors</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
-      </div>
-      <h3>Spinners of different sizes</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo size={'75px'} />
-        <SpinnerLogo size={'100px'} />
-        <SpinnerLogo size={'150px'} />
+        <SpinnerLogo size={'150px'} primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
       </div>
     </>
   </Story>
