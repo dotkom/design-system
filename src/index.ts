@@ -8,7 +8,7 @@ import * as global from 'common/global';
 import { media, breakPoints } from 'common/layout';
 export { colors, global, media, breakPoints };
 
-export { default as Alert } from 'components/alerts/Alert';
+export { default as Message } from 'components/message/Message';
 export { default as EventCard } from './components/eventCard/EventCard';
 export { default as Spinner } from 'components/spinner/Spinner';
 export { default as SpinnerLogo } from 'components/spinner/SpinnerLogo';
