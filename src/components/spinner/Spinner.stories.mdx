@@ -3,6 +3,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import { colors } from 'common/colors';
 import Spinner from './Spinner';
 import SpinnerLogo from './SpinnerLogo';
+import SpinnerCircles from './SpinnerCircles';
 
 <Meta title="Feedback|Spinner" component={Spinner} />
 
@@ -14,12 +15,39 @@ import SpinnerLogo from './SpinnerLogo';
       <h3>Regular small spinner</h3>
       <Spinner />
       <h3>Colored small spinner</h3>
-      <Spinner primaryColor={colors.primaryDark} secondaryColor={colors.hotpink} />
+      <Spinner primaryColor={colors.error} secondaryColor="#0FF0AE" />
     </>
   </Story>
 </Preview>
 
 <Props of={Spinner} />
+
+# Spinner Circles
+
+<Preview>
+  <Story name="Spinner Circles">
+    <>
+      <h3>Classic Spinner</h3>
+      <div style={{ display: 'inline-flex' }}>
+        <SpinnerCircles />
+      </div>
+      <h3>Spinner with other colors</h3>
+      <div style={{ display: 'inline-flex' }}>
+        <SpinnerCircles primaryColor={'rgb(99,105,157)'} secondaryColor={'rgb(113,147,214)'} />
+      </div>
+      <h3>Spinners of different sizes</h3>
+      <div>
+        <SpinnerCircles size={'3rem'} />
+        <br />
+        <SpinnerCircles size={'4rem'} />
+        <br />
+        <SpinnerCircles size={'5rem'} />
+      </div>
+    </>
+  </Story>
+</Preview>
+
+<Props of={SpinnerCircles} />
 
 # Spinner Logo
 

@@ -1,6 +1,6 @@
 {
   "name": "@dotkomonline/design-system",
-  "version": "0.6.2",
+  "version": "0.7.1",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.modern.mjs",
@@ -14,8 +14,8 @@
     "build-storybook": "build-storybook -s public",
     "format": "tsc --noEmit && prettier --write 'src/**/*.{js,ts,tsx}'",
     "format-check": "tsc --noEmit && prettier --check 'src/**/*.{js,ts,tsx}'",
-    "lint-check": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet",
-    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint-check": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}'",
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,8 +35,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
-    "@material-ui/core": "^4.4.3",
-    "@material-ui/icons": "^4.4.3",
     "@mdx-js/loader": "1.2.2",
     "@storybook/addon-a11y": "5.2.1",
     "@storybook/addon-actions": "5.2.1",

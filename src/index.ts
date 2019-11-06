@@ -8,13 +8,53 @@ import * as global from 'common/global';
 import { media, breakPoints } from 'common/layout';
 export { colors, global, media, breakPoints };
 
+// components/alerts
 export { default as Alert } from 'components/alerts/Alert';
-export { default as EventCard } from './components/eventCard/EventCard';
-export { default as CircleCross } from 'components/icons/CircleCross';
-export { default as CircleCheckmark } from 'components/icons/CircleCheckmark';
-export { default as Spinner } from 'components/spinner/Spinner';
-export { default as SpinnerLogo } from 'components/spinner/SpinnerLogo';
+
+// components/button
+export { default as Button } from 'components/button/Button';
+
+// components/card
+export { default as Card } from 'components/card/Card';
+
+// components/checkbox
+export { default as Checkbox } from 'components/checkbox/Checkbox';
+
+// components/eventCard
+export { default as EventCard } from 'components/eventCard/EventCard';
+
+// components/icon
+export { default as Icon } from 'components/icon/Icon';
+
+// component/link
+export { default as Link } from 'components/link/Link';
+
+// component/logo
+export { default as LightningO } from 'components/logo/LightningO';
+export { default as Logo } from 'components/logo/Logo';
 export { default as StaticLogo } from 'components/logo/StaticLogo';
+export { default as StaticSpinnerLogo } from 'components/logo/StaticSpinnerLogo';
+
+// component/radio
+export { default as Radio } from 'components/radio/Radio';
+
+// component/select
+export { default as Select } from 'components/select/Select';
+
+// component/spinner
+export { default as Spinner } from 'components/spinner/Spinner';
+export { default as SpinnerCircles } from 'components/spinner/SpinnerCircles';
+export { default as SpinnerLogo } from 'components/spinner/SpinnerLogo';
+
+// components/tab
+export { default as Tab } from 'components/tabs/Tab';
+export { default as Tabs } from 'components/tabs/Tabs';
+
+// component/textField
 export { default as TextField } from 'components/textField/TextField';
+
+// components/timeline
+export { default as Timeline } from 'components/timeline/Timeline';
+
+// component/toggleSwitch
 export { default as ToggleSwitch } from 'components/toggleSwitch/ToggleSwitch';
-export { default as Card } from 'components/cards/Card';

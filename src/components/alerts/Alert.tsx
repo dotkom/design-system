@@ -1,46 +1,61 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
+import Icon from '../icon/Icon';
 
 interface AlertProps {
   type?: 'success' | 'alert' | 'error' | 'info';
   children: React.ReactNode;
 }
 
-const Alert = ({ type, children }: AlertProps): JSX.Element => {
+const IconWrapper = styled.span<{ color: string }>`
+  color: ${({ color }) => color};
+  margin-right: 0.5rem;
+`;
+
+const Alert = ({ type = 'info', children }: AlertProps) => {
   let color: string;
   let bordercolor: string;
+  let iconName: string;
 
   switch (type) {
     case 'success': {
-      color = colors.systemSuccess50;
-      bordercolor = colors.systemSuccess;
+      color = colors.successLighten90;
+      bordercolor = colors.success;
+      iconName = 'done';
       break;
     }
     case 'alert': {
-      color = colors.systemWarning50;
-      bordercolor = colors.systemWarning;
+      color = colors.warningLighten90;
+      bordercolor = colors.warning;
+      iconName = 'warning';
       break;
     }
     case 'error': {
-      color = colors.systemError50;
-      bordercolor = colors.systemError;
+      color = colors.errorLighten90;
+      bordercolor = colors.error;
+      iconName = 'clear';
       break;
     }
     case 'info': {
-      color = colors.systemInfo20;
-      bordercolor = colors.systemInfo;
+      color = colors.infoLighten90;
+      bordercolor = colors.info;
+      iconName = 'info';
       break;
     }
     default: {
-      color = colors.graysWhite;
-      bordercolor = colors.graysGray;
+      color = colors.white;
+      bordercolor = colors.black;
+      iconName = 'help';
       break;
     }
   }
 
   return (
     <StyledBox backgroundColor={color} borderColor={bordercolor}>
+      <IconWrapper color={bordercolor}>
+        <Icon name={iconName} />
+      </IconWrapper>
       {children}
     </StyledBox>
   );
@@ -49,8 +64,10 @@ const Alert = ({ type, children }: AlertProps): JSX.Element => {
 export default Alert;
 
 const StyledBox = styled.div<{ backgroundColor: string; borderColor: string }>`
-  background-color: ${({ backgroundColor }): string => backgroundColor};
-  border: 1px solid ${({ borderColor }): string => borderColor};
-  padding: 1em;
+  display: flex;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  border: 1px solid ${({ borderColor }) => borderColor};
+  padding: 1rem;
   border-radius: 3px;
+  font-size: 1.25rem;
 `;

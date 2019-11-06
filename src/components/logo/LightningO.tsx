@@ -14,15 +14,11 @@ interface OwnProps {
 }
 
 const OSvg = styled.svg<SvgProps>`
-  ${({ width }): string => width + 'px;'}
-  ${({ height }): string => height + 'px;'}
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
 `;
 
-const LightningO = ({
-  size = 300,
-  oColor = colors.officialBlue,
-  lightningColor = colors.officialOrange,
-}: OwnProps): JSX.Element => {
+const LightningO = ({ size = 300, oColor = colors.officialBlue, lightningColor = colors.officialOrange }: OwnProps) => {
   const proportion = 615 / 445;
   return (
     <OSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 615 445" width={size} height={size / proportion}>

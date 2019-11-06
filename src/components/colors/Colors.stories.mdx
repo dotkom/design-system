@@ -1,0 +1,102 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { media, breakPoints } from 'common/layout';
+import ColorSwatch from './Colors';
+
+<Meta title="Global|Colors" />
+
+# Colors
+
+<Preview>
+  <Story name="Gray">
+    <>
+      <ColorSwatch color="white" darkText={true} />
+      <ColorSwatch color="grayLighten90" darkText={true} />
+      <ColorSwatch color="grayLighten60" darkText={true} />
+      <ColorSwatch color="grayLighten30" darkText={true} />
+      <ColorSwatch color="gray" />
+      <ColorSwatch color="grayDarken30" />
+      <ColorSwatch color="grayDarken60" />
+      <ColorSwatch color="grayDarken90" />
+      <ColorSwatch color="black" />
+    </>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Primary">
+    <>
+      <ColorSwatch color="primaryLighten45" darkText={true} />
+      <ColorSwatch color="primaryLighten30" />
+      <ColorSwatch color="primaryLighten15" />
+      <ColorSwatch color="primary" />
+      <ColorSwatch color="primaryDarken15" />
+      <ColorSwatch color="primaryDarken30" />
+      <ColorSwatch color="primaryDarken45" />
+    </>
+  </Story>
+  <Story name="Secondary">
+    <>
+      <ColorSwatch color="secondaryLighten45" darkText={true} />
+      <ColorSwatch color="secondaryLighten30" darkText={true} />
+      <ColorSwatch color="secondaryLighten15" darkText={true} />
+      <ColorSwatch color="secondary" darkText={true} />
+      <ColorSwatch color="secondaryDarken15" darkText={true} />
+      <ColorSwatch color="secondaryDarken30" />
+      <ColorSwatch color="secondaryDarken45" />
+    </>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Info">
+    <>
+      <ColorSwatch color="infoLighten90" darkText={true} />
+      <ColorSwatch color="infoLighten45" darkText={true} />
+      <ColorSwatch color="info" />
+      <ColorSwatch color="infoDarken35" />
+      <ColorSwatch color="infoDarken70" />
+    </>
+  </Story>
+  <Story name="Success">
+    <>
+      <ColorSwatch color="successLighten90" darkText={true} />
+      <ColorSwatch color="successLighten45" darkText={true} />
+      <ColorSwatch color="success" />
+      <ColorSwatch color="successDarken35" />
+      <ColorSwatch color="successDarken70" />
+    </>
+  </Story>
+  <Story name="Warning">
+    <>
+      <ColorSwatch color="warningLighten90" darkText={true} />
+      <ColorSwatch color="warningLighten45" darkText={true} />
+      <ColorSwatch color="warning" darkText={true} />
+      <ColorSwatch color="warningDarken35" />
+      <ColorSwatch color="warningDarken70" />
+    </>
+  </Story>
+  <Story name="Error">
+    <>
+      <ColorSwatch color="errorLighten90" darkText={true} />
+      <ColorSwatch color="errorLighten45" darkText={true} />
+      <ColorSwatch color="error" />
+      <ColorSwatch color="errorDarken35" />
+      <ColorSwatch color="errorDarken70" />
+    </>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="Events">
+    <>
+      <ColorSwatch color="eventsBedpres" />
+      <ColorSwatch color="eventsKurs" />
+      <ColorSwatch color="eventsSosialt" darkText={true} />
+      <ColorSwatch color="eventsUtflukt" darkText={true} />
+      <ColorSwatch color="eventsEkskursjon" darkText={true} />
+      <ColorSwatch color="eventsKjelleren" />
+      <ColorSwatch color="eventsInternt" />
+      <ColorSwatch color="eventsAnnet" />
+    </>
+  </Story>
+</Preview>

@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
-import DateRangeIcon from '@material-ui/icons/DateRange';
-import PermIdentityIcon from '@material-ui/icons/PermIdentity';
+import Icon from 'components/icon/Icon';
 
 interface ICard {
   eventName: string;
@@ -33,7 +32,7 @@ const EventInfo = styled.div`
 
 const ColorCodeIndicator = styled.span<{ color?: string }>`
   display: inline-block;
-  background: ${({ color }): string => color || colors.primary};
+  background: ${({ color }) => color || colors.primary};
   width: 7px;
   min-height: calc(4rem - 20px);
   margin: 10px 0;
@@ -64,7 +63,7 @@ const Picture = styled.img<{ hidden: boolean }>`
 `;
 
 const CategoryInfo = styled.h2<{ color?: string; hidden: boolean }>`
-  background: ${({ color }): string => color || colors.primary};
+  background: ${({ color }) => color || colors.primary};
   color: #fff;
   margin: 0;
   border-top-left-radius: 3px;
@@ -79,15 +78,7 @@ const CategoryInfo = styled.h2<{ color?: string; hidden: boolean }>`
   }
 `;
 
-const EventCard = ({
-  eventName,
-  eventColor,
-  date,
-  attending,
-  imgSrc = '',
-  isLargeEvent,
-  category,
-}: ICard): JSX.Element => (
+const EventCard = ({ eventName, eventColor, date, attending, imgSrc = '', isLargeEvent, category }: ICard) => (
   <CardContainer>
     <CategoryInfo color={eventColor} hidden={!isLargeEvent}>
       {category}
@@ -99,11 +90,11 @@ const EventCard = ({
         <Text>{eventName}</Text>
       </Box>
       <Box>
-        <DateRangeIcon />
+        <Icon name="date_range" />
         <Text>{date}</Text>
       </Box>
       <Box>
-        <PermIdentityIcon />
+        <Icon name="perm_identity" />
         <Text>{attending}</Text>
       </Box>
     </EventInfo>

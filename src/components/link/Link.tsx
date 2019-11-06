@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { StyledComponentProps } from 'styled-components';
+import styled, { css, StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
 
 interface LinkProps extends StyledComponentProps<'a', any, any, any> {
@@ -27,9 +27,9 @@ const StyledLink = styled.a<StyledLinkProps>`
     bottom: 0;
     left: 0;
     transition: transform 0.1s, color 0.1s;
-    ${(props): string | false | undefined =>
+    ${(props) =>
       !props.underline &&
-      `
+      css`
         transform: scaleX(0);
       `}
   }
@@ -37,16 +37,16 @@ const StyledLink = styled.a<StyledLinkProps>`
   &:hover,
   &:focus {
     outline: none;
-    color: ${colors.primaryDark};
+    color: ${colors.primaryDarken45};
 
     &::after {
       transform: scaleX(1);
-      background: ${colors.primaryDark};
+      background: ${colors.primaryDarken45};
     }
   }
 `;
 
-const Link = ({ href, underline = false, children }: LinkProps): JSX.Element => {
+const Link = ({ href, underline = false, children }: LinkProps) => {
   return (
     <StyledLink href={href} underline={underline}>
       {children}
