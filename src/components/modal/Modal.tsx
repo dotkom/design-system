@@ -11,19 +11,29 @@ const Center = styled.div`
   min-height: 100px;
   display: flex;
   flex-direction: column;
-  padding: 0.5em;
+  padding: 1em;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 `;
 
 const CloseBtn = styled.button`
-  position: absolute;
-  right: 0.5em;
-  width: 1em;
-  height: 1em;
+  font-size: 24px;
   background-color: transparent;
   border: none;
-  color: red;
+  color: ${colors.error};
   font-weight: bold;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.5rem;
+  margin: -0.5em -0.5em 0 0;
+
+  &:hover {
+    background-color: ${colors.errorLighten90};
+  }
+
+  &:active {
+    background-color: ${colors.error};
+    color: ${colors.errorDarken35};
+  }
 `;
 
 const FullscreenWrapper = styled.div`
