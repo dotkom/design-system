@@ -34,7 +34,7 @@ const Alert = ({ type = 'info', children }: AlertProps) => {
     case 'error': {
       color = colors.errorLighten90;
       bordercolor = colors.error;
-      iconName = 'cancel';
+      iconName = 'clear';
       break;
     }
     case 'info': {
