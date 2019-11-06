@@ -63,8 +63,8 @@ const Modal: React.FC<Props> = ({ open = false, onClose, children }): JSX.Elemen
   return (
     <>
       {open && (
-        <FullscreenWrapper>
-          <Center>
+        <FullscreenWrapper onClick={() => onClose()}>
+          <Center onClick={(event) => event.stopPropagation()}>
             <TopBar>
               <CloseBtn onClick={() => onClose()}>
                 <Icon name="clear" />
