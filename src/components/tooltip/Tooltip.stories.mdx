@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Tooltip from './Tooltip';
+import Button from '../button/Button';
+
+<Meta title="Others|Tooltip" component={Tooltip} />
+
+# Tooltip
+
+<Preview>
+  <Story name="All">
+    <>
+       Button with tooltip on hover
+       <Tooltip body="This is a body text">
+         <Button>Hover me</Button>
+       </Tooltip>
+    </>
+  </Story>
+</Preview>
+	
+
