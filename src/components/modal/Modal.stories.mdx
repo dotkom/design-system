@@ -1,6 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Modal from './Modal';
-import ExampleModal from './ExampleModal';
+import Button from 'components/button/Button'
+import { useState } from 'react';
 
 <Meta title="Modal" component={Modal} />
 
@@ -9,19 +10,18 @@ The modal is used to front important information, prompts, user-required actions
 
 <Preview>
   <Story name="Modal">
-    <ExampleModal />
+    {() => {
+      const [modalOpen, setModalOpen] = useState(false)
+      return (
+        <>
+          <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+            <p>This is the modal text</p>
+          </Modal>
+          <Button onClick={() => setModalOpen(true)}>Click me to display modal!</Button>
+        </>
+      )
+    }}
   </Story>
 </Preview>
 
 <Props of={Modal} />
-
-# In-place
-The in-place modal allows for info boxes and other overlays that does not need block the entire screen.
-
-<Preview>
-  <Story name="In-place">
-    <Modal fullscreen={false} open={true}>
-      This is an example of how an in-place modal can be used.
-      </Modal>
-  </Story>
-</Preview>
