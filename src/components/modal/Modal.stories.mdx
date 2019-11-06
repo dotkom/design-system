@@ -7,6 +7,8 @@ import { useState } from 'react';
 
 # Modal
 The modal is used to front important information, prompts, user-required actions and information hidden from default view.
+It accepts the prop `open` and `onClose` which should be used to control whether the modal is displayed.  
+`onClose` will be called by the modal on click of the exit button or if the user clicks outside the center component.  
 
 <Preview>
   <Story name="Modal">
