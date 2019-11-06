@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { colors, ColorName } from 'common/colors';
 import Icon from 'components/icon/Icon';
 
-interface AlertProps {
+interface MessageProps {
   type: 'info' | 'success' | 'warning' | 'error';
   children: React.ReactNode;
 }
@@ -27,7 +27,7 @@ const StyledBox = styled.div<{ type: string }>`
   `}
 `;
 
-const Alert = ({ type, children }: AlertProps) => {
+const Message = ({ type, children }: MessageProps) => {
   const iconNames = {
     info: 'info',
     success: 'done',
@@ -45,4 +45,4 @@ const Alert = ({ type, children }: AlertProps) => {
   );
 };
 
-export default Alert;
+export default Message;
