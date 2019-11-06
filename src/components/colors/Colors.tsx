@@ -1,15 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { colors } from 'common/colors';
-
-type ColorStrings = keyof typeof colors;
+import { colors, ColorName } from 'common/colors';
 
 interface ColorSwatchProps {
-  color: ColorStrings;
+  color: ColorName;
   darkText?: boolean;
 }
 
-const StyledColor = styled.div<{ color: ColorStrings; darkText: boolean }>`
+const StyledColor = styled.div<{ color: ColorName; darkText: boolean }>`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
