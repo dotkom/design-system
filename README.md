@@ -40,25 +40,25 @@ We use [MDX](https://mdxjs.com/) with Storybook, so we recommend using a [plugin
 As mentioned, we use `eslint` and `prettier` to lint our TypeScript. We followed the setup used [here](https://dev.to/robertcoopercode/using-eslint-and-prettier-in-a-typescript-project-53jb). We use Visual Studio Code for development, and the guide provides a handy snippet for your editor configuration:
 
 ```json
-"eslint.autoFixOnSave":  true,
-"eslint.validate":  [
+"eslint.autoFixOnSave": true,
+"eslint.validate": [
   "javascript",
   "javascriptreact",
-  {"language":  "typescript",  "autoFix":  true  },
-  {"language":  "typescriptreact",  "autoFix":  true  }
+  { "language": "typescript", "autoFix": true },
+  { "language": "typescriptreact", "autoFix": true }
 ],
-"editor.formatOnSave":  true,
-"[javascript]":  {
-  "editor.formatOnSave":  false,
+"editor.formatOnSave": true,
+"[javascript]": {
+  "editor.formatOnSave": false,
 },
-"[javascriptreact]":  {
-  "editor.formatOnSave":  false,
+"[javascriptreact]": {
+  "editor.formatOnSave": false,
 },
-"[typescript]":  {
-  "editor.formatOnSave":  false,
+"[typescript]": {
+  "editor.formatOnSave": false,
 },
-"[typescriptreact]":  {
-  "editor.formatOnSave":  false,
+"[typescriptreact]": {
+  "editor.formatOnSave": false,
 },
 ```
 
