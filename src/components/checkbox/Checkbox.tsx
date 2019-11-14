@@ -65,6 +65,7 @@ const StyledCheckbox = styled.div<{ error?: boolean }>`
   ${CheckboxCommon}
   display: inline-block;
   border: 2px solid ${({ error }) => (error ? colors.error : colors.grayLighten60)};
+  border-radius: 3px;
   color: ${colors.white};
   background: #fff;
   transition: background-color 0.2s ease-in, border-color 0.2s;
