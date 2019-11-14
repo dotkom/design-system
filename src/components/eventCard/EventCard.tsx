@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
 import Icon from 'components/icon/Icon';
+import Card from 'components/card/Card';
 
 interface ICard {
   eventName: string;
@@ -12,12 +13,6 @@ interface ICard {
   isLargeEvent: boolean;
   category: string;
 }
-
-const CardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: 'Open Sans Pro', sans-serif;
-`;
 
 const EventInfo = styled.div`
   display: flex;
@@ -79,7 +74,7 @@ const CategoryInfo = styled.h2<{ color?: string; hidden: boolean }>`
 `;
 
 const EventCard = ({ eventName, eventColor, date, attending, imgSrc = '', isLargeEvent, category }: ICard) => (
-  <CardContainer>
+  <Card style={{ padding: 0 }}>
     <CategoryInfo color={eventColor} hidden={!isLargeEvent}>
       {category}
     </CategoryInfo>
@@ -98,7 +93,7 @@ const EventCard = ({ eventName, eventColor, date, attending, imgSrc = '', isLarg
         <Text>{attending}</Text>
       </Box>
     </EventInfo>
-  </CardContainer>
+  </Card>
 );
 
 export default EventCard;
