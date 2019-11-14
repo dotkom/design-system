@@ -32,6 +32,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
   font-size: 1em;
   color: ${colors.black};
   border: 2px solid ${({ status }) => (status ? statuses[status] : colors.grayLighten60)};
+  transition: border-color 0.2s;
 
   &:focus {
     outline: none;

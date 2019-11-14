@@ -9,21 +9,32 @@ The toggle switch is a simple button switching between "checked" and "not checke
 
 <Preview>
   <Story name="All">
-    <>
-      <h3>Toggle Switch</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <ToggleSwitch />
-        <ToggleSwitch size={24} />
-        <ToggleSwitch size={32} />
-      </div>
-      <h3>Disabled</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <ToggleSwitch disabled />
-        <ToggleSwitch size={24} disabled />
-        <ToggleSwitch size={32} disabled />
-      </div>
-    </>
+    <ToggleSwitch />
   </Story>
 </Preview>
 
 <Props of={ToggleSwitch} />
+
+### Sizes
+
+<Preview>
+  <Story name="Sizes">
+    <div style={{ display: 'inline-flex' }}>
+      <ToggleSwitch />
+      <ToggleSwitch size={26} initialChecked />
+      <ToggleSwitch size={32} />
+    </div>
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview>
+  <Story name="Disabled">
+    <div style={{ display: 'inline-flex' }}>
+      <ToggleSwitch disabled />
+      <ToggleSwitch size={26} disabled initialChecked />
+      <ToggleSwitch size={32} disabled />
+    </div>
+  </Story>
+</Preview>
