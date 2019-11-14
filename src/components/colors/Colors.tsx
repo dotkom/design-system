@@ -17,7 +17,7 @@ const StyledColor = styled.div<{ color: ColorName; darkText: boolean }>`
   color: ${({ darkText }) => (darkText ? colors.black : colors.white)};
   width: 100%;
   padding: 1rem;
-  transition: background 0.2s ease-out, color 0.2s;
+  transition: background 0.2s ease-out, border-color 0.1s;
 
   &:hover {
     border-color: ${({ darkText }) => (darkText ? colors.black : colors.white)};

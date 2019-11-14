@@ -17,6 +17,7 @@ const StyledLink = styled.a<StyledLinkProps>`
   text-decoration: none;
   color: ${colors.primary};
   transition: color 0.1s;
+  cursor: pointer;
 
   &::after {
     content: '';
@@ -37,11 +38,11 @@ const StyledLink = styled.a<StyledLinkProps>`
   &:hover,
   &:focus {
     outline: none;
-    color: ${colors.primaryDarken45};
+    color: ${colors.primaryLighten30};
 
     &::after {
       transform: scaleX(1);
-      background: ${colors.primaryDarken45};
+      background: ${colors.primaryLighten30};
     }
   }
 `;
