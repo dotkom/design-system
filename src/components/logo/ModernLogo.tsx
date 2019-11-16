@@ -7,7 +7,7 @@ export interface Props {
   secondaryColor?: string;
 }
 
-const StaticLogo = ({ width, primaryColor = colors.officialBlue, secondaryColor = colors.officialOrange }: Props) => (
+const ModernLogo = ({ width, primaryColor = colors.officialBlue, secondaryColor = colors.officialOrange }: Props) => (
   <svg viewBox="0 0 141 112" fill="none" width={width}>
     <g clipPath="url(#clip0)">
       <path
@@ -40,4 +40,4 @@ const StaticLogo = ({ width, primaryColor = colors.officialBlue, secondaryColor 
   </svg>
 );
 
-export default StaticLogo;
+export default ModernLogo;

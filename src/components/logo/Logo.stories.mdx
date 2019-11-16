@@ -1,11 +1,11 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import StaticLogo from './StaticLogo';
 import Logo from './Logo';
+import CompactLogo from './CompactLogo';
+import ModernLogo from './ModernLogo';
 import StaticSpinnerLogo from './StaticSpinnerLogo';
-import LightningO from './LightningO';
 import { colors } from 'common/colors';
 
-<Meta title="Logo" component={StaticLogo} />
+<Meta title="Logo" component={ModernLogo} />
 
 # Logo
 
@@ -25,40 +25,40 @@ This is the official logo, meant to be used in its full form.
 
 <Props of={Logo} />
 
-# Lightning O
+# Compact Logo
 
-This is the alternative logo.  
+This is the compact version of the logo, showing only the O with the lightning.
 This can be used in places where the larger logo cannot fit, as a favicon, or application logo.
 
 <Preview>
-  <Story name="Lightning O">
+  <Story name="Compact Logo">
     <>
-      <LightningO width="150px" />
+      <CompactLogo width="150px" />
       <br />
       <br />
-      <LightningO width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
+      <CompactLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
     </>
   </Story>
 </Preview>
 
-<Props of={LightningO} />
+<Props of={CompactLogo} />
 
 # Modern Logo
 
 **NOT APPROVED FOR OFFICIAL USE**
 
 <Preview>
-  <Story name="Static Logo">
+  <Story name="Modern Logo">
     <>
-      <StaticLogo width="150px" />
+      <ModernLogo width="150px" />
       <br />
       <br />
-      <StaticLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
+      <ModernLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
     </>
   </Story>
 </Preview>
 
-<Props of={StaticLogo} />
+<Props of={ModernLogo} />
 
 # Futuristic Logo (Static Spinner)
 

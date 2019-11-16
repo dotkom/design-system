@@ -1,7 +1,7 @@
 import React from 'react';
 import { colors } from 'common/colors';
 
-export interface SpinnerLogoProps {
+export interface Props {
   width?: string;
   primaryColor?: string;
   secondaryColor?: string;
@@ -11,7 +11,7 @@ const StaticSpinnerLogo = ({
   width,
   primaryColor = colors.officialBlue,
   secondaryColor = colors.officialOrange,
-}: SpinnerLogoProps) => (
+}: Props) => (
   <svg viewBox="0 0 506 400" fill="none" width={width}>
     <circle
       cx="200"

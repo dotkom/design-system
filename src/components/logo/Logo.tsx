@@ -1,13 +1,13 @@
 import React from 'react';
 import { colors } from 'common/colors';
 
-interface LogoProps {
+interface Props {
   width?: string;
   primaryColor?: string;
   secondaryColor?: string;
 }
 
-const Logo = ({ width, primaryColor = colors.officialBlue, secondaryColor = colors.officialOrange }: LogoProps) => {
+const Logo = ({ width, primaryColor = colors.officialBlue, secondaryColor = colors.officialOrange }: Props) => {
   return (
     <svg viewBox="0 0 239 59" width={width}>
       <defs />

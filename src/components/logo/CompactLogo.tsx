@@ -1,17 +1,13 @@
 import React from 'react';
 import { colors } from 'common/colors';
 
-interface OwnProps {
+interface Props {
   width?: string;
   primaryColor: string;
   secondaryColor: string;
 }
 
-const LightningO = ({
-  width,
-  primaryColor = colors.officialBlue,
-  secondaryColor = colors.officialOrange,
-}: OwnProps) => {
+const CompactLogo = ({ width, primaryColor = colors.officialBlue, secondaryColor = colors.officialOrange }: Props) => {
   return (
     <svg viewBox="0 0 615 445" width={width}>
       <defs>
@@ -66,4 +62,4 @@ const LightningO = ({
   );
 };
 
-export default LightningO;
+export default CompactLogo;
