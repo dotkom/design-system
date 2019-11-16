@@ -3,6 +3,7 @@ import StaticLogo from './StaticLogo';
 import Logo from './Logo';
 import StaticSpinnerLogo from './StaticSpinnerLogo';
 import LightningO from './LightningO';
+import { colors } from 'common/colors';
 
 <Meta title="Logo" component={StaticLogo} />
 
@@ -13,7 +14,12 @@ This is the official logo, meant to be used in its full form.
 
 <Preview>
   <Story name="Logo">
-    <Logo />
+    <>
+      <Logo width="400px" />
+      <br />
+      <br />
+      <Logo width={500} primaryColor={colors.error} secondaryColor="#0A94C2" />
+    </>
   </Story>
 </Preview>
 
@@ -26,7 +32,12 @@ This can be used in places where the larger logo cannot fit, as a favicon, or ap
 
 <Preview>
   <Story name="Lightning O">
-    <LightningO />
+    <>
+      <LightningO width="150px" />
+      <br />
+      <br />
+      <LightningO width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
+    </>
   </Story>
 </Preview>
 
@@ -39,15 +50,10 @@ This can be used in places where the larger logo cannot fit, as a favicon, or ap
 <Preview>
   <Story name="Static Logo">
     <>
-      <StaticLogo />
-      <h3>Alternative colors</h3>
-      <StaticLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
-      <h3>Example of different sizes</h3>
-      <div style={{ display: 'inline-flex', alignItems: 'center' }}>
-        <StaticLogo size={'75px'} />
-        <StaticLogo size={'100px'} />
-        <StaticLogo size={'150px'} />
-      </div>
+      <StaticLogo width="150px" />
+      <br />
+      <br />
+      <StaticLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
     </>
   </Story>
 </Preview>
@@ -60,7 +66,12 @@ This can be used in places where the larger logo cannot fit, as a favicon, or ap
 
 <Preview>
   <Story name="Static Spinner Logo">
-    <StaticSpinnerLogo />
+    <>
+      <StaticSpinnerLogo width="150px" />
+      <br />
+      <br />
+      <StaticSpinnerLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
+    </>
   </Story>
 </Preview>
 
