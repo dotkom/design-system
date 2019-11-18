@@ -73,3 +73,5 @@ export const colors = {
   officialBlue: '#0060A3',
   officialOrange: '#FAA21B',
 };
+
+export type ColorName = keyof typeof colors;

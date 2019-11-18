@@ -10,7 +10,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   h1, h2, h3 {
     font-family: 'Source Code Pro', monospace;
-    margin: 2rem 0 1rem;
   }
   h1 {
     font-size: 2.5rem;

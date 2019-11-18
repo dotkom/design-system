@@ -1,15 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { colors } from 'common/colors';
-
-type ColorStrings = keyof typeof colors;
+import { colors, ColorName } from 'common/colors';
 
 interface ColorSwatchProps {
-  color: ColorStrings;
+  color: ColorName;
   darkText?: boolean;
 }
 
-const StyledColor = styled.div<{ color: ColorStrings; darkText: boolean }>`
+const StyledColor = styled.div<{ color: ColorName; darkText: boolean }>`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -19,7 +17,7 @@ const StyledColor = styled.div<{ color: ColorStrings; darkText: boolean }>`
   color: ${({ darkText }) => (darkText ? colors.black : colors.white)};
   width: 100%;
   padding: 1rem;
-  transition: background 0.2s ease-out, color 0.2s;
+  transition: background 0.2s ease-out, border-color 0.1s;
 
   &:hover {
     border-color: ${({ darkText }) => (darkText ? colors.black : colors.white)};

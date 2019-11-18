@@ -36,7 +36,7 @@ const StyledButton = styled.button<{ spacing: number; size: number; disabled: bo
     `}
 `;
 
-const StyledSlider = styled.div<{ checked?: boolean; size: number; spacing: number }>`
+const StyledSlider = styled.div<{ checked?: boolean; size: number; spacing: number; disabled: boolean }>`
   display: inline-block;
   position: relative;
   left: 0;
@@ -46,16 +46,22 @@ const StyledSlider = styled.div<{ checked?: boolean; size: number; spacing: numb
   font-size: ${({ size }) => size + 'px'};
   background: ${({ checked }) => (checked ? colors.success : colors.error)};
   color: ${colors.white};
-  transition: left 0.2s;
+  transition: left 0.2s, background 0.2s;
 
   ${({ checked, size }) =>
     checked &&
     css`
       left: calc(100% - ${size}px);
     `}
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      background: ${colors.grayLighten60};
+    `}
 `;
 
-const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 16 }: Props) => {
+const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 20 }: Props) => {
   const spacing = size / 8;
   const [checked, setChecked] = useState(initialChecked);
 
@@ -65,7 +71,7 @@ const ToggleSwitch = ({ initialChecked = false, disabled = false, size = 16 }: P
 
   return (
     <StyledButton size={size} spacing={spacing} disabled={disabled} onClick={onClick}>
-      <StyledSlider size={size} checked={checked} spacing={spacing}>
+      <StyledSlider size={size} checked={checked} spacing={spacing} disabled={disabled}>
         {checked ? <Icon name="check-circle" /> : <Icon name="clear" />}
       </StyledSlider>
     </StyledButton>

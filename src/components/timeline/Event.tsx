@@ -33,24 +33,26 @@ const Event = ({ title, startTime, endTime, children }: EventProps) => {
 
 export default Event;
 
+const widthTime = '5rem';
+
 const StyledEvent = styled.div``;
 
 const EventTitle = styled.h3`
   position: relative;
-  font-weight: bold;
-  border-left: 1px solid ${colors.black};
-  padding: 16px 0 16px 45px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 1rem 0 1rem 2rem;
 
   &::before {
     content: '';
     display: inline-block;
-    background-color: ${colors.black};
+    background-color: ${colors.primary};
     border-radius: 50%;
-    width: 15px;
-    height: 15px;
+    width: 1rem;
+    height: 1rem;
     position: absolute;
     left: 0;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     ${StyledEvent}:hover & {
       background-color: ${colors.secondary};
@@ -61,35 +63,35 @@ const EventTitle = styled.h3`
 const EventHeader = styled.div`
   display: flex;
   position: relative;
-  h3 {
-    margin: 0px;
-  }
+  cursor: pointer;
 `;
 
 const EventTime = styled.h3`
-  padding: 16px 30px 16px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 1rem 0;
+  width: ${widthTime};
 `;
 
 const EventEndTime = styled.p`
   text-decoration: underline;
-  padding-top: 16px;
+  margin-top: 1rem;
 `;
 
 const EventBody = styled.div<{ hide?: boolean }>`
-  border-left: 1px solid ${colors.black};
-  padding-left: 45px;
-  margin-left: 90px;
+  padding: 0.5rem 2rem 1rem;
+  margin-left: ${widthTime};
   max-width: 670px;
+  line-height: 1.25;
 
   ${({ hide }) =>
     hide &&
     `
     display: none;
-  `}
+  `};
 `;
 
 const EventInnerContent = styled.div`
   & > * + * {
-    margin: 16px 0;
+    margin-top: 1rem;
   }
 `;

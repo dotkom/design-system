@@ -2,19 +2,21 @@ import Logo from 'components/logo/Logo';
 
 <Meta title="Design System|Intro" />
 
-<Logo size={200} />
+<Logo />
 
 #
 
 # Get started
 
-Online Design System is a reusable component library that helps Storybook contributors build UIs faster. The goal is to make building durable UIs more productive and satisfying.
+Online's Design System, simply dubbed Design System (DS), is made by us at [dotkom](https://github.com/dotkom/) for [Online](https://online.ntnu.no/).
+
+The components in DS are designed with consistency in mind, and our main goal is to make it easier for dotkom to develop web pages that adhere to Online's style.
+
+Like the vast majority of our projects, DS is readily available open-source on GitHub [here](https://github.com/dotkom/design-system/).
 
 ## Install
 
-SDS components are written in React, and its stories are written in [Component Story Format](https://medium.com/storybookjs/component-story-format-66f4c32366df). It requires Storybook version 5.2-beta and up.
-
-Add SDS to your project.
+Add DS to your project
 
 `npm install --save @dotkomonline/design-system`
 
@@ -22,35 +24,20 @@ Add SDS to your project.
 
 Import components you want into your UI
 
-`import { Alert } from ‘@dotkomonline/design-system’;`
+`import { Message } from ‘@dotkomonline/design-system’;`
 
 and use them like so
 
 ```
   const example = () => (
     <div>
-      <Alert type="success">Works!</Alert>
+      <Message type="success">It just works!</Message>
     </div>
   )
 ```
 
-### **Browse SDS components in your own Storybook**
+### Contribute to DS
 
-Once you add the package, update your .storybook/config.js to import all files ending in .stories.js.
+Like the vast majority of our projects, DS is readily available open-source on GitHub [here](https://github.com/dotkom/design-system/).
 
-```
-  import { configure } from '@storybook/react';
-  configure(require.context('../src', true, /.stories.js$/), module);
-```
-
-### **Run and develop SDS locally**
-
-Clone the [SDS GitHub project](https://github.com/dotkom/design-system) then start Storybook.
-
-`yarn && yarn start`
-
-### **Resources**
-
-- [Introducing Storybook Design System](https://medium.com/storybookjs/introducing-storybook-design-system-23fd9b1ac3c0)
-- [Storybooks GitHub repository](https://github.com/storybookjs/design-system)
-- [Onlines GitHub repository](https://github.com/dotkom/design-system)
+Follow the instructions in the README.md to set up DS locally, and engage in jolly co-operation!
