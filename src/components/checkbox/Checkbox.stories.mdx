@@ -1,26 +1,21 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Checkbox from './Checkbox';
+import { ExampleContainer } from 'common/containers';
 
 <Meta title="Forms|Checkbox" component={Checkbox} />
 
-# Checkbox bars
+# Checkbox
 
 <Preview>
   <Story name="All">
-    <>
+    <ExampleContainer>
       <Checkbox label="Checkbox" />
-      <br />
-      <br />
       <Checkbox label="Always true" isChecked={true} />
       <Checkbox label="Always false" isChecked={false} />
-      <br />
-      <br />
       <Checkbox label="Disabled" disabled={true} />
       <Checkbox label="Disabled" disabled={true} isChecked={true} />
-      <br />
-      <br />
       <Checkbox label="Error" error={true} />
-    </>
+    </ExampleContainer>
   </Story>
 </Preview>
 

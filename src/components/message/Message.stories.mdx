@@ -1,5 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Message from './Message';
+import { ExampleContainer } from 'common/containers';
 
 <Meta title="Feedback|Message" component={Message} />
 
@@ -7,27 +8,24 @@ import Message from './Message';
 
 <Preview>
   <Story name="All">
-    <>
+    <ExampleContainer>
       <Message type="info">This is a shorter info message, like "hey man, this is a beta, chill out you know"</Message>
-      <br />
       <Message type="success">
         This is a bit longer success message, letting you know for example "oh wow you finished your transaction, we're
         so proud of you man!"
       </Message>
-      <br />
       <Message type="warning">
         This here warning is longer to show you what a long warning looks like. A warning could be letting you know
         "you're moving into some real sketchy territory, mister. y'all might want to consider leaving this page. here
         there be dragons"
       </Message>
-      <br />
       <Message type="error">
         You are now seeing an error, and if the red colors weren't tipping you off, this longer piece of text will
         surely tell you that you are in some deep shit. Potential reasons for seeing an error like this are, but not
         limited to: goofing up a form, about to do some dangerous business, having triggered an error on the server, or
         just doing something you shouldn't.
       </Message>
-    </>
+    </ExampleContainer>
   </Story>
 </Preview>
 

@@ -4,6 +4,7 @@ import CompactLogo from './CompactLogo';
 import ModernLogo from './ModernLogo';
 import StaticSpinnerLogo from './StaticSpinnerLogo';
 import { colors } from 'common/colors';
+import { ExampleContainer } from 'common/containers';
 
 <Meta title="Logo" component={ModernLogo} />
 
@@ -14,12 +15,10 @@ This is the official logo, meant to be used in its full form.
 
 <Preview>
   <Story name="Logo">
-    <>
+    <ExampleContainer>
       <Logo width="400px" />
-      <br />
-      <br />
       <Logo width={500} primaryColor={colors.error} secondaryColor="#0A94C2" />
-    </>
+    </ExampleContainer>
   </Story>
 </Preview>
 
@@ -32,12 +31,10 @@ This can be used in places where the larger logo cannot fit, as a favicon, or ap
 
 <Preview>
   <Story name="Compact Logo">
-    <>
+    <ExampleContainer>
       <CompactLogo width="150px" />
-      <br />
-      <br />
       <CompactLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
-    </>
+    </ExampleContainer>
   </Story>
 </Preview>
 
@@ -49,12 +46,10 @@ This can be used in places where the larger logo cannot fit, as a favicon, or ap
 
 <Preview>
   <Story name="Modern Logo">
-    <>
+    <ExampleContainer>
       <ModernLogo width="150px" />
-      <br />
-      <br />
       <ModernLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
-    </>
+    </ExampleContainer>
   </Story>
 </Preview>
 
@@ -66,12 +61,10 @@ This can be used in places where the larger logo cannot fit, as a favicon, or ap
 
 <Preview>
   <Story name="Static Spinner Logo">
-    <>
+    <ExampleContainer>
       <StaticSpinnerLogo width="150px" />
-      <br />
-      <br />
       <StaticSpinnerLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
-    </>
+    </ExampleContainer>
   </Story>
 </Preview>
 
