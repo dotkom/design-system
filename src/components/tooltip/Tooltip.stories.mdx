@@ -1,6 +1,7 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Tooltip from './Tooltip';
 import Button from '../button/Button';
+import Icon from '../icon/Icon';
 
 <Meta title="Others|Tooltip" component={Tooltip} />
 
@@ -9,9 +10,16 @@ import Button from '../button/Button';
 <Preview>
   <Story name="All">
     <>
-       Button with tooltip on hover
+       Button with tooltip
        <Tooltip body="This is a body text">
-         <Button>Hover me</Button>
+	  <Button>Hover me</Button>
+       </Tooltip>
+       <br />
+       <br />
+       <br />
+       Icon with tooltip
+       <Tooltip body="This is an error">
+	  <Icon color="grey" icon="error" size="medium" />
        </Tooltip>
     </>
   </Story>
