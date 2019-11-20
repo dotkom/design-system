@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "microbundle -f modern,cjs --jsx=React.createElement",
+    "build": "babel src --out-dir dist --extensions .ts,.tsx",
     "prepublishOnly": "yarn build",
     "start": "start-storybook -p 9009 -s public",
     "build-docs": "build-storybook --docs",
@@ -34,7 +34,11 @@
     "react-is": "~16.8"
   },
   "devDependencies": {
+    "@babel/cli": "^7.7.0",
     "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "@babel/preset-typescript": "^7.7.2",
     "@mdx-js/loader": "1.2.2",
     "@storybook/addon-a11y": "5.2.1",
     "@storybook/addon-actions": "5.2.1",
@@ -54,6 +58,8 @@
     "@typescript-eslint/parser": "^1.11.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-styled-components": "^1.10.6",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
