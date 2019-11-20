@@ -1,6 +1,6 @@
 {
   "name": "@dotkomonline/design-system",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.modern.mjs",

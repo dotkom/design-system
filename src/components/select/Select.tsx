@@ -1,25 +1,49 @@
+import * as React from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
+import Icon from 'components/icon/Icon';
 
-const Select = styled.select`
+interface SelectProps {
+  children: React.ReactNode;
+}
+
+const SelectContainer = styled.div`
+  display: inline;
+  position: relative;
+
+  & > *:last-child {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    user-select: none;
+    color: ${colors.grayLighten60};
+  }
+`;
+
+const StyledSelect = styled.select`
   transition: all 0.2s;
-
-  padding: 8px 28px 8px 8px;
+  padding: 8px 20px 8px 8px;
   background: #fff;
   border-radius: 3px;
-  border: 1px solid ${colors.grayLighten90};
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid ${colors.grayLighten60};
 
   cursor: pointer;
 
   &:hover {
-    border-color: ${colors.primaryLighten45};
+    border-color: ${colors.primary};
   }
   appearance: none;
-
-  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="64 64 896 896" width="0.8em" height="0.8em" fill="%23bbb"%3E%3Cpath d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"%3E%3C/path%3E%3C/svg%3E');
-  background-position: right 5px center;
-  background-repeat: no-repeat;
 `;
+
+const Select = ({ children }: SelectProps) => {
+  return (
+    <SelectContainer>
+      <StyledSelect>{children}</StyledSelect>
+      <Icon name="keyboard_arrow_down" />
+    </SelectContainer>
+  );
+};
 
 export default Select;

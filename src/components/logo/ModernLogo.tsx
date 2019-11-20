@@ -1,24 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 import { colors } from 'common/colors';
 
 export interface Props {
+  width?: string;
   primaryColor?: string;
   secondaryColor?: string;
-  size?: string;
 }
 
-const Logo = styled.svg<{ size: string }>`
-  height: ${({ size }) => size};
-  width: ${({ size }) => size};
-`;
-
-const StaticLogo = ({
-  primaryColor = colors.officialBlue,
-  secondaryColor = colors.officialOrange,
-  size = '100px',
-}: Props) => (
-  <Logo size={size} viewBox="0 0 141 112" fill="none">
+const ModernLogo = ({ width, primaryColor = colors.officialBlue, secondaryColor = colors.officialOrange }: Props) => (
+  <svg viewBox="0 0 141 112" fill="none" width={width}>
     <g clipPath="url(#clip0)">
       <path
         d="M22.213 83.8012C26.2975 90.7452 34.618 101.093 48.2128 107.048C61.8075 113.002 77.2087 113.308
@@ -47,7 +37,7 @@ const StaticLogo = ({
         <rect width="141" height="112" fill="white" />
       </clipPath>
     </defs>
-  </Logo>
+  </svg>
 );
 
-export default StaticLogo;
+export default ModernLogo;

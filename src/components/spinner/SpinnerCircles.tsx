@@ -58,8 +58,8 @@ const SpinnerSecondaryCircle = styled.div<{ color: string; size: string }>`
 `;
 
 const SpinnerCircles = ({
-  primaryColor = colors.officialBlue,
-  secondaryColor = colors.officialOrange,
+  primaryColor = colors.primary,
+  secondaryColor = colors.primaryLighten30,
   size = '2rem',
 }: SpinnerCirclesProps) => (
   <SpinnerContainer size={size}>

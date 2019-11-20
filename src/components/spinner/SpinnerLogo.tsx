@@ -8,9 +8,8 @@ export interface SpinnerLogoProps {
   size?: string;
 }
 
-const SpinnerContainer = styled.section<{ size?: string }>`
+const SpinnerContainer = styled.div<{ size?: string }>`
   position: relative;
-  margin: auto;
   height: ${({ size }) => size};
   width: ${({ size }) => size};
 `;

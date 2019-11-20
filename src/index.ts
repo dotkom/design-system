@@ -8,8 +8,8 @@ import * as global from 'common/global';
 import { media, breakPoints } from 'common/layout';
 export { colors, global, media, breakPoints };
 
-// components/alerts
-export { default as Alert } from 'components/alerts/Alert';
+// components/message
+export { default as Message } from 'components/message/Message';
 
 // components/button
 export { default as Button } from 'components/button/Button';
@@ -30,9 +30,9 @@ export { default as Icon } from 'components/icon/Icon';
 export { default as Link } from 'components/link/Link';
 
 // component/logo
-export { default as LightningO } from 'components/logo/LightningO';
 export { default as Logo } from 'components/logo/Logo';
-export { default as StaticLogo } from 'components/logo/StaticLogo';
+export { default as CompactLogo } from 'components/logo/CompactLogo';
+export { default as ModernLogo } from 'components/logo/ModernLogo';
 export { default as StaticSpinnerLogo } from 'components/logo/StaticSpinnerLogo';
 
 // component/radio
