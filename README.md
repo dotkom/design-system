@@ -63,3 +63,9 @@ As mentioned, we use `eslint` and `prettier` to lint our TypeScript. We followed
 ```
 
 The snippet above sets up automatic formatting on save! You might need plugins for [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for this to work.
+
+### Publishing to npm
+
+DS will automatically be published to npm when a branch beginning with `fix/` producing a patch version change, and a branch beginning with `feat/` producing a minor version change.
+
+You can also publish DS manually by incrementing the version number in [package.json](https://github.com/dotkom/design-system/blob/master/package.json). Keep in mind that we try to follow [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) in dotkom.
