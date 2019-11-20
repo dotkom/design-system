@@ -2,17 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from './../icon/Icon';
 import { colors } from 'common/colors';
+import { media } from 'common/layout'
 
 const Center = styled.div`
   position: relative;
   background-color: white;
   border-radius: 3px;
-  min-width: 100px;
-  min-height: 100px;
+  min-width: 90vw;
+  min-height: 80vh;
+  max-height: 95vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   padding: 1em;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  @media ${media.desktopAndUp} {
+    min-width: 100px;
+    min-height: min-content;
+    max-width: 60vw;
+    max-height: 80vw;
+  }
 `;
 
 const CloseBtn = styled.button`
@@ -57,9 +66,11 @@ const TopBar = styled.div`
 interface Props {
   open: boolean;
   onClose: () => void;
+  children: React.ReactNode;
 }
 
-const Modal: React.FC<Props> = ({ open = false, onClose, children }): JSX.Element => {
+const Modal = ({ open = false, onClose, children }: Props): JSX.Element => {
+
   return (
     <>
       {open && (
