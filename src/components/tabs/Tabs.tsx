@@ -1,4 +1,4 @@
-import React, { useState, FC, ReactElement } from 'react';
+import React, { useState, FC, ReactElement, Fragment } from 'react';
 import TabHeader from './TabHeader';
 import TabSelect from './TabSelect';
 import { TabProps } from './Tab';
@@ -13,7 +13,7 @@ const Tabs: FC<Props> = ({ children }: Props) => {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <>
+    <Fragment>
       <TabSelect activeTab={activeTab}>
         {React.Children.map(children, (child, i): JSX.Element | React.ReactNode => {
           if (!React.isValidElement(child)) {
@@ -29,7 +29,7 @@ const Tabs: FC<Props> = ({ children }: Props) => {
       </TabSelect>
 
       {React.Children.map(children, (child, i): JSX.Element | false => i === activeTab && child)}
-    </>
+    </Fragment>
   );
 };
 
