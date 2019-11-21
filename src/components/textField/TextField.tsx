@@ -86,6 +86,7 @@ const ClearButton = styled.button`
   color: ${colors.grayLighten30};
   cursor: pointer;
   background: transparent;
+  border: none;
 `;
 
 const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
