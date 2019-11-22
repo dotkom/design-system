@@ -1,8 +1,8 @@
 import { darken, lighten } from './blender';
 
-const primary = '#0060A3';
-const secondary = '#FAA21B';
-const white = '#ffffff';
+const primary = '#0D5474';
+const secondary = '#F9B759';
+const white = '#FFFFFF';
 const gray = '#808080';
 const black = '#000000';
 const info = '#0A94C2';
