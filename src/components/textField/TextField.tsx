@@ -18,14 +18,8 @@ interface TextFieldProps extends StyledComponentProps<'input', any, any, any> {
   status?: StatusStrings;
 }
 
-const InputContainer = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  box-sizing: border-box;
-`;
-
 const InputField = styled.input<{ status?: StatusStrings }>`
-  border: none;
+  width: 100%;
   border-radius: 3px;
   padding: 0.5rem;
   padding-right: 1.5rem;
@@ -50,6 +44,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
 `;
 
 const InputLabel = styled.label`
+  display: block;
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
   color: ${colors.primary};
@@ -60,6 +55,7 @@ const InputLabel = styled.label`
 `;
 
 const InputMessage = styled.p`
+  font-size: 0.8rem;
   margin-top: 0.5rem;
   color: ${colors.error};
 
@@ -68,21 +64,12 @@ const InputMessage = styled.p`
   }
 `;
 
-const TextField = ({ type = 'text', label = '', errorMessage = '', ...props }: TextFieldProps) => {
-  return (
-    <InputContainer>
-      <InputLabel>{label}</InputLabel>
-      <ClearableInputField type={type} {...props} />
-      <InputMessage>{errorMessage}</InputMessage>
-    </InputContainer>
-  );
-};
-
 const ClearButton = styled.button`
-  position: relative;
+  position: absolute;
   padding: 0.5rem;
   font-size: 1rem;
-  right: 2rem;
+  top: calc(2rem + 2px);
+  right: calc(2.5rem + 4px);
   color: ${colors.grayLighten30};
   cursor: pointer;
   background: transparent;
@@ -105,6 +92,16 @@ const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
           <Icon name="clear" />
         </ClearButton>
       )}
+    </div>
+  );
+};
+
+const TextField = ({ type = 'text', label = '', errorMessage = '', ...props }: TextFieldProps) => {
+  return (
+    <div>
+      <InputLabel>{label}</InputLabel>
+      <ClearableInputField type={type} {...props} />
+      <InputMessage>{errorMessage}</InputMessage>
     </div>
   );
 };

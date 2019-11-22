@@ -1,27 +1,27 @@
 import { action } from '@storybook/addon-actions';
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import TextField from './TextField';
+import TextArea from './TextArea';
 
-<Meta title="Forms|Text Field" component={TextField} />
+<Meta title="Forms|Text Area" component={TextArea} />
 
 # Text field
 
-This is basically an `<input />` field of `type="text"` in HTML.
-This component supports any props a regular `<input />` [accepts](https://www.w3schools.com/tags/tag_input.asp), as well as it's own props listed below.
+This is more or less a `<textarea>` from HTML.
+This component supports any props a regular `<input />` [accepts](https://www.w3schools.com/tags/tag_textarea.asp), as well as it's own props listed below.
 
 <Preview>
   <Story name="Default">
-    <TextField placeholder={'Search...'} />
+    <TextArea placeholder="I'm resizable!" />
   </Story>
 </Preview>
 
-<Props of={TextField} />
+<Props of={TextArea} />
 
 ### Input disabled
 
 <Preview>
   <Story name="Disabled">
-    <TextField defaultValue="disabled" disabled />
+    <TextArea defaultValue="disabled" disabled />
   </Story>
 </Preview>
 
@@ -29,7 +29,7 @@ This component supports any props a regular `<input />` [accepts](https://www.w3
 
 <Preview>
   <Story name="With Label">
-    <TextField placeholder={'Search...'} label="Label" />
+    <TextArea placeholder={'Search...'} label="Label" />
   </Story>
 </Preview>
 
@@ -46,7 +46,7 @@ Green color indicates that input is correct and validated, and the user can subm
 
 <Preview>
   <Story name="With Error">
-    <TextField defaultValue={'Not an email'} type="email" pattern=".+@.+" required errorMessage="Not an email" />
+    <TextArea defaultValue={'Incorrect input'} status="error" errorMessage="That input was incorrect" />
   </Story>
 </Preview>
 
@@ -54,7 +54,7 @@ Green color indicates that input is correct and validated, and the user can subm
 
 <Preview>
   <Story name="With Success">
-    <TextField defaultValue="Correct input" status="success" />
+    <TextArea defaultValue="Correct input" status="success" />
   </Story>
 </Preview>
 
@@ -62,6 +62,6 @@ Green color indicates that input is correct and validated, and the user can subm
 
 <Preview>
   <Story name="With Warning">
-    <TextField placeholder="This field is prone to errors" status="warning" />
+    <TextArea placeholder="This field is prone to errors" status="warning" />
   </Story>
 </Preview>
