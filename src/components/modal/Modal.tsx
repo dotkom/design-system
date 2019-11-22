@@ -1,22 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from './../icon/Icon';
+import Icon from 'components/icon/Icon';
+import Card from 'components/card/Card';
 import { colors } from 'common/colors';
-import { media } from 'common/layout'
+import { media } from 'common/layout';
 
-const Center = styled.div`
-  position: relative;
-  background-color: white;
-  border-radius: 3px;
+const StyledCard = styled(Card)`
   min-width: 90vw;
-  min-height: 80vh;
   max-height: 95vh;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
-  @media ${media.desktopAndUp} {
+
+  @media ${media.tabletAndUp} {
     min-width: 100px;
     min-height: min-content;
     max-width: 60vw;
@@ -70,19 +64,18 @@ interface Props {
 }
 
 const Modal = ({ open = false, onClose, children }: Props): JSX.Element => {
-
   return (
     <>
       {open && (
         <FullscreenWrapper onClick={() => onClose()}>
-          <Center onClick={(event) => event.stopPropagation()}>
+          <StyledCard onClick={(event: Event) => event.stopPropagation()}>
             <TopBar>
               <CloseBtn onClick={() => onClose()}>
                 <Icon name="clear" />
               </CloseBtn>
             </TopBar>
             {children}
-          </Center>
+          </StyledCard>
         </FullscreenWrapper>
       )}
     </>
