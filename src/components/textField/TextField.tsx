@@ -89,10 +89,14 @@ const ClearButton = styled.button`
   border: none;
 `;
 
+const TextFieldContainer = styled.div`
+  display: flex;
+`;
+
 const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
   const [text, setText] = useState(props.defaultValue || '');
   return (
-    <div>
+    <TextFieldContainer>
       <InputField
         value={text}
         onChange={(e) => {
@@ -106,7 +110,7 @@ const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
           <Icon name="clear" />
         </ClearButton>
       )}
-    </div>
+    </TextFieldContainer>
   );
 };
 
