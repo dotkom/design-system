@@ -4,9 +4,9 @@
  */
 
 import { colors } from 'common/colors';
-import * as global from 'common/global';
+import { GlobalStyle } from 'common/global';
 import { media, breakPoints } from 'common/layout';
-export { colors, global, media, breakPoints };
+export { colors, GlobalStyle, media, breakPoints };
 
 // components/message
 export { default as Message } from 'components/message/Message';
