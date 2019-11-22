@@ -1,4 +1,0 @@
-{
-    "presets": ["@babel/preset-typescript", "@babel/preset-react", ["@babel/preset-env", {"modules": false}]],
-    "plugins": ["babel-plugin-styled-components", ["babel-plugin-module-resolver", {"root":["."], "alias":{"common":"./src/common","components":"./src/components"}}]]
-}
