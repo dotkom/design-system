@@ -70,8 +70,8 @@ export const colors = {
   eventsInternt: '#e75e3b',
   eventsAnnet: '#b36bcd',
 
-  officialBlue: '#0060A3',
-  officialOrange: '#FAA21B',
+  officialBlue: '#0D5474',
+  officialOrange: '#F9B759',
 };
 
 export type ColorName = keyof typeof colors;
