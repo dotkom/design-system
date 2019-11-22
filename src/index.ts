@@ -50,6 +50,9 @@ export { default as SpinnerLogo } from 'components/spinner/SpinnerLogo';
 export { default as Tab } from 'components/tabs/Tab';
 export { default as Tabs } from 'components/tabs/Tabs';
 
+// component/textArea
+export { default as TextArea } from 'components/textArea/TextArea';
+
 // component/textField
 export { default as TextField } from 'components/textField/TextField';
 

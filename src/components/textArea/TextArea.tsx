@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled, { StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
-import Icon from 'components/icon/Icon';
 
 const statuses = {
   error: colors.error,
@@ -11,7 +10,7 @@ const statuses = {
 
 type StatusStrings = keyof typeof statuses;
 
-interface TextFieldProps extends StyledComponentProps<'input', any, any, any> {
+interface TextAreaProps extends StyledComponentProps<'input', any, any, any> {
   errorMessage?: string;
   label?: string;
   type?: string;
@@ -24,7 +23,7 @@ const InputContainer = styled.div`
   box-sizing: border-box;
 `;
 
-const InputField = styled.input<{ status?: StatusStrings }>`
+const StyledTextarea = styled.textarea<{ status?: StatusStrings }>`
   border: none;
   border-radius: 3px;
   padding: 0.5rem;
@@ -33,6 +32,8 @@ const InputField = styled.input<{ status?: StatusStrings }>`
   color: ${colors.black};
   border: 2px solid ${({ status }) => (status ? statuses[status] : colors.grayLighten60)};
   transition: border-color 0.2s;
+  resize: vertical;
+  min-height: 4rem;
 
   &:focus {
     outline: none;
@@ -42,6 +43,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
   &:disabled {
     background-color: ${colors.grayLighten90};
     color: ${colors.grayDarken30};
+    resize: none;
   }
 
   &:invalid {
@@ -68,46 +70,28 @@ const InputMessage = styled.p`
   }
 `;
 
-const TextField = ({ type = 'text', label = '', errorMessage = '', ...props }: TextFieldProps) => {
+const TextArea = ({ type = 'text', label = '', errorMessage = '', ...props }: TextAreaProps) => {
   return (
     <InputContainer>
       <InputLabel>{label}</InputLabel>
-      <ClearableInputField type={type} {...props} />
+      <InputArea type={type} {...props} />
       <InputMessage>{errorMessage}</InputMessage>
     </InputContainer>
   );
 };
 
-const ClearButton = styled.button`
-  position: relative;
-  padding: 0.5rem;
-  font-size: 1rem;
-  right: 2rem;
-  color: ${colors.grayLighten30};
-  cursor: pointer;
-  background: transparent;
-  border: none;
-`;
-
-const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
+const InputArea = ({ disabled, ...props }: TextAreaProps) => {
   const [text, setText] = useState(props.defaultValue || '');
   return (
-    <div>
-      <InputField
-        value={text}
-        onChange={(e) => {
-          setText(e.target.value);
-        }}
-        {...props}
-        disabled={disabled}
-      />
-      {text && !disabled && (
-        <ClearButton onClick={() => setText('')}>
-          <Icon name="clear" />
-        </ClearButton>
-      )}
-    </div>
+    <StyledTextarea
+      value={text}
+      onChange={(e) => {
+        setText(e.target.value);
+      }}
+      {...props}
+      disabled={disabled}
+    />
   );
 };
 
-export default TextField;
+export default TextArea;
