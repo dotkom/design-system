@@ -1,14 +1,35 @@
-# Design system for dotkom
+# Design System
 
-This is a react component library for dotkom @ [online.ntnu.no](https://online.ntnu.no). See the components live at: [storybook.online.ntnu.no](https://storybook.online.ntnu.no).
+Online's Design System, simply dubbed Design System (DS), is made by us at [dotkom](https://github.com/dotkom/) for [Online](https://online.ntnu.no/).
+
+The components in DS are designed with consistency in mind, and our main goal is to make it easier for dotkom to develop web pages that adhere to Online's style.
+
+See the components live at: [storybook.online.ntnu.no](https://storybook.online.ntnu.no).
 
 ## Usage
 
+Before importing and using a component, the `<GlobalStyle />` component should be applied to your project, preferably at root-level. This component applies the global style rules and resets which are the baseline for DS. Without it, components will likely not look or act as intended, so this is **very important**.
+
 ```javascript
 import React from 'react';
-import { Alert } from '@dotkomonline/design-system';
+import { GlobalStyle } from '@dotkomonline/design-system';
+import App from './App';
 
-export const SuccessAlert = ({ children }) => <Alert type="success">{children}</Alert>;
+export const Root = () => (
+  <>
+    <GlobalStyle />
+    <App />
+  </>
+);
+```
+
+After that, importing and using components is as simple as:
+
+```javascript
+import React from 'react';
+import { Message } from '@dotkomonline/design-system';
+
+export const SuccessMessage = ({ children }) => <Message type="success">{children}</Message>;
 ```
 
 ## Development
