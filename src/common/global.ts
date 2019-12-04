@@ -24,8 +24,12 @@ export const GlobalStyle = createGlobalStyle`
   }
   h1, h2, h3 {
     font-family: 'Source Code Pro', monospace;
-    margin: 2rem 0 1rem;
-    line-height: 1.2;
+    margin: 4rem 0 2rem;
+    line-height: 1.5;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
   h1 {
     font-size: var(--font-size-xl);
@@ -35,6 +39,13 @@ export const GlobalStyle = createGlobalStyle`
   }
   h3 {
     font-size: var(--font-size-md);
+  }
+  b, strong {
+    font-weight: bold;
+  }
+  code {
+    white-space: pre-wrap;
+    font-family: 'Source Code Pro', monospace;
   }
   samp {
     font-family: 'Source Code Pro', monospace;
