@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { StyledComponentProps, css } from 'styled-components';
 import { colors } from 'common/colors';
 
-interface HeaderProps extends StyledComponentProps<'h1', any, any, any> {}
+type HeaderProps = StyledComponentProps<'h1', any, any, any>;
 
 const HeadingStyle = css`
   color: ${colors.grayDarken90};

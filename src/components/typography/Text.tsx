@@ -3,7 +3,7 @@ import styled, { StyledComponentProps, css } from 'styled-components';
 import { colors } from 'common/colors';
 import { Icon } from '../../';
 
-interface TextProps extends StyledComponentProps<'p', any, any, any> {}
+type TextProps = StyledComponentProps<'p', any, any, any>;
 interface QuoteProps extends StyledComponentProps<'blockquote', any, any, any> {
   by?: string;
 }
