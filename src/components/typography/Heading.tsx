@@ -5,7 +5,7 @@ import { colors } from 'common/colors';
 interface HeaderProps extends StyledComponentProps<'h1', any, any, any> {}
 
 const HeadingStyle = css`
-  color: ${colors.graysBlack};
+  color: ${colors.grayDarken90};
 `;
 
 const StyledH1 = styled.h1`
