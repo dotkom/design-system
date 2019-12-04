@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
-import { ExternalCSS } from 'common/types';
 
 interface RadioProps {
   labels: string[];
@@ -10,41 +9,31 @@ interface RadioProps {
   error?: boolean;
 }
 
-const Radio = ({ labels, groupName, disabled, error }: RadioProps): JSX.Element => {
-  const radios = labels.map(
-    (label, index): JSX.Element => (
-      <RadioLabel key={index} disabled={disabled}>
-        <HiddenRadio name={groupName} disabled={disabled} />
-        <StyledRadio tabIndex={0} error={error} />
-        {label}
-      </RadioLabel>
-    )
-  );
+const Radio = ({ labels, groupName, disabled, error }: RadioProps) => {
+  const radios = labels.map((label, index) => (
+    <RadioLabel key={index} disabled={disabled}>
+      <HiddenRadio name={groupName} disabled={disabled} />
+      <StyledRadio tabIndex={0} error={error} />
+      {label}
+    </RadioLabel>
+  ));
   return <RadioGroup error={error}>{radios}</RadioGroup>;
 };
 
 const size = 20;
 
-const RadioGroupError = css`
-  border: 1px solid ${colors.systemError};
-`;
-
 const RadioGroup = styled.div<{ error?: boolean }>`
-  padding: 1rem;
-
   & > * + * {
     margin-top: 0.5rem;
   }
-
-  ${({ error }): ExternalCSS => Boolean(error) && RadioGroupError};
 `;
 
 const RadioLabelDisabled = css`
-  color: ${colors.graysGray};
+  color: ${colors.grayLighten60};
   cursor: not-allowed;
 
   &:hover {
-    color: ${colors.graysGray};
+    color: ${colors.grayLighten60};
   }
 `;
 
@@ -60,7 +49,7 @@ const RadioLabel = styled.label<{ disabled?: boolean }>`
     color: ${colors.primary};
   }
 
-  ${({ disabled }): ExternalCSS => Boolean(disabled) && RadioLabelDisabled};
+  ${({ disabled }) => disabled && RadioLabelDisabled};
 `;
 
 const HiddenRadioCommon = css`
@@ -80,9 +69,8 @@ const HiddenRadio = styled.input.attrs({ type: 'radio' })`
 const StyledRadio = styled.div<{ error?: boolean }>`
   ${HiddenRadioCommon}
   background: #fff;
-  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayslightGray)};
+  border: 2px solid ${({ error }) => (error ? colors.error : colors.grayLighten60)};
   border-radius: 50%;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
   transition: border 0.2s;
 
   ${RadioLabel}:hover &,
@@ -96,8 +84,8 @@ const StyledRadio = styled.div<{ error?: boolean }>`
 
   ${HiddenRadio}:disabled + & {
     cursor: not-allowed;
-    background-color: ${colors.grayslightGray};
-    border-color: ${colors.graysGray};
+    background-color: ${colors.grayLighten90};
+    border-color: ${colors.grayLighten90};
   }
 `;
 

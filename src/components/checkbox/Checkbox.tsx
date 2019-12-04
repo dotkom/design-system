@@ -1,6 +1,7 @@
 import React from 'react';
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
+import Icon from 'components/icon/Icon';
 
 interface CheckboxProps {
   label: string;
@@ -10,11 +11,13 @@ interface CheckboxProps {
   error?: boolean;
 }
 
-const Checkbox = ({ label, isChecked, onCheck, disabled, error }: CheckboxProps): JSX.Element => {
+const Checkbox = ({ label, isChecked, onCheck, disabled, error }: CheckboxProps) => {
   return (
-    <CheckboxLabel onChange={(): void => onCheck(!isChecked)} disabled={disabled}>
+    <CheckboxLabel onChange={() => onCheck(!isChecked)} disabled={disabled}>
       <HiddenCheckbox checked={isChecked} disabled={disabled} />
-      <StyledCheckbox tabIndex={0} error={error} />
+      <StyledCheckbox tabIndex={0} error={error}>
+        <Icon name="done" />
+      </StyledCheckbox>
       <span>{label}</span>
     </CheckboxLabel>
   );
@@ -25,10 +28,10 @@ export default Checkbox;
 const size = 20;
 
 const CheckboxLabelDisabled = css`
-  color: ${colors.graysGray};
+  color: ${colors.grayLighten60};
   cursor: not-allowed;
   &:hover {
-    color: ${colors.graysGray};
+    color: ${colors.grayLighten60};
   }
 `;
 
@@ -41,9 +44,9 @@ const CheckboxLabel = styled.label<{ disabled?: boolean }>`
   height: ${size}px;
   cursor: pointer;
   &:hover {
-    color: ${colors.primaryDark};
+    color: ${colors.primary};
   }
-  ${({ disabled }): FlattenSimpleInterpolation | undefined | false => disabled && CheckboxLabelDisabled};
+  ${({ disabled }) => disabled && CheckboxLabelDisabled};
 `;
 
 const CheckboxCommon = css`
@@ -61,24 +64,27 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 const StyledCheckbox = styled.div<{ error?: boolean }>`
   ${CheckboxCommon}
   display: inline-block;
-  border: 1px solid ${({ error }): string => (error ? colors.systemError : colors.grayslightGray)};
+  border: 2px solid ${({ error }) => (error ? colors.error : colors.grayLighten60)};
+  border-radius: 3px;
+  color: ${colors.white};
   background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s ease-in, border-color 0.2s;
   ${HiddenCheckbox}:checked + & {
-    background-color: ${colors.primary};
-    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
-    background-position: center;
-    background-size: 75%;
-    background-repeat: no-repeat;
-    border-color: ${colors.primaryLight};
+    background: ${colors.primary};
+    border-color: ${colors.primary};
   }
   ${CheckboxLabel}:hover & {
-    border-color: ${colors.primaryLight};
+    border-color: ${colors.primary};
   }
   ${HiddenCheckbox}:disabled + & {
     cursor: not-allowed;
-    background-color: ${colors.grayslightGray};
-    border-color: ${colors.graysGray};
+    color: ${colors.grayLighten90};
+    background-color: ${colors.grayLighten90};
+    border-color: ${colors.grayLighten60};
+  }
+  ${HiddenCheckbox}:disabled:checked + & {
+    color: ${colors.grayLighten60};
+    background-color: ${colors.grayLighten90};
+    border-color: ${colors.grayLighten60};
   }
 `;

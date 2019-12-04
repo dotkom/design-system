@@ -4,7 +4,8 @@ import { media } from './layout';
 
 export const GlobalStyle = createGlobalStyle`
   ${Reset}
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Code+Pro&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Code+Pro|Material+Icons+Outlined');
+
   body {
     font-family: 'Source Sans Pro', sans-serif;
   }
@@ -34,5 +35,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   h3 {
     font-size: var(--font-size-md);
+  }
+  samp {
+    font-family: 'Source Code Pro', monospace;
   }
 `;

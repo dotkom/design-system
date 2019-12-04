@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { StyledComponentProps } from 'styled-components';
+import styled, { css, StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
 
 interface ButtonProps extends StyledComponentProps<'button', any, any, any> {
@@ -16,9 +16,9 @@ interface StyledButtonProps {
 
 const StyledButton = styled.button<StyledButtonProps>`
   appearance: none;
-  background: ${(props): string => props.color};
-  border: 2px solid ${(props): string => props.color};
-  color: ${colors.graysWhite};
+  background: ${(props) => props.color};
+  border: 2px solid ${(props) => props.color};
+  color: ${colors.white};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   padding: 0.5rem 1rem;
@@ -29,20 +29,20 @@ const StyledButton = styled.button<StyledButtonProps>`
   }
 
   &:disabled {
-    background: ${colors.grayslightGray};
-    color: ${colors.graysGray};
+    background: ${colors.grayLighten90};
+    color: ${colors.grayLighten60};
     box-shadow: none;
-    border-color: ${colors.grayslightGray};
+    border-color: ${colors.grayLighten90};
     cursor: not-allowed;
   }
 
-  ${(props): string | false =>
+  ${(props) =>
     props.variant == 'outline' &&
-    `
-    background: transparent;
-    border: 2px solid ${props.color};
-    color: ${props.color};
-  `}
+    css`
+      background: transparent;
+      border-color: ${props.color};
+      color: ${props.color};
+    `}
 `;
 
 const Button = ({
@@ -52,19 +52,19 @@ const Button = ({
   variant = 'normal',
   disabled = false,
   ...props
-}: ButtonProps): JSX.Element => {
+}: ButtonProps) => {
   let mainColor: string = colors.primary;
   switch (color) {
     case 'secondary': {
-      mainColor = colors.accent;
+      mainColor = colors.secondary;
       break;
     }
     case 'success': {
-      mainColor = colors.systemSuccess;
+      mainColor = colors.success;
       break;
     }
     case 'danger': {
-      mainColor = colors.systemError;
+      mainColor = colors.error;
       break;
     }
   }

@@ -1,21 +1,21 @@
 {
   "name": "@dotkomonline/design-system",
-  "version": "0.6.2",
+  "version": "0.9.4",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.modern.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "microbundle -f modern,cjs --jsx=React.createElement",
+    "build": "webpack",
     "prepublishOnly": "yarn build",
     "start": "start-storybook -p 9009 -s public",
     "build-docs": "build-storybook --docs",
     "build-storybook": "build-storybook -s public",
     "format": "tsc --noEmit && prettier --write 'src/**/*.{js,ts,tsx}'",
     "format-check": "tsc --noEmit && prettier --check 'src/**/*.{js,ts,tsx}'",
-    "lint-check": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet",
-    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint-check": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}'",
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -26,17 +26,13 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "material-design-icons": "^3.0.1",
     "storybook-chromatic": "^2.2.2"
   },
   "peerDependencies": {
-    "react": "~16.8",
-    "react-is": "~16.8"
+    "react": "^16.8",
+    "react-is": "^16.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
-    "@material-ui/core": "^4.4.3",
-    "@material-ui/icons": "^4.4.3",
     "@mdx-js/loader": "1.2.2",
     "@storybook/addon-a11y": "5.2.1",
     "@storybook/addon-actions": "5.2.1",
@@ -60,7 +56,6 @@
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
-    "microbundle": "^0.12.0-next.3",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-docgen-typescript-loader": "^3.2.0",
@@ -72,7 +67,10 @@
     "storybook-addon-styled-themes": "0.0.3",
     "styled-components": "^4.3.2",
     "ts-jest": "^24.0.2",
+    "ts-loader": "^6.2.1",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }

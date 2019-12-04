@@ -1,46 +1,46 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-
 import { colors } from 'common/colors';
 import Spinner from './Spinner';
 import SpinnerLogo from './SpinnerLogo';
+import SpinnerCircles from './SpinnerCircles';
+import { ExampleContainer } from 'common/containers';
 
 <Meta title="Feedback|Spinner" component={Spinner} />
 
-# Spinner/loading component
+# Chasing Spinner
 
 <Preview>
-  <Story name="All">
-    <>
-      <h3>Regular small spinner</h3>
+  <Story name="Chasing Spinner">
+    <ExampleContainer>
       <Spinner />
-      <h3>Colored small spinner</h3>
-      <Spinner primaryColor={colors.primaryDark} secondaryColor={colors.hotpink} />
-    </>
+      <Spinner primaryColor={colors.error} secondaryColor="#0FF0AE" />
+    </ExampleContainer>
   </Story>
 </Preview>
 
 <Props of={Spinner} />
 
+# Spinner Circles
+
+<Preview>
+  <Story name="Spinner Circles">
+    <ExampleContainer>
+      <SpinnerCircles />
+      <SpinnerCircles size={'4rem'} primaryColor={colors.primary} secondaryColor={colors.secondary} />
+    </ExampleContainer>
+  </Story>
+</Preview>
+
+<Props of={SpinnerCircles} />
+
 # Spinner Logo
 
 <Preview>
   <Story name="Spinner Logo">
-    <>
-      <h3>Classic Spinner</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo />
-      </div>
-      <h3>Spinner with other colors</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
-      </div>
-      <h3>Spinners of different sizes</h3>
-      <div style={{ display: 'inline-flex' }}>
-        <SpinnerLogo size={'75px'} />
-        <SpinnerLogo size={'100px'} />
-        <SpinnerLogo size={'150px'} />
-      </div>
-    </>
+    <ExampleContainer>
+      <SpinnerLogo />
+      <SpinnerLogo size={'150px'} primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
+    </ExampleContainer>
   </Story>
 </Preview>
 

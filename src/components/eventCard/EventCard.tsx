@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
-import DateRangeIcon from '@material-ui/icons/DateRange';
-import PermIdentityIcon from '@material-ui/icons/PermIdentity';
+import Icon from 'components/icon/Icon';
+import Card from 'components/card/Card';
 
 interface ICard {
   eventName: string;
@@ -13,12 +13,6 @@ interface ICard {
   isLargeEvent: boolean;
   category: string;
 }
-
-const CardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: 'Open Sans Pro', sans-serif;
-`;
 
 const EventInfo = styled.div`
   display: flex;
@@ -33,7 +27,7 @@ const EventInfo = styled.div`
 
 const ColorCodeIndicator = styled.span<{ color?: string }>`
   display: inline-block;
-  background: ${({ color }): string => color || colors.primary};
+  background: ${({ color }) => color || colors.primary};
   width: 7px;
   min-height: calc(4rem - 20px);
   margin: 10px 0;
@@ -64,7 +58,7 @@ const Picture = styled.img<{ hidden: boolean }>`
 `;
 
 const CategoryInfo = styled.h2<{ color?: string; hidden: boolean }>`
-  background: ${({ color }): string => color || colors.primary};
+  background: ${({ color }) => color || colors.primary};
   color: #fff;
   margin: 0;
   border-top-left-radius: 3px;
@@ -79,16 +73,8 @@ const CategoryInfo = styled.h2<{ color?: string; hidden: boolean }>`
   }
 `;
 
-const EventCard = ({
-  eventName,
-  eventColor,
-  date,
-  attending,
-  imgSrc = '',
-  isLargeEvent,
-  category,
-}: ICard): JSX.Element => (
-  <CardContainer>
+const EventCard = ({ eventName, eventColor, date, attending, imgSrc = '', isLargeEvent, category }: ICard) => (
+  <Card style={{ padding: 0 }}>
     <CategoryInfo color={eventColor} hidden={!isLargeEvent}>
       {category}
     </CategoryInfo>
@@ -99,15 +85,15 @@ const EventCard = ({
         <Text>{eventName}</Text>
       </Box>
       <Box>
-        <DateRangeIcon />
+        <Icon name="date_range" />
         <Text>{date}</Text>
       </Box>
       <Box>
-        <PermIdentityIcon />
+        <Icon name="perm_identity" />
         <Text>{attending}</Text>
       </Box>
     </EventInfo>
-  </CardContainer>
+  </Card>
 );
 
 export default EventCard;
