@@ -67,3 +67,4 @@ export { default as ToggleSwitch } from 'components/toggleSwitch/ToggleSwitch';
 // component/typography
 export { Heading, Heading2, Heading3 } from 'components/typography/Heading';
 export { Ingress, Paragraph, Quote, Info } from 'components/typography/Text';
+export { Markdown, md } from 'components/typography/Markdown';

@@ -1,0 +1,74 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Heading } from './Heading';
+import { Info, Ingress } from './Text';
+import { Markdown, md } from './Markdown';
+
+<Meta title="Typography|Markdown" component={Markdown} />
+
+# Markdown
+
+Markdown keeps the writers focused on the content and not the design of the content. Keeping content separated from the design of the content has a lot of advantages, like if the design changes.
+
+This the markdown component is borrowed from `markdown-to-jsx`, with a few tweaks to match our design.
+
+## Example usage
+
+<Props of={Markdown} />
+
+<Preview>
+  <Story name="Example usage">
+    <>
+      <Heading>The story of Lorem Ipsum</Heading>
+      <Info>Written by Lorem and Ipsum</Info>
+      <Ingress>
+        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+        'Content here, content here', making it look like readable English.
+      </Ingress>
+      <Markdown>
+        {`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+${''}
+## Facts about Lorem Ipsum
+${''}
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+${''}
+> Understanding is the first step to acceptance, and only with acceptance can there be recovery.
+>
+> -- <cite>J.K. Rowling</cite>
+${''}
+## Code
+\`\`\`javascript
+const exampleCode = '';
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+\`\`\``}
+      </Markdown>
+    </>
+  </Story>
+</Preview>
+
+## Using the `md` template literal
+
+<Preview>
+  <Story name="md Template Literal">
+    {md`
+# Template Literals
+## Heading 2
+### Heading 3
+${''}
+Paragraph
+${''}
+> Quote
+${''}
+nice
+${''}
+> Quote with source
+>
+> -- Source
+${''}
+\`\`\`
+const some = 'code';
+\`\`\`
+    `}
+  </Story>
+</Preview>
