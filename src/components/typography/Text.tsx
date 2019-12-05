@@ -35,6 +35,12 @@ const StyledQuote = styled.blockquote`
   text-align: center;
   margin: 2rem 0;
   ${TextStyle}
+
+  & > p {
+    margin: 0;
+    display: inline;
+    font-size: var(--font-size-lg);
+  }
 `;
 
 const RotatedQuotationMark = styled(Icon)`
@@ -60,16 +66,34 @@ export const Paragraph = ({ children, ...props }: TextProps): JSX.Element => {
   return <StyledParagraph {...props}>{children}</StyledParagraph>;
 };
 
-export const Quote: FC<QuoteProps> = ({ children, by = '', ...props }: TextProps): JSX.Element => {
+export const Quote: FC<QuoteProps> = ({ children, by = '', ...props }: QuoteProps): JSX.Element => {
+  let source = null;
+  let quote = children;
+  if (by) {
+    source = by;
+  } else if (typeof quote !== 'string' && children && quote.length && quote.slice(-1)[0].props.children) {
+    // Check if there are any source on the quote
+    if (quote.slice(-1)[0].props.children[0].indexOf('-- ') === 0) {
+      // Get the source from markdown quote
+      source = quote
+        .slice(-1)[0]
+        .props.children.map((e: JSX.Element | string, i: number) =>
+          i === 0 && typeof e === 'string' ? e.replace(/^-- /, '') : e
+        );
+
+      // Remove source from quote
+      quote = quote.slice(0, -1);
+    }
+  }
   return (
     <StyledQuote {...props}>
       <RotatedQuotationMark name="format_quote" />
-      {children}
+      {quote}
       <Icon name="format_quote" />
-      {by ? (
+      {source ? (
         <>
           <br />
-          <StyledQuotedBy>{by}</StyledQuotedBy>
+          <StyledQuotedBy>{source}</StyledQuotedBy>
         </>
       ) : (
         ''
