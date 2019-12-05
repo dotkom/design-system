@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     --font-base-size: 1.2rem;
     --font-scale: 1.4;
+    --font-size-xxs: calc(var(--font-base-size) / (var(--font-scale) * var(--font-scale) * var(--font-scale)));
     --font-size-xs: calc(var(--font-base-size) / (var(--font-scale) * var(--font-scale)));
     --font-size-sm: calc(var(--font-base-size) / var(--font-scale));
     --font-size-md: calc(var(--font-base-size));
@@ -22,23 +23,8 @@ export const GlobalStyle = createGlobalStyle`
       --font-scale: 1.5;
     }
   }
-  h1, h2, h3 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Source Code Pro', monospace;
-    margin: 4rem 0 2rem;
-    line-height: 1.5;
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-  h1 {
-    font-size: var(--font-size-xl);
-  }
-  h2 {
-    font-size: var(--font-size-lg);
-  }
-  h3 {
-    font-size: var(--font-size-md);
   }
   b, strong {
     font-weight: bold;
