@@ -73,13 +73,15 @@ export const Quote: FC<QuoteProps> = ({ children, by = '', ...props }: QuoteProp
     source = by;
   } else if (typeof quote !== 'string' && children && quote.length && quote.slice(-1)[0].props.children) {
     // Check if there are any source on the quote
-    if (quote.slice(-1)[0].props.children[0].indexOf('-- ') === 0) {
+    let sourceChildren = quote.slice(-1)[0].props.children;
+    if (typeof sourceChildren === 'string') {
+      sourceChildren = [sourceChildren];
+    }
+    if (sourceChildren[0].indexOf('-- ') === 0) {
       // Get the source from markdown quote
-      source = quote
-        .slice(-1)[0]
-        .props.children.map((e: JSX.Element | string, i: number) =>
-          i === 0 && typeof e === 'string' ? e.replace(/^-- /, '') : e
-        );
+      source = sourceChildren.map((e: JSX.Element | string, i: number) =>
+        i === 0 && typeof e === 'string' ? e.replace(/^-- /, '') : e
+      );
 
       // Remove source from quote
       quote = quote.slice(0, -1);
