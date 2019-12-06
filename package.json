@@ -15,7 +15,9 @@
     "format": "tsc --noEmit && prettier --write 'src/**/*.{js,ts,tsx}'",
     "format-check": "tsc --noEmit && prettier --check 'src/**/*.{js,ts,tsx}'",
     "lint-check": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}'",
-    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --fix"
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --fix",
+    "storybook": "start-storybook -p 9009 -s public",
+    "chromatic": "chromatic test --exit-zero-on-changes"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,9 +27,6 @@
     "not ie 11",
     "not op_mini all"
   ],
-  "dependencies": {
-    "storybook-chromatic": "^2.2.2"
-  },
   "peerDependencies": {
     "react": "^16.8",
     "react-is": "^16.8"
@@ -67,6 +66,7 @@
     "storybook-addon-figma": "0.1.0",
     "storybook-addon-props": "^3.0.4",
     "storybook-addon-styled-themes": "0.0.3",
+    "storybook-chromatic": "^2.2.2",
     "styled-components": "^4.3.2",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.2.1",
