@@ -51,11 +51,11 @@ steps:
       CHROMATIC_APP_CODE:
         from_secret: chromatic_app_code
     when:
-      event: [push, pull_request]
+      event: [pull_request]
       branch: master
       status: success
     commands:
-      - yarn chromatic
+      - CI=true yarn chromatic
 
   - name: rebuild-cache
     image: drillster/drone-volume-cache
