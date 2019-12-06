@@ -43,6 +43,20 @@ steps:
     commands:
       - yarn format-check
 
+  - name: chromatic (UI diff)
+    image: node:12
+    group: checks
+    secrets: [chromatic_app_code]
+    environment:
+    CHROMATIC_APP_CODE:
+      from_secret: chromatic_app_code
+    when:
+      event: [push, pull_request]
+      branch: master
+      status: success
+    commands:
+      - yarn chromatic
+
   - name: rebuild-cache
     image: drillster/drone-volume-cache
     when:
