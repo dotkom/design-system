@@ -36,11 +36,4 @@ const Heading6 = styled.h6`
   ${HeadingStyle}
 `;
 
-export {
-  Heading,
-  Heading2,
-  Heading3,
-  Heading4,
-  Heading5,
-  Heading6,
-};
+export { Heading, Heading2, Heading3, Heading4, Heading5, Heading6 };

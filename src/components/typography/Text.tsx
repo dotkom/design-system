@@ -92,8 +92,8 @@ export const Quote: FC<QuoteProps> = ({ children, by = '', ...props }: QuoteProp
           <StyledQuotedBy>{source}</StyledQuotedBy>
         </>
       ) : (
-          ''
-        )}
+        ''
+      )}
     </StyledQuote>
   );
 };
