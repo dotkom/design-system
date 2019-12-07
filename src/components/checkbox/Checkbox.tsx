@@ -1,9 +1,9 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
 import Icon from 'components/icon/Icon';
 
-interface CheckboxProps {
+interface CheckboxProps extends StyledComponentProps<'input', any, any, any> {
   label: string;
   isChecked?: boolean;
   onCheck: (isChecked: boolean) => void;
@@ -11,10 +11,10 @@ interface CheckboxProps {
   error?: boolean;
 }
 
-const Checkbox = ({ label, isChecked, onCheck, disabled, error }: CheckboxProps) => {
+const Checkbox = ({ label, isChecked, onCheck, disabled, error, ...props }: CheckboxProps) => {
   return (
     <CheckboxLabel onChange={() => onCheck(!isChecked)} disabled={disabled}>
-      <HiddenCheckbox checked={isChecked} disabled={disabled} />
+      <HiddenCheckbox checked={isChecked} disabled={disabled} {...props} />
       <StyledCheckbox tabIndex={0} error={error}>
         <Icon name="done" />
       </StyledCheckbox>
