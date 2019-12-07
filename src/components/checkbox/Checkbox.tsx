@@ -63,6 +63,7 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 
 const StyledIcon = styled(Icon)`
   vertical-align: baseline;
+  display: block;
 `;
 
 const StyledCheckbox = styled.div<{ error?: boolean }>`
