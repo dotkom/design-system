@@ -14,6 +14,10 @@ const TextStyle = css`
   &:first-child {
     margin-top: 0;
   }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export const Info = styled.p`
