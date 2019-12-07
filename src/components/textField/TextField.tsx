@@ -80,6 +80,10 @@ const RelativeContainer = styled.div`
   position: relative;
 `;
 
+const StyledIcon = styled(Icon)`
+  display: block;
+`;
+
 const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
   const [text, setText] = useState(props.defaultValue || '');
   return (
@@ -94,7 +98,7 @@ const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
       />
       {text && !disabled && (
         <ClearButton onClick={() => setText('')}>
-          <Icon name="clear" />
+          <StyledIcon name="clear" />
         </ClearButton>
       )}
     </RelativeContainer>
