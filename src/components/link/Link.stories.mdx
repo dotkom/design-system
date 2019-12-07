@@ -1,5 +1,6 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Link from './Link';
+import { Paragraph } from '../../';
 
 <Meta title="Navigation|Link" component={Link} />
 
@@ -11,23 +12,23 @@ import Link from './Link';
       <Link>Underline on hover</Link>
       <br />
       <br />
-      <p>
+      <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget elementum lorem. Proin elementum aliquet
         euismod. Proin quis gravida arcu. Donec molestie sollicitudin ligula, ac rutrum mauris.{' '}
         <Link>Etiam pharetra</Link> purus et enim mattis, nec suscipit felis ornare. Fusce eget porttitor quam. Proin
         quis tellus in metus facilisis vehicula. Sed sed odio enim. Integer eu pharetra urna, convallis molestie nulla.
-      </p>
+      </Paragraph>
       <br />
       <Link underline={true}>Underline by default</Link>
       <br />
       <br />
-      <p>
+      <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget elementum lorem. Proin elementum aliquet
         euismod. Proin quis gravida arcu. Donec molestie sollicitudin ligula, ac rutrum mauris.{' '}
         <Link underline={true}>Etiam pharetra</Link> purus et enim mattis, nec suscipit felis ornare. Fusce eget
         porttitor quam. Proin quis tellus in metus facilisis vehicula. Sed sed odio enim. Integer eu pharetra urna,
         convallis molestie nulla.
-      </p>
+      </Paragraph>
     </>
   </Story>
 </Preview>

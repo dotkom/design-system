@@ -2,6 +2,7 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Icon from './Icon';
 import Button from '../button/Button';
 import styled from 'styled-components';
+import { Paragraph } from '../../';
 
 <Meta title="Global|Icon" component={Icon} />
 
@@ -20,15 +21,15 @@ The icons inherit color and font-size from its parents.
 <Preview>
   <Story name="All">
     <ExampleIconContainer>
-      <p style={{ fontSize: '24px' }}>
+      <Paragraph style={{ fontSize: '24px' }}>
         Icons inherit
         <Icon name="whatshot" />
         font size
-      </p>
-      <p style={{ color: 'green' }}>
+      </Paragraph>
+      <Paragraph style={{ color: 'green' }}>
         <Icon name="lock" />
         Icons also inherit color
-      </p>
+      </Paragraph>
       <Button>
         <Icon name="favorite" /> Lorem
       </Button>
