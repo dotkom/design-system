@@ -9,7 +9,7 @@ interface QuoteProps extends StyledComponentProps<'blockquote', any, any, any> {
 
 const TextStyle = css`
   color: ${colors.grayDarken90};
-  line-height: 1.5;
+  line-height: 1.6;
 `;
 
 export const Info = styled.p`
