@@ -16,7 +16,7 @@ const Checkbox = ({ label, isChecked, onCheck, disabled, error }: CheckboxProps)
     <CheckboxLabel onChange={() => onCheck(!isChecked)} disabled={disabled}>
       <HiddenCheckbox checked={isChecked} disabled={disabled} />
       <StyledCheckbox tabIndex={0} error={error}>
-        <Icon name="done" />
+        <StyledIcon name="done" />
       </StyledCheckbox>
       <span>{label}</span>
     </CheckboxLabel>
@@ -59,6 +59,10 @@ const CheckboxCommon = css`
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   ${CheckboxCommon}
   visibility: hidden;
+`;
+
+const StyledIcon = styled(Icon)`
+  vertical-align: baseline;
 `;
 
 const StyledCheckbox = styled.div<{ error?: boolean }>`
