@@ -58,6 +58,10 @@ const RotatedQuotationMark = styled(Icon)`
   vertical-align: top;
 `;
 
+const TranslatedQuotationMark = styled(Icon)`
+  vertical-align: bottom;
+`;
+
 const StyledQuotedBy = styled.span`
   color: ${colors.grayDarken60};
   float: right;
@@ -93,7 +97,7 @@ export const Quote: FC<QuoteProps> = ({ children, by = '', ...props }: QuoteProp
     <StyledQuote {...props}>
       <RotatedQuotationMark name="format_quote" />
       {quote}
-      <Icon name="format_quote" />
+      <TranslatedQuotationMark name="format_quote" />
       {source ? (
         <>
           <br />
