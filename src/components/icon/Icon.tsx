@@ -9,7 +9,7 @@ interface IconProps extends StyledComponentProps<'i', any, any, any> {
 const StyledIcon = styled.i`
   color: inherit;
   font-size: inherit;
-  vertical-align: bottom;
+  vertical-align: middle;
 `;
 
 const Icon = ({ name, className = '', ...props }: IconProps) => {
