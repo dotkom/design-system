@@ -6,15 +6,15 @@ import Icon from 'components/icon/Icon';
 interface CheckboxProps extends StyledComponentProps<'input', any, any, any> {
   label: string;
   isChecked?: boolean;
-  onCheck: (isChecked: boolean) => void;
+  onChange: (isChecked: boolean) => void;
   disabled?: boolean;
   error?: boolean;
 }
 
-const Checkbox = ({ label, isChecked, onCheck, disabled, error, ...props }: CheckboxProps) => {
+const Checkbox = ({ label, isChecked, onChange, disabled, error, ...props }: CheckboxProps) => {
   return (
-    <CheckboxLabel onChange={() => onCheck(!isChecked)} disabled={disabled}>
-      <HiddenCheckbox checked={isChecked} disabled={disabled} {...props} />
+    <CheckboxLabel disabled={disabled}>
+      <HiddenCheckbox checked={isChecked} disabled={disabled} onChange={() => onChange(!isChecked)} {...props} />
       <StyledCheckbox tabIndex={0} error={error}>
         <Icon name="done" />
       </StyledCheckbox>
