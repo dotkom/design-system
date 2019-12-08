@@ -57,7 +57,7 @@ yarn format
 If you want to run a chromatic test (UI image diff), use:
 
 ```bash
-CHROMATIC_APP_CODE={get-app-code-from-dotkom} yarn chromatica # This may take som time
+CHROMATIC_APP_CODE={get-app-code-from-dotkom} yarn chromatic # This may take som time
 # Then, go your last build on https://www.chromaticqa.com/builds?appId=5dea690ec744f30020aaf273 to review changes in UI.
 ```
 
