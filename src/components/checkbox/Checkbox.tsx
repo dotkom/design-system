@@ -73,7 +73,7 @@ const StyledCheckbox = styled.div<{ error?: boolean }>`
     background: ${colors.primary};
     border-color: ${colors.primary};
   }
-  ${CheckboxLabel}:hover & {
+  ${CheckboxLabel}:hover > & {
     border-color: ${colors.primary};
   }
   ${HiddenCheckbox}:disabled + & {
