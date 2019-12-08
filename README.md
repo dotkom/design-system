@@ -54,6 +54,13 @@ yarn lint
 yarn format
 ```
 
+If you want to run a chromatic test (UI image diff), use:
+
+```bash
+CHROMATIC_APP_CODE={get-app-code-from-dotkom} yarn chromatica # This may take som time
+# Then, go your last build on https://www.chromaticqa.com/builds?appId=5dea690ec744f30020aaf273 to review changes in UI.
+```
+
 ### Editor config
 
 We use [MDX](https://mdxjs.com/) with Storybook, so we recommend using a [plugin](https://marketplace.visualstudio.com/items?itemName=silvenon.mdx) for syntax highlighting etc.
