@@ -13,8 +13,8 @@ interface CheckboxProps extends StyledComponentProps<'input', any, any, any> {
 
 const Checkbox = ({ label, isChecked, onChange = () => { }, disabled, error, ...props }: CheckboxProps) => {
   return (
-    <CheckboxLabel disabled={disabled} htmlFor="bla">
-      <HiddenCheckbox checked={isChecked} id="bla" disabled={disabled} tabIndex={0} onChange={() => onChange(!isChecked)} {...props} />
+    <CheckboxLabel disabled={disabled}>
+      <HiddenCheckbox checked={isChecked} disabled={disabled} tabIndex={0} onChange={() => onChange(!isChecked)} {...props} />
       <StyledCheckbox error={error}>
         <Icon name="done" />
       </StyledCheckbox>
