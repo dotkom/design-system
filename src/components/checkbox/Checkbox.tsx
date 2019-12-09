@@ -14,8 +14,8 @@ interface CheckboxProps extends StyledComponentProps<'input', any, any, any> {
 const Checkbox = ({ label, isChecked, onChange = () => { }, disabled, error, ...props }: CheckboxProps) => {
   return (
     <CheckboxLabel disabled={disabled} htmlFor="bla">
-      <HiddenCheckbox checked={isChecked} id="bla" disabled={disabled} onChange={() => onChange(!isChecked)} {...props} />
-      <StyledCheckbox tabIndex={0} error={error}>
+      <HiddenCheckbox checked={isChecked} id="bla" disabled={disabled} tabIndex={0} onChange={() => onChange(!isChecked)} {...props} />
+      <StyledCheckbox error={error}>
         <Icon name="done" />
       </StyledCheckbox>
       <span>{label}</span>
@@ -58,7 +58,6 @@ const CheckboxCommon = css`
 
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   ${CheckboxCommon}
-  visibility: hidden;
 `;
 
 const StyledCheckbox = styled.div<{ error?: boolean }>`
