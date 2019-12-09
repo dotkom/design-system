@@ -97,3 +97,9 @@ The snippet above sets up automatic formatting on save! You might need plugins f
 DS will automatically be published to npm when a branch beginning with `fix/` producing a patch version change, and a branch beginning with `feat/` producing a minor version change.
 
 You can also publish DS manually by incrementing the version number in [package.json](https://github.com/dotkom/design-system/blob/master/package.json). Keep in mind that we try to follow [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) in dotkom.
+
+## Thanks
+
+<a href="https://www.chromaticqa.com/"><img src="https://cdn-images-1.medium.com/letterbox/147/36/50/50/1*oHHjTjInDOBxIuYHDY2gFA.png?source=logoAvatar-d7276495b101---37816ec27d7a" width="120"/></a>
+
+Thanks to [Chromatic](https://www.chromaticqa.com/) for providing the visual testing platform that helps us catch unexpected changes on time.
