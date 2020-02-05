@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styled, { StyledComponentProps, css } from 'styled-components';
 import { colors } from 'common/colors';
-import { Icon } from '../../';
 
 interface QuoteProps extends StyledComponentProps<'blockquote', any, any, any> {
   by?: string;
@@ -41,8 +40,6 @@ export const Paragraph = styled.p`
 
 const StyledQuote = styled.blockquote`
   font-size: var(--font-size-lg);
-  font-style: italic;
-  text-align: center;
   margin: 2rem 0;
   ${TextStyle}
 
@@ -50,25 +47,6 @@ const StyledQuote = styled.blockquote`
     margin: 0;
     display: inline;
     font-size: var(--font-size-lg);
-  }
-`;
-
-const RotatedQuotationMark = styled(Icon)`
-  transform: rotate(180deg);
-  vertical-align: top;
-`;
-
-const TranslatedQuotationMark = styled(Icon)`
-  vertical-align: bottom;
-`;
-
-const StyledQuotedBy = styled.span`
-  color: ${colors.grayDarken60};
-  float: right;
-  font-size: var(--font-size-md);
-
-  &::before {
-    content: '- ';
   }
 `;
 
@@ -95,17 +73,7 @@ export const Quote: FC<QuoteProps> = ({ children, by = '', ...props }: QuoteProp
   }
   return (
     <StyledQuote {...props}>
-      <RotatedQuotationMark name="format_quote" />
-      {quote}
-      <TranslatedQuotationMark name="format_quote" />
-      {source ? (
-        <>
-          <br />
-          <StyledQuotedBy>{source}</StyledQuotedBy>
-        </>
-      ) : (
-        ''
-      )}
+      «{quote}» {source}
     </StyledQuote>
   );
 };
