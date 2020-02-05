@@ -13,6 +13,8 @@ export const ExampleButtonContainer = styled.div`
 
 # Button
 
+For most cases, our default button without any specific variant or color will suffice. Buttons with the "secondary" color are rarely suited for use, and serve more as a contrast for differing backgrounds. Other colors and variants are explained below.
+
 <Preview>
   <Story name="All">
     <ExampleButtonContainer>
@@ -42,3 +44,32 @@ export const ExampleButtonContainer = styled.div`
 </Preview>
 
 <Props of={Button} />
+
+## Outline variant
+
+When you wish to present the user with two or more options, and you wish to highlight one of the options as the recommended alternative, consider setting the other alternatives to the "outline" variant.
+
+<Preview>
+  <Story name="Outline">
+    <ExampleButtonContainer>
+      <Button>Confirm</Button>
+      <Button variant="outline">Cancel</Button>
+    </ExampleButtonContainer>
+  </Story>
+</Preview>
+
+## Status colors
+
+Status colors can be used to indicate actions with considerable consequences. The "success" color can for example be used for completing a form, while the "danger" color can be used to indicate irreversible actions that might require some second thought.
+
+<Preview>
+  <Story name="Status">
+    <ExampleButtonContainer>
+      <Button color="success">Save</Button>
+      <Button color="danger">Delete</Button>
+      <Button variant="outline" color="danger">
+        Clear
+      </Button>
+    </ExampleButtonContainer>
+  </Story>
+</Preview>
