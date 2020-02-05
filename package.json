@@ -1,6 +1,6 @@
 {
   "name": "@dotkomonline/design-system",
-  "version": "0.9.4",
+  "version": "0.11.2",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.modern.mjs",
@@ -33,14 +33,6 @@
   },
   "devDependencies": {
     "@mdx-js/loader": "1.2.2",
-    "@storybook/addon-a11y": "5.2.1",
-    "@storybook/addon-actions": "5.2.1",
-    "@storybook/addon-docs": "5.2.1",
-    "@storybook/addon-knobs": "5.2.1",
-    "@storybook/addon-storysource": "5.2.1",
-    "@storybook/addons": "5.2.1",
-    "@storybook/react": "5.2.1",
-    "@storybook/source-loader": "5.2.1",
     "@types/jest": "^24.0.18",
     "@types/markdown-to-jsx": "^6.9.1",
     "@types/node": "12.7.5",
@@ -74,5 +66,15 @@
     "typescript": "^3.6.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@storybook/addon-a11y": "^5.3.12",
+    "@storybook/addon-actions": "^5.3.12",
+    "@storybook/addon-docs": "^5.3.12",
+    "@storybook/addon-knobs": "^5.3.12",
+    "@storybook/addon-storysource": "^5.3.12",
+    "@storybook/addons": "^5.3.12",
+    "@storybook/react": "^5.3.12",
+    "@storybook/source-loader": "^5.3.12"
   }
 }
