@@ -21,28 +21,31 @@ const Heading = styled.h1`
   ${HeadingStyle}
 `;
 const Heading2 = styled.h2`
-  font-size: calc(var(--font-size-xxl) * 0.85);
+  font-size: calc(var(--font-size-xl));
   line-height: 3.75rem;
   ${HeadingStyle}
 `;
 const Heading3 = styled.h3`
-  font-size: calc(var(--font-size-xxl) * 0.72);
+  font-size: calc(var(--font-size-lg));
   line-height: 3.125rem;
   ${HeadingStyle}
 `;
 const Heading4 = styled.h4`
-  font-size: calc(var(--font-size-xxl) * 0.6);
+  font-size: calc(var(--font-size-md));
   line-height: 2.5rem;
+  font-weight: 900;
   ${HeadingStyle}
 `;
 const Heading5 = styled.h5`
-  font-size: calc(var(--font-size-xxl) * 0.53);
+  font-size: calc(var(--font-size-sm));
   line-height: 2rem;
+  font-weight: 900;
   ${HeadingStyle}
 `;
 const Heading6 = styled.h6`
-  font-size: var(--font-size-md);
+  font-size: calc(var(--font-size-xs));
   line-height: 2rem;
+  font-weight: 900;
   ${HeadingStyle}
 `;
 
