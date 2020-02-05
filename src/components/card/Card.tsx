@@ -1,21 +1,39 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { colors } from 'common/colors';
 
 interface CardProps {
   children: React.ReactNode;
-  [name: string]: any;
+  elevated?: boolean;
+  padding?: boolean;
 }
 
-const StyledCard = styled.div`
+const StyledCard = styled.div<{ elevated: boolean; padding: boolean }>`
   display: inline-block;
   background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-  padding: 1rem;
+  border: 1px solid ${colors.grayLighten60};
+
+  ${(props) =>
+    props.elevated &&
+    css`
+      border: none;
+      border-radius: 3px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    `}
+
+  ${(props) =>
+    props.padding &&
+    css`
+      padding: 1rem;
+    `}
 `;
 
-const Card = ({ children, ...props }: CardProps) => {
-  return <StyledCard {...props}>{children}</StyledCard>;
+const Card = ({ children, elevated = false, padding = true }: CardProps) => {
+  return (
+    <StyledCard elevated={elevated} padding={padding}>
+      {children}
+    </StyledCard>
+  );
 };
 
 export default Card;

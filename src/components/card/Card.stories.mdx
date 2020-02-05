@@ -1,9 +1,18 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 import Card from './Card';
+import styled from 'styled-components';
+
+export const ExampleElevationContainer = styled.div`
+  & > \* + \* {
+    margin-top: 1rem;
+  }
+`;
 
 <Meta title="Layout|Card" component={Card} />
 
 # Card
+
+Cards are a structural component that can help divide your components into logical sections. Only use them if you feel they contribute to the maneuverability of the design, since an abundance of cards leads to a lot of visual clutter.
 
 <Preview>
   <Story name="Card">
@@ -11,30 +20,41 @@ import Card from './Card';
   </Story>
 </Preview>
 
-### Image Card
+<Props of={Card} />
+
+
+## Elevation
+
+Instead of a flat border design, cards also come in a variant where they are "elevated" from the background by use of shadows, evoking the Material Design paper look Google popularized. This variant also comes with mildly rounded edges, despite the fact that real paper has sharp edges, hence paper cuts. Note that we are actively phasing out this design, so consider carefully before using it.
 
 <Preview>
-  <Story name="Image Card">
-    <Card>
-      <img
-        width="300px"
-        src="https://online.ntnu.no/media/images/responsive/sm/72f7113d-3833-4ca5-a498-4eccbb833db7.png"
-      />
-      <p>This card has standard padding, which might look weird with a non-transparent image.</p>
-    </Card>
+  <Story name="Elevation">
+    <ExampleElevationContainer>
+      <Card>
+        <p>This card is flat to the background.</p>
+      </Card>
+      <Card elevated>
+        <p>This card is elevated, making it rise above the others</p>
+      </Card>
+      <Card>
+        <p>This card is flat to the background.</p>
+      </Card>
+    </ExampleElevationContainer>
   </Story>
 </Preview>
 
-### Padding
+## Padding
+
+Cards come with a default padding that should rarely be overriden. However, we might want to stretch an image to the edges of the card, which is why we provide the option to turn off the padding.
 
 <Preview>
-  <Story name="Card With Padding">
-    <Card style={{ padding: 0 }}>
+  <Story name="Padding">
+    <Card padding={false} elevated>
       <img
-        width="300px"
+        width="100%"
         src="https://online.ntnu.no/media/images/responsive/sm/72f7113d-3833-4ca5-a498-4eccbb833db7.png"
       />
-      <p>This card has no padding at all!</p>
+      <div style={{ padding: '1rem' }}>The image stretching above this text makes it looks more like a header for this card!</div>
     </Card>
   </Story>
 </Preview>
