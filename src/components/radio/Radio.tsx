@@ -22,18 +22,10 @@ const Radio = ({ labels, groupName, disabled, error }: RadioProps) => {
 
 const size = 20;
 
-const RadioGroupError = css`
-  border: 1px solid ${colors.error};
-`;
-
 const RadioGroup = styled.div<{ error?: boolean }>`
-  padding: 1rem;
-
   & > * + * {
     margin-top: 0.5rem;
   }
-
-  ${({ error }) => error && RadioGroupError};
 `;
 
 const RadioLabelDisabled = css`
@@ -77,9 +69,8 @@ const HiddenRadio = styled.input.attrs({ type: 'radio' })`
 const StyledRadio = styled.div<{ error?: boolean }>`
   ${HiddenRadioCommon}
   background: #fff;
-  border: 1px solid ${({ error }) => (error ? colors.error : colors.grayLighten90)};
+  border: 2px solid ${({ error }) => (error ? colors.error : colors.grayLighten60)};
   border-radius: 50%;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.15));
   transition: border 0.2s;
 
   ${RadioLabel}:hover &,
@@ -94,7 +85,7 @@ const StyledRadio = styled.div<{ error?: boolean }>`
   ${HiddenRadio}:disabled + & {
     cursor: not-allowed;
     background-color: ${colors.grayLighten90};
-    border-color: ${colors.grayLighten60};
+    border-color: ${colors.grayLighten90};
   }
 `;
 

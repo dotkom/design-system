@@ -3,27 +3,28 @@ import { create } from '@storybook/theming';
 export default create({
   base: 'light',
 
-  colorPrimary: 'hotpink',
-  colorSecondary: '#d60',
+  colorPrimary: '#0D5474',
+  colorSecondary: '#316e89',
 
   // UI
-  appBg: '#004170',
-  appContentBg: '#fff',
-  //appBorderColor: '#faa21b',
-  appBorderRadius: 5,
+  appBg: '#0D5474',
+  appContentBg: '#FFFFFF',
+
+  // appBorderColor: '#0D5474',
+  appBorderRadius: 3,
 
   // Typography
-  fontBase: '"Open Sans Pro", sans-serif',
-  fontCode: 'monospace',
+  fontBase: '"Source Sans Pro", sans-serif',
+  fontCode: '"Source Code Pro", monospace',
 
   // Text colors
   //textColor: 'black',
   //textInverseColor: 'rgba(255,255,255,0.9)',
 
   // Toolbar default and active colors
-  barTextColor: '#999',
-  barSelectedColor: '#d60',
-  barBg: '#333',
+  barTextColor: '#808080',
+  barSelectedColor: '#F9B759',
+  barBg: '#072e40',
 
   //// Form colors
   //inputBg: 'white',

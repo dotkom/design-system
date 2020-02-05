@@ -40,7 +40,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     props.variant == 'outline' &&
     css`
       background: transparent;
-      border: 2px solid ${props.color};
+      border-color: ${props.color};
       color: ${props.color};
     `}
 `;
