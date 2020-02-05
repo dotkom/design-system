@@ -38,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Source Sans Pro', sans-serif;
   }
   b, strong {
     font-weight: bold;
