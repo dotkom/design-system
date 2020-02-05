@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import Reset from './reset';
 import { media, breakPointsInPX } from './layout';
+import { colors } from './colors';
 
 export const GlobalStyle = createGlobalStyle`
   ${Reset}
@@ -9,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
+    color: ${colors.grayDarken90};
   }
   :root {
     --font-base-size: 1.2rem;

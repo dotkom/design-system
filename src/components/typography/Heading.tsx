@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
-import { colors } from 'common/colors';
 
 const HeadingStyle = css`
-  color: ${colors.grayDarken90};
   margin: 4rem 0 2rem;
   line-height: 1.5;
 
