@@ -8,6 +8,8 @@ import Breakpoints from './Breakpoints';
 
 We have defined a few break points that should be used when designing components. This will make it easier tweak parameters later and keep the system more consistent while developing over time.
 
+We have a mobile-first approach, meaning you will need to design for mobile first. You can then add, for example, desktop behaviour afterwards using `desktopAndUp` and so on. Be sure to order the media queries correctly (mobile first, then increase).
+
 To use the break points in a media query, you need to specify `@media` on beforehand. You can then use the query like this:
 
 ```javascript
@@ -27,8 +29,6 @@ To use the break points in a media query, you need to specify `@media` on before
   // Negation of desktop and up => tablet and down (aka mobile and tablet)
 }
 ```
-
-**NB:** We have a mobile-first approach, meaning you will need to design for mobile first. You can then add, for example, desktop behaviour afterwards using `desktopAndUp` and so on. Be sure to order the media queries correctly (mobile first, then increase).
 
 <Preview>
   <Story name="All cases">
@@ -64,13 +64,19 @@ To use the break points in a media query, you need to specify `@media` on before
 
 ## List of all media queries available
 
+### Minimums
+
 | Media query             | Interval                   | Logic                                             |
 | :---------------------- | :------------------------- | :------------------------------------------------ |
-| **Minimums**            |                            |                                                   |
 | `media.tabletAndUp`     | `[minTablet, ∞)`           | Minimum tablet. This excludes mobile.             |
 | `media.desktopAndUp`    | `[minDesktop, ∞)`          | Minimum desktop. This excludes mobile and tablet. |
 | `media.widescreenAndUp` | `[minWidescreen, ∞)`       | Minimum widescreen. Basically widescreen only.    |
-| **Precise**             |                            |                                                   |
+
+
+### Precise
+
+| Media query             | Interval                   | Logic                                             |
+| :---------------------- | :------------------------- | :------------------------------------------------ |
 | `media.mobileOnly`      | `[0, maxMobile]`           | Mobile only.                                      |
 | `media.tabletOnly`      | `[minTablet, maxTablet]`   | Tablet only.                                      |
 | `media.desktopOnly`     | `[minDesktop, maxDesktop]` | Desktop only.                                     |
