@@ -63,3 +63,6 @@ export { default as Timeline } from 'components/timeline/Timeline';
 
 // component/toggleSwitch
 export { default as ToggleSwitch } from 'components/toggleSwitch/ToggleSwitch';
+
+// component/modal
+export { default as Modal } from 'components/modal/Modal';
