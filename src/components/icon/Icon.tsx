@@ -1,7 +1,7 @@
 import React from 'react';
-import styled, { StyledComponentProps } from 'styled-components';
+import styled from 'styled-components';
 
-interface IconProps extends StyledComponentProps<'i', any, any, any> {
+interface IconProps {
   name: string;
 }
 
