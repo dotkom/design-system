@@ -1,0 +1,94 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Heading, Heading2, Heading3 } from './Heading';
+import { Ingress, Paragraph, Quote, Info } from './Text';
+import { Markdown } from './Markdown';
+
+<Meta title="Typography|Article Composition" />
+
+# Article Composition
+
+This story displays how an article could be composed using our typography components.
+
+## Short Example
+
+<Preview>
+  <Story name="Short Example">
+    <>
+      <Heading>Heading</Heading>
+      <Info>Info</Info>
+      <Ingress>Ingress</Ingress>
+      <Paragraph>Paragraph</Paragraph>
+      <Quote>Quote</Quote>
+    </>
+  </Story>
+</Preview>
+
+## Long Example Using Markdown
+
+<Preview>
+  <Story name="Long Example Using Markdown">
+    <>
+      <Heading>The story of Lorem Ipsum</Heading>
+      <Info>Written by Lorem and Ipsum</Info>
+      <Ingress>
+        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+        'Content here, content here', making it look like readable English.
+      </Ingress>
+      <Markdown>
+        {`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+${''}
+## Facts about Lorem Ipsum
+${''}
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+${''}
+> Understanding is the first step to acceptance, and only with acceptance can there be recovery.
+>
+> -- J.K. Rowling
+${''}
+The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes
+on purpose (injected humour and the like).
+${''}
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`}
+      </Markdown>
+    </>
+  </Story>
+</Preview>
+
+## Long Example Using Components
+
+<Preview>
+  <Story name="Long Example Using Components">
+    <>
+      <Heading>The story of Lorem Ipsum</Heading>
+      <Info>Written by Lorem and Ipsum</Info>
+      <Ingress>
+        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+        'Content here, content here', making it look like readable English.
+      </Ingress>
+      <Paragraph>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+      </Paragraph>
+      <Heading2>Facts about Lorem Ipsum</Heading2>
+      <Paragraph>
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+        its layout.
+      </Paragraph>
+      <Quote by="J.K. Rowling">
+        Understanding is the first step to acceptance, and only with acceptance can there be recovery.
+      </Quote>
+      <Paragraph>
+        The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+        'Content here, content here', making it look like readable English. Many desktop publishing packages and web
+        page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many
+        web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes
+        on purpose (injected humour and the like).
+      </Paragraph>
+      <Paragraph>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</Paragraph>
+    </>
+  </Story>
+</Preview>

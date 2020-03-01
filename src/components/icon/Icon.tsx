@@ -1,18 +1,23 @@
 import React from 'react';
-import styled, { StyledComponentProps } from 'styled-components';
+import styled from 'styled-components';
 
-interface IconProps extends StyledComponentProps<'i', any, any, any> {
+interface IconProps {
   name: string;
+  className?: string;
 }
 
 const StyledIcon = styled.i`
   color: inherit;
   font-size: inherit;
-  vertical-align: bottom;
+  vertical-align: middle;
 `;
 
-const Icon = ({ name }: IconProps) => {
-  return <StyledIcon className="material-icons-outlined">{name}</StyledIcon>;
+const Icon = ({ name, className = '', ...props }: IconProps) => {
+  return (
+    <StyledIcon className={`material-icons-outlined ${className}`} {...props}>
+      {name}
+    </StyledIcon>
+  );
 };
 
 export default Icon;

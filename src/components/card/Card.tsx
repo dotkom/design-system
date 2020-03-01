@@ -6,6 +6,7 @@ interface CardProps {
   children: React.ReactNode;
   elevated?: boolean;
   padding?: boolean;
+  [name: string]: any;
 }
 
 const StyledCard = styled.div<{ elevated: boolean; padding: boolean }>`
@@ -28,9 +29,9 @@ const StyledCard = styled.div<{ elevated: boolean; padding: boolean }>`
     `}
 `;
 
-const Card = ({ children, elevated = false, padding = true }: CardProps) => {
+const Card = ({ children, elevated = false, padding = true, ...props }: CardProps) => {
   return (
-    <StyledCard elevated={elevated} padding={padding}>
+    <StyledCard elevated={elevated} padding={padding} {...props}>
       {children}
     </StyledCard>
   );

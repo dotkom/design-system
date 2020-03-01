@@ -11,7 +11,6 @@ const StyledColor = styled.div<{ color: ColorName; darkText: boolean }>`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  line-height: 1.5;
   background: ${({ color }) => colors[color]};
   border: 2px solid ${({ color }) => colors[color]};
   color: ${({ darkText }) => (darkText ? colors.black : colors.white)};

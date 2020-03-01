@@ -1,8 +1,8 @@
 import React from 'react';
-import styled, { css, StyledComponentProps } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
 
-interface LinkProps extends StyledComponentProps<'a', any, any, any> {
+interface LinkProps {
   href: string;
   underline?: boolean;
   children: string;

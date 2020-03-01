@@ -39,7 +39,6 @@ const StyledEvent = styled.div``;
 
 const EventTitle = styled.h3`
   position: relative;
-  font-family: 'Source Sans Pro', sans-serif;
   padding: 1rem 0 1rem 2rem;
 
   &::before {
@@ -67,7 +66,6 @@ const EventHeader = styled.div`
 `;
 
 const EventTime = styled.h3`
-  font-family: 'Source Sans Pro', sans-serif;
   padding: 1rem 0;
   width: ${widthTime};
 `;

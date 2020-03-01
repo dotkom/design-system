@@ -7,6 +7,7 @@ export const ExampleElevationContainer = styled.div`
     margin-top: 1rem;
   }
 `;
+import { Paragraph } from '../../';
 
 <Meta title="Layout|Card" component={Card} />
 
@@ -31,13 +32,13 @@ Instead of a flat border design, cards also come in a variant where they are "el
   <Story name="Elevation">
     <ExampleElevationContainer>
       <Card>
-        <p>This card is flat to the background.</p>
+        <Paragraph>This card is flat to the background.</Paragraph>
       </Card>
       <Card elevated>
-        <p>This card is elevated, making it rise above the others</p>
+        <Paragraph>This card is elevated, making it rise above the others</Paragraph>
       </Card>
       <Card>
-        <p>This card is flat to the background.</p>
+        <Paragraph>This card is flat to the background.</Paragraph>
       </Card>
     </ExampleElevationContainer>
   </Story>
