@@ -37,6 +37,9 @@ export { default as OldCompactLogo } from 'components/logo/OldCompactLogo';
 export { default as ModernLogo } from 'components/logo/ModernLogo';
 export { default as StaticSpinnerLogo } from 'components/logo/StaticSpinnerLogo';
 
+// component/modal
+export { default as Modal } from 'components/modal/Modal';
+
 // component/radio
 export { default as Radio } from 'components/radio/Radio';
 

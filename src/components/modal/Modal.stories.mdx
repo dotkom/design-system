@@ -1,0 +1,115 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import Modal from './Modal';
+import Button from 'components/button/Button';
+import { useState } from 'react';
+
+<Meta title="Layout|Modal" component={Modal} />
+
+# Modal
+
+The modal is used to front important information, prompts, user-required actions and information hidden from default view.  
+It accepts the props `open` and `onClose` which should be used to control whether the modal is displayed.  
+`onClose` will be called by the modal on click of the exit button or if the user clicks outside the center component.
+
+<Preview>
+  <Story name="Modal">
+    {() => {
+      const [modalOpen, setModalOpen] = useState(false);
+      return (
+        <>
+          <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+            <p>This is the modal text</p>
+          </Modal>
+          <Button onClick={() => setModalOpen(true)}>Click me to display modal!</Button>
+        </>
+      );
+    }}
+  </Story>
+</Preview>
+
+<Props of={Modal} />
+
+# Modal with action
+
+The modal will display any children it is passed.  
+Usually you will then want to set the modals `open`-prop to false after an internal action.
+
+<Preview>
+  <Story name="Modal With Action Buttons">
+    {() => {
+      const [modalOpen, setModalOpen] = useState(false);
+      return (
+        <>
+          <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+            <h2 style={{ textAlign: 'center' }}>Accept terms?</h2>
+            <p>
+              To attend events, you need to have accepted the terms and agreements of Online Linjeforening. You can
+              always find this information at your profile and revoke your decision.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', marginTop: '2em' }}>
+              <Button onClick={() => setModalOpen(false)}>Accept Terms</Button>
+              <Button variant="outline" onClick={() => setModalOpen(false)}>
+                Do Not Accept
+              </Button>
+            </div>
+          </Modal>
+          <Button onClick={() => setModalOpen(true)}>Display modal with action buttons</Button>
+        </>
+      );
+    }}
+  </Story>
+</Preview>
+
+# Modal with long text
+
+<Preview>
+  <Story name="Modal With long text">
+    {() => {
+      const [modalOpen, setModalOpen] = useState(false);
+      return (
+        <>
+          <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+            <p style={{ lineHeight: '1.5' }}>
+              Bro ipsum dolor sit amet skinny pipe tele heli air liftie taco rig. Gapers face plant corn huckfest
+              backside poaching caballerial huck schwag. Bomb hole phat Whistler steeps. Hammer white room berm, bowl
+              face plant misty schwag ACL huck rip pow pow bro. Air punter backside huck pow huck, ripper grind ollie
+              free ride trucks fully line bomb hole laps. Carve Whistler chillax, piste Ski bowl gorby schwag. Epic
+              T-bar gondy skid lid saddle couloir dirtbag. Core shot afterbang first tracks bump tele schwag air
+              poaching. Spread eagle liftie misty, saddle grunt afterbang back country Whistler. Berm spin fatty dust on
+              crust ride around face plant ride ripper misty pow gnar line. Carve stunt huckfest bear trap berm ski bum
+              bowl deck frontside dope. Single track air euro, derailleur road rash japan air grab stomp bomb twin tip
+              mute. Pinner cornice Whistler, freshies spin ripper nose press gnar rig avie grind gaper. Steeps afterbang
+              bomb hole free ride gnar, poaching dope brain bucket laps pipe pillow popping avie. Pow pow smear ACL rail
+              Bike epic rig ripper. Groomer jib bear trap presta corduroy bonk euro air flowy ride. Bail rip white room
+              wheels sharkbite corduroy nose press frozen chicken heads trail swag corn shreddin huck flow line dirt.
+              Switch stunt rock roll, skinny deck gnar roadie taco mitt pow Bike gaper. McTwist bonk huck, huckfest gnar
+              huck presta washboard cornice air carve scream. Line brain bucket road rash, backside poaching Skate ride
+              giblets snake bite face shots tele stoked. Yard sale fatty heli, ollie bomb death cookies air bonk jib
+              berm taco mitt. Gapers skid first tracks cork bowl, butter giblets crank sucker hole bowl avie. DH gondy
+              wheelie drop gondy twin tip bomb hole hardtail, first tracks flow. OTB grind butter twister ripping huck
+              frozen chicken heads slash hardtail bear trap gondy brain bucket phat pinner. Sucker hole heli betty brain
+              bucket face plant. Hurl carcass titanium air frozen chicken heads hammerhead. Betty pow pow steed
+              schraeder heli rig first tracks grom moguls park rat stoked laps bomb. Groomer free ride huckfest nose
+              press park. Big ring rail Whistler backside rig cork bonk. Trucks afterbang bowl nose press clipless.
+              Pinner ski bum air wheelie drop bump gnar sucker hole grind heli. Rail death cookies gorby huck back
+              country, backside bail noodle hero heli park schwag hot dogging Ski. Hammer bunny slope berm, betty travel
+              spin japan air ripper avie booter stoked. Bonk face shots line huck rig bro acro. Saddle method huckfest
+              single track bump chillax. Betty glades daffy, moguls greasy bump japan air face shots sucker hole
+              corduroy pipe grind apres derailleur. Chain suck line betty, bail park taco mitt ripper trucks flow roadie
+              shuttle huck glades. Laps hellflip corduroy huck acro, grind tele. Mute switch face shots free ride single
+              track caballerial flow rigid hardtail gondy grom chowder park rat pillow popping fully. Skid dirtbag
+              schraeder nose press pow bro ride Whistler ripping. Clean pow pow big ring rigid. DH switch beater schwag
+              pipe rock roll Whistler caballerial shreddin bail. Huckfest sucker hole free ride avie Whistler jib.
+              Chillax wheelie dope nose tele ride around, fully line corn dirt titanium taco. Apres endo nose press,
+              wheelie dope park flow rig. Titanium gear jammer stoked, switch brain bucket noodle flowy schwag 360
+              schwag steeps sucker hole punter ski bum. Spin first tracks grind poaching hot dogging hammer. Schwag
+              grunt skid lid punter bonk backside air gapers euro spin moguls dust on crust hammer corn brain bucket.
+              Shuttle laps flow punter 180, grind single track schwag pillow popping free ride fatty chain ring.
+            </p>
+          </Modal>
+          <Button onClick={() => setModalOpen(true)}>Click me to display modal!</Button>
+        </>
+      );
+    }}
+  </Story>
+</Preview>
