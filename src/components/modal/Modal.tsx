@@ -14,7 +14,7 @@ const StyledCard = styled(Card)`
     min-width: 100px;
     min-height: min-content;
     max-width: 60vw;
-    max-height: 80vw;
+    max-height: 80vh;
   }
 `;
 
