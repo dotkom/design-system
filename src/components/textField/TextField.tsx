@@ -22,7 +22,7 @@ const InputField = styled.input<{ status?: StatusStrings }>`
   width: 100%;
   border-radius: 3px;
   padding: 0.5rem;
-  padding-right: 1.5rem;
+  padding-right: 2.5rem;
   font-size: 1em;
   color: ${colors.black};
   border: 2px solid ${({ status }) => (status ? statuses[status] : colors.grayLighten60)};
@@ -66,19 +66,28 @@ const InputMessage = styled.p`
 
 const ClearButton = styled.button`
   position: absolute;
-  padding: 0.5rem;
+  padding: 0.8rem;
   font-size: 1rem;
-  top: calc(2rem + 2px);
-  right: calc(2.5rem + 4px);
+  top: 0;
+  right: 0;
+  bottom: 0;
   color: ${colors.grayLighten30};
   cursor: pointer;
   background: transparent;
 `;
 
+const RelativeContainer = styled.div`
+  position: relative;
+`;
+
+const StyledIcon = styled(Icon)`
+  display: block;
+`;
+
 const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
   const [text, setText] = useState(props.defaultValue || '');
   return (
-    <div>
+    <RelativeContainer>
       <InputField
         value={text}
         onChange={(e) => {
@@ -89,10 +98,10 @@ const ClearableInputField = ({ disabled, ...props }: TextFieldProps) => {
       />
       {text && !disabled && (
         <ClearButton onClick={() => setText('')}>
-          <Icon name="clear" />
+          <StyledIcon name="clear" />
         </ClearButton>
       )}
-    </div>
+    </RelativeContainer>
   );
 };
 

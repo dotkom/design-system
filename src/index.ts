@@ -37,6 +37,9 @@ export { default as OldCompactLogo } from 'components/logo/OldCompactLogo';
 export { default as ModernLogo } from 'components/logo/ModernLogo';
 export { default as StaticSpinnerLogo } from 'components/logo/StaticSpinnerLogo';
 
+// component/modal
+export { default as Modal } from 'components/modal/Modal';
+
 // component/radio
 export { default as Radio } from 'components/radio/Radio';
 
@@ -64,5 +67,7 @@ export { default as Timeline } from 'components/timeline/Timeline';
 // component/toggleSwitch
 export { default as ToggleSwitch } from 'components/toggleSwitch/ToggleSwitch';
 
-// component/modal
-export { default as Modal } from 'components/modal/Modal';
+// component/typography
+export { Heading, Heading2, Heading3, Heading4, Heading5, Heading6 } from 'components/typography/Heading';
+export { Ingress, Paragraph, Quote, Info } from 'components/typography/Text';
+export { Markdown, md } from 'components/typography/Markdown';

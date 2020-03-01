@@ -1,0 +1,34 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Heading, Heading2, Heading3, Heading4, Heading5, Heading6 } from './Heading';
+import { Ingress, Paragraph, Info } from './Text';
+
+<Meta title="Typography|Heading" component={Heading} />
+
+# Headings
+
+`<Heading>`, `<Heading2>`, `<Heading3>` components should be used instead of `<h1>`, `<h2>` and `<h3>`.
+
+<Preview>
+  <Story name="All Headings">
+    <>
+      <Heading>Heading</Heading>
+      <Heading2>Heading2</Heading2>
+      <Heading3>Heading3 (we recommend not going smaller than this)</Heading3>
+      <Heading4>Heading4</Heading4>
+      <Heading5>Heading5</Heading5>
+      <Heading6>Heading6</Heading6>
+    </>
+  </Story>
+</Preview>
+
+## Custom style
+
+The component behaves just like a normal heading tag. Just use the `style` attribute if you need modifications.
+
+<Preview>
+  <Story name="Custom Style">
+    <>
+      <Heading style={{ color: 'red' }}>Custom styled Heading</Heading>
+    </>
+  </Story>
+</Preview>
