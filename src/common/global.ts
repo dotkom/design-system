@@ -1,16 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 import Reset from './reset';
 import { media, breakPointsInPX } from './layout';
-import { colors } from './colors';
 
 export const GlobalStyle = createGlobalStyle`
   ${Reset}
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Code+Pro|Material+Icons+Outlined');
+  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Serif+Pro|Source+Code+Pro|Material+Icons+Outlined');
 
   body {
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
-    color: ${colors.grayDarken90};
   }
   :root {
     --font-base-size: 1.2rem;
@@ -40,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Serif Pro', sans-serif;
   }
   b, strong {
     font-weight: bold;

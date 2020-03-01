@@ -1,14 +1,11 @@
 import React, { FC } from 'react';
 import styled, { StyledComponentProps, css } from 'styled-components';
-import { colors } from 'common/colors';
 
 interface QuoteProps extends StyledComponentProps<'blockquote', any, any, any> {
   by?: string;
 }
 
 const TextStyle = css`
-  line-height: 1.6;
-
   &:first-child {
     margin-top: 0;
   }
@@ -21,7 +18,6 @@ const TextStyle = css`
 export const Info = styled.p`
   font-size: var(--font-size-sm);
   ${TextStyle}
-  color: ${colors.grayDarken60};
 `;
 
 export const Ingress = styled.p`

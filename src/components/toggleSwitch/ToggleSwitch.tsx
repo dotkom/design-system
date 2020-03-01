@@ -91,5 +91,4 @@ const Slider = styled.div`
 
 const CheckIcon = styled(Icon)`
   display: block;
-  vertical-align: baseline;
 `;
