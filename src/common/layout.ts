@@ -1,11 +1,18 @@
+export const breakPointsInPX = {
+  minMobileWidth: 320,
+  minTabletWidth: 756,
+  minDesktopWidth: 1200,
+  minWidescreenWidth: 1704,
+};
+
 export const breakPoints = {
-  minMobileWidth: '320px',
-  maxMobileWidth: '755px',
-  minTabletWidth: '756px',
-  maxTabletWidth: '1199px',
-  minDesktopWidth: '1200px',
-  maxDesktopWidth: '1703px',
-  minWidescreenWidth: '1704px',
+  minMobileWidth: breakPointsInPX.minMobileWidth + 'px',
+  maxMobileWidth: breakPointsInPX.minTabletWidth - 1 + 'px',
+  minTabletWidth: breakPointsInPX.minTabletWidth + 'px',
+  maxTabletWidth: breakPointsInPX.minDesktopWidth - 1 + 'px',
+  minDesktopWidth: breakPointsInPX.minDesktopWidth + 'px',
+  maxDesktopWidth: breakPointsInPX.minWidescreenWidth - 1 + 'px',
+  minWidescreenWidth: breakPointsInPX.minWidescreenWidth + 'px',
 };
 
 export const media = {

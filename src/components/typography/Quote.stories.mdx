@@ -1,0 +1,43 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Quote } from './Text';
+import { Markdown } from './Markdown';
+
+<Meta title="Typography|Quote" />
+
+# Quotes
+
+## Using Components
+
+<Preview>
+  <Story name="Quote With Source">
+    <Quote by="Source">Quote with source</Quote>
+  </Story>
+  <Story name="Quote Without Source">
+    <Quote>Quote without source</Quote>
+  </Story>
+</Preview>
+
+## Using Markdown
+
+<Preview>
+  <Story name="Markdown Quote With Source">
+    <Markdown>{`
+> Quote with source
+>
+> -- Source
+`}</Markdown>
+  </Story>
+  <Story name="Markdown Quote Without Source">
+    <Markdown>{`> Quote without source`}</Markdown>
+  </Story>
+  <Story name="Equal To Markdown Quotes">
+    <Quote>
+      <p>Equal to markdown quotes</p>
+      <p>-- Source</p>
+    </Quote>
+  </Story>
+</Preview>
+
+## Properties
+
+<Props of={Quote} />

@@ -49,7 +49,7 @@ const StyledDayBody = styled.div`
     display: block;
     background: ${colors.primary};
     width: 2px;
-    height: calc(100% - 3rem);
+    height: calc(100% - 3.1rem);
     top: 1.5rem;
     position: absolute;
     left: calc(5rem - 1px);

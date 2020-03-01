@@ -1,0 +1,29 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Paragraph, Quote } from './Text';
+
+<Meta title="Typography|Paragraph" />
+
+# Paragraphs
+
+Use on all plain text.
+
+**NB:** Do not use a lot of `<br />` to add space between paragraphs. Instead, use a new paragraph. We want to be consistent.
+
+<Preview>
+  <Story name="Example Usage">
+    <>
+      <Paragraph>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book.
+      </Paragraph>
+      <Paragraph>
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+        its layout.
+      </Paragraph>
+      <Paragraph>
+        Another paragraph to show how amazing paragraphs are. It is really <b>important</b> that you read this.
+      </Paragraph>
+    </>
+  </Story>
+</Preview>
