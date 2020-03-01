@@ -6,21 +6,11 @@ import ColorSwatch from './Colors';
 
 # Colors
 
-<Preview>
-  <Story name="Gray">
-    <>
-      <ColorSwatch color="white" darkText={true} />
-      <ColorSwatch color="grayLighten90" darkText={true} />
-      <ColorSwatch color="grayLighten60" darkText={true} />
-      <ColorSwatch color="grayLighten30" darkText={true} />
-      <ColorSwatch color="gray" />
-      <ColorSwatch color="grayDarken30" />
-      <ColorSwatch color="grayDarken60" />
-      <ColorSwatch color="grayDarken90" />
-      <ColorSwatch color="black" />
-    </>
-  </Story>
-</Preview>
+This page describes dotkom's palette for use on Online's systems. The colors consist of a primary shade, which will generate "lighten" and "darken" versions automatically if swapped. The text is manually colored black or white based on color contrast. If the text on the color is white, it can and should be used with white. Conversely, if the color of the text is black, you should not use the color on white.
+If implemented correctly, this could make theming easier, as the colors would propagte down to the components.
+
+Our primary and secondary palette is part of Online's [brand identity](https://online.ntnu.no/wiki/online/info/innsikt-og-interface/grafisk-profil/). Until an "official" dark mode is discussed, we prefer using whites and grays for most elements, with splashes of color here and there. When designing interactive elements, like when developing the components of Design System, you mostly need to use the base "primary" color. The tints and shades can be useful if you for example want to highlight something when hovering over it.
+The secondary color should be used very sparingly, mostly when a lot of the primary color is already used and you need to distinguish from it.
 
 <Preview>
   <Story name="Primary">
@@ -47,6 +37,27 @@ import ColorSwatch from './Colors';
   </Story>
 </Preview>
 
+First up is our set of grays, of which there are many. For now we just use actual black and actual white, instead of a slightly-off low contrast version. Again, these colors could be replaced easily.
+The reason so many shades are provided is because you often need more than you think to distinguish elements from eachother.
+
+<Preview>
+  <Story name="Gray">
+    <>
+      <ColorSwatch color="white" darkText={true} />
+      <ColorSwatch color="grayLighten90" darkText={true} />
+      <ColorSwatch color="grayLighten60" darkText={true} />
+      <ColorSwatch color="grayLighten30" darkText={true} />
+      <ColorSwatch color="gray" />
+      <ColorSwatch color="grayDarken30" />
+      <ColorSwatch color="grayDarken60" />
+      <ColorSwatch color="grayDarken90" />
+      <ColorSwatch color="black" />
+    </>
+  </Story>
+</Preview>
+
+The info color is used in components to indicate a bit of information, most prominently displayed in the "Message" component.
+
 <Preview>
   <Story name="Info">
     <>
@@ -58,6 +69,8 @@ import ColorSwatch from './Colors';
     </>
   </Story>
 </Preview>
+
+The success color is used to indicate confirmative actions, for example saving or finishing a form.
 
 <Preview>
   <Story name="Success">
@@ -71,6 +84,8 @@ import ColorSwatch from './Colors';
   </Story>
 </Preview>
 
+The warning color can indicate actions where the user should take a second to think about what they're doing. It can also tell the user important information about deviations from regular user flow that should be taken into consideration.
+
 <Preview>
   <Story name="Warning">
     <>
@@ -83,6 +98,8 @@ import ColorSwatch from './Colors';
   </Story>
 </Preview>
 
+The error color is the final of the status colors, and it indicates dangerous or faulty actions. If you want to discourage a user from being a place or doing a thing, this is the color to do it with. It is also useful for cases where the user has done something wrong, or something has gone wrong on our side.
+
 <Preview>
   <Story name="Error">
     <>
@@ -94,6 +111,8 @@ import ColorSwatch from './Colors';
     </>
   </Story>
 </Preview>
+
+The following are the event type colors as used in OWF. They should not be used for anything else than indicating the type of event. This set of colors may be revamped in the future to provide a more coherent palette, or be removed entirely.
 
 <Preview>
   <Story name="Events">

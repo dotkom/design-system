@@ -74,7 +74,7 @@ const CategoryInfo = styled.h2<{ color?: string; hidden: boolean }>`
 `;
 
 const EventCard = ({ eventName, eventColor, date, attending, imgSrc = '', isLargeEvent, category }: ICard) => (
-  <Card style={{ padding: 0 }}>
+  <Card padding={false}>
     <CategoryInfo color={eventColor} hidden={!isLargeEvent}>
       {category}
     </CategoryInfo>
