@@ -16,3 +16,10 @@ import Select from './Select';
     </Select>
   </Story>
 </Preview>
+
+Select has no props except for children. It takes any number of option-elements 
+and displays them in the order they were given.
+Select is meant to be used within an  HTML-form, and thus does not yield the selected value. 
+```html
+<option value={x}>Text</option>
+```

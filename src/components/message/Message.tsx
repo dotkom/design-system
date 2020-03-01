@@ -4,7 +4,7 @@ import { colors, ColorName } from 'common/colors';
 import Icon from 'components/icon/Icon';
 
 interface MessageProps {
-  type: 'info' | 'success' | 'warning' | 'error';
+  status: 'info' | 'success' | 'warning' | 'error';
   children: React.ReactNode;
 }
 
@@ -15,19 +15,19 @@ const IconWrapper = styled.span<{ color: string }>`
   display: flex;
 `;
 
-const StyledBox = styled.div<{ type: string }>`
+const StyledBox = styled.div<{ status: string }>`
   display: flex;
   padding: 1rem;
   border-radius: 3px;
   line-height: 1.25;
-  ${({ type }) => css`
-    border: 2px solid ${colors[type as ColorName]};
-    color: ${colors[`${type}Darken70` as ColorName]};
-    background: ${colors[`${type}Lighten90` as ColorName]};
+  ${({ status }) => css`
+    border: 2px solid ${colors[status as ColorName]};
+    color: ${colors[`${status}Darken70` as ColorName]};
+    background: ${colors[`${status}Lighten90` as ColorName]};
   `}
 `;
 
-const Message = ({ type, children }: MessageProps) => {
+const Message = ({ status, children }: MessageProps) => {
   const iconNames = {
     info: 'info',
     success: 'done',
@@ -36,9 +36,9 @@ const Message = ({ type, children }: MessageProps) => {
   };
 
   return (
-    <StyledBox type={type}>
-      <IconWrapper color={colors[type]}>
-        <Icon name={iconNames[type]} />
+    <StyledBox status={status}>
+      <IconWrapper color={colors[status]}>
+        <Icon name={iconNames[status]} />
       </IconWrapper>
       {children}
     </StyledBox>
