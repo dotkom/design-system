@@ -59,8 +59,3 @@ steps:
       status: success
     commands:
       - yarn chromatic --auto-accept-changes
-
-volumes:
-  - name: cache
-    host:
-      path: /tmp/cache
