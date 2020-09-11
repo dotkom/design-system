@@ -21,7 +21,7 @@ const Checkbox = ({ label, isChecked, onChange, disabled, error, ...props }: Che
     <CheckboxLabel disabled={disabled}>
       <HiddenCheckbox checked={checked} disabled={disabled} onChange={update} {...props} />
       <StyledCheckbox tabIndex={0} error={error}>
-        <StyledIcon name="done" />
+        <StyledIcon name="done" isChecked={checked} />
       </StyledCheckbox>
       <span>{label}</span>
     </CheckboxLabel>
@@ -67,6 +67,7 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 `;
 
 const StyledIcon = styled(Icon)`
+  visibility: ${(props: { isChecked: boolean | undefined }) => props.isChecked ? 'visible' : 'hidden'};
   display: block;
 `;
 
