@@ -2,19 +2,6 @@ kind: pipeline
 name: default
 
 steps:
-  - name: restore-cache
-    image: drillster/drone-volume-cache
-    when:
-      event: [push, pull_request]
-      branch: master
-    volumes:
-      - name: cache
-        path: /cache
-    settings:
-      restore: true
-      mount:
-        - ./node_modules
-
   - name: install
     image: node:12
     when:
@@ -42,19 +29,6 @@ steps:
       status: success
     commands:
       - yarn format-check
-
-  - name: rebuild-cache
-    image: drillster/drone-volume-cache
-    when:
-      event: [push, pull_request]
-      branch: master
-    volumes:
-      - name: cache
-        path: /cache
-    settings:
-      rebuild: true
-      mount:
-        - ./node_modules
 
   - name: deploy
     image: appleboy/drone-ssh
