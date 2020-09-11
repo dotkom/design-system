@@ -6,7 +6,7 @@ import Icon from 'components/icon/Icon';
 interface CheckboxProps extends StyledComponentProps<'input', any, any, any> {
   label: string;
   isChecked?: boolean;
-  onChange: (isChecked: boolean) => void;
+  onChange: (isChecked?: boolean) => void;
   disabled?: boolean;
   error?: boolean;
 }
