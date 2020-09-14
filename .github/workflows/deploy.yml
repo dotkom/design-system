@@ -26,7 +26,7 @@ jobs:
     - name: Release
       run: npx semantic-release
       env:
-        GITHUB_TOKEN: ${{ secrets.github_token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.npm_token }}
         GIT_AUTHOR_NAME: dotkom
         GIT_COMMITTER_NAME: dotkom
