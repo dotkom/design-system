@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { css, StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
 import Icon from 'components/icon/Icon';
@@ -17,6 +17,13 @@ const Checkbox = ({ label, isChecked, onChange, disabled, error, ...props }: Che
     setChecked(!checked);
     onChange(checked);
   }
+
+  useEffect(() => {
+    if(isChecked !== checked) {
+      setChecked(isChecked);
+    }
+  }, [isChecked]);
+
   return (
     <CheckboxLabel disabled={disabled}>
       <HiddenCheckbox checked={checked} disabled={disabled} onChange={update} {...props} />
