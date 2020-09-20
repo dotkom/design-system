@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled, { css, StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
 import Icon from 'components/icon/Icon';
@@ -6,27 +6,31 @@ import Icon from 'components/icon/Icon';
 interface CheckboxProps extends StyledComponentProps<'input', any, any, any> {
   label: string;
   isChecked: boolean;
-  onChange: (isChecked?: boolean) => void;
-  disabled?: boolean;
-  error?: boolean;
+  onChange: (checked?: boolean) => void;
+  disabled: boolean;
+  error: boolean;
 }
 
-const Checkbox = ({ label, isChecked = false, onChange = () => null, disabled, error, ...props }: CheckboxProps) => {
+const Checkbox = ({
+  label,
+  isChecked = false,
+  onChange = () => null,
+  disabled = false,
+  error = false,
+  ...props
+}: CheckboxProps) => {
   const [checked, setChecked] = useState<boolean>(isChecked);
-  const update = () => {
-    setChecked((prevState) => !prevState);
-    onChange(checked);
-  };
 
-  useEffect(() => {
-    if (isChecked !== checked) {
-      setChecked(isChecked);
+  const update = () => {
+    if (!disabled) {
+      setChecked((prevState) => !prevState);
+      onChange(checked);
     }
-  }, [isChecked]);
+  };
 
   return (
     <CheckboxLabel disabled={disabled}>
-      <HiddenCheckbox checked={checked} disabled={disabled} onChange={update} {...props} />
+      <HiddenCheckbox checked={checked} disabled={disabled} onChange={() => update()} {...props} />
       <StyledCheckbox tabIndex={0} error={error}>
         <StyledIcon name="done" isChecked={checked} />
       </StyledCheckbox>
