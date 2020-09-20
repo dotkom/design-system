@@ -30,7 +30,7 @@ const Checkbox = ({
 
   return (
     <CheckboxLabel disabled={disabled}>
-      <HiddenCheckbox checked={checked} disabled={disabled} onChange={() => update()} {...props} />
+      <HiddenCheckbox checked={checked} disabled={disabled} onChange={update} {...props} />
       <StyledCheckbox tabIndex={0} error={error}>
         <StyledIcon name="done" isChecked={checked} />
       </StyledCheckbox>
