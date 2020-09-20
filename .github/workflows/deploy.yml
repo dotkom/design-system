@@ -1,0 +1,44 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+           ${{ runner.os }}-node-
+    - name: Install dependencies
+      run: yarn
+    - name: Release
+      run: npx semantic-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.npm_token }}
+        GIT_AUTHOR_NAME: dotkom
+        GIT_COMMITTER_NAME: dotkom
+        GIT_AUTHOR_EMAIL: dotkom@online.ntnu.no
+        GIT_COMMITTER_EMAIL: dotkom@online.ntnu.no
+    - name: Chromatic (update baseline)
+      run: yarn chromatic --auto-accept-changes
+      env:
+        CHROMATIC_APP_CODE: ${{ secrets.chromatic_app_token }}

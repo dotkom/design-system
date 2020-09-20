@@ -16,10 +16,10 @@ const Checkbox = ({ label, isChecked, onChange, disabled, error, ...props }: Che
   const update = () => {
     setChecked(!checked);
     onChange(checked);
-  }
+  };
 
   useEffect(() => {
-    if(isChecked !== checked) {
+    if (isChecked !== checked) {
       setChecked(isChecked);
     }
   }, [isChecked]);
@@ -74,7 +74,7 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 `;
 
 const StyledIcon = styled(Icon)`
-  visibility: ${(props: { isChecked: boolean | undefined }) => props.isChecked ? 'visible' : 'hidden'};
+  visibility: ${(props: { isChecked: boolean | undefined }) => (props.isChecked ? 'visible' : 'hidden')};
   display: block;
 `;
 
