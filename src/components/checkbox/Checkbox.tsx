@@ -14,7 +14,7 @@ interface CheckboxProps extends StyledComponentProps<'input', any, any, any> {
 const Checkbox = ({ label, isChecked, onChange, disabled, error, ...props }: CheckboxProps) => {
   const [checked, setChecked] = useState<boolean | undefined>(isChecked);
   const update = () => {
-    setChecked(!checked);
+    setChecked(prevState => !prevState);
     onChange(checked);
   };
 
