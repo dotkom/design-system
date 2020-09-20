@@ -12,10 +12,10 @@ Checkboxes are used when you want to provide the user with a choice between one 
   <Story name="All">
     <ExampleContainer>
       <Checkbox label="Checkbox" onChange={() => null} />
-      <Checkbox label="Always true" isChecked={true} onChange={() => null} />
-      <Checkbox label="Always false" isChecked={false} onChange={() => null} />
+      <Checkbox label="Logs checked on change" onChange={(checked) => console.log(checked)} />
+      <Checkbox label="Default checked" isChecked={true} onChange={() => null} />
       <Checkbox label="Disabled" disabled={true} onChange={() => null} />
-      <Checkbox label="Disabled" disabled={true} isChecked={true} onChange={() => null} />
+      <Checkbox label="Disabled and checked" disabled={true} isChecked={true} onChange={() => null} />
       <Checkbox label="Error" error={true} onChange={() => null} />
     </ExampleContainer>
   </Story>
