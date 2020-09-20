@@ -19,7 +19,7 @@ const Checkbox = ({ label, isChecked, onChange, disabled, error, ...props }: Che
   };
 
   useEffect(() => {
-    if(isChecked !== checked) {
+    if (isChecked !== checked) {
       setChecked(isChecked);
     }
   }, [isChecked]);
