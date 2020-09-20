@@ -5,14 +5,14 @@ import Icon from 'components/icon/Icon';
 
 interface CheckboxProps extends StyledComponentProps<'input', any, any, any> {
   label: string;
-  isChecked?: boolean;
+  isChecked: boolean;
   onChange: (isChecked?: boolean) => void;
   disabled?: boolean;
   error?: boolean;
 }
 
-const Checkbox = ({ label, isChecked, onChange, disabled, error, ...props }: CheckboxProps) => {
-  const [checked, setChecked] = useState<boolean | undefined>(isChecked);
+const Checkbox = ({ label, isChecked = false, onChange = () => null, disabled, error, ...props }: CheckboxProps) => {
+  const [checked, setChecked] = useState<boolean>(isChecked);
   const update = () => {
     setChecked(prevState => !prevState);
     onChange(checked);
