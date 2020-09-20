@@ -11,12 +11,12 @@ Checkboxes are used when you want to provide the user with a choice between one 
 <Preview>
   <Story name="All">
     <ExampleContainer>
-      <Checkbox label="Checkbox" />
-      <Checkbox label="Always true" isChecked={true} />
-      <Checkbox label="Always false" isChecked={false} />
-      <Checkbox label="Disabled" disabled={true} />
-      <Checkbox label="Disabled" disabled={true} isChecked={true} />
-      <Checkbox label="Error" error={true} />
+      <Checkbox label="Checkbox" onChange={() => null} />
+      <Checkbox label="Always true" isChecked={true} onChange={() => null} />
+      <Checkbox label="Always false" isChecked={false} onChange={() => null} />
+      <Checkbox label="Disabled" disabled={true} onChange={() => null} />
+      <Checkbox label="Disabled" disabled={true} isChecked={true} onChange={() => null} />
+      <Checkbox label="Error" error={true} onChange={() => null} />
     </ExampleContainer>
   </Story>
 </Preview>
