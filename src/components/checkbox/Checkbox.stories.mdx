@@ -15,7 +15,7 @@ This checkbox takes a default checked value and handles checked with internal st
     <ExampleContainer>
       <Checkbox label="Checkbox" onChange={() => null} />
       <Checkbox label="Logs checked on change" onChange={(checked) => console.log(checked)} />
-      <Checkbox label="Default checked" isChecked={true} onChange={() => null} />
+      <Checkbox label="Default checked" defaultChecked={true} onChange={() => null} />
       <Checkbox label="Disabled" disabled={true} onChange={() => null} />
       <Checkbox label="Disabled and checked" disabled={true} isChecked={true} onChange={() => null} />
       <Checkbox label="Error" error={true} onChange={() => null} />
