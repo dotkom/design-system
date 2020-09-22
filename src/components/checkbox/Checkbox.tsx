@@ -23,8 +23,8 @@ const Checkbox = ({
 
   const update = () => {
     if (!disabled) {
+      onChange(!checked);
       setChecked((prevState) => !prevState);
-      onChange(checked);
     }
   };
 
