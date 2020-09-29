@@ -41,7 +41,7 @@ export { default as StaticSpinnerLogo } from 'components/logo/StaticSpinnerLogo'
 export { default as Modal } from 'components/modal/Modal';
 
 // component/radio
-export { default as Radio } from 'components/radio/Radio';
+export { default as Radio } from 'components/radio/RadioGroup';
 
 // component/select
 export { default as Select } from 'components/select/Select';

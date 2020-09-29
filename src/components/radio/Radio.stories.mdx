@@ -1,25 +1,46 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import Radio from './Radio';
+import Radio from './RadioGroup';
+import RadioButton from './RadioButton';
+import Icon from 'components/icon/Icon';
 
 <Meta title="Forms|Radio" component={Radio} />
 
 # Radio
 
-Our radio buttons are defined as a group. Use this over checkboxes when you only want to provide one choice to the user. For now you can only input text as labels, not stuff like icons.
+The radio group is created by passing an `Array` of choices as: 
+```js
+{
+  label: React.ReactNode,
+  value: string,
+  defaultChecked?: boolean,
+}
+```
+Use this over checkboxes when you only want to provide one choice to the user.
+If used in an HTML `<form>`, specify `groupName`-attribute as it will be the key that is sent in the form.
+If externally controlled, i.e. by a React component, you can use the selected value as you want by specifying an onChange-method.
+The the onChange-method can take 1 parameter which will be the value of the selected element.
 
 <Preview>
   <Story name="Default">
-    <Radio labels={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']} />
+    <Radio choices={[{label: 'Lorem', value: '1'}, { label:'Ipsum', value: '2'}, {label: 'Dolor', value: '3'}, {label:'Sit', value: '4'}, {label:'Amet', value: '5'}]} />
   </Story>
 </Preview>
 
 <Props of={Radio} />
 
+### Default-checked value
+
+<Preview>
+  <Story name="Default-checked value">
+    <Radio choices={[{ label:'Lorem', value: '0'}, { label:'Ipsum', value: '1', defaultChecked: true}, { label:'Dolor', value: '2'}, { label:'Sit', value:'3'}, {label:'Amet', value: '4'}]} />
+  </Story>
+</Preview>
+
 ### Disabled
 
 <Preview>
   <Story name="Disabled">
-    <Radio labels={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']} disabled />
+    <Radio choices={[{ label:'Lorem', value: '0'}, { label:'Ipsum', value: '0'}, { label:'Dolor', value: '0'}, { label:'Sit', value:'0'}, {label:'Amet', value: '0'}]} disabled />
   </Story>
 </Preview>
 
@@ -27,6 +48,6 @@ Our radio buttons are defined as a group. Use this over checkboxes when you only
 
 <Preview>
   <Story name="Error">
-    <Radio labels={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']} error />
+    <Radio choices={[{ label:'Lorem', value: '0'}, {label:'Ipsum', value: '1'}, { label:'Dolor', value: '2'}, { label:'Sit', value: '3'}, { label:'Amet', value: '4'}]} error />
   </Story>
 </Preview>
