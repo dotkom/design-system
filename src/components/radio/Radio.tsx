@@ -1,18 +1,23 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
+import _ from 'lodash';
 
 interface RadioProps {
-  labels: string[];
-  groupName: string;
+  labels?: string[];
   disabled?: boolean;
   error?: boolean;
+  children?: React.ReactNode;
 }
 
-const Radio = ({ labels, groupName, disabled, error }: RadioProps) => {
-  const radios = labels.map((label, index) => (
+
+const Radio = ({ labels, disabled, error, children }: RadioProps) => {
+  const groupId = _.uniqueId();
+  const radioOptions = labels || children;
+  if(!radioOptions || _.isEmpty(radioOptions)) return null;
+  const radios = (radioOptions as Array<string|JSX.Element>).map((label, index) => (
     <RadioLabel key={index} disabled={disabled}>
-      <HiddenRadio name={groupName} disabled={disabled} />
+      <HiddenRadio name={groupId} disabled={disabled} />
       <StyledRadio tabIndex={0} error={error} />
       {label}
     </RadioLabel>
