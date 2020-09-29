@@ -24,14 +24,14 @@ const Radio = ({ choices, disabled, groupName, error, onChange }: RadioProps) =>
   const update = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.currentTarget.value);
     if (onChange) onChange(event.currentTarget.value);
-  }
+  };
   const radios = choices.map((choice, index) => {
     if (choice.defaultChecked && !hasSetDefault) {
       setChecked(choice.value);
       setHasSetDefault(true);
-    };
+    }
     return (
-      <RadioButton 
+      <RadioButton
         groupName={groupId}
         value={choice.value}
         key={index}
@@ -40,7 +40,7 @@ const Radio = ({ choices, disabled, groupName, error, onChange }: RadioProps) =>
         error={error}
         checked={choice.value === checked}
       >
-        { choice.label }
+        {choice.label}
       </RadioButton>
     );
   });

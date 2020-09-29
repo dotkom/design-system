@@ -8,12 +8,20 @@ interface RadioButtonProps extends Omit<RadioProps, 'choices' | 'onChange'> {
   children: React.ReactNode;
   checked: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
+}
 
-const RadioButton: React.FC<RadioButtonProps> = ({ children, checked, value, disabled, groupName, error, onChange}: RadioButtonProps) => {
+const RadioButton: React.FC<RadioButtonProps> = ({
+  children,
+  checked,
+  value,
+  disabled,
+  groupName,
+  error,
+  onChange,
+}: RadioButtonProps) => {
   return (
     <RadioLabel disabled={disabled}>
-      <HiddenRadio name={groupName} disabled={disabled} onChange={onChange} value={value} checked={checked}/>
+      <HiddenRadio name={groupName} disabled={disabled} onChange={onChange} value={value} checked={checked} />
       <StyledRadio tabIndex={0} error={error} />
       {children}
     </RadioLabel>
