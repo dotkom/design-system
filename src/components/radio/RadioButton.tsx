@@ -1,32 +1,34 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { colors } from 'common/colors';
+import { RadioProps } from './RadioGroup';
 
-interface RadioProps {
-  labels: string[];
-  groupName: string;
-  disabled?: boolean;
-  error?: boolean;
+interface RadioButtonProps extends Omit<RadioProps, 'choices' | 'onChange'> {
+  value: string;
+  children: React.ReactNode;
+  checked: boolean;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Radio = ({ labels, groupName, disabled, error }: RadioProps) => {
-  const radios = labels.map((label, index) => (
-    <RadioLabel key={index} disabled={disabled}>
-      <HiddenRadio name={groupName} disabled={disabled} />
+const RadioButton: React.FC<RadioButtonProps> = ({
+  children,
+  checked,
+  value,
+  disabled,
+  groupName,
+  error,
+  onChange,
+}: RadioButtonProps) => {
+  return (
+    <RadioLabel disabled={disabled}>
+      <HiddenRadio name={groupName} disabled={disabled} onChange={onChange} value={value} checked={checked} />
       <StyledRadio tabIndex={0} error={error} />
-      {label}
+      {children}
     </RadioLabel>
-  ));
-  return <RadioGroup error={error}>{radios}</RadioGroup>;
+  );
 };
 
 const size = 20;
-
-const RadioGroup = styled.div<{ error?: boolean }>`
-  & > * + * {
-    margin-top: 0.5rem;
-  }
-`;
 
 const RadioLabelDisabled = css`
   color: ${colors.grayLighten60};
@@ -89,4 +91,4 @@ const StyledRadio = styled.div<{ error?: boolean }>`
   }
 `;
 
-export default Radio;
+export default RadioButton;
