@@ -17,32 +17,30 @@ export interface RadioProps {
   onChange?: (value: string) => void;
 }
 
-const Radio = ({ choices, disabled, groupName, error, onChange }: RadioProps) => {
+const Radio: React.FC<RadioProps> = ({ disabled, groupName, error, onChange, children }) => {
   const [checked, setChecked] = useState<string>();
-  const [hasSetDefault, setHasSetDefault] = useState<boolean>(false);
+  const [hasSetDefaultChecked, setHasSetDefaultChecked] = useState<boolean>(false);
   const groupId = groupName || _.uniqueId();
   const update = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.currentTarget.value);
     if (onChange) onChange(event.currentTarget.value);
   };
-  const radios = choices.map((choice, index) => {
-    if (choice.defaultChecked && !hasSetDefault) {
-      setChecked(choice.value);
-      setHasSetDefault(true);
+  const radios = React.Children.map(children, (child) => {
+    if (React.isValidElement(child) && child.type === RadioButton) {
+      if (!hasSetDefaultChecked && child.props["checked"]) {
+        setHasSetDefaultChecked(true);
+        setChecked(child.props["value"]);
+      }
+      const props = {
+        checked: child.props["value"] === checked,
+        groupName: groupId,
+        onChange: update,
+        disabled: disabled,
+        error: error,
+      };
+      return React.cloneElement(child, props)
     }
-    return (
-      <RadioButton
-        groupName={groupId}
-        value={choice.value}
-        key={index}
-        onChange={update}
-        disabled={disabled}
-        error={error}
-        checked={choice.value === checked}
-      >
-        {choice.label}
-      </RadioButton>
-    );
+    return child;
   });
   return <RadioGroupWrapper error={error}>{radios}</RadioGroupWrapper>;
 };

@@ -1,38 +1,37 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import Radio from './RadioGroup';
+import RadioGroup from './RadioGroup';
 import RadioButton from './RadioButton';
 import Icon from 'components/icon/Icon';
 
-<Meta title="Forms|Radio" component={Radio} />
+<Meta title="Forms|Radio" component={RadioGroup} />
 
 # Radio
 
-The radio group is created by passing an `Array` of choices as: 
-```js
-{
-  label: React.ReactNode,
-  value: string,
-  defaultChecked?: boolean,
-}
-```
 Use this over checkboxes when you only want to provide one choice to the user.
 If used in an HTML `<form>`, specify `groupName`-attribute as it will be the key that is sent in the form.
 If externally controlled, i.e. by a React component, you can use the selected value as you want by specifying an onChange-method.
-The the onChange-method can take 1 parameter which will be the value of the selected element.
+The `onChange`-method can take 1 parameter which will be the value of the selected element.
 
 <Preview>
   <Story name="Default">
-    <Radio choices={[{label: 'Lorem', value: '1'}, { label:'Ipsum', value: '2'}, {label: 'Dolor', value: '3'}, {label:'Sit', value: '4'}, {label:'Amet', value: '5'}]} />
+    <RadioGroup>
+      <RadioButton value="1">{<p>I am a label!</p>}</RadioButton>
+      <RadioButton value="2">{<p>I am also a label</p>}</RadioButton>
+    </RadioGroup>
   </Story>
 </Preview>
 
-<Props of={Radio} />
+<Props of={RadioGroup} />
 
 ### Default-checked value
 
 <Preview>
   <Story name="Default-checked value">
-    <Radio choices={[{ label:'Lorem', value: '0'}, { label:'Ipsum', value: '1', defaultChecked: true}, { label:'Dolor', value: '2'}, { label:'Sit', value:'3'}, {label:'Amet', value: '4'}]} />
+    <RadioGroup onChange={(chosenValue) => console.log(chosenValue)}>
+      <RadioButton value="Lorem" checked>{<p>Lorem</p>}</RadioButton>
+      <RadioButton value="Ipsum">{<p>Ipsum</p>}</RadioButton>
+      <p>The chosen value is logged to the console!</p>
+    </RadioGroup>
   </Story>
 </Preview>
 
@@ -40,7 +39,10 @@ The the onChange-method can take 1 parameter which will be the value of the sele
 
 <Preview>
   <Story name="Disabled">
-    <Radio choices={[{ label:'Lorem', value: '0'}, { label:'Ipsum', value: '0'}, { label:'Dolor', value: '0'}, { label:'Sit', value:'0'}, {label:'Amet', value: '0'}]} disabled />
+    <RadioGroup disabled>
+      <RadioButton value="Lorem">{<p>Lorem</p>}</RadioButton>
+      <RadioButton value="Ipsum">{<p>Ipsum</p>}</RadioButton>
+    </RadioGroup>
   </Story>
 </Preview>
 
@@ -48,6 +50,9 @@ The the onChange-method can take 1 parameter which will be the value of the sele
 
 <Preview>
   <Story name="Error">
-    <Radio choices={[{ label:'Lorem', value: '0'}, {label:'Ipsum', value: '1'}, { label:'Dolor', value: '2'}, { label:'Sit', value: '3'}, { label:'Amet', value: '4'}]} error />
+    <RadioGroup error>
+      <RadioButton value="Lorem">{<p>Lorem</p>}</RadioButton>
+      <RadioButton value="Ipsum">{<p>Ipsum</p>}</RadioButton>
+    </RadioGroup>
   </Story>
 </Preview>
