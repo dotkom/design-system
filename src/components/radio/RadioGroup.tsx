@@ -3,14 +3,7 @@ import styled from 'styled-components';
 import _ from 'lodash';
 import RadioButton from './RadioButton';
 
-interface RadioButtonChoice {
-  value: string;
-  label: React.ReactNode;
-  defaultChecked?: boolean;
-}
-
 export interface RadioProps {
-  choices: RadioButtonChoice[];
   disabled?: boolean;
   groupName?: string;
   error?: boolean;

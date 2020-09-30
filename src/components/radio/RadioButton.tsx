@@ -6,8 +6,8 @@ import { RadioProps } from './RadioGroup';
 interface RadioButtonProps extends Omit<RadioProps, 'choices' | 'onChange'> {
   value: string;
   children: React.ReactNode;
-  checked: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  checked?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; // onChange is supplied through RadioGroup if wrapped on render, so TS fail to see it.
 }
 
 const RadioButton: React.FC<RadioButtonProps> = ({
