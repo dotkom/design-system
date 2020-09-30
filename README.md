@@ -4,7 +4,7 @@ Online's Design System, simply dubbed Design System (DS), is made by us at [dotk
 
 The components in DS are designed with consistency in mind, and our main goal is to make it easier for dotkom to develop web pages that adhere to Online's style.
 
-See the components live at: [storybook.online.ntnu.no](https://storybook.online.ntnu.no).
+See the components live at: [design.online.ntnu.no](https://design.online.ntnu.no).
 
 ## Usage
 
