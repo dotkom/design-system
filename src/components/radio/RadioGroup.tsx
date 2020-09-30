@@ -27,18 +27,18 @@ const Radio: React.FC<RadioProps> = ({ disabled, groupName, error, onChange, chi
   };
   const radios = React.Children.map(children, (child) => {
     if (React.isValidElement(child) && child.type === RadioButton) {
-      if (!hasSetDefaultChecked && child.props["checked"]) {
+      if (!hasSetDefaultChecked && child.props['checked']) {
         setHasSetDefaultChecked(true);
-        setChecked(child.props["value"]);
+        setChecked(child.props['value']);
       }
       const props = {
-        checked: child.props["value"] === checked,
+        checked: child.props['value'] === checked,
         groupName: groupId,
         onChange: update,
         disabled: disabled,
         error: error,
       };
-      return React.cloneElement(child, props)
+      return React.cloneElement(child, props);
     }
     return child;
   });
