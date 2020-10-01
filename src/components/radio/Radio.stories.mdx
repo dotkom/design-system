@@ -1,32 +1,97 @@
 import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
-import Radio from './Radio';
+import RadioGroup from './RadioGroup';
+import RadioButton from './RadioButton';
+import Icon from 'components/icon/Icon';
 
-<Meta title="Forms|Radio" component={Radio} />
+<Meta title="Forms|Radio" component={RadioGroup} />
 
 # Radio
 
-Our radio buttons are defined as a group. Use this over checkboxes when you only want to provide one choice to the user. For now you can only input text as labels, not stuff like icons.
+Use this over checkboxes when you only want to provide one choice to the user.
+If used in an HTML `<form>`, specify `groupName`-attribute on the `RadioGroup` as it will be the key that is sent in the form.
+If externally controlled, i.e. by a React component, you can use the selected value as you want by specifying an onChange-method.
+The `onChange`-method can take 1 parameter which will be the value of the selected element.
 
 <Preview>
   <Story name="Default">
-    <Radio labels={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']} groupName="lorem" />
+    <RadioGroup>
+      <RadioButton value="1">{<p>I am a label!</p>}</RadioButton>
+      <RadioButton value="2">{<p>I am also a label</p>}</RadioButton>
+    </RadioGroup>
   </Story>
 </Preview>
 
-<Props of={Radio} />
+<Props of={RadioGroup} />
+
+### Default-checked value
+
+Default-checked values can be used to represent a value that the user has chosen earlier, but now have the option to change.  
+For example, this can be if the user views a form of their settings, where default checked can show what they have chosen earlier.  
+
+<Preview>
+  <Story name="Default-checked value">
+    <RadioGroup>
+      <RadioButton value="Lorem" checked>{<p>Lorem</p>}</RadioButton>
+      <RadioButton value="Ipsum">{<p>Ipsum</p>}</RadioButton>
+    </RadioGroup>
+  </Story>
+</Preview>
 
 ### Disabled
 
+Disabled `RadioGroups` signal to the user that these options are not applicable to them.  
+You **should** however avoid using this if you can, and rather show a clear `<Message>`-to the user with the responding `error`.
+
 <Preview>
   <Story name="Disabled">
-    <Radio labels={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']} groupName="ipsum" disabled />
+    <RadioGroup disabled>
+      <RadioButton value="Lorem">{<p>Lorem</p>}</RadioButton>
+      <RadioButton value="Ipsum">{<p>Ipsum</p>}</RadioButton>
+    </RadioGroup>
   </Story>
 </Preview>
 
 ### Error
 
+`error` can be set on a `RadioGroup` after a user has taken an action which did not accept the value of the selected `RadioButton`.  
+An example of this could be if the selection is required, but the user tried to submit the form without picking an option.
+
 <Preview>
   <Story name="Error">
-    <Radio labels={['Lorem', 'Ipsum', 'Dolor', 'Sit', 'Amet']} groupName="dolor sit amet" error />
+    <RadioGroup error>
+      <RadioButton value="Lorem">{<p>Lorem</p>}</RadioButton>
+      <RadioButton value="Ipsum">{<p>Ipsum</p>}</RadioButton>
+    </RadioGroup>
+  </Story>
+</Preview>
+
+### With onChange
+
+When used within a form where you want control of the data, specify the `onChange`-prop of the RadioGroup.  
+This will be triggered every time the selected value changes and sends the new value as the only parameter.  
+**Note:** When using default-checked, `checked`-attribute, on one of the buttons, the `onChange` will not trigger the first time (as it is not a change).
+
+<Preview>
+  <Story name="With onChange">
+    <RadioGroup onChange={(chosenValue) => console.log(chosenValue)}>
+      <RadioButton value="Lorem">{<p>Lorem</p>}</RadioButton>
+      <RadioButton value="Ipsum">{<p>Ipsum</p>}</RadioButton>
+      <p>The chosen value is logged to the console!</p>
+    </RadioGroup>
+  </Story>
+</Preview>
+
+### With groupName
+
+When used in a form and the data is only relevant for the submitted form data,
+you **should** specify a `groupName` on the `RadioGroup`.  
+This will then be the key on the data sent, instead of a random generated key.  
+
+<Preview>
+  <Story name="With groupName">
+    <RadioGroup groupName="FavouriteSubject">
+      <RadioButton value="Lorem">{<p>Lorem</p>}</RadioButton>
+      <RadioButton value="Ipsum">{<p>Ipsum</p>}</RadioButton>
+    </RadioGroup>
   </Story>
 </Preview>
