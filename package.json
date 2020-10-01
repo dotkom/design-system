@@ -1,6 +1,6 @@
 {
   "name": "@dotkomonline/design-system",
-  "version": "0.14.0",
+  "version": "0.19.2",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.modern.mjs",
@@ -39,7 +39,7 @@
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
     "@types/storybook__react": "^4.0.2",
-    "@types/styled-components": "^4.1.19",
+    "@types/styled-components": "^5.1.3",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "@zerollup/ts-transform-paths": "^1.7.11",
@@ -60,7 +60,7 @@
     "storybook-addon-props": "^3.0.4",
     "storybook-addon-styled-themes": "0.0.3",
     "storybook-chromatic": "^2.2.2",
-    "styled-components": "^4.3.2",
+    "styled-components": "^5.2.0",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.2.1",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
@@ -75,6 +75,7 @@
     "@storybook/addon-storysource": "^5.3.12",
     "@storybook/addons": "^5.3.12",
     "@storybook/react": "^5.3.12",
-    "@storybook/source-loader": "^5.3.12"
+    "@storybook/source-loader": "^5.3.12",
+    "@types/lodash": "^4.14.161"
   }
 }
