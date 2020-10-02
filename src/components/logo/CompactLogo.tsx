@@ -3,8 +3,8 @@ import { colors } from 'common/colors';
 
 interface Props {
   width?: string;
-  primaryColor: string;
-  secondaryColor: string;
+  primaryColor?: string;
+  secondaryColor?: string;
 }
 
 const CompactLogo = ({ width, primaryColor = colors.officialBlue, secondaryColor = colors.officialOrange }: Props) => {

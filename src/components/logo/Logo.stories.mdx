@@ -7,6 +7,7 @@ import ModernLogo from './ModernLogo';
 import StaticSpinnerLogo from './StaticSpinnerLogo';
 import { colors } from 'common/colors';
 import { ExampleContainer } from 'common/containers';
+import BlackBackground from './BlackBackground';
 
 <Meta title="Logo" component={ModernLogo} />
 
@@ -20,7 +21,9 @@ For rules regarding usage, see our [brand identity](https://online.ntnu.no/wiki/
   <Story name="Logo">
     <ExampleContainer>
       <Logo width="400px" />
-      <Logo width={500} primaryColor={colors.error} secondaryColor="#0A94C2" />
+      <BlackBackground>
+        <Logo width={400} primaryColor={colors.white} />
+      </BlackBackground>
     </ExampleContainer>
   </Story>
 </Preview>
@@ -37,7 +40,9 @@ For rules regarding usage, see our [brand identity](https://online.ntnu.no/wiki/
   <Story name="Compact Logo">
     <ExampleContainer>
       <CompactLogo width="150px" />
-      <CompactLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
+      <BlackBackground>
+        <CompactLogo width={150} primaryColor={colors.white} />
+      </BlackBackground>
     </ExampleContainer>
   </Story>
 </Preview>
@@ -51,7 +56,9 @@ For rules regarding usage, see our [brand identity](https://online.ntnu.no/wiki/
   <Story name="Old Logo">
     <ExampleContainer>
       <OldLogo width="400px" />
-      <OldLogo width={500} primaryColor={colors.error} secondaryColor="#0A94C2" />
+      <BlackBackground>
+        <OldLogo width={500} primaryColor={colors.white} />
+      </BlackBackground >
     </ExampleContainer>
   </Story>
 </Preview>
@@ -65,7 +72,9 @@ For rules regarding usage, see our [brand identity](https://online.ntnu.no/wiki/
   <Story name="Old Compact Logo">
     <ExampleContainer>
       <OldCompactLogo width="150px" />
-      <OldCompactLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
+      <BlackBackground>
+        <OldCompactLogo width={200} primaryColor={colors.white} />
+      </BlackBackground>
     </ExampleContainer>
   </Story>
 </Preview>
@@ -79,7 +88,9 @@ For rules regarding usage, see our [brand identity](https://online.ntnu.no/wiki/
   <Story name="Modern Logo">
     <ExampleContainer>
       <ModernLogo width="150px" />
-      <ModernLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
+      <BlackBackground>
+        <ModernLogo width={200} primaryColor={colors.white} />
+      </BlackBackground>
     </ExampleContainer>
   </Story>
 </Preview>
@@ -93,7 +104,9 @@ For rules regarding usage, see our [brand identity](https://online.ntnu.no/wiki/
   <Story name="Static Spinner Logo">
     <ExampleContainer>
       <StaticSpinnerLogo width="150px" />
-      <StaticSpinnerLogo width={200} primaryColor={colors.error} secondaryColor="#0A94C2" />
+      <BlackBackground>
+        <StaticSpinnerLogo width={200} primaryColor={colors.white} />
+      </BlackBackground>
     </ExampleContainer>
   </Story>
 </Preview>
