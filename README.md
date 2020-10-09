@@ -32,6 +32,15 @@ import { Message } from '@dotkomonline/design-system';
 export const SuccessMessage = ({ children }) => <Message type="success">{children}</Message>;
 ```
 
+To get the fonts and icons to work you will also need to include them in the head of your application. In your index.html, or your alternative, include this:
+
+```html
+<link
+  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Serif+Pro|Source+Code+Pro|Material+Icons+Outlined"
+  rel="stylesheet"
+/>
+```
+
 ## Development
 
 `yarn` to install the dependencies.
