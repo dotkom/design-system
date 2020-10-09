@@ -14,7 +14,7 @@ const StyledIcon = styled.i`
 
 const Icon = ({ name, className = '', ...props }: IconProps) => {
   return (
-    <StyledIcon className={`material-icons-outlined ${className}`} {...props}>
+    <StyledIcon className={`material-icons ${className}`} {...props}>
       {name}
     </StyledIcon>
   );
