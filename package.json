@@ -76,10 +76,6 @@
     "@storybook/addons": "^5.3.12",
     "@storybook/react": "^5.3.12",
     "@storybook/source-loader": "^5.3.12",
-    "@types/lodash": "^4.14.161",
-    "fontsource-material-icons": "^3.0.2",
-    "fontsource-source-code-pro": "^3.0.10",
-    "fontsource-source-sans-pro": "^3.0.9",
-    "fontsource-source-serif-pro": "^3.0.10"
+    "@types/lodash": "^4.14.161"
   }
 }
