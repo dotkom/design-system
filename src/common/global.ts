@@ -4,7 +4,6 @@ import { media, breakPointsInPX } from './layout';
 
 export const GlobalStyle = createGlobalStyle`
   ${Reset}
-  
   body {
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
