@@ -4,8 +4,7 @@ import { media, breakPointsInPX } from './layout';
 
 export const GlobalStyle = createGlobalStyle`
   ${Reset}
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Serif+Pro|Source+Code+Pro|Material+Icons+Outlined');
-
+  
   body {
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
