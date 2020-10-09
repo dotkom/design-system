@@ -1,10 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 import Reset from './reset';
 import { media, breakPointsInPX } from './layout';
+import 'fontsource-material-icons/outlined.css';
+import 'fontsource-source-sans-pro/300.css';
+import 'fontsource-source-sans-pro/400.css';
+import 'fontsource-source-sans-pro/700.css';
+import 'fontsource-source-serif-pro';
+import 'fontsource-source-code-pro';
 
 export const GlobalStyle = createGlobalStyle`
   ${Reset}
-  @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Source+Serif+Pro|Source+Code+Pro|Material+Icons+Outlined');
 
   body {
     font-family: 'Source Sans Pro', sans-serif;
