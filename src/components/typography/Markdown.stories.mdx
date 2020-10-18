@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import { Heading } from './Heading';
 import { Info, Ingress } from './Text';
 import { Markdown, md } from './Markdown';
@@ -15,7 +15,7 @@ This the markdown component is borrowed from `markdown-to-jsx`, with a few tweak
 
 <Props of={Markdown} />
 
-<Preview>
+<Canvas>
   <Story name="Example usage">
     <>
       <Heading>The story of Lorem Ipsum</Heading>
@@ -45,11 +45,11 @@ for (let i = 0; i < 10; i++) {
       </Markdown>
     </>
   </Story>
-</Preview>
+</Canvas>
 
 ## Using the `md` template literal
 
-<Preview>
+<Canvas>
   <Story name="md Template Literal">
     {md`
 # Template Literals
@@ -71,4 +71,4 @@ const some = 'code';
 \`\`\`
     `}
   </Story>
-</Preview>
+</Canvas>

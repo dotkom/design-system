@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import { Heading, Heading2, Heading3, Heading4, Heading5, Heading6 } from './Heading';
 import { Ingress, Paragraph, Info } from './Text';
 
@@ -8,7 +8,7 @@ import { Ingress, Paragraph, Info } from './Text';
 
 `<Heading>`, `<Heading2>`, `<Heading3>` components should be used instead of `<h1>`, `<h2>` and `<h3>`.
 
-<Preview>
+<Canvas>
   <Story name="All Headings">
     <>
       <Heading>Heading</Heading>
@@ -19,16 +19,16 @@ import { Ingress, Paragraph, Info } from './Text';
       <Heading6>Heading6</Heading6>
     </>
   </Story>
-</Preview>
+</Canvas>
 
 ## Custom style
 
 The component behaves just like a normal heading tag. Just use the `style` attribute if you need modifications.
 
-<Preview>
+<Canvas>
   <Story name="Custom Style">
     <>
       <Heading style={{ color: 'red' }}>Custom styled Heading</Heading>
     </>
   </Story>
-</Preview>
+</Canvas>

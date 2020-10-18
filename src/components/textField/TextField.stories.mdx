@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import TextField from './TextField';
 
 <Meta title="Forms|Text Field" component={TextField} />
@@ -9,29 +9,29 @@ import TextField from './TextField';
 This is basically an `<input />` field of `type="text"` in HTML.
 This component supports any props a regular `<input />` [accepts](https://www.w3schools.com/tags/tag_input.asp), as well as it's own props listed below.
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <TextField placeholder={'Search...'} />
   </Story>
-</Preview>
+</Canvas>
 
 <Props of={TextField} />
 
 ### Input disabled
 
-<Preview>
+<Canvas>
   <Story name="Disabled">
     <TextField defaultValue="disabled" disabled />
   </Story>
-</Preview>
+</Canvas>
 
 ### Input with label
 
-<Preview>
+<Canvas>
   <Story name="With Label">
     <TextField placeholder={'Search...'} label="Label" />
   </Story>
-</Preview>
+</Canvas>
 
 ## Status colors
 
@@ -44,24 +44,24 @@ Green color indicates that input is correct and validated, and the user can subm
 
 ### Input with error
 
-<Preview>
+<Canvas>
   <Story name="With Error">
     <TextField defaultValue={'Not an email'} type="email" pattern=".+@.+" required errorMessage="Not an email" />
   </Story>
-</Preview>
+</Canvas>
 
 ### Input with success
 
-<Preview>
+<Canvas>
   <Story name="With Success">
     <TextField defaultValue="Correct input" status="success" />
   </Story>
-</Preview>
+</Canvas>
 
 ### Input with warning
 
-<Preview>
+<Canvas>
   <Story name="With Warning">
     <TextField placeholder="This field is prone to errors" status="warning" />
   </Story>
-</Preview>
+</Canvas>

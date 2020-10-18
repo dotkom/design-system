@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import { Quote } from './Text';
 import { Markdown } from './Markdown';
 
@@ -8,18 +8,18 @@ import { Markdown } from './Markdown';
 
 ## Using Components
 
-<Preview>
+<Canvas>
   <Story name="Quote With Source">
     <Quote by="Source">Quote with source</Quote>
   </Story>
   <Story name="Quote Without Source">
     <Quote>Quote without source</Quote>
   </Story>
-</Preview>
+</Canvas>
 
 ## Using Markdown
 
-<Preview>
+<Canvas>
   <Story name="Markdown Quote With Source">
     <Markdown>{`
 > Quote with source
@@ -36,7 +36,7 @@ import { Markdown } from './Markdown';
       <p>-- Source</p>
     </Quote>
   </Story>
-</Preview>
+</Canvas>
 
 ## Properties
 

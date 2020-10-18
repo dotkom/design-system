@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import { Heading, Heading2, Heading3 } from './Heading';
 import { Ingress, Paragraph, Quote, Info } from './Text';
 import { Markdown } from './Markdown';
@@ -11,7 +11,7 @@ This story displays how an article could be composed using our typography compon
 
 ## Short Example
 
-<Preview>
+<Canvas>
   <Story name="Short Example">
     <>
       <Heading>Heading</Heading>
@@ -21,11 +21,11 @@ This story displays how an article could be composed using our typography compon
       <Quote>Quote</Quote>
     </>
   </Story>
-</Preview>
+</Canvas>
 
 ## Long Example Using Markdown
 
-<Preview>
+<Canvas>
   <Story name="Long Example Using Markdown">
     <>
       <Heading>The story of Lorem Ipsum</Heading>
@@ -52,11 +52,11 @@ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`}
       </Markdown>
     </>
   </Story>
-</Preview>
+</Canvas>
 
 ## Long Example Using Components
 
-<Preview>
+<Canvas>
   <Story name="Long Example Using Components">
     <>
       <Heading>The story of Lorem Ipsum</Heading>
@@ -91,4 +91,4 @@ Lorem Ipsum has been the industry's standard dummy text ever since the 1500s`}
       <Paragraph>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</Paragraph>
     </>
   </Story>
-</Preview>
+</Canvas>

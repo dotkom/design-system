@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import { colors } from 'common/colors';
 import Spinner from './Spinner';
 import SpinnerLogo from './SpinnerLogo';
@@ -9,43 +9,40 @@ import { ExampleContainer } from 'common/containers';
 
 # Chasing Spinner
 
-Online does not have an official spinner, which leaves you free to use whatever you want. In general though, it's wise to use the same spinner for the whole application. 
+Online does not have an official spinner, which leaves you free to use whatever you want. In general though, it's wise to use the same spinner for the whole application.
 
-<Preview>
+<Canvas>
   <Story name="Chasing Spinner">
     <ExampleContainer>
       <Spinner />
       <Spinner primaryColor={colors.error} secondaryColor="#0FF0AE" />
     </ExampleContainer>
   </Story>
-</Preview>
-
+</Canvas>
 <Props of={Spinner} />
 
 # Spinner Circles
 
-<Preview>
+<Canvas>
   <Story name="Spinner Circles">
     <ExampleContainer>
       <SpinnerCircles />
       <SpinnerCircles size={'4rem'} primaryColor={colors.primary} secondaryColor={colors.secondary} />
     </ExampleContainer>
   </Story>
-</Preview>
-
+</Canvas>
 <Props of={SpinnerCircles} />
 
 # Spinner Logo
 
 Like mentioned in the logo variations, this isn't an official logo or anything.
 
-<Preview>
+<Canvas>
   <Story name="Spinner Logo">
     <ExampleContainer>
       <SpinnerLogo />
       <SpinnerLogo size={'150px'} primaryColor={'#db7093'} secondaryColor={'#2f9c0a'} />
     </ExampleContainer>
   </Story>
-</Preview>
-
+</Canvas>
 <Props of={SpinnerLogo} />

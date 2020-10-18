@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import Modal from './Modal';
 import Button from 'components/button/Button';
 import { useState } from 'react';
@@ -11,7 +11,7 @@ The modal is used to front important information, prompts, user-required actions
 It accepts the props `open` and `onClose` which should be used to control whether the modal is displayed.  
 `onClose` will be called by the modal on click of the exit button or if the user clicks outside the center component.
 
-<Preview>
+<Canvas>
   <Story name="Modal">
     {() => {
       const [modalOpen, setModalOpen] = useState(false);
@@ -25,7 +25,7 @@ It accepts the props `open` and `onClose` which should be used to control whethe
       );
     }}
   </Story>
-</Preview>
+</Canvas>
 
 <Props of={Modal} />
 
@@ -34,7 +34,7 @@ It accepts the props `open` and `onClose` which should be used to control whethe
 The modal will display any children it is passed.  
 Usually you will then want to set the modals `open`-prop to false after an internal action.
 
-<Preview>
+<Canvas>
   <Story name="Modal With Action Buttons">
     {() => {
       const [modalOpen, setModalOpen] = useState(false);
@@ -58,11 +58,11 @@ Usually you will then want to set the modals `open`-prop to false after an inter
       );
     }}
   </Story>
-</Preview>
+</Canvas>
 
 # Modal with long text
 
-<Preview>
+<Canvas>
   <Story name="Modal With long text">
     {() => {
       const [modalOpen, setModalOpen] = useState(false);
@@ -112,4 +112,4 @@ Usually you will then want to set the modals `open`-prop to false after an inter
       );
     }}
   </Story>
-</Preview>
+</Canvas>

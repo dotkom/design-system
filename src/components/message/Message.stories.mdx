@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import Message from './Message';
 import { ExampleContainer } from 'common/containers';
 
@@ -8,7 +8,7 @@ import { ExampleContainer } from 'common/containers';
 
 The messages themselves in this case describe part of their usage.
 
-<Preview>
+<Canvas>
   <Story name="All">
     <ExampleContainer>
       <Message status="info">This is a shorter info message, like "hey man, this is a beta, chill out you know"</Message>
@@ -29,6 +29,6 @@ The messages themselves in this case describe part of their usage.
       </Message>
     </ExampleContainer>
   </Story>
-</Preview>
+</Canvas>
 
 <Props of={Message} />

@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import Timeline from './Timeline';
 import Day from './Day';
 import Event from './Event';
@@ -13,7 +13,7 @@ export const toggleActives = (index) => {
 
 # Timeline
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <Timeline>
       <Day day={'Fredag 23. august'}>
@@ -67,7 +67,7 @@ export const toggleActives = (index) => {
       </Day>
     </Timeline>
   </Story>
-</Preview>
+</Canvas>
 
 ## Event Props
 

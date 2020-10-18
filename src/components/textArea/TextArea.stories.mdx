@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import TextArea from './TextArea';
 
 <Meta title="Forms|Text Area" component={TextArea} />
@@ -9,29 +9,29 @@ import TextArea from './TextArea';
 This is more or less a `<textarea>` from HTML.
 This component supports any props a regular `<input />` [accepts](https://www.w3schools.com/tags/tag_textarea.asp), as well as it's own props listed below.
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <TextArea placeholder="I'm resizable!" />
   </Story>
-</Preview>
+</Canvas>
 
 <Props of={TextArea} />
 
 ### Input disabled
 
-<Preview>
+<Canvas>
   <Story name="Disabled">
     <TextArea defaultValue="disabled" disabled />
   </Story>
-</Preview>
+</Canvas>
 
 ### Input with label
 
-<Preview>
+<Canvas>
   <Story name="With Label">
     <TextArea placeholder={'Search...'} label="Label" />
   </Story>
-</Preview>
+</Canvas>
 
 ## Status colors
 
@@ -44,24 +44,24 @@ Green color indicates that input is correct and validated, and the user can subm
 
 ### Input with error
 
-<Preview>
+<Canvas>
   <Story name="With Error">
     <TextArea defaultValue={'Incorrect input'} status="error" errorMessage="That input was incorrect" />
   </Story>
-</Preview>
+</Canvas>
 
 ### Input with success
 
-<Preview>
+<Canvas>
   <Story name="With Success">
     <TextArea defaultValue="Correct input" status="success" />
   </Story>
-</Preview>
+</Canvas>
 
 ### Input with warning
 
-<Preview>
+<Canvas>
   <Story name="With Warning">
     <TextArea placeholder="This field is prone to errors" status="warning" />
   </Story>
-</Preview>
+</Canvas>

@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import Tabs from './Tabs';
 import Tab from './Tab';
 
@@ -8,7 +8,7 @@ import Tab from './Tab';
 
 Tabs are useful when you want to display several sets of components separated. This can be useful for creating sub-pages, and there's hardly any limit to how much you can put in a tab. That being said, consider separating into its own page if you get a lot of big tab contents.
 
-<Preview>
+<Canvas>
   <Story name="Tabs">
     <Tabs>
       <Tab title="Lorem">Contents of Tab 1.</Tab>
@@ -18,6 +18,6 @@ Tabs are useful when you want to display several sets of components separated. T
       <Tab title="Amet">Contents of Tab 5.</Tab>
     </Tabs>
   </Story>
-</Preview>
+</Canvas>
 
 <Props of={Tab} />

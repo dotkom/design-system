@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import { media, breakPoints } from 'common/layout';
 import Breakpoints from './Breakpoints';
 import { Heading } from '../../';
@@ -31,7 +31,7 @@ To use the break points in a media query, you need to specify `@media` on before
 }
 ```
 
-<Preview>
+<Canvas>
   <Story name="All cases">
     <Breakpoints style={{ backgroundColor: '#ddd', margin: 'auto', textAlign: 'center' }}>
       <Heading className="content" style={{ margin: 0 }} />
@@ -61,7 +61,7 @@ To use the break points in a media query, you need to specify `@media` on before
       />
     </Breakpoints>
   </Story>
-</Preview>
+</Canvas>
 
 ## List of all media queries available
 

@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import Button from './Button';
 import styled from 'styled-components';
 
@@ -15,7 +15,7 @@ export const ExampleButtonContainer = styled.div`
 
 For most cases, our default button without any specific variant or color will suffice. Buttons with the "secondary" color are rarely suited for use, and serve more as a contrast for differing backgrounds. Other colors and variants are explained below.
 
-<Preview>
+<Canvas>
   <Story name="All">
     <ExampleButtonContainer>
       <Button color="primary">Primary</Button>
@@ -41,7 +41,7 @@ For most cases, our default button without any specific variant or color will su
       </Button>
     </ExampleButtonContainer>
   </Story>
-</Preview>
+</Canvas>
 
 <Props of={Button} />
 
@@ -49,20 +49,20 @@ For most cases, our default button without any specific variant or color will su
 
 When you wish to present the user with two or more options, and you wish to highlight one of the options as the recommended alternative, consider setting the other alternatives to the "outline" variant.
 
-<Preview>
+<Canvas>
   <Story name="Outline">
     <ExampleButtonContainer>
       <Button>Confirm</Button>
       <Button variant="outline">Cancel</Button>
     </ExampleButtonContainer>
   </Story>
-</Preview>
+</Canvas>
 
 ## Status colors
 
 Status colors can be used to indicate actions with considerable consequences. The "success" color can for example be used for completing a form, while the "danger" color can be used to indicate irreversible actions that might require some second thought.
 
-<Preview>
+<Canvas>
   <Story name="Status">
     <ExampleButtonContainer>
       <Button color="success">Save</Button>
@@ -72,4 +72,4 @@ Status colors can be used to indicate actions with considerable consequences. Th
       </Button>
     </ExampleButtonContainer>
   </Story>
-</Preview>
+</Canvas>

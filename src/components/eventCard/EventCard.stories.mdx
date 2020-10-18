@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import EventCard from './EventCard';
 
 <Meta title="EventCard" component={EventCard} />
@@ -9,7 +9,7 @@ This component was designed for use in OWF, but the OWF implementation has since
 
 This large event card prominently displays the event image, with the information displayed directly underneath it.
 
-<Preview>
+<Canvas>
   <Story name="Large">
     <EventCard
       eventName="Nofas"
@@ -21,7 +21,7 @@ This large event card prominently displays the event image, with the information
       eventColor="#127DBD"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ## Small event card
 
@@ -29,9 +29,9 @@ There is a smaller version of the card for more compact viewing. It displays the
 
 <Props of={EventCard} />
 
-<Preview>
+<Canvas>
   <Story name="Small">
     <EventCard eventName="Bekk" date="2019-08-07" attending="17/20" isLargeEvent={false} />
   </Story>
-</Preview>
+</Canvas>
 

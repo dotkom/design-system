@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import Checkbox from './Checkbox';
 import { ExampleContainer } from 'common/containers';
 
@@ -10,7 +10,7 @@ Checkboxes are used when you want to provide the user with a choice between one 
 
 This checkbox takes a default checked value and handles checked with internal state. If you need to trigger some effect based on the state of the checkbox you can pass a function to onChange, onChange also gives the checked state as a argument to the callback.
 
-<Preview>
+<Canvas>
   <Story name="All">
     <ExampleContainer>
       <Checkbox label="Checkbox" onChange={() => null} />
@@ -21,6 +21,5 @@ This checkbox takes a default checked value and handles checked with internal st
       <Checkbox label="Error" error={true} onChange={() => null} />
     </ExampleContainer>
   </Story>
-</Preview>
-
+</Canvas>
 <Props of={Checkbox} />

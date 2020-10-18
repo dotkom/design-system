@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import { media, breakPoints } from 'common/layout';
 import ColorSwatch from './Colors';
 
@@ -12,7 +12,7 @@ If implemented correctly, this could make theming easier, as the colors would pr
 Our primary and secondary palette is part of Online's [brand identity](https://online.ntnu.no/wiki/online/info/innsikt-og-interface/grafisk-profil/). Until an "official" dark mode is discussed, we prefer using whites and grays for most elements, with splashes of color here and there. When designing interactive elements, like when developing the components of Design System, you mostly need to use the base "primary" color. The tints and shades can be useful if you for example want to highlight something when hovering over it.
 The secondary color should be used very sparingly, mostly when a lot of the primary color is already used and you need to distinguish from it.
 
-<Preview>
+<Canvas>
   <Story name="Primary">
     <>
       <ColorSwatch color="primaryLighten45" darkText={true} />
@@ -35,12 +35,12 @@ The secondary color should be used very sparingly, mostly when a lot of the prim
       <ColorSwatch color="secondaryDarken45" />
     </>
   </Story>
-</Preview>
+</Canvas>
 
 First up is our set of grays, of which there are many. For now we just use actual black and actual white, instead of a slightly-off low contrast version. Again, these colors could be replaced easily.
 The reason so many shades are provided is because you often need more than you think to distinguish elements from eachother.
 
-<Preview>
+<Canvas>
   <Story name="Gray">
     <>
       <ColorSwatch color="white" darkText={true} />
@@ -54,11 +54,11 @@ The reason so many shades are provided is because you often need more than you t
       <ColorSwatch color="black" />
     </>
   </Story>
-</Preview>
+</Canvas>
 
 The info color is used in components to indicate a bit of information, most prominently displayed in the "Message" component.
 
-<Preview>
+<Canvas>
   <Story name="Info">
     <>
       <ColorSwatch color="infoLighten90" darkText={true} />
@@ -68,11 +68,11 @@ The info color is used in components to indicate a bit of information, most prom
       <ColorSwatch color="infoDarken70" />
     </>
   </Story>
-</Preview>
+</Canvas>
 
 The success color is used to indicate confirmative actions, for example saving or finishing a form.
 
-<Preview>
+<Canvas>
   <Story name="Success">
     <>
       <ColorSwatch color="successLighten90" darkText={true} />
@@ -82,11 +82,11 @@ The success color is used to indicate confirmative actions, for example saving o
       <ColorSwatch color="successDarken70" />
     </>
   </Story>
-</Preview>
+</Canvas>
 
 The warning color can indicate actions where the user should take a second to think about what they're doing. It can also tell the user important information about deviations from regular user flow that should be taken into consideration.
 
-<Preview>
+<Canvas>
   <Story name="Warning">
     <>
       <ColorSwatch color="warningLighten90" darkText={true} />
@@ -96,11 +96,11 @@ The warning color can indicate actions where the user should take a second to th
       <ColorSwatch color="warningDarken70" />
     </>
   </Story>
-</Preview>
+</Canvas>
 
 The error color is the final of the status colors, and it indicates dangerous or faulty actions. If you want to discourage a user from being a place or doing a thing, this is the color to do it with. It is also useful for cases where the user has done something wrong, or something has gone wrong on our side.
 
-<Preview>
+<Canvas>
   <Story name="Error">
     <>
       <ColorSwatch color="errorLighten90" darkText={true} />
@@ -110,11 +110,11 @@ The error color is the final of the status colors, and it indicates dangerous or
       <ColorSwatch color="errorDarken70" />
     </>
   </Story>
-</Preview>
+</Canvas>
 
 The following are the event type colors as used in OWF. They should not be used for anything else than indicating the type of event. This set of colors may be revamped in the future to provide a more coherent palette, or be removed entirely.
 
-<Preview>
+<Canvas>
   <Story name="Events">
     <>
       <ColorSwatch color="eventsBedpres" />
@@ -127,4 +127,4 @@ The following are the event type colors as used in OWF. They should not be used 
       <ColorSwatch color="eventsAnnet" />
     </>
   </Story>
-</Preview>
+</Canvas>
