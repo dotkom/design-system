@@ -1,5 +1,5 @@
 import ToggleSwitch from './ToggleSwitch';
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 
 <Meta title="Forms|Toggle Switch" />
 
@@ -7,17 +7,17 @@ import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
 
 The toggle switch is a simple button switching between "checked" and "not checked".
 
-<Preview>
+<Canvas>
   <Story name="Default">
     <ToggleSwitch />
   </Story>
-</Preview>
+</Canvas>
 
 <Props of={ToggleSwitch} />
 
 ### Scales
 
-<Preview>
+<Canvas>
   <Story name="Scales">
     <div style={{ display: 'inline-flex' }}>
       <ToggleSwitch />
@@ -25,11 +25,11 @@ The toggle switch is a simple button switching between "checked" and "not checke
       <ToggleSwitch scale={1.4} />
     </div>
   </Story>
-</Preview>
+</Canvas>
 
 ### Disabled
 
-<Preview>
+<Canvas>
   <Story name="Disabled">
     <div style={{ display: 'inline-flex' }}>
       <ToggleSwitch disabled />
@@ -37,4 +37,4 @@ The toggle switch is a simple button switching between "checked" and "not checke
       <ToggleSwitch scale={1.4} disabled />
     </div>
   </Story>
-</Preview>
+</Canvas>

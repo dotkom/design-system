@@ -55,11 +55,11 @@
     "react-docgen-typescript-loader": "^3.2.0",
     "react-dom": "^16.9.0",
     "react-is": "^16.9.0",
-    "storybook-addon-designs": "^5.1.1",
+    "storybook-addon-designs": "^5.4.2",
     "storybook-addon-figma": "0.1.0",
     "storybook-addon-props": "^3.0.4",
     "storybook-addon-styled-themes": "0.0.3",
-    "storybook-chromatic": "^2.2.2",
+    "storybook-chromatic": "^3.5.5",
     "styled-components": "^5.2.0",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.2.1",
@@ -68,14 +68,17 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "@storybook/addon-a11y": "^5.3.12",
-    "@storybook/addon-actions": "^5.3.12",
-    "@storybook/addon-docs": "^5.3.12",
-    "@storybook/addon-knobs": "^5.3.12",
-    "@storybook/addon-storysource": "^5.3.12",
-    "@storybook/addons": "^5.3.12",
-    "@storybook/react": "^5.3.12",
-    "@storybook/source-loader": "^5.3.12",
-    "@types/lodash": "^4.14.161"
+    "@storybook/addon-a11y": "^6.0.26",
+    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-docs": "^6.0.26",
+    "@storybook/addon-knobs": "^6.0.26",
+    "@storybook/addon-storysource": "^6.0.26",
+    "@storybook/addons": "^6.0.26",
+    "@storybook/react": "^6.0.26",
+    "@storybook/source-loader": "^6.0.26",
+    "@types/lodash": "^4.14.161",
+    "@types/react-select": "^3.0.22",
+    "react-select": "^3.1.0",
+    "storybook": "^6.0.26"
   }
 }

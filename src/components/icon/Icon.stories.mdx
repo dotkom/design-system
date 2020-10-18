@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import Icon from './Icon';
 import Button from '../button/Button';
 import styled from 'styled-components';
@@ -22,7 +22,7 @@ When you follow the link above, you can find an icon you like, then enter the na
 
 PS: for the icons to work you must remember to inlcude the fonts in your document head.
 
-<Preview>
+<Canvas>
   <Story name="All">
     <ExampleIconContainer>
       <Paragraph style={{ fontSize: '24px' }}>
@@ -43,6 +43,6 @@ PS: for the icons to work you must remember to inlcude the fonts in your documen
       </Button>
     </ExampleIconContainer>
   </Story>
-</Preview>
+</Canvas>
 
 <Props of={Icon} />

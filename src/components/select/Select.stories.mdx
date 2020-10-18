@@ -1,4 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas, Props } from '@storybook/addon-docs/blocks';
 import Select from './Select';
 
 <Meta title="Forms|Select" component={Select} />
@@ -7,7 +7,7 @@ import Select from './Select';
 
 It's a dropdown, you know what it does. Choose this over a radio button group if you have a lot of options to choose from.
 
-<Preview>
+<Canvas>
   <Story name="All">
     <Select>
       <option value={0}>Lorem</option>
@@ -17,7 +17,7 @@ It's a dropdown, you know what it does. Choose this over a radio button group if
       <option value={4}>Amet</option>
     </Select>
   </Story>
-</Preview>
+</Canvas>
 
 Select has no props except for children. It takes any number of option-elements 
 and displays them in the order they were given.
