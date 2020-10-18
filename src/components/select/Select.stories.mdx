@@ -9,19 +9,22 @@ It's a dropdown, you know what it does. Choose this over a radio button group if
 
 <Preview>
   <Story name="All">
-    <Select>
-      <option value={0}>Lorem</option>
-      <option value={1}>Ipsum</option>
-      <option value={2}>Dolor</option>
-      <option value={3}>Sit</option>
-      <option value={4}>Amet</option>
-    </Select>
+    <Select
+      options={[
+        { value: 0, label: 'lorem' },
+        { value: 1, label: 'ipsum' },
+        { value: 2, label: 'dolor' },
+        { value: 3, label: 'sit' },
+        { value: 4, label: 'amet' },
+      ]}
+    />
   </Story>
 </Preview>
 
-Select has no props except for children. It takes any number of option-elements 
+Select has no props except for children. It takes any number of option-elements
 and displays them in the order they were given.
-Select is meant to be used within an  HTML-form, and thus does not yield the selected value. 
+Select is meant to be used within an HTML-form, and thus does not yield the selected value.
+
 ```html
-<option value={x}>Text</option>
+<option value="{x}">Text</option>
 ```
