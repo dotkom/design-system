@@ -60,5 +60,5 @@
     "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
   },
   "include": ["src"],
-  "exclude": ["src/common"]
+  "exclude": ["src/common","src/old_components"]
 }

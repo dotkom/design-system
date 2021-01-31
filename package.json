@@ -83,6 +83,8 @@
     "@storybook/source-loader": "^6.1.15",
     "@types/lodash": "^4.14.168",
     "@types/react-select": "^3.1.2",
-    "framer-motion": "^3.2.2-rc.1"
+    "framer-motion": "^3.2.2-rc.1",
+    "react-icons": "^4.1.0",
+    "storybook-addon-performance": "^0.14.0"
   }
 }

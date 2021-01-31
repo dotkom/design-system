@@ -1,3 +1,2 @@
-import TestComponent from "./TestComponent/TestComponent";
 
-export { TestComponent };
+export { default as CustomButton } from 'components/button/CustomButton'
