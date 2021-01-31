@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from 'components/icon/Icon';
-import Card from 'components/card/Card';
+import Icon from 'old_components/icon/Icon';
+import Card from 'old_components/card/Card';
 import { colors } from 'common/colors';
 import { media } from 'common/layout';
 

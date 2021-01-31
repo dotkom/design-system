@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { colors, ColorName } from 'common/colors';
-import Icon from 'components/icon/Icon';
+import Icon from 'old_components/icon/Icon';
 
 interface MessageProps {
   status: 'info' | 'success' | 'warning' | 'error';

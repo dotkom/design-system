@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colors } from 'common/colors';
 
-import Icon from 'components/icon/Icon';
+import Icon from 'old_components/icon/Icon';
 
 export interface Props {
   initialChecked?: boolean;
