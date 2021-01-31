@@ -59,5 +59,6 @@
     "paths": { "*": ["*"] },                  /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     "plugins": [{ "transform": "@zerollup/ts-transform-paths" }]
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/common","src/old_components"]
 }

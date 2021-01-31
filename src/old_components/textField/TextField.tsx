@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled, { StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
-import Icon from 'components/icon/Icon';
+import Icon from 'old_components/icon/Icon';
 
 const statuses = {
   error: colors.error,
