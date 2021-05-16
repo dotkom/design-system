@@ -4,8 +4,8 @@ import styled, { StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
 
 interface OptionType {
-  value: string;
-  label: string;
+  value: any;
+  label: any;
 }
 interface SelectProps extends StyledComponentProps<'select', any, any, any> {
   options: OptionType[];
