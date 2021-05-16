@@ -3,8 +3,12 @@ import ReactSelect from 'react-select';
 import styled, { StyledComponentProps } from 'styled-components';
 import { colors } from 'common/colors';
 
+interface OptionType {
+  value: string;
+  label: string;
+}
 interface SelectProps extends StyledComponentProps<'select', any, any, any> {
-  options: [{ value: any; label: any }];
+  options: OptionType[];
 }
 
 const StyledSelect = styled(ReactSelect)`
