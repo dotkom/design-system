@@ -43,24 +43,24 @@ To get the fonts and icons to work you will also need to include them in the hea
 
 ## Development
 
-`yarn` to install the dependencies.
+`npm i` to install the dependencies.
 
-`yarn start` to start the storybook environment.
+`npm run start` to start the storybook environment.
 
 ### Before contributing
 
 You will need to follow the rules from `eslint` and `prettier`. To verify that you follow the rules, run:
 
 ```bash
-yarn lint-check
-yarn format-check
+npm run lint-check
+npm run format-check
 ```
 
 If you want to autoformat, use these:
 
 ```bash
-yarn lint
-yarn format
+npm run lint
+npm run format
 ```
 
 If you want to run a chromatic test (UI image diff), use:
