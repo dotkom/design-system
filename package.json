@@ -59,7 +59,7 @@
     "storybook-addon-figma": "0.1.0",
     "storybook-addon-props": "^3.0.4",
     "storybook-addon-styled-themes": "0.0.3",
-    "storybook-chromatic": "^2.2.2",
+    "storybook-chromatic": "^3.5.1",
     "styled-components": "^5.2.0",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.2.1",
