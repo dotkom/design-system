@@ -1,0 +1,21 @@
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import UploadField from './UploadField';
+
+<Meta title="Forms|UploadField" component={UploadField} />
+
+# Upload field
+
+This is an `<input />` field of `type="file"` in HTML.
+It has support for multiple files being uploaded, as well as drag & drop.
+
+<Preview>
+  <Story name="all">
+    <>
+      <h3>Upload file</h3>
+      <UploadField label="Upload file" />
+    </>
+  </Story>
+</Preview>
+
+<Props of={UploadField} />
